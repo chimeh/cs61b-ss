@@ -1,0 +1,6 @@
+# Erroneous input 4
+
+DEF A(x,y) = (x+y)(x-y);
+
+A(a);
+

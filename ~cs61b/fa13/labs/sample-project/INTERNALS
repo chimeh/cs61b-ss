@@ -1,0 +1,98 @@
+	An Implementor's Guide to the PCalc Polynomial Calculator 
+			P. N. Hilfinger
+
+
+REPRESENTATION OF POLYNOMIALS
+
+Internally, a Polynomial is a sequence of non-zero terms, stored as a
+List in canonical order.  An empty list represents the 0 polynomial.
+
+Each term is represented by an object of type Polynomial.Term.  A Term
+consists of an integer coefficient (type long), and a List of
+simple factors of the form v^n in canonical order, representing the
+product of the coefficient and the factors.  An empty sequence of
+factors represents 1, and is used for the scalar term.
+
+Each factor is represented as an object of type Polynomial.Factor,
+which is essentially a pair consisting of a variable (type char) and a
+non-negative exponent.  In fully initialized Terms, no Factor has an
+exponent of 0, although internally, during the construction of a Term,
+a Factor may temporarily have a 0 exponent.
+
+Except during the actual operation of the add or mult procedures 
+on Polynomials, the contents of Terms, Factors, and Polynomials do not
+change.  Therefore, Terms and Factors may be freely shared once 
+construction of a Polynomial is finished.  Several copying constructors
+allow the creation of new, fresh Terms, Factors, and Polynomials that may 
+be modified before being returned back to the client.
+
+
+BASIC OPERATIONS ON POLYNOMIALS, TERMS, FACTORS
+
+To add two Polynomials, p1 and p2, one creates a deep copy of p1 (call
+this copy r) and then "merges" the terms of p2 into it.  That is, for
+term in p2, we first find the appropriate position in canonical order
+for it within r (as determined by the Term.compareTo method).  If
+there is no Term in r with matching variables and exponents, then the 
+Term from p2 is simply inserted into r.  Otherwise, its coefficient is 
+added to that of the corresponding term in r.  Terms that end up with
+0 coefficients are removed.
+
+To multiply two Polynomials, p1 and p2, we simply take all pairs of terms
+from p1 and p2, multiply them into a new term, and add that term into
+a running Polynomial sum.  Multiplying consists of multiplying 
+coefficients and adding corresponding exponents.
+
+Exponentiation is simply repeated multiplication.
+
+Polynomials, Terms, and Factors all have subst (substitution) methods.
+Their operation is actually quite straightforward.  A Polynomial is a
+sum of terms, so to substitute, we simply add the results of
+substituting into the terms of the Polynomial.  A term is a product of
+a coefficient and some factors, so to substitute into a Term, we
+simply multiply its coefficient by the results of substituting into
+its factors.  Finally, a Factor is variable raised to an exponent, so to
+substitute into a Factor, we either get the Factor itself if there is no
+substitution for its variable, and otherwise the result of exponentiating 
+its substitution.
+
+
+PARSING
+
+The parser is a simple recursive-descent translator---basically a
+transcription of the description of the input syntax into methods---
+one for full polynomial expressions, one for terms, one for factors,
+and one for substitutions.  Each method returns the polynomial
+represented by the construct it parses. By convention, each function
+reads all the tokens covered by its syntactic construct, and then
+leaves the input at the first token of the next construct, first
+skipping any intervening whitespace (ends of lines).
+
+One example illustrates the idea:  A Polynomial is defined as a 
+sequence of terms separated by '+'s and '-'s, and possibly beginning
+with a '-'.  Therefore to parse a Polynomial, we
+
+1. Check for a leading '-', and read past it if present.
+
+2. Call the term-parsing method (parseTerm) to parse the first term.
+   This gives us a Polynomial, which we negate (multiply by -1) if 
+   there was a leading '-', and then use as the initial value of 
+   our accumulated result.
+
+3. Now we loop for as long as we see '+' or '-', first skipping the
+   '+' or '-', then using parseTerm to get the next term, then 
+   adding (subtracting) the resulting Polynomial to (from) our 
+   accumulated result.
+
+4. When the loop stops, we return the accumulated result.
+
+
+DEFINITIONS
+
+An instance of the Defns class provides a dictionary for saving 
+definitions (introduced by DEF).  Each parameter list is stored as a 
+String (for 'DEF A(b,c,a) = ...', the saved string is "bca").  Since
+all definitions are single upper-case characters, we simply use two 
+26-element arrays to store the argument lists and the bodies of the 
+definitions.
+

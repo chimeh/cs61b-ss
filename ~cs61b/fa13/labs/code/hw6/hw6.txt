@@ -1,0 +1,109 @@
+HW #6
+
+Table I.  Cost parameters for various insertion sorting programs.
+----- --  ---- ---------- --- ------- --------- ------- ---------
+
+This table shows the parameters a, b, and c in the formula
+
+          2
+       a N   +  b N  +  c
+
+for the running time (in seconds) of several different programs running on
+random, uniformly distributed data.
+
+Machine:
+
+Program            |    a    |     b    |      c
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter             |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O2)        |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter2            |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O0)        |         |          |
+                   |         |          |
+
+
+Table II.  Cost parameters for a different machine
+----- ---  ---- ---------- --- - --------- -------
+
+As for Table I, but with a different architecture.
+
+Machine:
+
+Program            |    a    |     b    |      c
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter             |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O2)        |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter2            |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O0)        |         |          |
+                   |         |          |
+
+
+
+Table III.  Cost parameters for insertion sorting programs, non-uniform data
+----- ----  ---- ---------- --- --------- ------- --------- ----------- ----
+
+This table shows the parameters a, b, and c in the formula
+
+          2
+       a N   +  b N  +  c
+
+for the running time (in seconds) of several different programs,
+running on random data in which the kth item is computed by k + 20 *
+R, where R is uniformly distributed on 0..1.
+     
+
+
+
+Program            |    a    |     b    |      c
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter             |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O2)        |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+Sorter2            |         |          |
+                   |         |          |
+-------------------+---------+----------+------------
+                   |         |          |
+csort (-O0)        |         |          |
+                   |         |          |
+
+
+
+3. Explanation of differences between Table I and Table III:
+
+
+
+
+
+
+4. Expected effect of using a linked list rather than an array:
+
+
+
+
+

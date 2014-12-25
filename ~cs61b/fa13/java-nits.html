@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<style type="text/css" media="screen">
+  @import url( styles/layout.css );
+</style>
+<head>
+<title>Java Style to Avoid</title></head>
+
+<body>
+
+<h1 ALIGN=center> Java Style to Avoid </h1>
+
+
+
+
+
+
+<font size=+1>
+
+<p>
+This page contains a list of various things I've encountered in students'
+programs in this and past semesters
+that might better be avoided.  Expect it to expand from
+time to time.
+</p>
+
+<p>
+
+<a href="java-nits.html#string_const"><b>* String constructors are seldom necessary.</b></a> <br>
+
+
+
+<a href="java-nits.html#compare_true"><b>* Boolean values need not be compared to <code>true</code> or 
+     <code>false</code>.</b></a> <br>
+
+
+
+<a href="java-nits.html#assign_bool"><b>* Boolean variables may be assigned from arbitrary boolean 
+     expressions.</b></a> <br>
+
+
+<a href="java-nits.html#bad_throws"><b>* Throws clauses aren't intended just to shut up the
+     Java compiler.</b></a> <br>
+
+
+<a href="java-nits.html#specific_exceptions"><b>* Be specific about exceptions.</b></a> <br>
+
+
+<a href="java-nits.html#commenting_out"><b>* Don't leave commented-out regions of code.</b></a> <br>
+
+
+
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="string_const"> <b>String constructors are seldom necessary.</b></a>
+Write
+<pre>
+    String aString = "foo";
+</pre>
+not 
+<pre>
+    String aString = new String ("foo");   <span class="bad">// BAD</span>
+</pre>
+<p>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="compare_true"> <b>Boolean values need not be compared to <code>true</code> or 
+     <code>false</code>.</b></a>
+Rather than writing
+<pre>
+    if (isRound == true &amp;&amp; isFilled == false)  <span class="bad">// BAD</span>
+        ...
+</pre>
+write
+<pre>
+    if (isRound &amp;&amp; ! isFilled)
+        ...
+</pre>
+Of course, to make this work, you should choose names for things that contain
+or return booleans that suggest that they <em>are</em> boolean.  For example,
+names like <code>isRound</code>, <code>hasNext</code>, 
+<code>amProcessing</code> clearly suggest that their values are boolean.
+
+<p>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="assign_bool"> <b>Boolean variables may be assigned from arbitrary boolean 
+     expressions.</b></a>
+Rather than writing
+<pre>
+    if (! isFilled)             <span class="bad">// BAD</span>
+        isOutline = true;
+    else
+        isOutline = false;
+</pre>
+simply write
+<pre>
+    isOutline = ! isFilled;
+</pre>
+
+<p>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="bad_throws"> <b>Throws clauses aren't intended just to shut up the
+     Java compiler.</b></a>
+Unless you are writing a throw-away piece of code to
+     try out something, avoid things like:
+<pre>
+     public static void main (String[] args) throws IOException <span class="bad">// BAD</span>
+</pre>
+If <code>javac</code> was complaining before you did this, it means 
+that something in your code might crash the program by 
+throwing <code>IOException</code>.  Decide what you want to do in that case and
+put in a <code>try...catch</code> block.
+
+<p>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="specific_exceptions"> <b>Be specific about exceptions.</b></a>
+In most cases, it is unwise to write
+<pre>
+     try {
+        doSomething ();
+     } catch (Exception e) {     <span class="bad">// BAD</span>
+        saySomething ();
+     }
+</pre>
+This will catch all exceptions, including things like 
+<code>NullPointerException</code>, which is more often a programming error
+rather than an expected result of user errors.  Try to narrow things down.
+
+<p>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+<p>
+<a name="commenting_out"> <b>Don't leave commented-out regions of code.</b></a>
+There is nothing more ugly (or difficult to read) than sections of program
+text that look like this:
+<pre>
+     foo (x, y);
+ //  foo (0, 0);
+ //    if (x > y) {
+ //        ...
+ //   }
+     return null;
+</pre>
+Clean them up before you submit.  In fact, don't have them there in the 
+first place.  With version control, you have all your old versions of 
+code around in the repository, should you ever need to restore them.
+<p>
+
+
+<hr>
+
+<p align=center>
+[<a href="index.html">CS61B Home Page</a>]
+</p>
+
+<font size=-1>
+<ADDRESS>
+Page was last modified on Wed Aug 22 17:43:39 2012. <br>
+Address comments and questions to
+<A NAME="webmaster" HREF="mailto:cs61b@imail.eecs.berkeley.edu">
+cs61b@imail.eecs.berkeley.edu</A>
+</ADDRESS>
+
+</body></html>
+
+
+
+
+
+
+
+

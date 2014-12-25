@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Heapsort</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/arraydemos.js"></script>
+<script type="text/javascript" src="js/arraydemos.sorting.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        sortingDemos.commonSetup();
+        sortingDemos.heapsortDemo();
+    });
+</script>
+</head>
+
+<body>
+
+<h1> Heapsort</h1>
+
+<p> 
+Heapsort is a type of selection sort that sorts <i>N</i> items in
+O(<i>N</i> lg <i>N</i>) time (worst case) using comparisons.
+It first converts the input sequence into a 
+a tree that satisfies the <dfn>heap property</dfn>&mdash;each node's value
+is less than or equal to that of its parent.
+Such trees are appropriately enough called <dfn>heaps</dfn>.
+As a result of the heap property, the largest element in the tree will be at 
+the root.
+The algorithm repeatedly removes the largest 
+element, replaces it with another value from the bottom level of the tree, 
+and then re-establishes 
+the heap property, thus forming the sorted array from the largest to the smallest
+element.
+</p>
+<p>
+In order to do all of this quickly, we represent the tree as a 
+<dfn>complete binary tree</dfn>&mdash;each level of the tree is 
+completely full, with the possible exception of the lowest level, all of 
+whose nodes are located as far to the 
+left of the level as possible.  Such trees have the nice property that we can 
+store them sequentially in an array using a simple rule to find the children
+and parent of a node: the parent of the node at index <i>k</i>&gt;0 in the 
+array is at index &lfloor;(<i>k</i>-1)/2&rfloor;.  Likewise, the children of node
+<i>k</i>, if present, are at indices 2<i>k</i>+1 and 2<i>k</i>+2.
+The rightmost node on the last level of the tree is therefore the last element
+of the array representation of the heap, and the root is the first
+element.  
+</p>
+<p>
+Complete trees must have a height that is bounded by lg <i>N</i>, where 
+<i>N</i> is the number of nodes.  Furthermore, the heap property is 
+sufficiently loose that when it is disturbed by replacing the root with another
+value that violates the heap property, the heap property may be restored in 
+time proportional to the height of the tree&mdash;hence the O(<i>N</i> lg <i>N</i>) time
+bound for performing this restoration <i>N</i> times.   If a single node
+in a heap violates the heap property with respect to its children, we simply
+swap that node with its larger child, repeating this process as often as 
+needed; it must perforce stop on reaching the leaves.  Establishing the 
+heap property in the first place for an arbitrary complete tree is possible
+in linear time:
+we simply work backwards from the end of the array, swapping each node with its
+parent if it is larger than the parent.
+</p>
+<p>
+In the demonstration below, the portion of the array that is "heapified" is
+shown in green, and the as-yet unheapified and unsorted elements are in 
+pink.   Items that are being compared (parents with child nodes) are marked
+with "V".
+Once the
+array is heapified, each step consists of swapping the root (largest) remaining
+element of the heap with the last element of the heap (thus removing it from
+the heap and placing it at the right point in the final array) and then
+"reheapifying" as needed, swapping the new root downwards until the heap
+property is restored. 
+</p>
+
+<p>
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<p>
+<table id="parameters" align="center">
+ <tr>
+  <td> 
+      <ul id="menu">
+        <li> <a href="heapsort-demo.html#">Choose Input</a>
+          <ul>
+            <li id="increasing"> <a href="heapsort-demo.html#">Sorted values</a> </li>
+            <li id="decreasing"> <a href="heapsort-demo.html#">Decreasing values</a> </li>
+            <li id="random"> <a href="heapsort-demo.html#">Random values</a> </li>
+          </ul>
+        </li>
+	<li id="Run"> <a href="heapsort-demo.html#">Sort input</a> </li>
+      </ul>
+  </td>
+  <td> <b>Input size:</b> 
+    <input type="text" id="input-size" size="2" />
+  </td>
+ </tr>
+</table>
+</p>
+
+<p>
+<div class="demo">
+<svg id="disp" version="1.1" width="800" height="300">
+   <text class="array-label" text-anchor="end" x="82" y="17">
+        Initial array:
+   </text>
+   <g id="input1" transform="translate(92, 2)"> </g>
+
+   <text class="array-label" text-anchor="end" x="76" y="124">Array:</text>
+   <g id="data-hs" transform="translate(90, 109)"> </g>
+
+   <text class="array-label" text-anchor="end" x="349" y="71">
+       # comparisons:
+   </text>
+   <g id="op-hs" transform="translate(363, 54)"> </g>
+</svg>
+</div>
+</p>
+
+<p>
+<div id="log">
+</div>
+</p>
+
+</body>
+</html>

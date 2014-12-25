@@ -1,0 +1,74 @@
+		   The PCalc Polynomial Calculator
+		      Users' Guide and Reference
+
+			   P. N. Hilfinger
+
+The Polynomial Calculator (pcalc) provides a simple interface for 
+inputting multivariable polynomials, for adding, subtracting, and
+multiplying them, for performing substitutions of their variables, and
+for simplifying them to a canonical form.  
+
+Input is free format.  A polynomial is written according to the
+following BNF:
+
+	<poly> ::= <opt-sign> <term> | <poly> <add operator> <term>
+ 	<add operator> ::=  "+" | "-"
+	<opt-sign> ::=  "-" | 
+	<term> ::= <factor> | <term> <factor>
+	<factor> ::= <primary> | <primary> "^" <integer constant>
+	<factor> ::= <integer constant> | <variable> | "(" <poly> ")" 
+		     | <function call>
+	<function call> ::= <name> "(" <args> ")" | <name> "(" ")"
+
+	<integer constant> ::= non-negative decimal numeral
+	<variable> ::= single lower-case letter
+	<name> ::= single upper-case letter
+	<args> ::= <poly> | <args> "," <poly>
+
+The <factor>s in a <term> are multipled.  The "^" syntax denotes 
+exponentiation.
+
+All integer constants and all coefficients in computed polynomials
+must be in the range -2**63 .. 2**63-1, or the results are undefined.
+All exponents must be in the range 0 .. 2**31-1.
+
+The possible input commands are as follows:
+
+  #  Arbitrary text
+	A one-line comment.
+
+  <poly> ;
+	Simplifies and prints <poly>.
+
+  DEF <name> ( <formals> ) = <poly> ;
+	Defines the function call <name>(p1,...pn) to be 
+	<poly> with p1,...,pn substituted for the variables in <formals> 
+	(which is a comma-separated list of 0 or more <variable>s).  
+	Only the variables in <formals> may appear in <poly>.
+
+  QUIT 
+  EXIT
+	Exit the program.
+
+Command input is free-format; commands (other than comments) 
+may cross line boundaries, and multiple commands are allowed on a line.
+
+EXAMPLE: 
+
+In the following, input from the terminal is marked with a "> " prompt.
+
+    Pcalc, version 1.0
+    > # Computation of aX^3 + bX^2 + cX + d
+    > DEF P(x,a,b,c,d) = d+x(c+x(b+ax));
+    > P(y,1,-2,3,4);
+    = y^3-2y^2+3y+4
+    > P(z,0,0,1,2)P(y,1,-2,3,4);
+    = y^3z+2y^3-2y^2z-4y^2+3yz+6y+4
+    > (y-2)(z+1);
+    = yz+y-2z-2
+    > P(z,0,0,1,2)-P(z,1,-2,1,4);
+    = -z^3+2z^2-2
+    > QUIT
+
+  
+	

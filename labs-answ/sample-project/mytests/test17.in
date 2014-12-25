@@ -1,0 +1,8 @@
+# Empty params
+
+DEF A() = 42;
+
+A();
+
+a+A();
+QUIT

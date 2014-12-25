@@ -1,0 +1,17 @@
+# Input formatting issues.
+
+3
++
+2
+;
+
+3
+^
+2;
+
+3    ^    2
+;
+
+3; 7; 9 ;
+
+QUIT

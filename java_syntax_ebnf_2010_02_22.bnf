@@ -1,0 +1,314 @@
+USE_LR_PARSER
+CompilationUnit
+ 
+(* ----------------------------------------------------- Precedence and associativity of operators --------------------------------------------------- *)
+%LEFT_ASSOC   "then"															"L0"  .(* lowest prec *)
+%LEFT_ASSOC   "else"															"L1"  .
+%RIGHT_ASSOC  "="  "+=" "-=" "*="  "/=" "%=" "&=" "|=" "^=" "<<=" ">>=" ">>>="	"L2"  .
+%RIGHT_ASSOC  "?" ":"       													"L3"  .(* short-hand conditional *)
+%LEFT_ASSOC   "||"       														"L4"  .
+%LEFT_ASSOC   "&&"       														"L5"  .
+%LEFT_ASSOC   "|"       														"L6"  .
+%LEFT_ASSOC   "^"       														"L7"  .
+%LEFT_ASSOC   "&"       														"L8"  .
+%LEFT_ASSOC   "==" "!="       													"L9"  .
+%LEFT_ASSOC   "<" "<=" ">" ">=" "instanceof"									"L10" .
+%LEFT_ASSOC   "<<" ">>" ">>>"       											"L11" .
+%LEFT_ASSOC   "+" "-"       													"L12" .
+%LEFT_ASSOC   "*" "/" "%"       												"L13" .
+%RIGHT_ASSOC  "!" "~" "++" "--" "new" "()"										"L14" .(* casting *)
+%LEFT_ASSOC   "[]" "."		      												"L15" .(* array access, dot access *)
+(* ---------------------------------------------------------------------------------------------------------------------------------------------------- *)
+
+
+(* ==================================================================================================================================================== *)
+(* ------------------------------------------------------ Comments ------------------------------------------------------------------------------------ *)
+(* ==================================================================================================================================================== *)
+(* A doc comment is written in HTML and must precede a class, field, constructor or method declaration. 
+   It is made up of two parts -- a description followed by block tags. 
+   Source: http://java.sun.com/j2se/javadoc/writingdoccomments/
+   
+   Issue: The preservation of comments within a parse tree is a well-known problem. In a classical setting it is not possible to
+          preserve all comments within a source program as the resulting grammar would be ambiguous. Typically, comments and white
+		  space are filtered out by the lexical analyzer. This enables comments to essentially occur anyplace where white space could
+		  occur (namely everywhere). Trying to capture this flexibility within a context-free grammar leads to an ambiguous grammar.
+*)   
+(* ---------------------------------------------------------------------------------------------------------------------------------------------------- *)
+   
+<JDocComment_list>	::= <JDocComment> <JDocComment_list> | <epsilon>				.
+<JDocComment>		::= jdoccomment													.
+
+(* ==================================================================================================================================================== *)
+
+(* ==================================================================================================================================================== *)
+(* ------------------------------------------------------ Compilation Unit ---------------------------------------------------------------------------- *)
+(* ==================================================================================================================================================== *)
+
+<CompilationUnit> 	::= <PackageDecl> <ImportDecls> <TypeDeclList> 					 				.
+<PackageDecl>		::= <JDocComment_list> "package" <QualifiedId> ";" | <epsilon>					.
+
+<ImportDecls>		::= <ImportDecl> <ImportDecls> | <epsilon>										.
+<ImportDecl> 		::= <JDocComment_list> "import" <StaticOpt> <ImportId> ";" 										.
+<StaticOpt>			::= "static" | <epsilon>														.
+<ImportId>			::= <QualifiedId> [ ".*" ]														.
+<TypeDeclList> 		::= <TypeDecl> <TypeDeclList> | <epsilon>										.
+<TypeDecl> 			::= <ClassDecl> 
+					  | <InterfaceDecl> 															.
+
+(* ==================================================================================================================================================== *)
+(* ------------------------------------------------------ Classes ------------------------------------------------------------------------------------- *)
+(* ==================================================================================================================================================== *)
+<ClassDecl>				::= <JDocComment_list>  <Modifiers> "class" <QualifiedId> <TypeParameterOpt> <SuperClassDecl> <SuperInterfaceDecl> <ClassBody>
+						  | <JDocComment_list>  <Modifiers> "enum" <Id> <SuperInterfaceDecl> <EnumBody>																	.
+
+<EnumBody>				::= "{" [<EnumConstants>] <ClassBodyDecls> "}"																				.
+<EnumConstants>			::= <EnumConstant> ["," <EnumConstants>]																					.
+<EnumConstant>			::= <JDocComment_list> <Modifiers> <Id> <ArgumentsOpt> [<ClassBody>]																			.
+																																								
+<TypeParameterOpt>		::= "<" <TypeParameters> ">" | <epsilon>																					.
+<TypeParameters>		::= <TypeParameter> [ "," <TypeParameters> ]																				.
+<TypeParameter>			::= <Id> [ "extends" <BoundList> ]																							.
+<BoundList>				::= <Type> ["&" <BoundList>]																								.
+<SuperClassDecl>		::= "extends" <Type>        | <epsilon>																						.
+<SuperInterfaceDecl>	::= "implements" <TypeList> | <epsilon>																						.
+<TypeList> 				::= <Type> ["," <TypeList>]																									.
+																																										
+<ClassBody> 			::= "{" <ClassBodyDecls> "}"																						.
+<ClassBodyDecls> 		::= <ClassBodyDecl> <ClassBodyDecls> | <epsilon>																			.
+<ClassBodyDecl> 		::= <StaticOpt> <Block>																											
+						  | <MemberDecl>																													
+						  | ";"																														.
+																																							
+<MemberDecl>			::= <Field>																																	
+						  | <Method>																												
+						  | <Constructor>																													
+						  | <TypeDecl>																												.
+																																						
+<Field> 				::= <JDocComment_list> <Modifiers> <Type> <Fields> ";" 																		.
+<Fields> 				::= <FieldRest> ["," <Fields>]																								.
+<FieldRest>	 			::= <Id> <FieldDeclRest>																									.
+<FieldDeclRest>			::= <Brackets> ["=" <VarInitializer>] 																						.
+																																									
+<Method>				::= <JDocComment_list> <Modifiers> <TypeParameterOpt> <Type> <Id> <FormalParams> <Brackets> <Throws> <MethodBody>			.
+<Constructor> 			::= <JDocComment_list> <Modifiers> <TypeParameterOpt>	       <Id> <FormalParams> 		  <Throws> <MethodBody>				.
+																																								
+<FormalParams>			::= "(" [<FormalParamList>] ")"																								.
+<FormalParamList> 		::= <FormalParam> ["," <FormalParamList>]																					.
+<FormalParam>	 		::= <FinalOpt> <Annotations> <Type> <VarArgOpt> <Id> <Brackets>	 															.
+<FinalOpt>				::= "final" | <epsilon>																										.
+<VarArgOpt>				::= "..."   | <epsilon>																										.
+<Annotations>			::= <Annotation> <Annotations> | <epsilon>																					.
+<Throws>				::= "throws" <TypeList> | <epsilon>																							.
+<MethodBody>	 		::= <Block> | ";" 																											.
+
+(* ==================================================================================================================================================== *)
+(* ------------------------------------------------------ Interfaces ---------------------------------------------------------------------------------- *)
+(* ==================================================================================================================================================== *)
+<InterfaceDecl>			::= <JDocComment_list> <Modifiers> <NormalInterface>
+						  | <JDocComment_list> <Modifiers> <AnnotationTypeDecl>														.
+
+<AnnotationTypeDecl>	::= "@" "interface" <Id> "{" <AnnoTypeElementDecls> "}"														.
+<AnnoTypeElementDecls>	::= <AnnoTypeElementDecl> <AnnoTypeElementDecls> | <epsilon>												.
+<AnnoTypeElementDecl> 	::= <JDocComment_list> <Modifiers> <Type> <Id> <AnnotationRest> ";"
+						  | <TypeDecl>																								.
+						  
+<AnnotationRest>		::= "(" ")" ["default" <ElementValue>]
+						  | <VarDeclarators>																						.
+
+<NormalInterface>		::= "interface" <Id> <TypeParameterOpt> <SuperDeclList> <InterfaceBody> 									.
+<SuperDeclList>			::= "extends" <TypeList> | <epsilon>																		.
+<InterfaceBody> 		::= "{" <InterfaceBodyDecls> "}" 																			.
+<InterfaceBodyDecls>	::= <InterfaceBodyDecl> <InterfaceBodyDecls> | <epsilon> 													.
+<InterfaceBodyDecl> 	::= ";" | <InterfaceMemberDecl> 																			.
+
+<InterfaceMemberDecl>	::= <InterfaceMethod>
+						  | <InterfaceField>
+						  | <TypeDecl>																								.
+
+<InterfaceMethod>		::= <JDocComment_list> <Modifiers> <TypeParameterOpt> <Type> <Id> <FormalParams> <Brackets> <Throws> ";"		.
+<InterfaceField>		::= <JDocComment_list> <Modifiers> <Type> <Id> <Brackets> "=" <VarInitializer> <Constants> ";"				.
+<Constants> 			::= "," <ConstantDecl> <Constants> | <epsilon>																.
+<ConstantDecl> 			::= <Id> <Brackets> "=" <VarInitializer>																	.
+
+
+
+(* ------------------------------------------------------ Identifiers --------------------------------------------------------------------------------- *)
+<Id>	 			::= ident	 									.
+<QualifiedId> 		::= [ <QualifiedId> "." ] <Id>					.
+
+(* ------------------------------------------------------ Literals ------------------------------------------------------------------------------------ *)
+<Literal> 			::= <IntLiteral>
+					  | <FpLiteral>
+					  | <CharLiteral>
+					  | <StringLiteral>
+					  | <BoolLiteral>
+					  | <NullLiteral>							.
+					  
+<IntLiteral> 		::= integer 								.
+<FpLiteral> 		::= float 									.
+<CharLiteral> 		::= charlit 								.
+<StringLiteral> 	::= string 									.
+<BoolLiteral> 		::= "true" | "false" 						.
+<NullLiteral> 		::= "null" 									.
+
+(* ------------------------------------------------------ Types --------------------------------------------------------------------------------------- *)
+<Type>				::= <QualifiedType> <Brackets>
+					  | <BasicType> <Brackets>									.
+					  
+<QualifiedType>		::= <Id> <TypeArgsOpt> ["." <QualifiedType>]				.
+<TypeArgsOpt>		::= "<" <TypeArgs> ">" | <epsilon>							.
+<TypeArgs>			::= <TypeArg> [ "," <TypeArgs> ]							.
+
+<TypeArg>			::= <Type>
+					  | "?" 
+					  | "?" "extends" <Type>
+					  | "?" "super" <Type>										.
+					  
+<Brackets> 			::= "[" "]" <Brackets> | <epsilon>							.
+<BasicType> 		::= "byte" | "short" | "char" | "int" | "long"
+					  | "float" | "double" | "boolean" | "void"					.
+
+(* ------------------------------------------------------ Modifiers ----------------------------------------------------------------------------------- *)
+<Modifiers> 		::= <Modifier> <Modifiers> | <epsilon>						.
+<Modifier> 			::= "public" 	   | "protected" | "private"
+				     | "static" 	   | "abstract"  | "final"    | "native"
+				     | "synchronized" | "transient" | "volatile" | "strictfp"
+				     | <Annotation>												.
+					 
+<Annotation>		::= "@" <Type> [ <AnnotationBody> ]							.
+<AnnotationBody>	::= "(" [ <Id> "=" ] <ElementValue> ")"						.
+<ElementValue>		::= <Expression>
+				      | <Annotation>
+				      | <ArrayInitializer>										.
+
+
+(* ------------------------------------------------------ Blocks -------------------------------------------------------------------------------------- *)
+<Block> 				::= "{" <BlockStatements> "}" 																	.
+<BlockStatements> 		::= <BlockStatement> <BlockStatements> | <epsilon>												.
+<BlockStatement> 		::= <Decorated_Statement>
+						  | <LocalVarDecl>
+						  | <TypeDecl> 																					.
+						  
+(* <LocalVarDecl> 			::= <FinalOpt> <Type> <VarDeclarators> ";" . *)
+<LocalVarDecl> 			::= <JDocComment_list> <FinalOpt> <Annotations> <Type> <VarDeclarators> ";" 														. 
+
+
+<VarDeclarators> 		::= <VarDeclarator> ["," <VarDeclarators>]														.
+<VarDeclarator> 		::= <Id> <VarDeclaratorRest>																	.
+<VarDeclaratorRest>		::= <Brackets> ["="  <VarInitializer>]															.
+<VarInitializer> 		::= <Expression>
+						  | <ArrayInitializer>																			.
+<ArrayInitializer> 		::= "{" <VarInitializers> "}"  																	.
+<VarInitializers>	 	::= <VarInitializer> "," <VarInitializers>
+						  | <VarInitializer>
+						  | <epsilon>				 																	.
+						  
+(* ------------------------------------------------------ Statements ---------------------------------------------------------------------------------- *)
+<Decorated_Statement> ::= <JDocComment_list> <Statement>	.
+
+<Statement>			::= <Block>
+					  | <Conditional>
+					  | "assert" <Expression> [":" <Expression>] ";"
+					  | "for" "(" <ForControl> ")" <Statement>
+					  | "while" "(" <Expression> ")" <Statement>
+					  | "do" <Statement> "while" "(" <Expression> ")" ";"
+					  | "try" <Block> <TryRest>
+					  | "switch" "(" <Expression> ")" "{" <SwitchStmts> "}"
+					  | "synchronized" "(" <Expression> ")" <Block>
+					  | "return" [<Expression>] ";"
+					  | "throw" <Expression>   ";"
+					  | "break" [<Id>] ";"
+					  | "continue" [<Id>] ";"
+					  | ";"
+					  | <StmtExpr> ";"
+					  | <Id> ":" <Statement>																	  		.		(* labelled stmt *)
+<Conditional>		::= "if" "(" <Expression> ")"  <Statement>				  				%PREC "L0"		.
+<Conditional>		::= "if" "(" <Expression> ")" <Statement> "else"  <Statement>  %PREC "L1"		.
+
+<TryRest>			::= <Catches>
+					  | [<Catches>] "finally" <Block>																	.
+<Catches> 			::= "catch" "(" <FormalParam> ")" <Block> [<Catches>]												.
+
+<SwitchStmts>		::= <SwitchLabel> <BlockStatements> <SwitchStmts> | <epsilon>										.
+<SwitchLabel> 		::= "case" <Expression> ":" 
+					  | "default"		  ":" 																			.
+
+<ForControl>		::= <FinalOpt> <Annotations> <Type> <Id> ":" <Expression>			 									(* new for-loop syntax *)
+					  | <ForInitOpt> ";" <ExpressionOpt> ";" <ForUpdateOpt>												.	(* old for-loop syntax *)
+					  
+<ForInitOpt>		::= <ForInit>    | <epsilon>																		.
+<ForUpdateOpt>		::= <ForUpdate>  | <epsilon>																		.
+<ExpressionOpt>		::= <Expression> | <epsilon>																		.
+<ForInit> 			::= <StmtExpr> <MoreStmtExprs>
+					  | <FinalOpt> <Annotations> <Type> <VarDeclarators>												.
+<ForUpdate>	 		::= <StmtExpr> <MoreStmtExprs>																		.
+<MoreStmtExprs> 	::= "," <StmtExpr> <MoreStmtExprs> | <epsilon> 														.
+
+(* ------------------------------------------------------ StmtExpression ------------------------------------------------------------------------------ *)
+<StmtExpr>			::= <BaseExpression> [<AssignOp> <Expression>] 			.
+<StmtExpr>			::= <PrefixOp> <BaseExpression>							.
+<StmtExpr>			::= <BaseExpression> <PostfixOp>						.
+
+(* ------------------------------------------------------ Expressions --------------------------------------------------------------------------------- *)
+<Expression> 			::= <CastExpression> 														.
+<Expression> 			::= <BaseExpression> <AssignOp> <Expression>					%PREC "L2"	.
+<Expression> 			::= <Expression> "?"  <Expression> ":" <Expression>				%PREC "L3" 	.
+<Expression>			::= <Expression> "||" <Expression> 								%PREC "L4"	.
+<Expression>			::= <Expression> "&&" <Expression> 								%PREC "L5"	.
+<Expression>			::= <Expression> "|"  <Expression>								%PREC "L6"	.
+<Expression>			::= <Expression> "^"  <Expression>								%PREC "L7"	.
+<Expression>			::= <Expression> "&"  <Expression>								%PREC "L8"	.
+<Expression>			::= <Expression> "==" <Expression>		 						%PREC "L9"	.
+<Expression>			::= <Expression> "!=" <Expression> 								%PREC "L9"	.
+<Expression>			::= <Expression> "instanceof" <Type>							%PREC "L10"	.
+<Expression>			::= <Expression> <RelOp> <Expression>							%PREC "L10"	.
+<Expression>			::= <Expression> <ShiftOp> <Expression>							%PREC "L11"	.
+<Expression>			::= <Expression> <AddOp> <Expression>							%PREC "L12"	.
+<Expression>			::= <Expression> <MultOp> <Expression>							%PREC "L13"	.
+<Expression>			::= <PrefixOp> <Expression>										%PREC "L14"	.
+<Expression>			::= <Expression> <PostfixOp>									%PREC "L14"	.
+<AssignOp>	 			::= "="  | "+=" | "-=" | "*="  | "/="  | "%="
+						  | "&=" | "|=" | "^=" | "<<=" | ">>=" | ">>>=" 							.
+<RelOp>					::= "<" | "<=" | ">" | ">="													.
+<ShiftOp>				::= "<""<"| ">"">"| ">"">"">"												.	(* avoid lexing conflicts *)
+<AddOp>					::= "+" | "-"																.
+<MultOp>				::= "*" | "/" | "%"															.
+<PrefixOp>				::= "++" | "--" | "+" | "-" | "~" | "!"										.
+<PostfixOp> 			::= "++" | "--" 															.
+
+<CastExpression>		::= <BaseExpression>
+						  | "(" <Type> ")" <CastExpression>
+						  | "(" <NumericType> ")" <PrefixOp> <CastExpression>						.
+<NumericType>			::= "byte" | "short" | "int"     | "long" | "float" | "double"
+						  | "Byte" | "Short" | "Integer" | "Long" | "Float" | "Double"				.
+
+<BaseExpression>		::= [<BaseExpression> "."] <Primary>
+					      | <Type> "." "class"														.
+<Primary> 				::= "(" <Expression> ")"					 	 								(* parenthesized expressions *)
+						  | <TypeArgsOpt> "this" <ArgumentsOpt>			 	 							(* this constructor calls *)
+						  | <TypeArgsOpt> "super" <Arguments>			 	 							(* super constructor calls *)
+						  | <TypeArgsOpt> "super" "." <Id> <ArgumentsOpt>		 						(* super field or method calls *)
+						  | <TypeArgsOpt> <Id> <Arguments>				 								(* method calls *)
+						  | "new" <TypeArgsOpt> <Type> <Creator>										(* new constructor *)
+						  | <Id> <BracketedExprList> 				 									(* array access *)
+						  | <Id>
+						  | <Literal>																.
+<ArgumentsOpt>			::= <Arguments> | <epsilon>													.
+<Arguments> 			::= "(" <ExprListOpt> ")" <BracketedExprListOpt>							.
+<ExprListOpt>			::= <ExprList> | <epsilon>													.
+<ExprList>				::= <Expression> ["," <ExprList>]											.
+
+<Creator> 				::= <ArrayCreatorRest>
+						  | <Arguments> [<ClassBody>] 												.	(* constructor call or new inner class *)
+<ArrayCreatorRest> 		::= <ArrayInitializer>		 			 	 									(* with initialization *)
+						  | <BracketedExprList> <Brackets> 											.	(* w/o initialization *)
+<BracketedExprListOpt>	::= <BracketedExprList> | <epsilon>											.
+<BracketedExprList> 	::= "[" <Expression> "]" [<BracketedExprList>]								.
+
+
+(* ------------------------------------------------------ Auxiliary ----------------------------------------------------------------------------------- *)
+
+<epsilon>	::= () .
+
+(* ==================================================================================================================================================== *)
+

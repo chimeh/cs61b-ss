@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<style type="text/css" media="screen">
+  @import url( styles/layout.css );
+</style>
+<head>
+<title>CS61B: Frequently Asked Questions (FAQ)</title></head>
+</head>
+
+<body>
+
+<h1 ALIGN=center> CS61B: Frequently Asked Questions (FAQ) </h1>
+
+
+
+
+
+
+<h2 ALIGN=center> Questions </h2>
+
+
+<ol>
+ </ol> <h3> Administrative Questions </h3>
+<ol>
+
+<li> <a href="FAQ.html#hw_grading"><div class="faq_index"> How are labs and homeworks graded? How do they contribute to the overall
+grade? </div></a> </li>
+
+
+<li> <a href="FAQ.html#hw_answers"><div class="faq_index"> Are there lab and homework solutions? </div></a> </li>
+
+
+<li> <a href="FAQ.html#finger_info"><div class="faq_index"> How do I change my password, or the name listed in 
+emails for my account? </div></a> </li>
+
+
+ </ol> <h3> Input/Output </h3>
+<ol>
+
+<li> <a href="FAQ.html#io_redirect"><div class="faq_index"> What are the "standard output" and the "standard error"? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#end_of_file"><div class="faq_index"> What is the "standard input", and what exactly does it mean to reach an "end-of-file" on it? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#paths"><div class="faq_index"> I have some compiled Java code in a JAR file.  How do I get Java to 
+load it? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#nested_classes"><div class="faq_index"> What are nested classes all about? </div></a> </li>
+
+
+ </ol> <h3> Java Language Issues </h3>
+<ol>
+
+<li> <a href="FAQ.html#nested_class_this"><div class="faq_index"> Can nested classes use "this"? If so, what does it refer to? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#nested_private"><div class="faq_index"> Can an enclosing class access the private methods/variables of its
+ nested classes? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#method_lookup"><div class="faq_index"> When several methods have the same name, how does Java select which 
+is called? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#equals_v_equalsequals"><div class="faq_index"> When I compare two strings with "==", I get unexpected results.  Why? </div></a> </li>
+
+
+
+<li> <a href="FAQ.html#warnings"><div class="faq_index"> What are these unchecked/unsafe operations that the compiler warns me
+about? Should I worry about them? </div></a> </li>
+
+
+ </ol> <h3> Patterns </h3>
+<ol>
+
+
+<li> <a href="FAQ.html#read_vs_string_escapes"><div class="faq_index"> When I read the input <code>\\(hello\\)</code> from the terminal into a String variable
+and then use it as a Pattern, it does not match the String 
+<code>"(hello)"</code>.  
+Why not? </div></a> </li>
+
+
+
+</ol>
+
+
+<h2 ALIGN=center> Answers </h2>
+
+<h3> Administrative Questions </h3><p>
+<p>
+<a name="hw_grading"> <div class="faq_question"> <b>Q:</b> How are labs and homeworks graded? How do they contribute to the overall
+grade? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Please see the first-day informational handout, which is also available on
+web page.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="hw_answers"> <div class="faq_question"> <b>Q:</b> Are there lab and homework solutions? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Yes, we will post them sometime after the due date.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="finger_info"> <div class="faq_question"> <b>Q:</b> How do I change my password, or the name listed in 
+emails for my account? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+From your Unix account, log in to update server on an xterm window using
+<code>ssh update</code>.   The name officially listed for your account is
+under the "Change your Cecos" entry.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<h3> Input/Output </h3><p>
+<p>
+<a name="io_redirect"> <div class="faq_question"> <b>Q:</b> What are the "standard output" and the "standard error"? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Unix supplies programs with two <emph>streams</emph> of 
+output to which they can write text.  These are called the <emph>standard 
+output</emph>, which is intended for normal output, 
+and the <emph>standard error</emph>, which is intended for error,
+warning, or logging messages.  You should observe this convention in your
+own programs, writing error messages to <tt>System.err</tt>.
+
+<p>
+From the point of view of a program, these streams
+look like ordinary output files.  Various programming languages provide 
+different notations and library calls to refer to them.  In Java programs, the 
+standard output appears as the variable <tt>System.out</tt> and the standard
+error as <tt>System.err</tt>.  Anything written to these (by, say, the 
+<tt>printf</tt> method) comes out on the respective stream.
+
+<p>
+By default, both streams 
+go to the terminal (or "console").  Unix shells provide
+various ways of directing
+them instead into separate files.  Unfortunately, the various
+shells are inconsistent in how to do this. To run a command FOO (e.g.,
+<tt>java solve test1.in</tt>), and send the output and error to various
+destinations:
+
+<table border=1 align=center>
+<tr>
+     <th>Desired effect</th>   <th>csh-like shell</th> <th>bash-like shell</th>
+</tr>
+<tr>
+   <td>  
+      Std. output -> blah  <br>
+      Std. error -> terminal
+   </td>
+   <td>   FOO &gt; blah   </td>   <td> FOO &gt; blah </td>
+</tr>
+<tr> </tr>
+<tr>
+   <td>   
+       Std. output -&gt; blah <br>
+       Std. error -&gt; blah
+   </td>
+   <td> FOO &gt;&amp; blah  </td> <td>    FOO &gt; blah 2&gt;&amp;1 </td>
+</tr>
+<tr> </tr>
+<tr>
+   <td> Std. output -&gt; blah1 <br>  
+        Std. error -&gt; blah2
+   </td>
+   <td> (FOO &gt; blah1) &gt;&amp; blah2 </td>
+   <td> FOO &gt; blah1 2&gt; blah2  </td>
+</tr>
+</table>
+
+<p>
+You can also redirect the output of FOO to be the input of another command,
+BAR:
+
+<table border=1 align=center>
+<tr>
+     <th>Desired effect</th>   <th>csh-like shell</th> <th>bash-like shell</th>
+</tr>
+<tr>
+   <td>
+      Std. output -&gt; BAR <br>
+      Std. error -&gt; terminal 
+   </td>
+   <td>    FOO | BAR  </td> <td> FOO | BAR </td>
+</tr>
+<tr> </tr>
+<tr>
+   <td> Std. output -&gt; BAR <br>
+        Std. error -&gt; BAR
+   </td>
+   <td>  FOO |&amp; BAR </td> <td>  FOO 2&gt;&amp;1 | BAR </td>
+</tr>
+<tr> </tr>
+<tr>
+   <td>  Std. output -&gt; BAR1 <br>
+         Std. error -&gt; BAR2
+   </td>
+   <td> (FOO | BAR1) |&amp; BAR2  </td>
+   <td> (FOO | BAR1) 2&amp;&gt;1 | BAR2 </td>
+</tr>
+</table>
+
+<p>
+We use all this in the autograder to separate or combine the output and error
+streams, as needed.
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="end_of_file"> <div class="faq_question"> <b>Q:</b> What is the "standard input", and what exactly does it mean to reach an "end-of-file" on it? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+There seems to be vast confusion about end-of-file in general.
+The confusion 
+arises from the fact that people have formed an inseparable link in their 
+minds between keyboard input, the "standard input", and System.in (and are
+unfamiliar with how to make keyboard input "end").  So here's a brief 
+tutorial:
+
+<ol>
+<li> Analogous to what happens with standard output, all Unix programs are 
+supplied with a standard stream of text input called the <emph>standard input.</emph>
+
+<li> There are <emph>no</emph> necessary connections between keyboard input, 
+   the standard input, and System.in except that <emph>by default</emph>, 
+   the standard 
+   input comes from the keyboard and System.in is <emph>by default</emph>
+   the Java
+   "handle" by which programs access the standard input.
+
+<li> One can obtain the standard input from sources other than the keyboard
+in Unix by using input redirection or pipes:
+
+<ol>
+<li> The command line
+
+<pre>
+         java foo &lt; SOMEFILE
+</pre>
+
+runs foo but takes the standard input from SOMEFILE (a file name) rather
+than the keyboard.  This works for any command, not just 'java'.
+
+<li> The command line
+
+<pre>
+         SOMECOMMAND | java foo
+</pre>
+
+runs SOMECOMMAND (any command) and java foo, taking the standard output
+from SOMECOMMAND and using it as the standard input for java foo.
+</ol>
+
+<li> Although System.in by default gives a program access to the standard input
+to the program, you can change this with
+
+<pre>
+        System.setIn (SOMEINPUTSTREAM)
+</pre>
+
+where SOMEINPUTSTREAM can be any Java expression that yields 
+an InputStream, such as
+
+<pre>
+        new FileInputStream (SOMEFILENAME)
+</pre>
+
+or
+
+<pre>
+        new StringBufferInputStream (SOMESTRING)
+</pre>
+
+<li> You can, in fact, get end-of-file on keyboard input.  On our system by
+   default, the character ^D (Control-D) signals the shell that it should
+   send end-of-file to whatever program is reading from the terminal (the
+   ^D is never transmitted).  However, you almost never want to do this.
+   In general, your test input really ought to come from files, so that you
+   aren't constantly retyping it.
+</ol>
+
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="paths"> <div class="faq_question"> <b>Q:</b> I have some compiled Java code in a JAR file.  How do I get Java to 
+load it? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+All classes loaded by a running Java program come from one of the locations 
+indicated by the <emph>class path</emph>, which is a list of directories and
+JAR (Jave ARchive) files.  JAR files, in effect, are directories full of files
+all collected into a single ordinary file in such a way that the original
+constituent files are easily found and extracted.
+The Java runtime system looks for a class 
+bar in package foo by looking at each item in the class path in turn.  If 
+the classpath item is a directory, <i>D</i>, then Java looks for a 
+file <i>D</i>/foo/bar.class
+(reverse the slashes on Windows).  If the item is a JAR file, Java treats it
+as a directory and again finds the desired class file (foo/bar.class) in it.
+Typically, the current directory will be part of the classpath, although it
+need not be.
+
+<p>
+Eclipse provides a "Java build path" window under Project->Properties.  The
+Libraries tab on that window will give you an "Add External Jar" selection.
+In plain UNIX, you add the Jar file to the CLASSPATH environment variable, 
+which is a list of files separated by colons.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="nested_classes"> <div class="faq_question"> <b>Q:</b> What are nested classes all about? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Nested classes are "members" of the enclosing class, just as are
+instance variables, constructors, and methods.  They may be public, 
+private, protected, or package private (default).   The meaning of 
+public, protected, etc., is exactly the same for classes as it is for
+instance variables and methods: it determines where else in the program
+you may mention the name of the member.
+
+<p>
+Static nested classes are just plain classes, like non-nested ones.  The
+only thing that distinguishes them is where their names can be mentioned, 
+and how they are referred to (class Nested inside class Enclosing is called
+Enclosing.Nested).
+
+<p>
+Non-static (inner) nested classes are plain classes with one extra implicit
+field.
+For inner class Inner in enclosing class Enclosing, if E is an Enclosing,
+then new E.Inner (...) is a pointer to a new object of type Enclosing.Inner
+that has a private instance variable field called Enclosing.this, whose
+value is E.   So, given
+
+<pre>
+    class Enclosing {
+        String myName;
+
+        Enclosing (String name) { myName = name; }
+
+        public String toString () { 
+           return "Enclosing named " + myName; 
+        }
+
+        Inner makeInner (String id) {
+           return this.new Inner (id);  
+           // OR return new Inner (id) for short ('this.' implied)
+        }
+
+        class Inner {
+           String innerName; 
+
+           Inner (String name) { innerName = name; }
+
+           public String toString () {
+              return "Inner named " + innerName + " connected to "
+                     + Enclosing.this;
+           }
+        }
+
+     }
+</pre>
+
+we could write (in some method somewhere):
+
+<pre>
+        Enclosing e = new Enclosing ("Tom");
+        Enclosing.Inner i1 = e.makeInner ("Dick");
+        Enclosing.Inner i2 = e.new Inner ("Harry");
+        System.out.printf ("e = %s%ni1 = %s%ni2 = %s%n", e, i1, i2);
+</pre>
+
+and see printed
+
+<pre>
+        Enclosing named Tom
+        Inner named Dick connected to Enclosing named Tom
+        Inner named Harry connected to Enclosing named Tom
+</pre>
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<h3> Java Language Issues </h3><p>
+<p>
+<a name="nested_class_this"> <div class="faq_question"> <b>Q:</b> Can nested classes use "this"? If so, what does it refer to? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Nested classes are just classes, and <tt>this</tt> means the same thing in them
+as it does in other classes: it applies in instance methods and refers
+to the "thing to the left of the dot" in the call.  That's why we have
+the odd syntax "Enclosing.this" for use in inner classes to distinguish
+the "this's".  To make life confusing, Java will "helpfully" figure out
+places where you "must have meant Enclosing.this" and supply it for you.
+So if in an instance method of Inner, above, you had written
+
+<pre>
+        makeInner ("Jack")
+</pre>
+
+<p>
+the Java compiler would assume that you must have meant to write
+
+<pre>
+        Enclosing.this.makeInner ("Jack");
+</pre>
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="nested_private"> <div class="faq_question"> <b>Q:</b> Can an enclosing class access the private methods/variables of its
+ nested classes? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Yes.  The rule on private is "can only be used within the top-level
+class containing its declaration," which must be (or include) the 
+enclosing class.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="method_lookup"> <div class="faq_question"> <b>Q:</b> When several methods have the same name, how does Java select which 
+is called? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+In general, Java uses lexical scoping, just like Scheme.  That is, a
+<emph>use</emph> of an unqualified simple name (i.e., an identifier that is not
+preceded by '.') may refer to any declaration that's in a <emph>declarative
+region</emph> (a class or interface declaration, a {...} block, a method,
+a <b>for</b> statement, a <b>catch</b> clause, the source file, the package) that
+contains that use.  In addition, package names in the anonymous package, 
+classes and interfaces in the package <tt>java.lang</tt>, 
+and imported classes and 
+interfaces can sort of be thought of as being in declarative regions
+that contain the use.  
+
+<p>
+For qualified names, SOMETHING.x, we look for 'x' only within SOMETHING
+(which may be a package, class, or instance).  
+For this purpose, we count inherited declarations as being in the class or
+interface that inherits them.
+
+<p>
+So far, these rules will in general pick out several possible declarations,
+as in the following <emph>completely legal</emph> declarations:
+
+<pre>
+     class A {
+    //     a
+        A A;
+    //  1 b
+
+        A A (A A) { return A; }
+    //  2 c  3 d           4
+        A () { }
+    //  e
+     }
+
+     class B extends A {
+    //               f
+        void A () {
+    //       g
+           A A = A (new A ().A);
+    //     7 h   8      9    10
+        }
+     }
+</pre>
+
+<p>
+Here, I have marked each use of A with a numeral and each definition with a
+lower-case letter.  
+
+<p>
+Initially, use #8 might refer to the declarations a (same file); b, c,
+   or e (inherited by class B), g, or h.  First, however, we apply
+   <emph>syntactic context</emph>: use #8 must refer to a method, because it is part
+   of a method call.  Therefore, it refers either to declaration c or g.
+   Overloaded methods are disambiguated by means of the argument list, so
+   #8 must refer to c.
+
+<p>
+   Or consider #9. By context, it must refer to a class, which means
+   declaration a, and a constructor within that class, which can only be
+   e.
+
+<p>
+   Since the thing to the left of the dot preceding #10 is an A, #10 must
+   refer to either declaration b, c, or e.  Since it is not a method call
+   or constructor invocation, it must refer to b.
+
+<p>
+Sometimes, these considerations of context or argument lists are not
+   sufficient, as in use #4, which might refer to either b or d.  In this
+   case, we defer to the INNERMOST declarative region, which in this case
+   is the method containing use #4.  That is #4 refers to d.  
+
+<p>
+Staticness has nothing whatever to do with any of this analysis.  Neither
+does access level (public, private, etc.), with the exception that
+private declarations are not visible outside their package, which may
+cut down on the set of possible candidate declarations. (Other access
+levels, such as default (package private) <emph>don't</emph> hide declarations;
+instead you get errors about trying to access non-public things from
+outside the package.  I consider this a small but annoying
+inconsistency in Java).
+
+<p>
+Therefore, runtime selection of instance methods by dynamic type is a
+separate mechanism, and does not participate in determining which
+declaration the compiler applies to some use.  It is only when the
+program is run that the system actually selects which method to call.
+It will always be one that has the same signature as the one the
+compiler selected.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="equals_v_equalsequals"> <div class="faq_question"> <b>Q:</b> When I compare two strings with "==", I get unexpected results.  Why? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+The == operator always compares <emph>values</emph> for equality.  
+Since the value of 
+a String expression is a <emph>pointer</emph> to a String object, 
+this means that ==
+compares <emph>pointers</emph>, not the contents (character sequences) 
+contained in the
+objects pointed to.  You can construct the same contents two different ways,
+and get two different objects with the same contents.  E.g.,
+
+<pre>
+   x = "Hello, ";
+
+  "Hello, world" != x + "world"
+</pre>
+This is semantically consistent, but admittedly confusing.  Use the
+<tt>.equals</tt> method instead:
+
+<pre>
+  "Hello, world".equals (x + "world")
+</pre>
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<p>
+<a name="warnings"> <div class="faq_question"> <b>Q:</b> What are these unchecked/unsafe operations that the compiler warns me
+about? Should I worry about them? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+Yes, you should worry.  As a general rule, you should treat almost all
+compiler warnings as if they were errors, because they <emph>might</emph>
+be errors.  Warnings such as 
+<pre>
+    Note: foo.java uses unchecked or unsafe operations.
+    Note: Recompile with -Xlint:unchecked for details.
+</pre>
+in particular mean that you have a construct that cannot be checked until
+execution time, whereas it is usually checkable at compilation time if the
+program is written correctly.  If you do this:
+<pre>
+        ArrayList foo = ...
+</pre>
+instead of
+<pre>
+        ArrayList&lt;String&gt; foo =
+</pre>
+for example, you'll get a warning.  You should correct all of these (our
+pretests often require it, for example).
+In almost all cases, you can correct them
+without a problem.  For this project, you are likely to find a couple of 
+instances in which you run into a limitation of Java and will have to 
+use the 
+<pre>
+        @SuppressWarnings ("unchecked")
+</pre>
+annotation before a method or constructor.  In my project #2, I had two
+on small methods.  If you
+have any more than that, or if you have to attach it to an entire class,
+you are probably doing something wrong.
+<p>
+The messages ask you to run javac like this:
+<pre>
+    javac -Xlint:unchecked foo.java
+</pre>
+as our Makefiles are set up to do.  This will give you more details.
+In Eclipse, you should eliminate all the
+little yellow warning flags.
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+<h3> Patterns </h3><p>
+<p>
+<a name="read_vs_string_escapes"> <div class="faq_question"> <b>Q:</b> When I read the input <code>\\(hello\\)</code> from the terminal into a String variable
+and then use it as a Pattern, it does not match the String 
+<code>"(hello)"</code>.  
+Why not? </div></a>
+<p>
+<div class="faq_answer">
+<b>A:</b>
+[Kyle Wecker] 
+The problem here is the difference between the way characters are represented
+inside a .java file and the way they are recognized through streams (e.g.,
+stdin). When you are typing into a string in a .java file, in order to show
+that you mean '\', you must type "\\". The reason for this is that backslash is
+an escape character that isalso used to signal a few other characters 
+(like '\n').
+
+<p>
+Characters in a stream or reader, on the other hand, are read 
+verbatim, without escape sequences.  So backslash is just backslash, and
+two backslashes are just two backslashes. So, your example is really 
+equivalent to the Java test <code>"(hello)".matches ("\\\\(hello\\\\)")</code>,
+which is indeed false.   The argument to <code>.matches</code> here, coming
+from a String literal, contains the characters backslash, backslash,  
+left parenthesis, etc.&mdash;each pair of backslashes in the literal encodes a 
+single backslash in the resulting String.
+
+<p>
+To make the confusion worse, backslashes have special significance in 
+Patterns, too.  So the Pattern consisting of two backslashes could
+be  input from
+a file as two backslashes or else written as a String literal with four
+backslashes, and is interpreted by the Pattern class as matching <em>ONE</em>
+backslash!
+<p>
+<div style="width: 50%; position: relative; left: 25%">  <hr> </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

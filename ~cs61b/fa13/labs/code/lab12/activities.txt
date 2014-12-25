@@ -1,0 +1,35 @@
+CS61B Lab #12
+
+In this lab, we'd like to make sure you are started on the project.
+If you have already started, make sure your files are up to date with
+our skeleton.
+
+The homework this week asks you to get some minimal amount of the
+graph package working.  Let's get started on that now. Copy
+the files for the 'graph' package in project 3 (there is a copy of
+that directory in the hw10 files as well) into your working directory
+and commit them.
+
+Make sure you understand the contents of this package.  Ask your TA if
+anything is unclear.  Choose a representation for keeping track of the
+vertices and edges of a graph (you can modify Basic, DirectedGraph,
+UndirectedGraph, Vertex, and Edge).  For hw10, you can get away with
+implementing only a little: you'll probably want at least
+
+* The constructors.
+* The add methods in Basic and DirectedGraph for adding vertices and edges.
+* The edges(), edges(v), and vertices() methods in Basic and DirectedGraph for
+  iterating over vertices or edges.
+
+... and possibly more.  Work on implementing these.
+
+While you are doing so, start adding JUnit tests for the methods you
+are writing.
+
+To be efficient, try to come up with sufficient implementations for the
+purposes of project 3, so that you can use the same code there as
+well.  Be sure, however, that you transfer anything you do for HW10 to
+your repository for proj3, and then stop developing the HW10 version,
+or there will be mass confusion eventually!
+
+

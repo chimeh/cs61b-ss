@@ -1,0 +1,5 @@
+# Erroneous input 2
+
+x ^ x;
+
+QUIT

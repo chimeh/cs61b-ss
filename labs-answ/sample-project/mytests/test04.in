@@ -1,0 +1,17 @@
+# Tests of simple canonical terms
+
+4 5 6;
+-4 5 6;
+y^3x;
+y^35x;
+5 x;
+5x;
+-5x;
+z3xy4y;
+0xy;
+x0y;
+-1x;
+1x;
+
+
+QUIT

@@ -1,0 +1,12 @@
+# Definitions
+
+DEF A(x,y,a,c) = a+c+x+y;
+
+A(x,y,a,c);
+A(z,z,z,z);
+A(3,1,2,-5);
+A(A(a,b,c,d)^2,A(d,c,b,a)^3,b,c);
+
+A(z,y,x,w)+3A(u,v,w,x);
+
+QUIT

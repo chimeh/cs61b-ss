@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Chapter 4. Branching and Merging</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.75.2" />
+    <link rel="home" href="index.html" title="Version Control with Subversion" />
+    <link rel="up" href="index.html" title="Version Control with Subversion" />
+    <link rel="prev" href="svn.advanced.summary.html" title="Summary" />
+    <link rel="next" href="svn.branchmerge.whatis.html" title="What's a Branch?" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">Chapter 4. Branching and Merging</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="svn.advanced.summary.html">Prev</a> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="svn.branchmerge.whatis.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="chapter" title="Chapter 4. Branching and Merging">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="svn.branchmerge"></a>Chapter 4. Branching and Merging</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.whatis.html">What's a Branch?</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.using.html">Using Branches</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.using.html#svn.branchmerge.using.create">Creating a Branch</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.using.html#svn.branchmerge.using.work">Working with Your Branch</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.using.html#svn.branchmerge.using.concepts">The Key Concepts Behind Branching</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.basicmerging.html">Basic Merging</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchmerge.changesets">Changesets</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchemerge.basicmerging.stayinsync">Keeping a Branch in Sync</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchemerge.basicmerging.reintegrate">Reintegrating a Branch</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchmerge.basicmerging.mergeinfo">Mergeinfo and Previews</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchmerge.basicmerging.undo">Undoing Changes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.basicmerging.html#svn.branchmerge.basicmerging.resurrect">Resurrecting Deleted Items</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.advanced.html">Advanced Merging</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.cherrypicking">Cherrypicking</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.advancedsyntax">Merge Syntax:  Full Disclosure</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.nomergedata">Merges Without Mergeinfo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.mergeconflicts">More on Merge Conflicts</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.blockchanges">Blocking Changes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.reintegratetwice">Keeping a Reintegrated Branch Alive</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.logblame">Merge-Sensitive Logs and Annotations</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.ancestry">Noticing or Ignoring Ancestry</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.moves">Merges and Moves</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.pre1.5clients">Blocking Merge-Unaware Clients</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.advanced.html#svn.branchmerge.advanced.finalword">The Final Word on Merge Tracking</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.switchwc.html">Traversing Branches</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.tags.html">Tags</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.tags.html#svn.branchmerge.tags.mksimple">Creating a Simple Tag</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.tags.html#svn.branchmerge.tags.mkcomplex">Creating a Complex Tag</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.maint.html">Branch Maintenance</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.maint.html#svn.branchmerge.maint.layout">Repository Layout</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.maint.html#svn.branchmerge.maint.lifetime">Data Lifetimes</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.commonpatterns.html">Common Branching Patterns</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.commonpatterns.html#svn.branchmerge.commonpatterns.release">Release Branches</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.branchmerge.commonpatterns.html#svn.branchmerge.commonpatterns.feature">Feature Branches</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.vendorbr.html">Vendor Branches</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.vendorbr.html#svn.advanced.vendorbr.general">General Vendor Branch Management Procedure</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.vendorbr.html#svn.advanced.vendorbr.svn_load_dirs">svn_load_dirs.pl</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.branchmerge.summary.html">Summary</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <div class="blockquote">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0" class="blockquote" summary="Block quote">
+          <tr>
+            <td width="10%" valign="top"> </td>
+            <td width="80%" valign="top">
+              <p>
+                <span class="quote">“<span class="quote">君子务本
+      (It is upon the Trunk that a gentleman works.)</span>”</span>
+              </p>
+            </td>
+            <td width="10%" valign="top"> </td>
+          </tr>
+          <tr>
+            <td width="10%" valign="top"> </td>
+            <td colspan="2" align="right" valign="top">--<span class="attribution">Confucius</span></td>
+          </tr>
+        </table>
+      </div>
+      <p>Branching, tagging, and merging are concepts common to
+    almost all version control systems.  If you're not familiar with
+    these ideas, we provide a good introduction in this chapter.  If
+    you are familiar, hopefully you'll find it interesting to
+    see how Subversion implements them.</p>
+      <p>Branching is a fundamental part of version control.  If
+    you're going to allow Subversion to manage your data, this
+    is a feature you'll eventually come to depend on.  This chapter
+    assumes that you're already familiar with Subversion's basic
+    concepts (<a class="xref" href="svn.basic.html" title="Chapter 1. Fundamental Concepts">Chapter 1, <i>Fundamental Concepts</i></a>).</p>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="svn.advanced.summary.html">Prev</a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="svn.branchmerge.whatis.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">Summary </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> What's a Branch?</td>
+        </tr>
+      </table>
+    </div>
+    <div xmlns="" id="svn-footer">
+      <hr />
+      <p>You are reading <em>Version Control with Subversion</em> (for Subversion 1.6), by Ben Collins-Sussman, Brian W. Fitzpatrick, and C. Michael Pilato.<br />
+       This work is licensed under the <a href="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution License v2.0</a>.<br />
+       To submit comments, corrections, or other contributions to the text, please visit <a href="http://www.svnbook.com/">http://www.svnbook.com/</a>.</p>
+    </div>
+  </body>
+</html>

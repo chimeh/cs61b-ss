@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Beyond Comparisons: Radix Sort and Counting Sort</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/arraydemos.js"></script>
+<script type="text/javascript" src="js/arraydemos.sorting.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        sortingDemos.setDataLength(3);
+        sortingDemos.sortMovement = "translate(0, -50)";
+        sortingDemos.commonSetup(0.35);
+        sortingDemos.radixSortDemo();
+    });
+</script>
+</head>
+
+<body>
+
+<h1> Beyond Comparisons: Radix Sort and Counting Sort</h1>
+
+<p> 
+Other sorting algorithms in these pages use binary comparisons (&lt;, &gt;, &le;,
+&ge;) to control the algorithms.  As a result, there is a theoretical lower 
+bound on the number of comparisons (and thus overall operations) needed to 
+sort <i>N</i> items: &Omega;(<i>N</i> lg <i>N</i>).  By exploiting more 
+properties of the data being sorted than its ordering relation, we can arrive 
+at different bounds.  <dfn>Radix sorting</dfn> uses the digits or bytes 
+constituting the data to make multi-way decisions, and is able to sort
+<i>B</i> <emph>bytes</emph> of data in O(<i>B</i>) time.  Comparing this result 
+to O(<i>N</i> lg <i>N</i>) comparisons to sort <i>N</i> (multi-byte) 
+<emph>records</emph> is a bit tricky, but if we assume that in the worst case,
+comparisons take time proportional to the number of bytes of data being 
+compared, it would seem that radix sorting should win out.  As usual, though,
+for practical purposes we must consider constant factors.
+</p>
+
+<p>
+The idea behind radix sorting is that we view the keys to be sorted sequences
+of numerals consisting of digits in some finite radix (call it <i>R</i>).
+For example, ASCII
+character strings can be thought of as base-256 numerals.  In effect, we pad
+all the keys to the same number of digits (on the left or right, depending on 
+sorting order: right for strings, left for numbers).  If the common 
+length of the keys is now <i>D</i> digits, we sort the keys (up to) <i>D</i>
+times, once on their first digit, once on their second, and so forth.  
+The precise logistics differ depending on whether one processes the digits
+from left to right (MSD radix sort, for Most Significant Digit first), or,
+as in the old card-based sorters, right to left (LSD radix sort).  
+</p>
+
+<p>
+For MSD radix
+sort, each sort rearranges the data into sections that can then be sorted
+independently&mdash;the sections will already be ordered correctly
+with respect to each other (all words that start with "A" come before all words
+that start with "B").  We then further refine
+sections having more than one key by 
+the later character positions until all sections contain just one item.
+</p>
+
+<p>
+For LSD radix sort, we sort all the data together on 
+each pass, being careful to maintain the previously established order for 
+keys with the same digit in the position currently being sorted.
+</p>
+
+<p>
+We can accomplish each of the one-character sorts in
+O(<i>N</i>+<i>R</i>) time using a stable <dfn>counting sort</dfn>.
+We first counts the number of keys containing each of the possible
+digits (0 to <i>R</i>-1) at the current character position (call this
+position <i>k</i>).  From this, it is easy to compute the number of
+keys whose <i>k</i><sup>th</sup digit is less than any given 
+digit value, <i>d</i>,  and thus the number of keys to the left of those 
+whose <i>k</i><sup>th</sup> is <i>d</i>.
+This in turn allows another pass through the
+keys, moving them to their proper positions.  
+</p>
+
+<p>
+The demo below uses integers as keys (radix 10).  You can run either LSD or
+MSD sort. The "Counts" array is used to count the number of keys with a given
+character at the current character position.  The "Positions" array then keeps
+track of the number of items to the left of a key with a given character
+at the current character position.  When we move a key to its proper position, 
+we also increment the appropriate position count, so that keys with the same 
+character in the current position go to the right of those already moved.
+</p>
+
+<p>
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<table id="parameters" align="center">
+ <tr>
+  <td> 
+      <ul id="menu">
+        <li> <a href="radix-sort-demo.html#">Choose Input</a>
+          <ul>
+            <li id="increasing"> <a href="radix-sort-demo.html#">Sorted values</a> </li>
+            <li id="decreasing"> <a href="radix-sort-demo.html#">Decreasing values</a> </li>
+            <li id="random"> <a href="radix-sort-demo.html#">Random values</a> </li>
+          </ul>
+        </li>
+	<li id="Run1"> <a href="radix-sort-demo.html#">LSD Radix Sort</a> </li>
+	<li id="Run2"> <a href="radix-sort-demo.html#">MSD Radix Sort</a> </li>
+      </ul>
+  </td>
+  <td> <b>Input size:</b> 
+    <input type="text" id="input-size" size="2" />
+  </td>
+ </tr>
+</table>
+
+<div class="demo">
+<svg id="disp" version="1.1" width="800" height="300">
+   <text class="array-label" text-anchor="end" x="82" y="17">
+        Initial array:
+   </text>
+   <g id="input1" transform="translate(92, 2)"> </g>
+
+   <text id="explain-rs" class="demo-notes" text-anchor="start" x="90" y="76">
+      <!-- Explanatory Text-->
+   </text>
+
+   <text class="array-label" text-anchor="end" x="76" y="104">
+       Array:
+   </text>
+   <g id="data-rs" transform="translate(90, 89)"> </g>
+
+   <g id="mover" transform="translate(0,0)">
+      <g id="tmp-rs" transform="translate(90, 139)"> </g>
+   </g>
+
+   <text class="array-label" text-anchor="end" x="136" y="214">
+       Counts:
+   </text>
+   <g id="count-rs" transform="translate(150, 200)"> </g>
+
+   <text class="array-label" text-anchor="end" x="136" y="269">
+       Positions:
+   </text>
+   <g id="posns-rs" transform="translate(150, 255)"> </g>
+
+   <text class="array-label" text-anchor="end" x="250" y="51">
+       Character position:
+   </text>
+   <g id="char-rs" transform="translate(264,34)"> </g>
+
+   <text class="array-label" text-anchor="end" x="500" y="51">
+       # input characters examined:
+   </text>
+   <g id="op-rs" transform="translate(514, 34)"> </g>
+
+</svg>
+</div>
+
+<div id="log">
+</div>
+
+</body>
+</html>

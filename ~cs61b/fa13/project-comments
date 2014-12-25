@@ -1,0 +1,87 @@
+	     A Collection of Common Comments on Projects
+
+
+* You have compiler warnings.  Wherever possible, you should treat
+  these as errors, and get rid of them (and generally NOT with 
+  @SuppressWarning).
+
+* Some errors not detected.
+
+* When creating plain text files (e.g., UserManual), keep lines of
+  reasonable length (say 72 characters) for readability.
+
+* Keep plain text files in plain ASCII.
+
+* Try to make the UserManual your own description of the spec.  It's
+  easy to slightly reformat our description, but that misses the
+  point.
+
+* INTERNALS is supposed to be a guide, an annotated index of sorts, as
+  opposed to a narrative paraphrase of what the code says, such as
+
+       "readCommand will call makeCommand when it sees a left 
+        parenthesis as the next token."
+
+  Instead, INTERNALS should give me an idea of the overall structure
+  of the project, the significant classes and methods, their purposes
+  and how they fit together, and (where warranted) significant
+  algorithms.
+
+* You should consider how to make your testing systematic.  You cover
+  many things, but one doesn't get the impression that these tests are
+  calculated to explore all the corner cases.
+
+* Your error checking was very limited, it seems.
+
+* One or more exceptions got exposed to the user, rather than being turned
+  into proper error messages.
+
+* Tabs seem to mean different numbers of spaces on different editors,
+  so I suggest that you set Eclipse (or other editor) to use SPACES 
+  to indent things, and never tabs.
+
+* Be sure to comment all methods you add, rather than relying on the
+  skeleton's comments to explain everything.  Also, be sure to comment
+  abstract methods as well.
+
+* When you see repeated sections of code, you should consider "refactoring" 
+  by introducing a new method that abstracts the function of that
+  repeated code in one place.
+
+* Avoid internal comments within methods.  See the project guidelines.
+  A method large and complex enough to warrant internal commentary
+  begs to be broken into several methods.
+
+* Larger test sequences might be clearer (and more conveniently
+  entered) if kept as source files rather than entered as literal
+  parameters of Scanners.
+
+* Careful with whitespace.  I don't like this sort of thing:
+
+	Value hashValue(){
+
+  Put whitespace around operators and break lines at a reasonable
+  length (72 characters).  See guidelines.
+
+* Whitespace is for comments, too.  Yours look rather crowded.  This
+  sort of thing:
+
+       /*read the scanner*/
+       void read () {
+
+  Looks kind of cheesy.
+
+* Don't let methods get too long.  This usually indicates some missed 
+  opportunities to refactor code, clarify intent with added methods,
+  use tables, or something else to make things prettier.  
+
+* Please remove our "//" comments, which are intended just to suggest
+  where you should insert or change stuff.  Likewise, placeholders
+  that Eclipse inserts, and things like "YOUR NAME HERE".
+
+* You have several "instanceof"s, which as we said generally mean you
+  have not supplied the right instance methods.
+
+* Avoid leaving commented-out code in your turned-in projects.
+
+* For methods and classes, I prefer documentation comments (/** */).

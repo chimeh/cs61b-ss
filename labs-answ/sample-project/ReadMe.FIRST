@@ -1,0 +1,49 @@
+This directory contains a skeleton for CS61B Project 1.
+
+Although some of what's in here might seem mysterious to you, try to 
+understand what it's all for.  Don't be afraid to ask us about it.
+
+CONTENTS:
+
+README.FIRST		This file.  Don't turn this in.
+	
+Makefile		A makefile (for gmake) that will compile your
+			files and run tests.  You must turn in a Makefile,
+			'gmake ' must compile all your files, and 
+			'gmake test' must perform all your tests.  Currently,
+			this makefile is set up to do just that with our
+			skeleton files.  Be sure to keep it up to date.
+
+pcalc.java		A skeleton for the main program.
+
+algebra/Polynomial.java Represents mathematical quantities on the stack:
+			scalars, vectors, matrices.  Skeleton of solution.
+
+test1.in, test2.in	Input files for testing.  The makefile will respond
+			to 'gmake test' by running these files through your
+			program, filtering the output through ./test-filter,
+			and comparing the results with the corresponding 
+			.out files.  You should add more files to the list
+			in Makefile.
+			REMINDER: These are samples only.  They DON'T 
+			constitute adequate tests.
+
+test1.out		Output that is supposed to result from test1.in
+test2.out		and test2.in, with the first line, all prompts,
+			and all blank lines removed (which is what 
+			test-filter does).
+
+test-filter		A little script that throws away variable
+			things (like the precise number of prompts,
+			the initial greeting message, or specific error
+			messages, so as to make it easier to compare test
+			output with standard results.
+
+User-Manual		Description of the program for one of its users.
+
+INTERNALS		Overview of the "guts" of your program: what's in
+			it, and what it does. Used by anyone who wants to
+			enhance or maintain your program, as opposed to 
+			simply using it.
+
+pcalc.prj		PRCS descriptor file.

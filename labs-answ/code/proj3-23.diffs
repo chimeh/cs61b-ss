@@ -1,0 +1,389 @@
+Index: graph/Edge.java
+===================================================================
+--- graph/Edge.java	(.../proj3-2)	(revision 48848)
++++ graph/Edge.java	(.../proj3-3)	(revision 48848)
+@@ -1,56 +0,0 @@
+-package graph;
+-
+-/** An edge between two vertices in a graph.
+- *  @author
+- */
+-public class Edge<VLabel, ELabel> {
+-
+-    /** An edge (V0,V1) with label LABEL.  It is a directed edge (from
+-     *  V0 to V1) in a directed graph. */
+-    protected Edge(Vertex<VLabel> v0, Vertex<VLabel> v1, ELabel label) {
+-        _label = label;
+-        _v0 = v0;
+-        _v1 = v1;
+-    }
+-
+-    /** Returns the label on this edge. */
+-    public ELabel getLabel() {
+-        return _label;
+-    }
+-
+-    /** Return the vertex this edge exits. For an undirected edge, this is
+-     *  one of the incident vertices. */
+-    public Vertex<VLabel> getV0() {
+-        return _v0;
+-    }
+-
+-    /** Return the vertex this edge enters. For an undirected edge, this is
+-     *  the incident vertices other than getExit(). */
+-    public Vertex<VLabel> getV1() {
+-        return _v1;
+-    }
+-
+-    /** Returns the vertex at the other end of me from V.  */
+-    public final Vertex<VLabel> getV(Vertex<VLabel> v) {
+-        if (v == _v0) {
+-            return _v1;
+-        } else if (v == _v1) {
+-            return _v0;
+-        } else {
+-            throw new IllegalArgumentException("vertex not incident to edge");
+-        }
+-    }
+-
+-    @Override
+-    public String toString() {
+-        return String.format("(%s,%s):%s", _v0, _v1, _label);
+-    }
+-
+-    /** Endpoints of this edge.  In directed edges, this edge exits _V0
+-     *  and enters _V1. */
+-    private final Vertex<VLabel> _v0, _v1;
+-
+-    /** The label on this edge. */
+-    private final ELabel _label;
+-
+-}
+Index: graph/DepthFirst.java
+===================================================================
+--- graph/DepthFirst.java	(.../proj3-2)	(revision 48848)
++++ graph/DepthFirst.java	(.../proj3-3)	(revision 48848)
+@@ -1,82 +0,0 @@
+-package graph;
+-
+-/** A depth-first traversal of a graph.  One typically specializes
+- *  this class by overriding the Visit methods, as needed. By default,
+- *  no action is taken on any vertex or edge.  A Visit method may
+- *  throw a RejectException or a StopException to alter the course of a
+- *  traversal.
+- *  @author
+- */
+-public class DepthFirst<VLabel, ELabel> {
+-
+-    /** Perform a depth-first traversal of G over all vertices reachable
+-     *  from V, or as modified by one of the visit methods throwing an
+-     *  exception. */
+-    public void traverse(Graph<VLabel, ELabel> G, Vertex<VLabel> v) {
+-        // FILL IN
+-    }
+-
+-    /** Continue the previous traversal starting from V.
+-     *  Continuing a traversal means that we do not traverse
+-     *  vertices or edges that have been traversed previously. */
+-    public void continueTraversing(Vertex<VLabel> v) {
+-        // FILL IN
+-    }
+-
+-    /** If the traversal ends prematurely, returns the Vertex argument to
+-     *  preVisit or postVisit that caused a Visit stop the traversal.
+-     *  Otherwise, returns null. */
+-    public Vertex<VLabel> finalVertex() {
+-        return _finalVertex;
+-    }
+-
+-    /** If the traversal ends prematurely, returns the Edge argument to
+-     *  preVisit or postVisit that caused a Visit routine to stop the
+-     *  traversal. If it was not an edge that caused termination,
+-     *  returns null. */
+-    public Edge<VLabel, ELabel> finalEdge() {
+-        return _finalEdge;
+-    }
+-
+-    /** Returns the graph currently being traversed.  Undefined if no traversal
+-     *  is in progress. */
+-    protected Graph<VLabel, ELabel> theGraph() {
+-        return null;
+-        // FILL IN
+-    }
+-
+-    /** Method to be called on the first visit to vertex V in
+-     *  a traversal, before visiting the unvisited successors
+-     *  of V.  If this routine throws a StopException, the traversal ends.
+-     *  If it throws a RejectException, outgoing edges are not considered.
+-     *  The default does nothing.  */
+-    protected void preVisit(Vertex<VLabel> v) {
+-    }
+-
+-    /** Method to be called on leaving vertex V after visiting all its
+-     *  unvisited successors in a traversal.  If this routine throws
+-     *  a StopException, the traversal ends.  A RejectException has no effect.
+-     *  The default simply returns true. */
+-    protected void postVisit(Vertex<VLabel> v) {
+-    }
+-
+-    /** Method to be called when traversing an edge E from vertex V0
+-     *  during a traversal.  If this routine throws a StopException,
+-     *  the traversal ends. If it throws a RejectException, the node at the
+-     *  other end of the edge is not traversed.  The default does nothing. */
+-    protected void preVisit(Edge<VLabel, ELabel> e, Vertex<VLabel> v0) {
+-    }
+-
+-    /** Method to be called after traversing the edge E from V0
+-     *  and finishing the traversal from the other incident vertex.
+-     *  If this routine throws a StopException, the traversal ends.
+-     *  A RejectException has no effect. The default does nothing. */
+-    protected void postVisit(Edge<VLabel, ELabel> e, Vertex<VLabel> v0) {
+-    }
+-
+-    /** The Vertex (if any) that terminated the last traversal. */
+-    private Vertex<VLabel> _finalVertex;
+-    /** The Edge (if any) that terminated the last traversal. */
+-    private Edge<VLabel, ELabel> _finalEdge;
+-
+-}
+Index: graph/Vertex.java
+===================================================================
+--- graph/Vertex.java	(.../proj3-2)	(revision 48848)
++++ graph/Vertex.java	(.../proj3-3)	(revision 48848)
+@@ -1,26 +0,0 @@
+-package graph;
+-
+-/** A vertex in a graph.
+- *  @author
+- */
+-public class Vertex<VLabel> {
+-
+-    /** A new vertex with LABEL as the value of getLabel(). */
+-    protected Vertex(VLabel label) {
+-        _label = label;
+-    }
+-
+-    /** Returns the label on this vertex. */
+-    public VLabel getLabel() {
+-        return _label;
+-    }
+-
+-    @Override
+-    public String toString() {
+-        return String.valueOf(_label);
+-    }
+-
+-    /** The label on this vertex. */
+-    private final VLabel _label;
+-
+-}
+Index: graph/Graph.java
+===================================================================
+--- graph/Graph.java	(.../proj3-2)	(revision 48848)
++++ graph/Graph.java	(.../proj3-3)	(revision 48848)
+@@ -3,16 +3,24 @@
+ import java.util.Comparator;
+ 
+ /* Do not add or remove public or protected members, or modify the signatures of
+- * any public methods.  You may make methods in Graph abstract, if you want
+- * different implementations in DirectedGraph and UndirectedGraph.  You may
+- * add bodies to abstract methods, modify existing bodies, or override
+- * inherited methods. */
++ * any public methods.  You may make changes that don't affect the API as seen
++ * from outside the graph package:
++ *   + You may make methods in Graph abstract, if you want different
++ *     implementations in DirectedGraph and UndirectedGraph.
++ *   + You may add bodies to abstract methods, modify existing bodies,
++ *     or override inherited methods.
++ *   + You may change parameter names, or add 'final' modifiers to parameters.
++ *   + You may private and package private members.
++ *   + You may add additional non-public classes to the graph package.
++ */
+ 
+ /** Represents a general graph whose vertices are labeled with a type
+  *  VLABEL and whose edges are labeled with a type ELABEL. The
+  *  vertices are represented by the inner type Vertex and edges by
+  *  inner type Edge.  A graph may be directed or undirected.  For
+  *  an undirected graph, outgoing and incoming edges are the same.
++ *  Graphs may have self edges and may have multiple edges between vertices.
++ *
+  *  The vertices and edges of the graph, the edges incident on a
+  *  vertex, and the neighbors of a vertex are all accessible by
+  *  iterators.  Changing the graph's structure by adding or deleting
+@@ -254,7 +262,7 @@
+         };
+     }
+ 
+-    /** Cause subsequent traversals and calls to edges() to visit or deliver
++    /** Cause subsequent calls to edges() to visit or deliver
+      *  edges in sorted order, according to COMPARATOR. Subsequent
+      *  addition of edges may cause the edges to be reordered
+      *  arbitrarily.  */
+Index: graph/Traversal.java
+===================================================================
+--- graph/Traversal.java	(.../proj3-2)	(revision 48848)
++++ graph/Traversal.java	(.../proj3-3)	(revision 48848)
+@@ -36,7 +36,9 @@
+ 
+     /** Perform a traversal of G over all vertices reachable from V.
+      *  ORDER determines the ordering in which the fringe of
+-     *  untraversed vertices is visited. */
++     *  untraversed vertices is visited.  The effect of specifying an
++     *  ORDER whose results change as a result of modifications made during the
++     *  traversal is undefined. */
+     public void traverse(Graph<VLabel, ELabel> G,
+                          Graph<VLabel, ELabel>.Vertex v,
+                          Comparator<VLabel> order) {
+@@ -67,14 +69,14 @@
+ 
+     /** Continue the previous traversal starting from V.
+      *  Continuing a traversal means that we do not traverse
+-     *  vertices or edges that have been traversed previously. */
++     *  vertices that have been traversed previously. */
+     public void continueTraversing(Graph<VLabel, ELabel>.Vertex v) {
+         // FILL IN
+     }
+ 
+     /** If the traversal ends prematurely, returns the Vertex argument to
+-     *  preVisit that caused a Visit routine to return false.  Otherwise,
+-     *  returns null. */
++     *  preVisit, visit, or postVisit that caused a Visit routine to
++     *  return false.  Otherwise, returns null. */
+     public Graph<VLabel, ELabel>.Vertex finalVertex() {
+         return _finalVertex;
+     }
+@@ -86,8 +88,8 @@
+         return _finalEdge;
+     }
+ 
+-    /** Returns the graph currently being traversed.  Undefined if no traversal
+-     *  is in progress. */
++    /** Returns the last graph argument to a traverse routine, or null if none
++     *  of these methods have been called. */
+     protected Graph<VLabel, ELabel> theGraph() {
+         return _graph;
+     }
+@@ -119,7 +121,7 @@
+     protected Graph<VLabel, ELabel>.Vertex _finalVertex;
+     /** The Edge (if any) that terminated the last traversal. */
+     protected Graph<VLabel, ELabel>.Edge _finalEdge;
+-    /** The graph currently being traversed. */
++    /** The last graph traversed. */
+     protected Graph<VLabel, ELabel> _graph;
+ 
+ }
+Index: graph/Distancer.java
+===================================================================
+--- graph/Distancer.java	(.../proj3-2)	(revision 48848)
++++ graph/Distancer.java	(.../proj3-3)	(revision 48848)
+@@ -1,7 +1,9 @@
+ package graph;
+ 
+ /** An object representing a function that computes the distance between
+- *  two objects of type TYPE. */
++ *  two objects of type TYPE.
++ *  @author P. N. Hilfinger
++ */
+ public interface Distancer<Type> {
+ 
+     /** Returns the distance from V0 to V1. */
+Index: graph/Testing.java
+===================================================================
+--- graph/Testing.java	(.../proj3-2)	(revision 48848)
++++ graph/Testing.java	(.../proj3-3)	(revision 48848)
+@@ -9,7 +9,9 @@
+  * may not be part of your graph package per se (that is, it must be
+  * possible to remove them and still have your package work). */
+ 
+-/** Unit tests for the graph package. */
++/** Unit tests for the graph package.
++ *  @author
++ */
+ public class Testing {
+ 
+     /** Run all JUnit tests in the graph package. */
+Index: graph/Makefile
+===================================================================
+--- graph/Makefile	(.../proj3-2)	(revision 48848)
++++ graph/Makefile	(.../proj3-3)	(revision 48848)
+@@ -1,14 +1,14 @@
+ # This a Makefile, an input file for the 'make' program.  For you 
+ # command-line and Emacs enthusiasts, this makes it possible to build
+ # this program with a single command:
+-#     gmake 
++#     make 
+ # (or just 'make' if you are on a system that uses GNU make by default,
+ # such as Linux.) You can also clean up junk files and .class files with
+-#     gmake clean
++#     make clean
+ # To run style61b (our style enforcer) over your source files, type
+-#     gmake style
++#     make style
+ # Finally, you can run tests with
+-#     gmake check
++#     make check
+ 
+ # This is not an especially efficient Makefile, because it's not easy to
+ # figure out the minimal set of Java files that need to be recompiled.  
+@@ -16,7 +16,7 @@
+ # we just remove all the .class files, compile the main class, and 
+ # then compile everything in the plugin directory.  
+ 
+-SKELSTYLE = style61b
++STYLEPROG = style61b
+ 
+ # All source files
+ SRCS := $(wildcard *.java)
+Index: staff-version
+===================================================================
+--- staff-version	(.../proj3-2)	(revision 48848)
++++ staff-version	(.../proj3-3)	(revision 48848)
+@@ -1 +1 @@
+-proj3-2
++proj3-3
+Index: make/Makefile
+===================================================================
+--- make/Makefile	(.../proj3-2)	(revision 48848)
++++ make/Makefile	(.../proj3-3)	(revision 48848)
+@@ -1,14 +1,14 @@
+ # This a Makefile, an input file for the 'make' program.  For you 
+ # command-line and Emacs enthusiasts, this makes it possible to build
+ # this program with a single command:
+-#     gmake 
++#     make 
+ # (or just 'make' if you are on a system that uses GNU make by default,
+ # such as Linux.) You can also clean up junk files and .class files with
+-#     gmake clean
++#     make clean
+ # To run style61b (our style enforcer) over your source files, type
+-#     gmake style
++#     make style
+ # Finally, you can run tests with
+-#     gmake check
++#     make check
+ 
+ # This is not an especially efficient Makefile, because it's not easy to
+ # figure out the minimal set of Java files that need to be recompiled.  
+Index: trip/Makefile
+===================================================================
+--- trip/Makefile	(.../proj3-2)	(revision 48848)
++++ trip/Makefile	(.../proj3-3)	(revision 48848)
+@@ -1,14 +1,14 @@
+ # This a Makefile, an input file for the 'make' program.  For you 
+ # command-line and Emacs enthusiasts, this makes it possible to build
+ # this program with a single command:
+-#     gmake 
++#     make 
+ # (or just 'make' if you are on a system that uses GNU make by default,
+ # such as Linux.) You can also clean up junk files and .class files with
+-#     gmake clean
++#     make clean
+ # To run style61b (our style enforcer) over your source files, type
+-#     gmake style
++#     make style
+ # Finally, you can run tests with
+-#     gmake check
++#     make check
+ 
+ # This is not an especially efficient Makefile, because it's not easy to
+ # figure out the minimal set of Java files that need to be recompiled.  

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Insertion Sorting</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/arraydemos.js"></script>
+<script type="text/javascript" src="js/arraydemos.sorting.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        sortingDemos.commonSetup();
+        sortingDemos.insertionSortDemo();
+    });
+</script>
+</head>
+
+<body>
+
+<h1> Insertion Sorting</h1>
+
+<p> 
+Insertion sorting is an <i>O(N<sup>2</sup>)</i> algorithm for sorting a list of
+<i>N</i> items using comparisons.  The idea is to divide the data (a sequence of items) 
+into two sections: one sorted (initially empty) and one unprocessed (initially 
+containing the entire input sequence).  Each unprocessed item in turn is then 
+inserted at the approriate point in the sorted list.
+In the worst case, each of the <i>N</i> elements requires an average of <i>N</i>
+operations either to find the desired insertion point (for sequences
+represented with linked structures) or to perform the actual insertion (for 
+sequences represented with arrays).  
+</p>
+
+<p>
+The particular variant represented in this demonstration uses an array for 
+the sequence and combines the operations of searching for an insertion point and
+moving array elements over to make room.  Items displayed in pink 
+are unprocessed and items displayed in green have been moved as needed to 
+accommodate the element currently being inserted.   The program moves elements
+by swapping with their predecessors; while this causes more stores than
+necessary, it slightly clarifies the comparisons being performed and, since
+swaps do not change the set of array values, makes it clear that the result must
+be a permutation of the input, as required.
+</p>
+
+<p>
+The "inversion count" is a measure of "unsortedness".  It is the number of pairs
+of items in the array that are out of order&mdash;in which the 
+first (lower-indexed) item is greater than the second.  Insertion sorting has
+the property that the total time required to sort an <i>N</i>-element
+sequence is proportional to <i>N</i> plus the number of inversions (why?).  Thus,
+nearly sorted inputs can be sorted in nearly linear time.
+</p>
+
+<p>
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<table id="parameters" align="center">
+ <tr>
+  <td> 
+      <ul id="menu">
+        <li> <a href="insertion-sort-demo.html#">Choose Input</a>
+          <ul>
+            <li id="increasing"> <a href="insertion-sort-demo.html#">Sorted values</a> </li>
+            <li id="decreasing"> <a href="insertion-sort-demo.html#">Decreasing values</a> </li>
+            <li id="random"> <a href="insertion-sort-demo.html#">Random values</a> </li>
+          </ul>
+        </li>
+	<li id="Run"> <a href="insertion-sort-demo.html#">Sort input</a> </li>
+      </ul>
+  </td>
+  <td> <b>Input size:</b> 
+    <input type="text" id="input-size" size="2" />
+  </td>
+ </tr>
+</table>
+
+<div class="demo">
+<svg id="disp" version="1.1" width="800" height="300">
+   <text class="array-label" text-anchor="end" x="82" y="17">
+        Initial array:
+   </text>
+   <g id="input1" transform="translate(92, 2)"> </g>
+
+   <text class="array-label" text-anchor="end" x="76" y="124">Array:</text>
+   <g id="data-is" transform="translate(90, 109)"> </g>
+
+   <text class="array-label" text-anchor="end" x="167" y="71">
+       Inversion count:
+   </text>
+   <g id="inv-is" transform="translate(181, 54)"> </g>
+
+   <text class="array-label" text-anchor="end" x="349" y="71">
+       # comparisons:
+   </text>
+   <g id="op-is" transform="translate(363, 54)"> </g>
+</svg>
+</div>
+
+<div id="log">
+</div>
+
+</body>
+</html>

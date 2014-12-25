@@ -1,0 +1,590 @@
+Index: graph/Graph.java
+===================================================================
+--- graph/Graph.java	(.../proj3-1)	(revision 48848)
++++ graph/Graph.java	(.../proj3-2)	(revision 48848)
+@@ -3,13 +3,15 @@
+ import java.util.Comparator;
+ 
+ /* Do not add or remove public or protected members, or modify the signatures of
+- * any public methods.  You may add bodies to abstract methods, modify
+- * existing bodies, or override inherited methods. */
++ * any public methods.  You may make methods in Graph abstract, if you want
++ * different implementations in DirectedGraph and UndirectedGraph.  You may
++ * add bodies to abstract methods, modify existing bodies, or override
++ * inherited methods. */
+ 
+ /** Represents a general graph whose vertices are labeled with a type
+  *  VLABEL and whose edges are labeled with a type ELABEL. The
+- *  vertices are represented by the type Vertex<VLabel> and edges by
+- *  Edge<VLabel, ELabel>.  A graph may be directed or undirected.  For
++ *  vertices are represented by the inner type Vertex and edges by
++ *  inner type Edge.  A graph may be directed or undirected.  For
+  *  an undirected graph, outgoing and incoming edges are the same.
+  *  The vertices and edges of the graph, the edges incident on a
+  *  vertex, and the neighbors of a vertex are all accessible by
+@@ -20,6 +22,85 @@
+  */
+ public abstract class Graph<VLabel, ELabel> {
+ 
++    /** Represents one of my vertices. */
++    public class Vertex {
++
++        /** A new vertex with LABEL as the value of getLabel(). */
++        Vertex(VLabel label) {
++            _label = label;
++        }
++
++        /** Returns the label on this vertex. */
++        public VLabel getLabel() {
++            return _label;
++        }
++
++        @Override
++        public String toString() {
++            return String.valueOf(_label);
++        }
++
++        /** The label on this vertex. */
++        private final VLabel _label;
++
++    }
++
++    /** Represents one of my edges. */
++    public class Edge {
++
++        /** An edge (V0,V1) with label LABEL.  It is a directed edge (from
++         *  V0 to V1) in a directed graph. */
++        Edge(Vertex v0, Vertex v1, ELabel label) {
++            _label = label;
++            _v0 = v0;
++            _v1 = v1;
++        }
++
++        /** Returns the label on this edge. */
++        public ELabel getLabel() {
++            return _label;
++        }
++
++        /** Return the vertex this edge exits. For an undirected edge, this is
++         *  one of the incident vertices. */
++        public Vertex getV0() {
++            return _v0;
++        }
++
++        /** Return the vertex this edge enters. For an undirected edge, this is
++         *  the incident vertices other than getV1(). */
++        public Vertex getV1() {
++            return _v1;
++        }
++
++        /** Returns the vertex at the other end of me from V.  */
++        public final Vertex getV(Vertex v) {
++            if (v == _v0) {
++                return _v1;
++            } else if (v == _v1) {
++                return _v0;
++            } else {
++                throw new
++                    IllegalArgumentException("vertex not incident to edge");
++            }
++        }
++
++        @Override
++        public String toString() {
++            return String.format("(%s,%s):%s", _v0, _v1, _label);
++        }
++
++        /** Endpoints of this edge.  In directed edges, this edge exits _V0
++         *  and enters _V1. */
++        private final Vertex _v0, _v1;
++
++        /** The label on this edge. */
++        private final ELabel _label;
++
++    }
++
++    /*=====  Methods and variables of Graph =====*/
++
+     /** Returns the number of vertices in me. */
+     public int vertexSize() {
+         // FIXME
+@@ -37,40 +118,40 @@
+ 
+     /** Returns the number of outgoing edges incident to V. Assumes V is one of
+      *  my vertices.  */
+-    public int outDegree(Vertex<VLabel> v) {
++    public int outDegree(Vertex v) {
+         // FIXME
+         return 0;
+     }
+ 
+     /** Returns the number of incoming edges incident to V. Assumes V is one of
+      *  my vertices. */
+-    public int inDegree(Vertex<VLabel> v) {
++    public int inDegree(Vertex v) {
+         // FIXME
+         return 0;
+     }
+ 
+     /** Returns outDegree(V). This is simply a synonym, intended for
+      *  use in undirected graphs. */
+-    public final int degree(Vertex<VLabel> v) {
++    public final int degree(Vertex v) {
+         return outDegree(v);
+     }
+ 
+     /** Returns true iff there is an edge (U, V) in me with any label. */
+-    public boolean contains(Vertex<VLabel> u, Vertex<VLabel> v) {
++    public boolean contains(Vertex u, Vertex v) {
+         // FIXME
+         return false;
+     }
+ 
+     /** Returns true iff there is an edge (U, V) in me with label LABEL. */
+-    public boolean contains(Vertex<VLabel> u, Vertex<VLabel> v,
+-                                     ELabel label) {
++    public boolean contains(Vertex u, Vertex v,
++                            ELabel label) {
+         // FIXME
+         return false;
+     }
+ 
+     /** Returns a new vertex labeled LABEL, and adds it to me with no
+      *  incident edges. */
+-    public Vertex<VLabel> add(VLabel label) {
++    public Vertex add(VLabel label) {
+         // FIXME
+         return null;
+     }
+@@ -78,9 +159,9 @@
+     /** Returns an edge incident on FROM and TO, labeled with LABEL
+      *  and adds it to this graph. If I am directed, the edge is directed
+      *  (leaves FROM and enters TO). */
+-    public Edge<VLabel, ELabel> add(Vertex<VLabel> from,
+-                                             Vertex<VLabel> to,
+-                                             ELabel label) {
++    public Edge add(Vertex from,
++                    Vertex to,
++                    ELabel label) {
+         // FIXME
+         return null;
+     }
+@@ -88,83 +169,83 @@
+     /** Returns an edge incident on FROM and TO with a null label
+      *  and adds it to this graph. If I am directed, the edge is directed
+      *  (leaves FROM and enters TO). */
+-    public Edge<VLabel, ELabel> add(Vertex<VLabel> from,
+-                                             Vertex<VLabel> to) {
++    public Edge add(Vertex from,
++                    Vertex to) {
+         // FIXME
+         return null;
+     }
+ 
+     /** Remove V and all adjacent edges, if present. */
+-    public void remove(Vertex<VLabel> v) {
++    public void remove(Vertex v) {
+         // FIXME
+     }
+ 
+     /** Remove E from me, if present.  E must be between my vertices,
+      *  or the result is undefined.  */
+-    public void remove(Edge<VLabel, ELabel> e) {
++    public void remove(Edge e) {
+         // FIXME
+     }
+ 
+     /** Remove all edges from V1 to V2 from me, if present.  The result is
+      *  undefined if V1 and V2 are not among my vertices.  */
+-    public void remove(Vertex<VLabel> v1, Vertex<VLabel> v2) {
++    public void remove(Vertex v1, Vertex v2) {
+         // FIXME
+     }
+ 
+     /** Returns an Iterator over all vertices in arbitrary order. */
+-    public Iteration<Vertex<VLabel>> vertices() {
++    public Iteration<Vertex> vertices() {
+         // FIXME
+         return null;
+     }
+ 
+     /** Returns an iterator over all successors of V. */
+-    public Iteration<Vertex<VLabel>> successors(Vertex<VLabel> v) {
++    public Iteration<Vertex> successors(Vertex v) {
+         // FIXME
+         return null;
+     }
+ 
+     /** Returns an iterator over all predecessors of V. */
+-    public Iteration<Vertex<VLabel>> predecessors(Vertex<VLabel> v) {
++    public Iteration<Vertex> predecessors(Vertex v) {
+         return null;
+         // FIXME
+     }
+ 
+     /** Returns successors(V).  This is a synonym typically used on
+      *  undirected graphs. */
+-    public final Iteration<Vertex<VLabel>> neighbors(Vertex<VLabel> v) {
++    public final Iteration<Vertex> neighbors(Vertex v) {
+         return successors(v);
+     }
+ 
+     /** Returns an iterator over all edges in me. */
+-    public Iteration<Edge<VLabel, ELabel>> edges() {
++    public Iteration<Edge> edges() {
+         return null;
+         // FIXME
+     }
+ 
+     /** Returns iterator over all outgoing edges from V. */
+-    public Iteration<Edge<VLabel, ELabel>> outEdges(Vertex<VLabel> v) {
++    public Iteration<Edge> outEdges(Vertex v) {
+         return null;
+         // FIXME
+     }
+ 
+     /** Returns iterator over all incoming edges to V. */
+-    public Iteration<Edge<VLabel, ELabel>> inEdges(Vertex<VLabel> v) {
++    public Iteration<Edge> inEdges(Vertex v) {
+         return null;
+         // FIXME
+     }
+ 
+     /** Returns outEdges(V). This is a synonym typically used
+      *  on undirected graphs. */
+-    public final Iteration<Edge<VLabel, ELabel>> edges(Vertex<VLabel> v) {
++    public final Iteration<Edge> edges(Vertex v) {
+         return outEdges(v);
+     }
+ 
+-    /** Returns the natural ordering on ELabel<T>, as a Comparator.  For
+-     *  example, if stringComp = Graph.<String>naturalOrder(), then
+-     *  stringComp.compare(S1, S2) is S1.compareTo(S2) for Strings S1
+-     *  and S2. */
+-    public static <T extends Comparable<? super T>> Comparator<T>
+-    naturalOrder() {
++    /** Returns the natural ordering on T, as a Comparator.  For
++     *  example, if stringComp = Graph.<Integer>naturalOrder(), then
++     *  stringComp.compare(x1, y1) is <0 if x1<y1, ==0 if x1=y1, and >0
++     *  otherwise. */
++    public static <T extends Comparable<? super T>> Comparator<T> naturalOrder()
++    {
+         return new Comparator<T>() {
+             @Override
+             public int compare(T x1, T x2) {
+Index: graph/Traversal.java
+===================================================================
+--- graph/Traversal.java	(.../proj3-1)	(revision 48848)
++++ graph/Traversal.java	(.../proj3-2)	(revision 48848)
+@@ -37,7 +37,8 @@
+     /** Perform a traversal of G over all vertices reachable from V.
+      *  ORDER determines the ordering in which the fringe of
+      *  untraversed vertices is visited. */
+-    public void traverse(Graph<VLabel, ELabel> G, Vertex<VLabel> v,
++    public void traverse(Graph<VLabel, ELabel> G,
++                         Graph<VLabel, ELabel>.Vertex v,
+                          Comparator<VLabel> order) {
+         // FILL IN
+     }
+@@ -49,7 +50,7 @@
+      *  a node is complete, the node itself is revisited by calling
+      *  the postVisit method on it. */
+     public void depthFirstTraverse(Graph<VLabel, ELabel> G,
+-                                   Vertex<VLabel> v) {
++                                   Graph<VLabel, ELabel>.Vertex v) {
+         // FILL IN
+     }
+ 
+@@ -60,28 +61,28 @@
+      *  a node is complete, the node itself is revisited by calling
+      *  the postVisit method on it. */
+     public void breadthFirstTraverse(Graph<VLabel, ELabel> G,
+-                                     Vertex<VLabel> v) {
++                                     Graph<VLabel, ELabel>.Vertex v) {
+         // FILL IN
+     }
+ 
+     /** Continue the previous traversal starting from V.
+      *  Continuing a traversal means that we do not traverse
+      *  vertices or edges that have been traversed previously. */
+-    public void continueTraversing(Vertex<VLabel> v) {
++    public void continueTraversing(Graph<VLabel, ELabel>.Vertex v) {
+         // FILL IN
+     }
+ 
+     /** If the traversal ends prematurely, returns the Vertex argument to
+      *  preVisit that caused a Visit routine to return false.  Otherwise,
+      *  returns null. */
+-    public Vertex<VLabel> finalVertex() {
++    public Graph<VLabel, ELabel>.Vertex finalVertex() {
+         return _finalVertex;
+     }
+ 
+     /** If the traversal ends prematurely, returns the Edge argument to
+      *  preVisit that caused a Visit routine to return false. If it was not
+      *  an edge that caused termination, returns null. */
+-    public Edge<VLabel, ELabel> finalEdge() {
++    public Graph<VLabel, ELabel>.Edge finalEdge() {
+         return _finalEdge;
+     }
+ 
+@@ -96,13 +97,14 @@
+      *  the traversal ends.  If it throws a RejectException, the edge
+      *  E is not traversed. The default does nothing.
+      */
+-    protected void preVisit(Edge<VLabel, ELabel> e, Vertex<VLabel> v0) {
++    protected void preVisit(Graph<VLabel, ELabel>.Edge e,
++                            Graph<VLabel, ELabel>.Vertex v0) {
+     }
+ 
+     /** Method to be called when visiting vertex V.  If this routine throws
+      *  a StopException, the traversal ends.  If it throws a RejectException,
+      *  successors of V do not get visited from V. The default does nothing. */
+-    protected void visit(Vertex<VLabel> v) {
++    protected void visit(Graph<VLabel, ELabel>.Vertex v) {
+     }
+ 
+     /** Method to be called immediately after finishing the traversal
+@@ -110,13 +112,13 @@
+      *  If this routine throws a StopException, the traversal ends.
+      *  Throwing a RejectException has no effect. The default does nothing.
+      */
+-    protected void postVisit(Vertex<VLabel> v) {
++    protected void postVisit(Graph<VLabel, ELabel>.Vertex v) {
+     }
+ 
+     /** The Vertex (if any) that terminated the last traversal. */
+-    protected Vertex<VLabel> _finalVertex;
++    protected Graph<VLabel, ELabel>.Vertex _finalVertex;
+     /** The Edge (if any) that terminated the last traversal. */
+-    protected Edge<VLabel, ELabel> _finalEdge;
++    protected Graph<VLabel, ELabel>.Edge _finalEdge;
+     /** The graph currently being traversed. */
+     protected Graph<VLabel, ELabel> _graph;
+ 
+Index: graph/Graphs.java
+===================================================================
+--- graph/Graphs.java	(.../proj3-1)	(revision 48848)
++++ graph/Graphs.java	(.../proj3-2)	(revision 48848)
+@@ -26,10 +26,10 @@
+      *  unreachable from V0, returns null and sets the minimum path weights of
+      *  all reachable nodes.  The distance to a node unreachable from V0 is
+      *  Double.POSITIVE_INFINITY. */
+-    public static <VLabel, ELabel> List<Edge<VLabel, ELabel>>
++    public static <VLabel, ELabel> List<Graph<VLabel, ELabel>.Edge>
+     shortestPath(Graph<VLabel, ELabel> G,
+-                 Vertex<VLabel> V0,
+-                 Vertex<VLabel> V1,
++                 Graph<VLabel, ELabel>.Vertex V0,
++                 Graph<VLabel, ELabel>.Vertex V1,
+                  Distancer<? super VLabel> h,
+                  Weighter<? super VLabel> vweighter,
+                  Weighting<? super ELabel> eweighter) {
+@@ -60,10 +60,11 @@
+      *  to a node unreachable from V0 is Double.POSITIVE_INFINITY. */
+     public static
+     <VLabel extends Weightable, ELabel extends Weighted>
+-    List<Edge<VLabel, ELabel>> shortestPath(Graph<VLabel, ELabel> G,
+-                                            Vertex<VLabel> V0,
+-                                            Vertex<VLabel> V1,
+-                                            Distancer<? super VLabel> h) {
++    List<Graph<VLabel, ELabel>.Edge>
++    shortestPath(Graph<VLabel, ELabel> G,
++                 Graph<VLabel, ELabel>.Vertex V0,
++                 Graph<VLabel, ELabel>.Vertex V1,
++                 Distancer<? super VLabel> h) {
+         return null;
+         // FIX ME
+     }
+Index: graph/Makefile
+===================================================================
+--- graph/Makefile	(.../proj3-1)	(revision 48848)
++++ graph/Makefile	(.../proj3-2)	(revision 48848)
+@@ -39,11 +39,18 @@
+ # changed since the last build.
+ default: $(CLASSES)
+ 
++# Classes must exist and be up to date with a marker file indicating the time
++# of last compilation.  We do it this way as a trick to prevent multiple
++# recompilations when there are errors.
++$(CLASSES): sentinel
++
+ # If any class is missing, or any source changed since the main classes were
+ # compiled, remove all class files and recompile.
+-$(CLASSES): $(SRCS)	
++sentinel: $(SRCS)	
++	$(RM) $@
+ 	$(RM) $(CLASSES)
+ 	javac $(JFLAGS) $(SRCS) || { $(RM) $(CLASSES); false; }
++	touch $@
+ 
+ # Run Tests.
+ check: unit-test
+@@ -59,6 +66,6 @@
+ # Find and remove all *~, *.class, and testing output files.
+ # Do not touch .svn directories.
+ clean :
+-	$(RM) *~ *.class
++	$(RM) *~ *.class sentinel
+ 
+ 
+Index: graph/Iteration.java
+===================================================================
+--- graph/Iteration.java	(.../proj3-1)	(revision 48848)
++++ graph/Iteration.java	(.../proj3-2)	(revision 48848)
+@@ -22,4 +22,36 @@
+     public void remove() {
+         throw new UnsupportedOperationException("remove not supported");
+     }
++
++    /** A wrapper class that turns an Iterator<TYPE> into an Iteration<TYPE>. */
++    private static class SimpleIteration<Type> extends Iteration<Type> {
++        /** ITER as an iteration. */
++        SimpleIteration(Iterator<Type> iter) {
++            _iter = iter;
++        }
++
++        @Override
++        public boolean hasNext() {
++            return _iter.hasNext();
++        }
++
++        @Override
++        public Type next() {
++            return _iter.next();
++        }
++
++        /** The iterator with which I was constructed. */
++        private Iterator<Type> _iter;
++    }
++
++    /** Returns an Iteration<TYPE> that delegates to IT. */
++    static <Type> Iteration<Type> iteration(Iterator<Type> it) {
++        return new SimpleIteration<>(it);
++    }
++
++    /** Returns an Iteration<TYPE> that delegates to ITERABLE. */
++    static <Type> Iteration<Type> iteration(Iterable<Type> iterable) {
++        return new SimpleIteration<>(iterable.iterator());
++    }
++
+ }
+Index: staff-version
+===================================================================
+--- staff-version	(.../proj3-1)	(revision 48848)
++++ staff-version	(.../proj3-2)	(revision 48848)
+@@ -1 +1 @@
+-proj3-1
++proj3-2
+Index: README
+===================================================================
+--- README	(.../proj3-1)	(revision 48848)
++++ README	(.../proj3-2)	(revision 48848)
+@@ -36,15 +36,6 @@
+         UndirectedGraph.java
+                Implementation of undirected graphs.
+                
+-        Edge.java:
+-               Represents edges in a graph.
+-
+-        Vertex.java
+-               Represents vertices in a graph.
+-
+-        DepthFirst.java:
+-               Represents a depth-first graph traversal.
+-
+         Traversal.java:
+                Represents breadth-first and other general graph traversals.
+ 
+@@ -117,3 +108,91 @@
+ make-tests:     Regression tests for the make application (currently empty).
+ 
+ trip-tests:     Regression tests for the make application (currently empty).
++
++
++MERGING CHANGES:
++----------------
++
++If and when we publish new versions of the skeleton, you may want to 
++incorporate those changes in your project.  This is known as "merging".
++Basically, it works like this:
++
++   0. Commit your current files (as with 'hw commit'). NEVER start
++      merging files until you have done this successfully!!!
++   1. Compute the set of differences between the version of the skeleton
++      from which your current code comes and the current version of the
++      skeleton.
++   2. Try to apply these differences to your current code.
++   3. Where the changes in the skeleton overlap your changes, there are
++      "merge conflicts".  Edit the files containing these conflicts and
++      resolve the conflict as appropriate.
++   4. When done, mark the files as no longer being conflicted.
++   5. Commit the new version of your files.  Again, NEVER do
++      additional editing until you have successfully committed.
++
++This process is so common that all widely used version-control systems
++support it with one or more commands.  In Subversion, this is the 'svn
++merge' command.  Rather than have you confront this directly, we've
++introduced the command 'mergeskel' to do steps 1 and 2 and
++'resolveskel' to do step 4.  So,
++
++   A. Put yourself in your project working directory first.
++   B. Commit any changes (hw commit)
++   C. Run mergeskel
++   D. Edit out any conflicts (hw status will tell you which files 
++      have conflicts).
++   E. Run resolveskel, which tells Subversion that the conflicts are 
++      fixed (it otherwise will not let you commit.)
++   F. Commit the results.
++
++If you have files lying around with names like "FOO.merge-right.r1234", you
++haven't resolved something.
++
++The rest of this section explains the full version of what's really
++going on.  We store copies of all versions of the skeleton in staff
++repository files called (on the instructional machines)
++
++       $STAFFREPOS/tags/projN-V
++
++where projN is the project (e.g., proj1) and V is a version number
++(starting at 0).  The current version of the skeleton is in
++
++       $STAFFREPOS/projN
++
++The file staff-version in your project directory, if present, contains the
++the tag name of that skeleton (if it isn't present, the tag name is projN-0,
++as in proj1-0).
++
++In a project working directory, say proj1, after committing all your
++current files, you (or mergeskel) merge in a new version of the
++skeleton (on the instructional machines) by first figuring out (using
++staff-version, if present) what was the last version you updated to.
++Suppose this is proj1-0.  Now you enter the commands
++
++        svn merge --accept=postpone $STAFFREPOS/tags/proj1-0 $STAFFREPOS/proj1
++
++This produces some progress messages, possibly including some messages
++about conflicts.  If there are no conflicts, you can simply commit your files
++and you are done.
++
++Otherwise, each file with conflicts will have sections like this
++
++    <<<<<<< .working
++         System.out.println ("Welcome to my project");
++         initialize ();
++    =======
++         initialize (args);
++    >>>>>>> .merge-right.r1009
++
++The part before the ======= was in your file to start with.  The part after 
++======= is from the updated version of the skeleton.  Choose which you
++want to use, or what combination you want to use and edit accordingly.
++Then remove the marker lines (<<<<, >>>>, ====) and save.  Do this for 
++all conflicted files.  Finally, you (or resolveskel) can run the command 
++
++    svn resolved --accept working <FILE>
++
++for each <FILE> you have resolved in this way.  If you've done this
++right, 'hw status' will no longer show conflicts (just modified
++files).  Now commit your work and you're done.
++

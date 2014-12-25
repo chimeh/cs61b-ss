@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Chapter 3. Advanced Topics</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.75.2" />
+    <link rel="home" href="index.html" title="Version Control with Subversion" />
+    <link rel="up" href="index.html" title="Version Control with Subversion" />
+    <link rel="prev" href="svn.tour.summary.html" title="Summary" />
+    <link rel="next" href="svn.tour.revs.specifiers.html" title="Revision Specifiers" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">Chapter 3. Advanced Topics</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="svn.tour.summary.html">Prev</a> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="svn.tour.revs.specifiers.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="chapter" title="Chapter 3. Advanced Topics">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="svn.advanced"></a>Chapter 3. Advanced Topics</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="sect1">
+              <a href="svn.tour.revs.specifiers.html">Revision Specifiers</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.tour.revs.specifiers.html#svn.tour.revs.keywords">Revision Keywords</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.tour.revs.specifiers.html#svn.tour.revs.dates">Revision Dates</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.pegrevs.html">Peg and Operative Revisions</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.props.html">Properties</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.html#svn.advanced.props.why">Why Properties?</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.html#svn.advanced.props.manip">Manipulating Properties</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.html#svn.advanced.props.workflow">Properties and the Subversion Workflow</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.html#svn.advanced.props.auto">Automatic Property Setting</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.props.file-portability.html">File Portability</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.file-portability.html#svn.advanced.props.special.mime-type">File Content Type</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.file-portability.html#svn.advanced.props.special.executable">File Executability</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.props.file-portability.html#svn.advanced.props.special.eol-style">End-of-Line Character Sequences</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.props.special.ignore.html">Ignoring Unversioned Items</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.props.special.keywords.html">Keyword Substitution</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.sparsedirs.html">Sparse Directories</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.locking.html">Locking</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.locking.html#svn.advanced.locking.creation">Creating Locks</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.locking.html#svn.advanced.locking.discovery">Discovering Locks</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.locking.html#svn.advanced.locking.break-steal">Breaking and Stealing Locks</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.locking.html#svn.advanced.locking.lock-communication">Lock Communication</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.externals.html">Externals Definitions</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.changelists.html">Changelists</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.changelists.html#svn.advanced.changelists.creating">Creating and Modifying Changelists</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.changelists.html#svn.advanced.changelists.asfilters">Changelists As Operation Filters</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.advanced.changelists.html#svn.advanced.changelists.limitations">Changelist Limitations</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.serverconfig.netmodel.html">Network Model</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.reqresp">Requests and Responses</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.creds">Client Credentials</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="sect3">
+                      <a href="svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.credcache">Caching credentials</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="sect3">
+                      <a href="svn.serverconfig.netmodel.html#svn.tour.initial.disabling-password-caching">Disabling password caching</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="sect3">
+                      <a href="svn.serverconfig.netmodel.html#svn.tour.initial.authn-cache-purge">Removing cached credentials</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="sect3">
+                      <a href="svn.serverconfig.netmodel.html#svn.tour.initial.different-user">Command-line authentication</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="sect3">
+                      <a href="svn.serverconfig.netmodel.html#svn.tour.initial.authn-wrapup">Authentication wrap-up</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="svn.advanced.summary.html">Summary</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <p>If you've been reading this book chapter by chapter, from
+    start to finish, you should by now have acquired enough
+    knowledge to use the Subversion client to perform the most
+    common version control operations.  You understand how to
+    check out a working copy from a Subversion repository.  You are
+    comfortable with submitting and receiving changes using the
+    <span class="command"><strong>svn commit</strong></span> and <span class="command"><strong>svn update</strong></span>
+    operations.  You've probably even developed a reflex that causes
+    you to run the <span class="command"><strong>svn status</strong></span> command almost
+    unconsciously.  For all intents and purposes, you are ready to
+    use Subversion in a typical environment.</p>
+      <p>But the Subversion feature set doesn't stop at <span class="quote">“<span class="quote">common
+    version control operations.</span>”</span>  It has other bits of
+    functionality besides just communicating file and
+    directory changes to and from a central repository.</p>
+      <p>This chapter highlights some of Subversion's features that,
+    while important, may not be part of the typical user's daily routine.
+    It assumes that you are familiar with Subversion's basic file and
+    directory versioning capabilities.  If you aren't, you'll want to
+    first read <a class="xref" href="svn.basic.html" title="Chapter 1. Fundamental Concepts">Chapter 1, <i>Fundamental Concepts</i></a> and <a class="xref" href="svn.tour.html" title="Chapter 2. Basic Usage">Chapter 2, <i>Basic Usage</i></a>.  Once you've mastered those basics and
+    consumed this chapter, you'll be a Subversion power user!</p>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="svn.tour.summary.html">Prev</a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="svn.tour.revs.specifiers.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">Summary </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> Revision Specifiers</td>
+        </tr>
+      </table>
+    </div>
+    <div xmlns="" id="svn-footer">
+      <hr />
+      <p>You are reading <em>Version Control with Subversion</em> (for Subversion 1.6), by Ben Collins-Sussman, Brian W. Fitzpatrick, and C. Michael Pilato.<br />
+       This work is licensed under the <a href="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution License v2.0</a>.<br />
+       To submit comments, corrections, or other contributions to the text, please visit <a href="http://www.svnbook.com/">http://www.svnbook.com/</a>.</p>
+    </div>
+  </body>
+</html>

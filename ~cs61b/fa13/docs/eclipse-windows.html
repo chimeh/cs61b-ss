@@ -1,0 +1,156 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title> CS61B: Using Eclipse in Windows </title>
+</head><body bgcolor="#fffff0" vlink="#0000ff" link="#0000ff">
+
+<h1 align="center"> CS61B: Using Eclipse in Windows </h1> 
+   
+<hr>
+
+<font size="+1">
+</font><p><font size="+1">Eclipse is the IDE (Integrated Development
+Environment) that we will be using to write and execute Java programs.
+It is available to multiple platforms. Here are the instructions for
+installing Eclipse and anything else that you need for this class.</font></p>
+
+<p><font size="+1">Install the following tools before getting started:
+</font></p><ol>
+<font size="+1"><li><p>JDK 1.6. The current release of JDK (Java
+Development Kit) is 1.6. It is made available by Sun. There are
+different updates, and you only need to install the lastest update
+(update 7 at the time when this page is written). It can be downloaded
+from here: <a href="http://java.sun.com/javase/downloads/?intcmp=1281" target="_blank">Java SE Downloads</a>.
+Choose "JDK 6 Update 7" to download and select your operating system in
+the new page. Install it after downloading. If you choose the default
+path for the installation, please verify that <code>javac.exe</code> and <code>java.exe</code> are available at <code>C:\Program Files\Java\jdk1.6.0_07\bin</code>. If the installer has not added the above path to your environment, add it in the "Properties" dialog from "My Computer".</p></li>
+<li><p>Eclipse 3.4. Eclipse is available at the <a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse download servers</a>.
+From the several available packages, please choose Eclipse IDE for Java
+Developers (148 MB). Select the appropriate platform under download links and
+download it. The
+downloaded file has name "eclipse-java-juno-win32.zip". Extract to
+a path that you like, say <code>C:\CS61B</code>, and you will see a subdirectory called <code>eclipse</code> with a program <code>eclipse.exe</code>.
+</p></li><li>We will be using Subversion to commit code to the
+instructional servers. Subversive is the plugin for Eclipse that
+supports using Subversion in it. It does not come with the Eclipse
+package, so we have to install it manually.<p></p>
+
+<p>Start Eclipse by running <code>eclipse.exe</code>. It will ask you a location to the workspace. You may choose <code>C:\CS61B\workspace</code>
+for now. From the main menu, choose "Help" &#8594; "Software Updates". In the
+popup dialog, choose the "Available Software" tab and click "Add Site"
+to add the following sites one by one:</p>
+
+<p><code><strike>http://download.eclipse.org/technology/subversive/0.7/update-site/</strike></code><br><code><strike>http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/</strike></code><br><code><font color="#008000">http://www.polarion.org/projects/subversive/download/eclipse/2.0/ganymede-site/</font></code><br><font color="#008000">(Refer to <a href="http://www.polarion.com/products/svn/subversive.php?src=eclipseproject" target="_blank">this webpage</a> for up-to-date information about Eclipse update sites.)</font></p>
+
+<p>After that, expand the node with the <strike>second</strike> URL as its name, and
+check "Subversive SVN Connectors". Click "Install..." and follow the
+steps thereafter. Eclipse will automatically figure out other packages
+that need to be installed as dependencies of "Subversive SVN
+Connectors", and install all of them. Restart Eclipse when prompted and
+our programming environment is ready.
+</p>
+
+<p><font color="#008000">For those who are not able to access the Eclipse update site, follow these steps to perform a manual Subversive installation:<code>plugins</code> directory of your Eclipse installation:
+<ol>
+  <li><p>Download <code><a href="http://www.eclipse.org/downloads/download.php?file=/technology/subversive/archive/Subversive-incubation-0.7.1.I20080612-1500.zip" target="_blank">Subversive-incubation-0.7.1.I20080612-1500.zip</a></code> from the Eclipse download site.</p></li>
+  <li><p>Extract all the .jar files in the <code>plugins</code> path of the zip file to the <code>plugins</code> directory of your Eclipse installation.</p></li>
+  <li><p>Download <code><a href="http://www.polarion.org/projects/subversive/download/eclipse/2.0/ganymede-site/plugins/org.polarion.eclipse.team.svn.connector.svnkit15_2.0.1.I20080612-1500.jar">org.polarion.eclipse.team.svn.connector.svnkit15_2.0.1.I20080612-1500.jar</a></code> and place it in the <code>plugins</code> directory of your Eclipse installation.</p></li>
+</ol>
+(This manual installation instruction is not supposed to work all the time and it may break your Eclipse installation.)
+</font></p>
+</li></font></ol>
+<p></p>
+
+<p><font size="+1">Once the programming environment is ready, we can
+create a project and write some code. But before we do that, we have to
+set up Subversion so that we can check our code into the instructional
+servers:
+</font></p><ol>
+<font size="+1"><li><p>In Eclipse, choose "Window" &#8594; "Open Perspective" &#8594; "Other...". In the dialog, choose "SVN Repository Exploring".</p></li>
+<li><p>Choose "File" &#8594; "New" &#8594; "Repository Location" from the menu, and
+enter your account information.  Copy your private SSH key (stored on the 
+instructional machines in <code>~/.ssh/id_rsa</code>) into some secure
+location on your home machine (readable only by you).  
+<li><p>In the "New Repository Location" dialog, fill in the following URL in the "General" tab:</p>
+<p><code>svn+ssh://torus.cs.berkeley.edu/&lt;YOURLOGIN&gt;</code></p>
+<li><p>In the "Authentication" group, use <code>cs61b-ta</code> as the user name, and leave the "Password" field blank.</p></li>
+<li><p>Switch to the "SSH Settings" tab and choose the "Private Key"
+radio button. In the "File" box, enter the location of the SSH private
+key file that you copied from the instructional machines.
+Leave the "Passphrase" box blank, since we are not using passphrases on these
+keys. 
+<li><p>When you click the "Finish" button, you will see the new repository listed in the "SVN Repositories" window.</p></li>
+<li><p>Expand the repository and you will see a "trunk" node, a "tags"
+node, and more. Right click on "trunk" and choose "Find/Check Out
+As...". Click "Finish" in the new dialog, and choose "Java Project"
+under "Java" in the next dialog. You need to give your project a name.
+Let's call it <code>cs61b</code>. In the same dialog as you enter the
+project name, choose "Use project folder as root for sources and class
+files" so that Eclipse does not separate the source and the compiled
+binary code into different subdirectories of the project.</p></li>
+<li><p>When you click "Finish" and return to the Java prespective, you will see and your <code>cs61b</code> project.</p></li>
+</font></ol>
+<p></p>
+
+<p><font size="+1">We can now write a <code>HelloWorld</code> program and commit it to the server.
+</font></p><ol>
+<font size="+1"><li><p>Right click on the <code>cs61b</code> project
+and choose "New" &#8594; "Class". In the new dialog, enter "HelloWorld" in
+the "Name" field and check "public static void main(String[] args)".
+The following is generated in <code>HelloWorld.java</code> as the skeleton:
+</p><pre>public class HelloWorld {
+  /**
+   * @param args
+   */
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+  }
+}</pre><p></p></li>
+<li><p>Replace the contents of the <code>main</code> method (between the open and close brackets) with:</p>
+<p><code>System.out.println("Hello World!");</code></p>
+<p>Save the file. Eclipse will automatically compile the code in the
+background as long as "Project" &#8594; "Build Automatically" is checked.</p></li>
+<li><p>Click the run button from the tool bar (the one with a white
+triangle in a green circle), or choose "Run" &#8594; "Run", or press
+Ctrl+F11, to run the code. You will see "Hello World!" to be printed to
+the console at the bottom of the Eclipse window.</p></li>
+<li><p>To commit the code to the server, expand "cs61b" and "(default
+package)" in "Package Explorer" so that you can see "HelloWorld.java".
+Right click "HelloWorld.java" and choose "Team" &#8594; "Add to Version
+Control...". Click "OK" in the new Dialog.</p></li>
+<li><p>Right click the "cs61b" project and choose "Team" &#8594; "Commit...".
+In the new dialog, enter a short comment (say, "My first program."). In
+the same dialog, the resources updated locally are listed, such as
+"HelloWorld.java", ".classpath" and ".project". Press "OK" to commit
+all those files.</p></li>
+</font></ol>
+<p></p>
+
+<p><font size="+1">We've now committed the <code>HelloWorld</code>
+program into the SVN repository located on the instructional servers.
+You will be able to check out the code on any of the machines that you
+work on.</font></p>
+
+<p><font size="+1"><font color="red">IMPORTANT: Make sure you commit
+your code regularly. There is no harm committing your code often, even
+though it is not executable yet or it contains bugs.</font></font></p>
+
+<font size="+1"></font>
+
+<p>
+</p><hr>
+
+<p align="center">
+<font size="+1">[<a href="http://www-inst.eecs.berkeley.edu/%7Ecs61b/fa08/index.html">CS61B Home Page</a>]
+</font></p>
+
+<font size="+1"><font size="-1">
+</font></font><p>
+</p><address>
+<font size="+1"><font size="-1">Page was last modified on Tue Aug 28 00:03:43 2012. <br>
+Address comments and questions to
+<a name="webmaster" href="mailto:cs61b@inst.eecs.berkeley.edu">
+cs61b@inst.eecs.berkeley.edu</a>
+</font></font></address>
+
+</body></html>

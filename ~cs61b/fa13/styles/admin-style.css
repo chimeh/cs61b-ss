@@ -1,0 +1,13 @@
+body { width: 600px }
+body, td, th { font-size: 16px }
+address { font-size: 14px }
+a:visited { color:blue }
+.boxed { border-width: 2px; border-style: solid; padding: 10px }
+.tightlyboxed { border-width: 1px; border-style: solid; padding: 1px }
+h1 { font: 20px Arial; font-weight: bold; text-align: center }
+h2 { font: 16px Arial; font-weight: bold; text-align: left }
+h3 { font: 14px Arial; font-weight: bold; text-align: left }
+span.err { color: #dd0000 }
+td.err { color: #dd0000 }
+span.comment { color: #0000dd }
+td.comment { color: #0000dd }

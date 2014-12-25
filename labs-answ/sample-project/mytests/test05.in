@@ -1,0 +1,26 @@
+# Tests of simple canonical terms
+
+3+4;
+3 + 4;
+3 - 4;
+3-4;
+
+-3+4;
+-3-4;
+
+x+y;
+x-y;
+-x+y;
+-x-y;
+
+1 + y + x;
+x + y + 1;
+1+2x+x^2;
+1+2a^2x^3 + 3x^4 + ax^7;
+
+x + y - x - y;
+3x^2y + yx^2 - 4xyx;
+3x^2y - x^2y - x^2y;
+x^2y - x^2y - x^2y;
+
+QUIT

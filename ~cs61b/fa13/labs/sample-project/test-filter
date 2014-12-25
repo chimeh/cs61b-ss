@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Output filter for project 1: 
+#  1. Remove first line.    (1d)
+#  2. Remove all prompts    (s/> //g)
+#  3. Remove leading and trailing blanks, (s/^ *// and s/ *$//)
+#     and convert multiple blanks to single blanks (s/  */ /g)
+#  4. Remove blank lines    (/^$/d)
+#  5. Convert any error line to single word ERROR, print it, and then
+#     throw away other output  (s/^.*ERROR.*$/ERROR/p  and /ERROR/q)
+
+sed -e '1d' \
+    -e 's/> //g' \
+    -e 's/^  *//' -e 's/ *$//' -e 's/  */ /g' \
+    -e '/^$/d' \
+    -e 's/^.*ERROR.*$/ERROR/' -e '/ERROR/q'

@@ -1,0 +1,8 @@
+# Negations 
+
+DEF A(x) = x;
+
+-a;
+-(x);
+-A(y);
+QUIT

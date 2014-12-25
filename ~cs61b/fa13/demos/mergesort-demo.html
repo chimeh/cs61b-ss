@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Insertion Sorting</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/arraydemos.js"></script>
+<script type="text/javascript" src="js/arraydemos.sorting.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        sortingDemos.sortMovement = "translate(0, -60)";
+        sortingDemos.commonSetup();
+        sortingDemos.mergesortDemo();
+    });
+</script>
+</head>
+
+<body>
+
+<h1> Merge Sorting</h1>
+
+<p> 
+<dfn>Merge sorts</dfn> are O(<i>N</i> lg <i>N</i>) algorithms for 
+sorting a list of
+<i>N</i> items using comparisons.  
+There are many variations, all of which follow a divide-and-conquer scheme:
+divide the data into subsequences, recursively sort the subsequences, and
+finally <dfn>merge</dfn> the sorted subsequences into increasingly large
+sorted sequences.
+</p>
+
+<p>
+To merge two or more sorted sequences, one repeatedly removes
+the smallest item from the input sequences,
+which because they are sorted, is always at the front of one of them.
+One can actually merge any number of sequences in this fashion; for large 
+numbers of sequences, one might use some variety of priority queue (or heap)
+to keep track of which sequence currently has the smallest item.  At any given 
+time, one need only look at the initial member of each sequence.
+</p>
+
+<p>
+Because it deals with data sequentially and requires only enough memory 
+to buffer its input and output&mdash;a finite amount&mdash;merge sorting is 
+ideally suited to <dfn>external sorting</dfn>, in which the amount of data to be
+sorted exceeds the capacity of primary memory by arbitrarily large amounts. 
+The size of the sorted data is limited only by the size of one's secondary 
+memory.  In addition, because of its divide-and-conquer character, merge sorting
+is also eminently parallelizable, as suggested in the variation shown here.
+</p>
+
+<p>
+The classic recursize mergesort algorithm looks like this (where merge(A, B, C)
+merges sorted arrays B and C, putting the result in A):
+<pre>
+    <i>To sort elements L through U of A</i>
+    mergesort(A, L, U):
+        if L &lt; U:
+            M = &lfloor;(L+U)/2&rfloor;
+            mergesort(A, L, M)
+            mergesort(A, M+1, U)
+            merge(A[L..U], A[L..M], A[M+1..U])
+</pre>
+The base case here is a single element (which is already sorted).  The algorithm
+merges pairs of elements into 2-element sequences, pairs of 2-element sequences 
+into 4-element sequences, etc.  When U-L+1 is not a power of two, there will 
+be merges of differing-length sequences at some point. The algorithm below
+uses a different sequence of merges, sorting non-overlapping 2-element 
+subsequences, then non-overlapping 4-element subsequences, etc., pairing 
+up sequences from the left. The 2-element sequences are sorted in place, and 
+subsequent merges use a temporary array to hold the result.
+</p>
+    
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<table id="parameters" align="center">
+ <tr>
+  <td> 
+      <ul id="menu">
+        <li> <a href="mergesort-demo.html#">Choose Input</a>
+          <ul>
+            <li id="increasing"> <a href="mergesort-demo.html#">Sorted values</a> </li>
+            <li id="decreasing"> <a href="mergesort-demo.html#">Decreasing values</a> </li>
+            <li id="random"> <a href="mergesort-demo.html#">Random values</a> </li>
+          </ul>
+        </li>
+	<li id="Run"> <a href="mergesort-demo.html#">Sort input</a> </li>
+      </ul>
+  </td>
+  <td> <b>Input size:</b> 
+    <input type="text" id="input-size" size="2" />
+  </td>
+ </tr>
+</table>
+
+<div class="demo">
+<svg id="disp" version="1.1" width="800" height="300">
+   <text class="array-label" text-anchor="end" x="82" y="17">
+        Initial array:
+   </text>
+   <g id="input1" transform="translate(92, 2)"> </g>
+
+   <text class="array-label" text-anchor="end" x="76" y="124">Array:</text>
+   <g id="data-ms" transform="translate(90, 109)"> 
+     <g id="connections-ms"> </g>
+   </g>
+
+
+   <g id="mover" transform="translate(0,0)">
+      <g id="merged-ms" transform="translate(90, 169)"> </g>
+   </g>
+
+   <text class="array-label" text-anchor="end" x="349" y="71">
+       # comparisons:
+   </text>
+   <g id="op-ms" transform="translate(363, 54)"> </g>
+</svg>
+</div>
+
+<div id="log">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html id="HTML">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Tries</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/treedemos.js"></script>
+<script type="text/javascript" src="js/treedemos.trie-demo.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+<style>
+.ui-menu {
+    width: 200px;
+}
+</style>
+</head>
+
+<body id="BOD">
+
+<h1>Tries</h1>
+
+<p>
+A <dfn>trie</dfn> is a search-tree structure that provides for insertion, 
+search, and removal of keys in time proportional to the length of the key, 
+regardless of the quantity of data stored in the trie.  Here, the definition
+of "length" depends on the type of data.  Anything that can be treated as a
+sequence of symbols from some finite alphabet can serve as a key.  Strings
+are the usual keys, but since a number may be represented as a sequence 
+of digits (or of bits), numbers also qualify.  Indeed, it is possible to turn 
+essentially anything into bits, the simplest alphabet.
+</p>
+<p>
+The keys in the trie occupy the leaf nodes.  Inner nodes correspond to 
+<emph>prefixes</emph> of multiple keys.  Each inner node contains one symbol,
+and the sequence of symbols from the root to a given inner node is the prefix of
+all keys in the subtree rooted at that node.  Searching for a key therefore 
+consists of searching following a path from the root dictated by successive
+symbols of the key until either finding a prefix that is not present in the trie
+or reaching a leaf, which may then be compared with the key.
+To insert a new key, we find the point at which this search procedure ends, and 
+then either insert a new leaf directly or else insert one or more inner nodes
+corresponding to the prefixes of the new key that already exist.  To delete
+a key, we remove its leaf, and (working up from the removal point)
+any inner nodes that have less than two keys under them as a result.
+</p>
+<p>
+There is a slight problem if a key is also a prefix of another key (consider
+a trie containing both "clan" and "clank").  We could modify the strategy
+and tag inner nodes that also represent keys.  Another technique (used here)
+is to terminate every key with a unique symbol (found only at the end of keys),
+thus guaranteeing that no key is also a prefix of another.
+</p>
+
+<p>
+In this demonstration, leaf nodes are represented by rectangles and inner nodes
+are circular. You can insert new keys by typing them into the "New key" space, 
+and can keys by double-clicking them.
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<table id="parameters" align="center">
+ <tr>
+  <td> <b>New key:</b> 
+    <input type="text" id="insertion" size="20"
+           title="Type string to add to trie, followed by Enter" />
+  </td>
+ </tr>
+</table>
+
+<div id="tree1" class="demo">
+</div>
+
+<p>
+<div id="log">
+</div>
+</p>
+
+</body>
+</html>

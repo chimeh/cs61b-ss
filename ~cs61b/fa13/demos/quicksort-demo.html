@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Quicksort</title>
+
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<script src="js/d3.v3.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/arraydemos.js"></script>
+<script type="text/javascript" src="js/arraydemos.sorting.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        sortingDemos.commonSetup();
+        sortingDemos.quicksortDemo();
+    });
+</script>
+</head>
+
+<body>
+
+<h1> Quicksort Sorting</h1>
+
+<p> 
+Quicksort sorting is an <i>O(N<sup>2</sup>)</i> algorithm for sorting a list of
+<i>N</i> items using comparisons that on average runs in <i>O(N</i> lg<i>N)</i>
+time.  The idea is to reorganize the input sequence 
+into two adjacent subsequences (<i>partitions</i>) such that all the
+elements in the first partition are less
+than all those in the second.  As a result, no further movement of items between
+the two sections is necessary and the two sections can themselves be sorted
+(recursively) independently.  We can continue this process, dividing the array
+into smaller and smaller partitions that are all correctly ordered with respect
+to each other.  
+</p>
+<p>
+When the partition size is reduced to one the entire sequence will
+be sorted.  However, the maximum partition size also limits the number of 
+inversions in the sequence, which in turn limits the execution time of insertion 
+sorting (see the <a href="insertion-sort-demo.html">Insertion Sorting</a> page).
+The number of inversions in a sequence partitioned by quicksort is equal to the
+sum of the numbers of inversions in the individual partitions (why?). 
+Therefore, once the maximum partition size is reduced to some constant, the
+total number of inversions is linear in the size of the entire sequence.
+Since insertion sorting has better constant factors than quicksort, 
+a common modification to the quicksort algorithm is
+to apply insertion sorting once the maximum partition size is reduced 
+below some predetermined threshold size.
+</p>
+<p>
+To partition a sequence, quicksort chooses a <i>pivot</i> element from
+the sequence and then swaps elements in the array to place elements
+less than the pivot in the first partition and those greater in the
+other. Each
+partitioning operation requires linear time in the size of the
+subsequence being partitioned. In the extreme case, the maximum
+partitition size is reduced by one on each step, leading to
+<i>O(N<sup>2</sup>)</i> running time.  The best case is to find pivots that
+divide the
+subsequence into equal-sized partitions.  There are various strategies
+for choosing such pivots, including taking small random samples of the
+subsequence. 
+</p>
+<p>
+The variant presented here chooses as the pivot the median of the
+first, last, and middle elements of a subsequence.  It switches to
+ordinary insertion sorting when the maximum partition size is reduced
+to a certain size, initially 4.
+</p>
+<p>
+The partitioning steps use an
+algorithm due to Nico Lomuto: the selected pivot is swapped to the
+beginning of the subsequence to be partitioned, and the rest of the
+array is swept, swapping elements less than the pivot to the left end
+of the array (after the pivot).  As a final step, the pivot element is
+swapped once more to the dividing line between the partitions, which is
+its correct position in the sequence (why?).  Since it therefore need not
+participate in further partitioning, any further partitioning operations
+operate on strictly smaller subsequences (avoiding infinite recursion).
+Each subsequence being partitioned is shown slightly separated from
+the rest of the array, with elements known to be less than the pivot 
+colored purple and those known to be greater than or equal colored
+green.
+</p>
+
+<p>
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<p>
+<table id="parameters" align="center">
+ <tr>
+  <td> 
+      <ul id="menu">
+        <li> <a href="quicksort-demo.html#">Choose Input</a>
+          <ul>
+            <li id="increasing"> <a href="quicksort-demo.html#">Sorted values</a> </li>
+            <li id="decreasing"> <a href="quicksort-demo.html#">Decreasing values</a> </li>
+            <li id="random"> <a href="quicksort-demo.html#">Random values</a> </li>
+          </ul>
+        </li>
+	<li id="Run"> <a href="quicksort-demo.html#">Sort input</a> </li>
+     </ul>
+  </td>
+  <td> <b>Input size:</b> 
+    <input type="text" id="input-size" size="2" />
+  </td>
+  <td> <b> Smallest <br/> subdivided <br/> partition</b> </td>
+  <td>  <input type="text" id="qsthreshold" size="2" /> </td>
+ </tr>
+</table>
+</p>
+
+<p>
+<div class="demo">
+<svg id="disp" version="1.1" width="800" height="300">
+   <text class="array-label" text-anchor="end" x="82" y="17">
+        Initial array:
+   </text>
+   <g id="input1" transform="translate(92, 2)"> </g>
+
+   <text class="array-label" text-anchor="end" x="76" y="124">Array:</text>
+   <g id="data-qs" transform="translate(90, 109)"> </g>
+
+   <text class="array-label" text-anchor="end" x="167" y="71">
+       Inversion count:
+   </text>
+   <g id="inv-qs" transform="translate(181, 54)"> </g>
+
+   <text class="array-label" text-anchor="end" x="349" y="71">
+       # comparisons:
+   </text>
+   <g id="op-qs" transform="translate(363, 54)"> </g>
+</svg>
+</div>
+</p>
+
+<p>
+<div id="log">
+</div>
+</p>
+
+</body>
+</html>

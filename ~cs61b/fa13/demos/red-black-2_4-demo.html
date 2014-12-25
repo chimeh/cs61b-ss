@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Red-Black Trees and 2-4 Trees</title>
+
+<script src="js/d3.v3.js" charset="utf-8"></script>
+<link href="https://inst.eecs.berkeley.edu/red-black.ico" rel="icon" type="image/x-icon"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/demo-common.js"></script>
+<script type="text/javascript" src="js/treedemos.js"></script>
+<script type="text/javascript" src="js/treedemos.red-black-demo.js"></script>
+<link type="text/css" href="css/demos.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1> Red-Black Trees and 2-4 Trees</h1>
+
+<p> One way to think of red-black trees is as a representation of 2-4 trees. 
+This demonstration shows the relationship: a red-black tree on the left 
+corresponds to the 2-4 tree on the right. 
+You can interactively add and remove items from the 
+red-black tree and see the corresponding changes in the 2-4 tree:
+<ul>
+  <li> Typing a number into the 
+    &ldquo;Value to insert&rdquo; box (followed by &ldquo;Enter&rdquo;) adds it to the tree.</li>
+  <li> Double-clicking a tree node removes it from the tree.</li>
+</ul>
+You can back up or redo an operation using the &ldquo;&lt;&lt;&rdquo; and 
+&ldquo;&gt;&gt&rdquo; buttons.
+Tree nodes that become unreachable (<i>&ldquo;garbage&rdquo;</i>) fall out of the 
+demonstration space.
+
+<p>
+<table>
+<tr>
+    <td colspan=2> <div id="animationSpeed"> </div> </td>
+</tr>
+<tr>
+    <td align="left">Fast</td> <td align="right">Slow </td>
+</tr>
+</table>
+
+<p>
+<table align="center">
+ <tr>
+  <td rowspan=2> <button id="undoAll" class="control-button" title="Rewind to empty tree"> []&lt;&lt; </button> </td>
+  <td > <button id="undo" class="control-button" title="Back up one step"> &lt;&lt; </button> </td>
+  <td > <button id="redo" class="control-button" title="Forward one step"> &gt;&gt; </button> </td>
+  <td rowspan=2> <button id="redoAll" class="control-button" title="Forward to final step"> &gt;&gt;[] </button> </td>
+  <td rowspan=2> <b>Value to insert:</b> 
+    <input type="text" id="insertion" width="4"
+           title="Type a value to insert, followed by Enter" />
+           
+ </tr>
+ <tr>
+    <td align="center"> <button id="undoMinor" class="small-control-button" title="Back up one minor step"> &lt;&lt; </button> </td>
+  <td align="center"> <button id="redoMinor" class="small-control-button" title="Forward one minor step"> &gt;&gt; </button> </td>
+ </tr>
+</table>
+</p>
+
+<p>
+<table>
+<tr>
+  <td id="tree1" class="demo"> </td>
+  <td width="12px"> </td>
+  <td id="tree2" class="demo"> </td>
+</tr>
+</table>
+</p>
+
+<p>
+<div id="log">
+</div>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Multiplying definitions
+
+DEF A(x, y) = 3 x ^ 2 + y;
+DEF B(x, y) = 4 x ^ 2 + 4y ^ 3;
+A(1, 2) B(3, 5);
+A(a, b) B(a, b);
+A(a, b) B(x, y);
+

@@ -1,0 +1,11 @@
+# More input formatting issues
+
+DEF
+A(x, y)
+=
+3x
+^ 2
++ y
+;
+A(3, 
+4);

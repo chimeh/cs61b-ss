@@ -1,0 +1,19 @@
+1. Give some parameters and resulting times for Bitsort and Quicksort
+   (don't be afraid to use problem sizes in the tens of megabytes, but use
+   the instructional servers for this purpose).  
+      
+
+
+   Bitsort (java Bitsort N)           Quicksort (java Quicksort N K)
+   N        Time                      N           K        Time
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+If possible, explain the results.
+

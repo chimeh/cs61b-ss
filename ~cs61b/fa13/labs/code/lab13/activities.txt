@@ -1,0 +1,12 @@
+CS61B Lab #13
+
+1. Project Checkpoint
+---------------------
+
+We expect you're likely to be working feverishly on the project this week, so
+the TAs are here to help you.  In particular, they will be trying to get a
+sense of how far each of you has gotten and what problems you are 
+encountering, as for Projects #1 and #2.
+
+
+

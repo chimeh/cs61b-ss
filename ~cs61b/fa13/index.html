@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<style type="text/css" media="screen">
+  @import url( styles/layout.css );
+</style>
+<head>
+<title>CS61B, Fall 2013</title></head>
+
+<body>
+
+
+<h1 ALIGN=center> CS61B: Data Structures and Advanced Programming </h1>
+<h3 ALIGN=center> Fall 2013, 2050 VALLEY LSB, MWF 3:00-4:00P </h3>
+<h3 ALIGN=center>Instructor: <a href = "http://www.cs.berkeley.edu/~hilfingr">Paul Hilfinger</a></h3>
+
+<P>
+<TABLE BORDER=0 CELLSPACING=6 COLS=2 ALIGN=CENTER>
+  <TR> <TD ALIGN=LEFT> 
+      <a href="cgi-bin/student-admin.cgi" target="_blank">
+      Account Administration (Grades, Registration, etc.) </a>  </TD>
+      <TD ALIGN=LEFT> <a href="handout0.pdf">General Course Information</a>
+  </TR>
+  <TR> <TD ALIGN=LEFT> 
+      Please take our <a href="cgi-bin/survey.cgi?surveyname=background_survey" target="_blank">background survey</a>
+      </TD>
+    <TD> </TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="TA.html">About the Staff</a> </TD> 
+      <TD ALIGN=LEFT> <a href="ta-materials.2">Materials from the TAs</a> </TD>
+<!--      <TD ALIGN=LEFT> <!--<a href="http://tinyurl.com/cs61bfa11ta">Materials from Discussion Sections</a>--> </TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="lectures/index.html">Lecture notes</a></TD>
+      <TD ALIGN=LEFT> <a href="labs/index.html">Labs and Homework</a></TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> 
+        <A HREF="http://www.piazza.com">Piazza Newsgroup</a>
+      </TD>
+      <TD ALIGN=LEFT> <a href="FAQ.html">Frequently Asked Questions</a></TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="http://download.oracle.com/javase/7/docs/api">Java Library Documentation</a>
+ (also: 
+      <a href="http://download.oracle.com/javase/7/docs/api/overview-summary.html">
+      no frames</a>)</TD>
+      <TD ALIGN=LEFT> <a href="docs/quick.pdf">Emacs Quick Guide</a></TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="docs/index.html">Tool Documentation: Subversion, Emacs, etc.</a></TD>
+      <TD ALIGN=LEFT> <a href="book1/java.pdf">A Java Reference</a>.
+</TD> 
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="book2/data-structures.pdf">Data Structures (Into Java)</a> </TD>
+      <TD ALIGN=LEFT>
+         <a href="docs/ucb-docs/index.html">UCB Package Documentation </a>
+      </TD>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="http://inst.eecs.berkeley.edu/cgi-bin/clients.cgi?choice=13">List of instructional login servers</a> </TD>
+      <TD ALIGN=LEFT> Some <a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html"> data-structure visualizations</a> and a 
+<a href="http://en.wikibooks.org/wiki/Data_Structures"> Wikibook.</a></td>
+  </TR>
+  <TR>
+      <TD ALIGN=LEFT> <a href="labs/guidelines.pdf">Some project style guidelines</a> </TD>
+      <TD ALIGN=LEFT> <a href="java-nits.html">A collection of bad Java practices</a> </TD>
+  </TR>
+  <TR> 
+     <TD ALIGN=LEFT> <a href="http://www.cs.berkeley.edu/~hilfingr/programming-contest">Berkeley Programming Contests</TD>
+     <TD> <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Downloading Java.</a></TD>
+  </TR>
+
+<!--
+  <TR>
+      <TD ALIGN=LEFT> <a href="http://java.sun.com/j2se/1.5.0/download.jsp">Download Java system (J2SE 5.0 Beta 2)</a>
+      <TD ALIGN=LEFT> <a href="installing.html">Installing our software at home</a>
+  </TR> -->
+</TABLE>
+
+<h2> <a name="announcements"> </a> Announcements  </h2>
+
+<UL>
+<LI> We have posted <a href="test-solutions/test1-soln.pdf">solutions to Test #1</a> and also <a href="test-solutions/test2-soln.pdf">solutions to Test #2.</a>.
+<LI> To perform a sanity check on your submission, try
+<pre>
+    pretest proj0
+ <i>or</i>
+    pretest tags/proj0-N
+</pre>
+    which checks out your latest version of proj0 (in $MYREPOS/proj0 or 
+    $MYREPOS/tags/proj0-N) and runs
+    a sanity check over it (does it compile; does it run your own tests
+    successfully; does it execute on a trivial file; does it pass the style
+    check?). This looks ONLY at the repository.  Uncommitted stuff sitting in 
+    your current working directory is ignored (just as the autograder
+    will ignore it).
+<LI> Home setup for Linux and MacOS (Lion or above) users:  We have a
+distribution of class software for home use. Here are the
+<a href="homesetup.README">installation instructions.</a> This will give you
+the 'hw' command, gjdb, our CS61B Java packages, Junit, and style61b.
+<LI> Use the <a href="docs/hw.pdf"><code>hw</code> command</a>
+on the instructional machines to 
+submit homework, get homework skeletons, and save versions of your work on an
+assignment (so as to minimize the damage if you accidentally lose your files).
+<LI> Please use <code>bug-submit</code> to submit problems
+ with your programs.  In a directory containing <em>all</em> the files in
+ your assignment (not just the subdirectory containing the you <em>thing</em>
+is the problem), prepare a file called 
+ ERROR containing a description of your problem and the commands needed
+to reproduce the problem (this last is important.)
+Then issue 
+<pre>
+   bug-submit ASSIGNMENT
+</pre>
+where ASSIGNMENT is the name of the assignment (e.g., proj1).
+
+<LI> Graph-algorithm demos are available via the command 
+<pre>
+    graph-demo
+</pre> 
+on the instructional machines.  There are some sample files
+in directory <tt>/home/ff/cs61b/code/graph-demos</tt>.
+<LI> Here are <a href="samples.2">sample tests and solutions. </a>
+<LI> FYI: Here a few common <a href="project-comments">project comments</a>
+     that I have made about projects in the past.
+</UL>
+
+<h2> Various Information </h2>
+
+<UL>
+<LI> Here are some pointers about
+     <a href="http://inst.eecs.berkeley.edu/connecting.html">connecting from
+     home.</a> </LI>
+</UL>
+
+<ADDRESS>
+Page was last modified on Sat Nov 23 01:40:50 2013. <br>
+Address comments and questions to
+<A NAME="webmaster" HREF="mailto:cs61b@imail.eecs.berkeley.edu">
+cs61b@imail.eecs.berkeley.edu</A>
+</ADDRESS>
+
+</body></html>

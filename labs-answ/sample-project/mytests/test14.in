@@ -1,0 +1,5 @@
+# Erroneous input 6
+
+DEF A(x) = x^2;
+
+B(x);
