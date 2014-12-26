@@ -104,7 +104,24 @@ class Progs {
      *  It is an error if the desired items don't exist. */
     static IntList dsublist(IntList L, int start, int len) {
         /* *Replace the following with the answer* */
-        return null;
+        checkArg(L, start, len);
+        /*  */
+        if(start == 0 && len == 0) {
+            L = null;
+            return L;
+        }
+        if(start == 0 && len == 1) {
+            L.tail = null;
+            return L;
+        }
+        else if(start == 0 && len > 0) {
+            dsublist(L.tail, start, len - 1);
+            return L;
+        }
+        else {
+            return dsublist(L.tail, start -1, len);
+        }
+
     }
 
 }

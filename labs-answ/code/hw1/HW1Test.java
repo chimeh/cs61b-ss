@@ -91,7 +91,27 @@ public class HW1Test {
 
     /** Return true iff dsublist passes its tests. */
     private static boolean testDsublist() {
-        return false;
+        IntList ret = null;
+        ret = Progs.dsublist(IntList.list(1, 2, 3, 4, 5, 6), 0, 0);
+        if(!(ret == null)){
+            return false;
+        }
+        ret = Progs.dsublist(IntList.list(1, 2, 3, 4, 5, 6, 7), 1, 0);
+        if(!(ret == null)){
+            return false;
+        }
+        ret = Progs.dsublist(IntList.list(1, 2, 3, 4, 5, 6, 7, 8), 0, 4);
+        //System.out.println(ret.toString());
+         if(!ret.equals(IntList.list(1, 2, 3, 4))){
+             return false;
+         }
+        ret = Progs.dsublist(IntList.list(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3);
+        //System.out.println(ret.toString());
+         if(!ret.equals(IntList.list(5, 6, 7))){
+             return false;
+         }
+
+        return true;
     }
 
 }
