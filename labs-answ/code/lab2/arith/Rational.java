@@ -3,15 +3,27 @@ package arith;
 /** A rational number.  Members of this class, like the Integer and Double
  *  wrapper classes, are immutable.  Operations create new Rational objects
  *  rather than modifying existing ones.
- *  @author
+ *  @huangjimin
  */
-public class Rational {
+public class Rational implements  Comparable<Rational> {
     // WARNING! Currently, this class is incomplete and has at least one
     // bug.
 
     /** Return the rational number NUM/DEN, where DEN is non-zero. */
     public static Rational frac(long num, long den) {
-        return new Rational(num, den);   // ??
+    	if(den == 0) {
+    	    throw new IllegalArgumentException("den can't eq 0");
+    	}
+    	if(num == 0) {
+    	   return new Rational(0L, 1L);   
+    	}
+    	if(num < 0 && den < 0) {
+    	    return new Rational(-num, -den);
+    	}
+    	long gcd = gcd(num, den);
+    	num = (den/Math.abs(den) * num)/gcd;
+    	den = Math.abs(den)/gcd;
+        return new Rational(num, den);
     }
 
     /** Returns the rational number X. */
@@ -23,7 +35,20 @@ public class Rational {
      *  NUM/DEN, +NUM/DEN, -NUM/DEN, +NUM, or -NUM for NUM and DEN
      *  integer numerals and DEN a non-zero integer numeral. */
     public static Rational frac(String val) {
-        return null; // ??
+        long num = 0L;
+        long den = 1L;
+        int sep = val.indexOf('/');
+        
+        if(sep == -1) {
+               num = Long.parseLong(val);
+               den = 1L;
+        }
+        else {
+            num = Long.parseLong(val.substring(0, sep-1));
+            den = Long.parseLong(val.substring(sep+1));
+        }
+        //return new Rational(num, den); //@bug
+        return frac(num, den);
     }
 
     /** Returns the value N, where THIS, in lowest terms, is N/D, and D>0. */
@@ -47,7 +72,38 @@ public class Rational {
             return String.format("%d/%d", _num, _den);
         }
     }
-
+    
+    public int compareTo(Rational val) {
+        if(_num * val.denom() == _den *val.numer()) {
+            return 0;   
+        }
+        else if (_num * val.denom() >  _den *val.numer()) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+    
+    public Rational abs(Rational val) {
+        return null;
+    }
+    public Rational add(Rational val) {
+        return null;
+    }
+    public Rational div(Rational val) {
+        return null;
+    }
+    public Rational sub(Rational val) {
+        return null;
+    }
+    public Rational max(Rational val) {
+        return null;
+    }
+    public Rational min(Rational val) {
+        return null;
+    }
+    
     /** I represent NUM/DEN, which are kept in lowest terms. */
     private final long _num, _den;
 
