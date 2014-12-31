@@ -1,7 +1,7 @@
 package arith;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import junit.Test;
+import static junit.Assert.*;
 
 import static arith.Rational.*;
 

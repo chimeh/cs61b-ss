@@ -12,7 +12,7 @@ public class Rational implements  Comparable<Rational> {
     /** Return the rational number NUM/DEN, where DEN is non-zero. */
     public static Rational frac(long num, long den) {
     	if(den == 0) {
-    	    throw new IllegalArgumentException("den can't eq 0");
+    	    throw new IllegalArgumentException("denominator can't eq 0");
     	}
     	if(num == 0) {
     	   return new Rational(0L, 1L);   
@@ -74,10 +74,10 @@ public class Rational implements  Comparable<Rational> {
     }
     
     public int compareTo(Rational val) {
-        if(_num * val.denom() == _den *val.numer()) {
+        if(_num * val.denom() == _den * val.numer()) {
             return 0;   
         }
-        else if (_num * val.denom() >  _den *val.numer()) {
+        else if (_num * val.denom() >  _den * val.numer()) {
             return 1;
         }
         else {
@@ -86,22 +86,43 @@ public class Rational implements  Comparable<Rational> {
     }
     
     public Rational abs(Rational val) {
-        return null;
+        if(val.numer() <0) {
+            return frac(-val.numer(), val.denom());
+        }
+        else {
+           return frac(val.numer(), val.denom());
+        }
     }
     public Rational add(Rational val) {
-        return null;
+        long snum = this.numer() * val.denom() + val.numer() * this.denom();
+        long sden = this.denom() * val.denom();
+        return frac(snum, sden);
     }
     public Rational div(Rational val) {
-        return null;
+        long snum = this.numer() * val.denom();
+        long sden = this.denom() * val.numer();
+        return frac(snum, sden);
     }
     public Rational sub(Rational val) {
-        return null;
+        long snum = this.numer() * val.denom() - val.numer() * this.denom();
+        long sden = this.denom() * val.denom();
+        return frac(snum, sden);
     }
     public Rational max(Rational val) {
-        return null;
+        if(this.numer()*val.denom() - val.numer()*this.denom() > 0) {
+            return this;
+        }
+        else {
+            return val;
+        }
     }
     public Rational min(Rational val) {
-        return null;
+        if(this.numer()*val.denom() - val.numer()*this.denom() < 0) {
+            return this;
+        }
+        else {
+            return val;
+        }
     }
     
     /** I represent NUM/DEN, which are kept in lowest terms. */
