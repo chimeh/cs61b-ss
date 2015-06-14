@@ -1,7 +1,7 @@
 package arith;
 
-import junit.Test;
-import static junit.Assert.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 import static arith.Rational.*;
 
@@ -12,7 +12,7 @@ public class RationalTest {
 
     /* Run the unit tests in this file. */
     public static void main(String... args) {
-        System.exit(ucb.junit.textui.runClasses(RationalTest.class));
+        System.exit(jh61b.junit.textui.runClasses(RationalTest.class));
     }
 
     @Test public void frac1() {
