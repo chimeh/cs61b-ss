@@ -3,7 +3,7 @@ package arith;
 /** A rational number.  Members of this class, like the Integer and Double
  *  wrapper classes, are immutable.  Operations create new Rational objects
  *  rather than modifying existing ones.
- *  @huangjimin
+ *  @author huangjimin
  */
 public class Rational implements  Comparable<Rational> {
     // WARNING! Currently, this class is incomplete and has at least one
@@ -11,18 +11,18 @@ public class Rational implements  Comparable<Rational> {
 
     /** Return the rational number NUM/DEN, where DEN is non-zero. */
     public static Rational frac(long num, long den) {
-    	if(den == 0) {
-    	    throw new IllegalArgumentException("denominator can't eq 0");
-    	}
-    	if(num == 0) {
-    	   return new Rational(0L, 1L);   
-    	}
-    	if(num < 0 && den < 0) {
-    	    return new Rational(-num, -den);
-    	}
-    	long gcd = gcd(num, den);
-    	num = (den/Math.abs(den) * num)/gcd;
-    	den = Math.abs(den)/gcd;
+        if (den == 0) {
+            throw new IllegalArgumentException("denominator can't eq 0");
+        }
+        if (num == 0) {
+            return new Rational(0L, 1L);   
+        }
+        if (num < 0 && den < 0) {
+            return new Rational(-num, -den);
+        }
+        long gcd = gcd(num, den);
+        num = (den / Math.abs(den) * num) / gcd;
+        den = Math.abs(den) / gcd;
         return new Rational(num, den);
     }
 
@@ -39,15 +39,14 @@ public class Rational implements  Comparable<Rational> {
         long den = 1L;
         int sep = val.indexOf('/');
         
-        if(sep == -1) {
-               num = Long.parseLong(val);
-               den = 1L;
+        if (sep == -1) {
+            num = Long.parseLong(val);
+            den = 1L;
         }
         else {
-            num = Long.parseLong(val.substring(0, sep-1));
-            den = Long.parseLong(val.substring(sep+1));
+            num = Long.parseLong(val.substring(0, sep - 1));
+            den = Long.parseLong(val.substring(sep + 1));
         }
-        //return new Rational(num, den); //@bug
         return frac(num, den);
     }
 
@@ -74,7 +73,7 @@ public class Rational implements  Comparable<Rational> {
     }
     
     public int compareTo(Rational val) {
-        if(_num * val.denom() == _den * val.numer()) {
+        if (_num * val.denom() == _den * val.numer()) {
             return 0;   
         }
         else if (_num * val.denom() >  _den * val.numer()) {
@@ -86,15 +85,20 @@ public class Rational implements  Comparable<Rational> {
     }
     
     public Rational abs(Rational val) {
-        if(val.numer() <0) {
+        if (val.numer() < 0) {
             return frac(-val.numer(), val.denom());
         }
         else {
-           return frac(val.numer(), val.denom());
+            return frac(val.numer(), val.denom());
         }
     }
     public Rational add(Rational val) {
         long snum = this.numer() * val.denom() + val.numer() * this.denom();
+        long sden = this.denom() * val.denom();
+        return frac(snum, sden);
+    }
+    public Rational sub(Rational val) {
+        long snum = this.numer() * val.denom() - val.numer() * this.denom();
         long sden = this.denom() * val.denom();
         return frac(snum, sden);
     }
@@ -103,13 +107,13 @@ public class Rational implements  Comparable<Rational> {
         long sden = this.denom() * val.numer();
         return frac(snum, sden);
     }
-    public Rational sub(Rational val) {
-        long snum = this.numer() * val.denom() - val.numer() * this.denom();
+    public Rational mul(Rational val) {
+        long snum = this.numer() * val.numer();
         long sden = this.denom() * val.denom();
         return frac(snum, sden);
     }
     public Rational max(Rational val) {
-        if(this.numer()*val.denom() - val.numer()*this.denom() > 0) {
+        if (this.numer() * val.denom() - val.numer() * this.denom() > 0) {
             return this;
         }
         else {
@@ -117,7 +121,7 @@ public class Rational implements  Comparable<Rational> {
         }
     }
     public Rational min(Rational val) {
-        if(this.numer()*val.denom() - val.numer()*this.denom() < 0) {
+        if (this.numer() * val.denom() - val.numer() * this.denom() < 0) {
             return this;
         }
         else {

@@ -5,12 +5,12 @@ import static arith.Rational.frac;
 // with appropriate code.
 
 /** Square root implementation on rational numbers.
- *  @author
+ *  @author jimmy
  */
 public class Root2 {
 
     /** Tolerance of approximation. */
-    private static final Rational EPS = /* 1.0e-6 */ null;
+    private static final Rational EPS = frac(1).div(frac(1000000L));
 
     /** Return the Kth root of X, where X >= 0, K >= 1. */
     static Rational root(Rational x, int k) {
@@ -18,25 +18,25 @@ public class Root2 {
          * corrections are negative.  We continue until the estimated
          * magnitude of the relative error is less than that of EPS. */
 
-        if (/* x < 0.0 */ false) {
+        if (x.compareTo(frac(0)) == -1) {
             throw new IllegalArgumentException("x must be non-negative");
         }
         if (k < 1.0) {
             throw new IllegalArgumentException("k must be >= 1");
         }
-        if (/* x == 0.0 */ false) {
-            return /* 0.0 */ null;
+        if (x.compareTo(frac(0)) == 0) {
+            return x;
         }
 
         Rational y, err;
-        Rational threshold = /* -k * EPS * x */ null;
-        y = /* Math.max (1.0, x) */ null;
+        Rational threshold =  frac(-k).mul(EPS).mul(x);
+        y = x.max(frac(1));
 
         do {
             Rational yk1 = power(y, k - 1);
-            err = /* x - yk1 * y */ null;
-            y = /* y + err / (k * yk1) */ null;
-        } while (/* err < threshold */ false);
+            err = x.sub(yk1.mul(y));
+            y = y.add(err.div(yk1.mul(frac(k))));
+        } while (err.compareTo(threshold) < 0);
 
         return y;
     }
@@ -47,20 +47,20 @@ public class Root2 {
          * Java Note: m&1 is the units bit of m, hence 1 if m is odd and 0
          * if it is even. */
 
-        if (/* x == 0.0 || x == 1.0 || */ k == 1) {
+        if (x.compareTo(frac(0)) == 0 || x.compareTo(frac(1)) == 0 || k == 1) {
             return x;
         }
         if (k == 0) {
-            return /* 1.0 */ null;
+            return  frac(1);
         }
         Rational z;
-        z = /* 1.0 */ null;
+        z = frac(1);
         while (k != 0) {
             if ((k & 1) == 1) {
-                /* z *= x */;
+                z = z.mul(x);
             }
             k /= 2;
-            /* x *= x; */
+            x = x.mul(x);
         }
         return z;
     }
