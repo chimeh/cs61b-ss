@@ -83,7 +83,9 @@ public class IntList {
         StringBuffer b = new StringBuffer();
         b.append("[");
         for (IntList L = this; L != null; L = L.tail) {
-            b.append(" " + L.head);
+            b.append(L.head);
+            if(L.tail != null)
+                b.append(", ");
         }
         b.append("]");
         return b.toString();
