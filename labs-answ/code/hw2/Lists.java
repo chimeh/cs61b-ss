@@ -15,6 +15,47 @@ class Lists {
      *  original list pointed to by L. */
     static IntList2 naturalRuns(IntList L) {
         /* *Replace this body with the solution. */
-        return null;
+        IntList2 result = new IntList2(null, null);
+        if (L == null) {
+            return result.tail;
+        }
+        IntList s = L;
+        IntList2 d = result;
+        while(s != null) {
+            s = cutnewasc(L);
+            IntList2 e = new IntList2(L, null);
+            d.tail = e;
+            d = d.tail;
+            L = s;
+        }
+        return result.tail;
+    }
+    /** Breaking up L into two part: first sublist meet "natural runs" and remain list ,
+     *  return remain: that is, maximal ascending sublists, in the same order as
+     *  the original.  For example, if s is (1, 3, 7, 5, 4, 6, 9, 10),
+     *  then result is two part: s become(1, 3, 7),remain =  (5, 4, 6, 9, 10).
+     */
+    static IntList cutnewasc(IntList s) {
+        IntList ret;
+        if(s == null) {
+        return s;
+        }
+        else {
+            for (; s.tail != null && s.head  <= s.tail.head; s = s.tail) {
+            }
+            ret = s.tail;
+            s.tail = null;
+            return ret;
+        }
+    }
+        /** Returns a readable String for THIS. */
+    static String toString(IntList2 L2) {
+        StringBuffer b = new StringBuffer();
+        b.append("[");
+        for (IntList2 e = L2; e != null; e = e.tail) {
+            b.append(e.head.toString() + ",");
+        }
+        b.append("]");
+        return b.toString();
     }
 }
