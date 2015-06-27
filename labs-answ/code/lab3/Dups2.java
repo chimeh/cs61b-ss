@@ -32,6 +32,7 @@ public class Dups2 {
      *  Each item appears once in the result.
      */
     static List<String> duplicates(List<String> L) {
+        /*
         ArrayList<String> result = new ArrayList<String>();
         int n;
         n = 0;
@@ -49,6 +50,17 @@ public class Dups2 {
                     result.add(x);
                     break;
                 }
+            }
+        }
+        */
+        ArrayList<String> result = new ArrayList<String>();
+        for ( ListIterator<String> p1 = L.listIterator(); p1.hasNext();) {
+            String x = p1.next();
+            if (result.contains(x)) {
+                continue;
+            }
+            if (L.subList(p1.nextIndex() , L.size()).contains(x)) {
+                result.add(x);
             }
         }
         return result;
