@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 import java.io.PrintStream;
-/* import java.util.Collections     Hint: may be useful for 2b. */
+import java.util.Comparator;
+import java.util.Collections;     /* Hint: may be useful for 2b. */
 
 /** Program to read a sequences of words and print all words in it that
  *  appear more than once.
  *  @author P. N. Hilfinger
+ *  @author Jimmy
  */
 public class Dups2 {
 
@@ -63,6 +65,11 @@ public class Dups2 {
                 result.add(x);
             }
         }
+        Collections.sort(result, new Comparator<String>() {
+            public int compare(String s1, String s2) {
+                return s1.compareToIgnoreCase(s2);
+            }}
+        );
         return result;
     }
 
