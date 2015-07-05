@@ -6,6 +6,8 @@ import java.util.Scanner;
 import java.io.PrintStream;
 import java.util.Comparator;
 import java.util.Collections;     /* Hint: may be useful for 2b. */
+import java.util.TreeSet;
+import java.util.AbstractCollection;
 
 /** Program to read a sequences of words and print all words in it that
  *  appear more than once.
@@ -55,22 +57,16 @@ public class Dups2 {
             }
         }
         */
-        ArrayList<String> result = new ArrayList<String>();
-        for ( ListIterator<String> p1 = L.listIterator(); p1.hasNext();) {
-            String x = p1.next();
-            if (result.contains(x)) {
-                continue;
-            }
-            if (L.subList(p1.nextIndex() , L.size()).contains(x)) {
-                result.add(x);
-            }
-        }
-        Collections.sort(result, new Comparator<String>() {
+        TreeSet<String> result = new TreeSet<String>(new Comparator<String>() {
             public int compare(String s1, String s2) {
                 return s1.compareToIgnoreCase(s2);
-            }}
-        );
-        return result;
+            }});
+        for ( ListIterator<String> p1 = L.listIterator(); p1.hasNext();) {
+            String x = p1.next();
+            result.add(x);
+        }
+        
+        return new ArrayList<String>(result);
     }
 
 
