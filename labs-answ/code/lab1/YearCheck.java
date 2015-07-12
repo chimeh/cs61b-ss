@@ -21,6 +21,9 @@ public class YearCheck {
     static boolean isLeapYear(int year) {
         // REPLACE THE CURRENT BODY WITH LINES FROM YearCheck.stuff,
         // SUITABLY INDENTED.
+        if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+            return true;
+        }
         return false;
     }
 }
