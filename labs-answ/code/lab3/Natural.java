@@ -17,8 +17,8 @@ public class Natural {
         i = 0;
         while (i < L.size()) {
             int j;
-            j = i;
-            while (j + 1 < L.size() && L.get(j) < L.get(j + 1)) {
+            j = i+1;
+            while (j < L.size() && L.get(j-1) < L.get(j)) {
                 j += 1;
             }
             result.add(L.subList(i, j));
