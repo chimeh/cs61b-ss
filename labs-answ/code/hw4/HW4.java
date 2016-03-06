@@ -14,11 +14,11 @@ public class HW4 {
 
     /* Problem 1 */
     /** A pattern that matches ',' followed by arbitrary whitespace. */
-    public static final String DELIM_P1 = "<REPLACE>";
+    public static final String DELIM_P1 = ",\\s*";
     /** A pattern that matches valid non-delimiter strings other
      *  than floating-point numbers. */
     public static final String OKSTRING_P1 =
-        "\\G<REPLACE>";
+        "\\G([^-.0-9]+[^,]*)";
 
     /* Problem 2 */
     /** A pattern that matches signed floating-point or integer
