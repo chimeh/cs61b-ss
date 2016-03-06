@@ -18,16 +18,24 @@ public class HW4 {
     /** A pattern that matches valid non-delimiter strings other
      *  than floating-point numbers. */
     public static final String OKSTRING_P1 =
-        "\\G([^-.0-9]+[^,]*)";
+        "\\G([^-.0-9,]+)";
 
     /* Problem 2 */
     /** A pattern that matches signed floating-point or integer
      *  numerals. */
+    /*  注意 "\\G([0-9]+|[0-9]+[.][0-9]*|[.][0-9]*|[0-9]+[e]-?[0-9]*"是错误的，优先级错误, 导致1e2匹配成1
+     * "\\G([0-9]+[.][0-9]*|[.][0-9]*|[0-9]+[e]-?[0-9]*" 才是正确的
+     *
+     */
+
     public static final String DOUBLE_P2 =
-        "\\G<REPLACE>";
+            "\\G([0-9]+[.][0-9]*"
+                    + "|[.][0-9]*"
+                    + "|[0-9]+[e]-?[0-9]+"
+                    + "|[0-9]+)";
     /** A pattern that matches valid non-delimiter strings. */
     public static final String ANY_STRING_P2 =
-        "\\G<REPLACE>";
+        "([^-.0-9,]+)";
 
     /* Problem 3 */
     /** A pattern that matches a simple HTML markup. Group 1 matches
