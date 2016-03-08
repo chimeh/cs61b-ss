@@ -43,8 +43,9 @@ public class HW4 {
      *  3 matches the attribute name, if present.  Group 4 matches the
      *  attribute value (without quotes).  Group 5 matches the closing
      *  '/', if present. */
+    /*正则表达式有优先级吗，为何这里需要问号*/
     public static final String HTML_P3 =
-        "<REPLACE>";
+        "<(/)?([\\w]+)[\\s]*([\\w]+)?[\\s]*?[=]?[\\s]?\"?([\\w]+)?\"?(/)?>";
 
     /* Problem 4 */
     /** A format (in printf style) that places a string and a double

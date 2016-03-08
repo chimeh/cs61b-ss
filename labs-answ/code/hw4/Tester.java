@@ -18,7 +18,7 @@ public class Tester {
         p1("tests/p1-2.inp", HW4.DELIM_P1, HW4.OKSTRING_P1);
         p2("tests/p1-2.inp", HW4.DELIM_P1, HW4.OKSTRING_P1,
             HW4.DOUBLE_P2, HW4.ANY_STRING_P2);
-       // p3("tests/p3.inp", HW4.HTML_P3);
+        p3("tests/p3.inp", HW4.HTML_P3);
         //p4("tests/p4.inp", HW4.FORMAT_P4);
     }
 
@@ -88,6 +88,8 @@ public class Tester {
         Scanner inp = new Scanner(new FileReader(name));
         while (inp.findWithinHorizon(markup, 0) != null) {
             MatchResult mat = inp.match();
+/*            out.printf("%s|%s|%s|%s|%s\r\n", mat.group(1), mat.group(2), mat.group(3),
+                    mat.group(4), mat.group(5));*/
             if (mat.group(1) != null
                 && (mat.group(5) != null || mat.group(3) != null)) {
                 out.printf("Bad markup.%n");
