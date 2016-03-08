@@ -50,6 +50,6 @@ public class HW4 {
     /* Problem 4 */
     /** A format (in printf style) that places a string and a double
      *  in the format specified for problem 4. */
-    public static final String FORMAT_P4 = "<REPLACE>";
+    public static final String FORMAT_P4 = "%-9s|%8.2f\n";
 
 }

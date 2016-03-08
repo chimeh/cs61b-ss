@@ -19,7 +19,7 @@ public class Tester {
         p2("tests/p1-2.inp", HW4.DELIM_P1, HW4.OKSTRING_P1,
             HW4.DOUBLE_P2, HW4.ANY_STRING_P2);
         p3("tests/p3.inp", HW4.HTML_P3);
-        //p4("tests/p4.inp", HW4.FORMAT_P4);
+        p4("tests/p4.inp", HW4.FORMAT_P4);
     }
 
     /** Problem 1 test on file NAME. DELIM is a delimiter pattern
