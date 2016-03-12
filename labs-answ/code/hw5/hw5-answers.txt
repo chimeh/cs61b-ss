@@ -1,0 +1,17 @@
+3. Suppose that f(n) is a positive, non-decreasing function. Show that ⌈f(n)⌉ ∈ O(f(n)).
+证明存在常数K、M，当n>M时，始终满足f(n)<Kf(n)，K为大于1即可，f(n)单调不减，M随意
+
+4. Suppose that p(x) is any polynomial in x with positive coefficients. Show that log p(x) ∈
+O(log x).
+
+存在常数K、M，当x>M时，始终满足log p(x)<Klog x.
+即存在常数K、M，当x>M时，始终存在log p(x)<log x^K，即log x^K - log p(x) > 0，即
+log (x^K/p(x)) > 0，因log是单调递增函数，任一对满足M^K/p(M) > 1的K、M即可
+
+
+5. Show that logb f(x) ∈ Θ(log f(x)) for any constant b > 1 (注意，b为底数，b>1)
+
+存在常数K1、M1、K2、M2，当x>max(M1, M2)时，始终满足K1log f(x) <logb f(x) < K2log f(x)
+即证明 log K1*logb*log f(x) < logf(x) <K2*logb* log f(x)或
+log K1*logb*log f(x) > logf(x) >K2*logb* log fa(x) (
+因b>1, 故logb >0, 因log f(x)是单调函数，显然存在K1, K2，及某个起始点，使满足条件
