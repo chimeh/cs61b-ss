@@ -13,7 +13,7 @@ class ReadFacts {
 
     /** Pattern describing sentences "<Name> is [not] the <Occupation>". */
     static final Pattern NAME_OCC_PATN =
-        Pattern.compile("REPLACE WITH REAL PATTERN");
+        Pattern.compile("\\G\\W*([A-Z][A-Za-z]*)\\b\\s+is\\s+(not\\s+)?the\\s+(\\p{Lower}+)");
 
     /** Print out the sentences in the file named ARGS[0]. */
     public static void main(String... args) {
@@ -34,9 +34,10 @@ class ReadFacts {
         while (true) {
             if (inp.findInLine(NAME_OCC_PATN) != null) {
                 MatchResult mat = inp.match();
-                String name = ""; // REPLACE
-                boolean negated = false; // REPLACE
-                String occupation = ""; // REPLACE
+                System.out.printf("%s|%s|%s\n",mat.group(1), mat.group(2), mat.group(3));
+                String name = mat.group(1); // REPLACE
+                boolean negated = mat.group(2) == null ? false : true; // REPLACE
+                String occupation = mat.group(3); // REPLACE
                 System.out.printf("%s is%s the %s.%n",
                                   name, negated ? " not" : "", occupation);
             } else if (false) { // CHANGE THIS TO A REAL TEST
@@ -45,6 +46,7 @@ class ReadFacts {
                 String rest = ""; // REPLACE TO FETCH THE REST OF THE LINE
                 if (true) { // CHANGE THIS TO A REAL TEST
                     System.out.println("<TRAILING GARBAGE ON LINE>");
+                    break;
                 }
             }
         }
