@@ -11,26 +11,51 @@ This table shows the parameters a, b, and c in the formula
 for the running time (in seconds) of several different programs running on
 random, uniformly distributed data.
 
-Machine:
+Machine: Linux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
 
 Program            |    a    |     b    |      c
 -------------------+---------+----------+------------
                    |         |          |
-Sorter             |         |          |
+Sorter             |1.2*10^-10 | -6.4*10^-7|0.0
                    |         |          |
 -------------------+---------+----------+------------
                    |         |          |
-csort (-O2)        |         |          |
+csort (-O2)        |1.4*10^-10| -1.4*10^-6 |0.0
                    |         |          |
 -------------------+---------+----------+------------
                    |         |          |
-Sorter2            |         |          |
+Sorter2            |2.2*10^-9 | -6.6*10^-4 |48.2
                    |         |          |
 -------------------+---------+----------+------------
                    |         |          |
-csort (-O0)        |         |          |
+csort (-O0)        |6.0*10^-10| -1.6*10^-5|1.5
                    |         |          |
+experiment data:
+Linux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+java Sorter (double [])
+a*10^10+b*10^5+c=1.2
+a*16*10^10+b*4*10^5+c=19.4
+a*64*10^10+b*8*10^5+c=78
 
+csort with -O2
+a*10^10+b*10^5+c=1.4
+a*16*10^10+b*4*10^5+c=22.5
+a*64*10^10+b*8*10^5+c=90.8
+
+csort with -O0
+a*10^10+b*10^5+c=6
+a*16*10^10+b*4*10^5+c=92
+a*64*10^10+b*8*10^5+c=376
+
+java Sorter2 (ArrayList<Double>)
+a*10^10+b*10^5+c=4.4
+a*16*10^10+b*4*10^5+c=136.4
+a*64*10^10+b*8*10^5+c=927.0
+
+java Sorter3 (LinkedList<Double>)
+a*10^6+b*10^3+c=2.0
+a*4*10^6+b*4*10^3+c=16.8
+a*64*10^6+b*8*10^3+c=140.8
 
 Table II.  Cost parameters for a different machine
 ----- ---  ---- ---------- --- - --------- -------

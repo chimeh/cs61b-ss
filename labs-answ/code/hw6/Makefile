@@ -1,4 +1,6 @@
-JFLAGS = -g -Xlint:unchecked
+CURDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+CLASSLIB := $(realpath $(CURDIR)/../lib)/*:$(CLASSPATH)
+JFLAGS = -g -Xlint:unchecked -classpath $(CLASSLIB)
 
 %.class: %.java
 	javac $(JFLAGS) $<
