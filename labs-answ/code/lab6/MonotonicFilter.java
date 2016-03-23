@@ -12,14 +12,17 @@ class MonotonicFilter<Value> extends Filter<Value> {
     /** A filter of values from INPUT that delivers a monotonic
      *  subsequence.  */
     MonotonicFilter(Iterator<Value> input) {
-        // FIXME
+        super(input);
+        this.cur = null;
     }
 
     @Override
     protected boolean keep() {
-        return false;  // FIXME
+        if (cur != null) {
+            
+        }
     }
+    private Value cur;
 
-    // FIXME
 
 }

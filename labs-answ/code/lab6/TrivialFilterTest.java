@@ -13,7 +13,7 @@ public class TrivialFilterTest {
     @org.junit.Test
     public void testIterator() throws Exception {
         ArrayList<Integer> tv = new ArrayList();
-        for (int i; i < 30; i++) {
+        for (int i=0; i < 30; i++) {
             tv.add(i);
         }
         TrivialFilter<Integer> tfiter = new TrivialFilter(tv.iterator());
