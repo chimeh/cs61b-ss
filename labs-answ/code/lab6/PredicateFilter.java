@@ -18,7 +18,7 @@ class PredicateFilter<Value> extends Filter<Value> {
 
     @Override
     protected boolean keep() {
-        if（pred.test(this._next)） {
+        if(pred.test(this._next)) {
             return true;
         }
         return false;
