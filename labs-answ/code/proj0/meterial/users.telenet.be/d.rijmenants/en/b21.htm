@@ -1,0 +1,314 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="The Hagelin C-52 and CX-52 Cipher Machines. Technical details and software simulations.">
+<meta name="keywords"
+content="hagelin, cx-52, c-52, cipher machines, cipher machine, pin and lug, dirk rijmenants">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Hagelin B-21</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Hagelin
+                        B-21 Cipher Machine</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a>
+                        <a href="hagelinmenu.htm" class="menu">Menu</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        History of the B-21</font></h4>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td valign="top"><p align="left"><font size="2">The
+                B-21 was the first cipher machine, invented by
+                Boris Hagelin, that was commercialised by A.B
+                Cryptograph. When in 1925 the Swedish General
+                Staff was searching for an alternative to the
+                German Enigma machine, Boris Hagelin told them
+                that he was experience in the design of cipher
+                machines and that he would produce, within six
+                months, a machine that was superior to the
+                Enigma. This was actually quite a display of
+                bluff poker, as Hagelin had nothing to start
+                from. They agreed and Boris managed to get the
+                machine finished in time. The only resemblance
+                with the enigma is the keyboard and the lamps.</font></p>
+                <p align="left"><font size="2">You can click the
+                images to enlarge them. All images Copyrighted,
+                courtesy John Alexander, Leicester.<br>
+                <br>
+                <br>
+                </font></p>
+                <h4 align="left"><font size="2">Technical
+                Decription</font></h4>
+                <p align="left"><font size="2">The B-21 was the
+                breakthrough design that started the commercial
+                success of Hagelin Cryptos. Hagelin started with
+                an existing design of Arvid Damm, the 'simplified
+                rotors' in a five by five grid. These rotors were
+                completely different in design and functioning as
+                the rotors of the German Enigma machine. The
+                Enigma had three rotors, each with 26 contacts,
+                one for each letter of the alphabet, and a
+                reflector to return the signal back into the
+                rotors. The Damm design required only two rotors
+                with five input contacts and ten output contacts.</font></p>
+                <p align="left"><font size="2">Beneath the
+                keyboard there are 10 horizontal bars [1] that
+                can be divided into 2 groups of 5 bars. If a key
+                [2] on the keyboard is depressed, one bar of the
+                first group and one bar of the second group is
+                shifted horizontally. All 25 keys have a
+                different combination of 2 bars, one in each
+                group of five. The bars control 10 switches [3]
+                which are also divided into 2 groups of 5
+                contacts. On the first group of five contacts,
+                one side leads to the positive of the power
+                supply and the other side leads to the first
+                rotor [4]. On the second group of five contacts,
+                one side leads to the negative of the power
+                supply and the other side leads to the second
+                rotor [5]. Each rotor has 5 ring contacts and 10
+                output contacts. The 5 input contacts are
+                scrambled to the odd output contacts in one
+                manner and scrambled to the even output contacts
+                in another manner. With each of the 10 steps of
+                the rotor there is switched between the odd and
+                even output contacts to pass the signal to the
+                static output rotor [6]. The output of both
+                rotors leads to a five by five matrix [7] with 25
+                lamps (one letter is omitted or combined with
+                another). The 10 rotor positions are labeled A to
+                K (the letter J is omitted)</font></p>
+                <p align="left"><img src="../pics/b21plan.jpg"
+                border="1" width="510" height="429"></p>
+                <h4 align="left"><font size="2"><br>
+                <br>
+                The Pin-wheels</font></h4>
+                <p align="left"><font size="2">The design of
+                these rotors wasn't new, but it did a good job to
+                scramble the electric signals. However, the
+                innovation in the design was how these two rotors
+                were stepped, and this completely new design by
+                Boris Hagelin would determine the unique Hagelin
+                machines for decades. The B-21 is the first
+                machine to use the famous pin-wheels, also called
+                key-wheels. The B-21 has four of these pin-wheels
+                with 17 (A to R), 19 (A to T), 21 (A to V) and 23
+                (A to X) pins, which all step each time a
+                keyboard key is depressed (the letter J is
+                omitted at the wheels). The combination of these
+                primes, together with the 10 possible positions
+                of the ciphering rotor, produces a maximum
+                periodicity of 1,560,090.</font></p>
+                <p align="left"><font size="2">The two left side
+                pin-wheels control the left side rotor and the
+                two on the right side the right rotor. If a pin
+                occurs on one pin-wheel, on the other pin-wheel
+                or on both wheels of such a pair, the controlled
+                rotor is advanced one step. This produces a very
+                irregular stepping of the two ciphering rotors.
+                The number of possible pin combinations for all
+                pin-wheel together is an enormous 10<sup>24</sup>.</font></p>
+                <p align="left"><font size="2">The key setting of
+                the machine consists of two parts. The first part
+                is the setting of the pins on the four pin-wheels
+                (active or passive). This setting was generally
+                changed once every 24 hours. The second part is
+                the initial position of the pin-wheels and the
+                ciphering rotors at the beginning of the message,
+                the so-called message key. This message key had
+                to be unique for every message. To manually
+                change the pin-wheel position, the pin-wheels are
+                disengaged from the gear system with a half turn
+                of an eccentric handle. </font></p>
+                <p align="left"><font size="2">When the machine
+                cover is removed, we can see in the top left part
+                the ciphering mechanism. The four big pin-wheels
+                are located at the bottom of that compartment.
+                Right above these pin-wheels is the axle with
+                cogs to transfer the position of the pins into a
+                movement of the ciphering rotors. These are the
+                two small rotors at the top, with five slide
+                contacts at its axle on one side and five pin
+                contacts on the other side. Although they
+                don&#146;t look like ordinary rotors they also
+                have an input and output side and the wiring is
+                scramble.</font></p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21closeup.jpg"><img
+                        src="../pics/b21closeup.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="545" height="405"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">The two rotors (top) and four
+                        pin-wheels (bottom)</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21-2r.jpg"><img
+                        src="../pics/b21-2r.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="300" height="319"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Hagelin B-21</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21-1.jpg"><img
+                        src="../pics/b21-1.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="300" height="499"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Hagelin B-21 with open lid</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21patent.jpg"><img
+                        src="../pics/b21patent.jpg" border="0"
+                        width="300" height="215"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">The B-21 Patent for the United
+                        States</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4 align="left"><font size="2"><br>
+        <br>
+        Other Machines with Pin-wheels</font></h4>
+        <p align="left"><font size="2">The use of these pin
+        wheels would return in many later Hagelin machines with
+        huge commercial success for the C-36, M-209 and C(X)-52.
+        The prototype, build in 1925, was approved by the Swedish
+        Army and later on sold also to some other countries. The
+        commercial breakthrough however was an adapted version
+        for the French Army. This portable machine, designated
+        B-211, had a printing mechanism and could be operated
+        with a crank in case of power failure. The rotor
+        ciphering electric circuit was powerd by a battery.</font></p>
+        <p align="left"><font size="2">In the B-21 and B211, the
+        four pin-wheels are used only to control the stepping of
+        the ciphering rotors in a complex fashion. In later
+        Hagelin machines such as the C-36, C-38/M-209 and C-52,
+        the pins of these pin-wheels are used only to offset a
+        reciprocal alphabet print drum. The CX-52 uses the pins
+        for both offsetting the alphabet drum and to control the
+        very irregular pin-wheel movements, making finally full
+        use of the ingenious pin-wheel design.<br>
+        <br>
+        <br>
+        </font></p>
+        <h4><font size="2">More on Hagelin </font></h4>
+        <ul>
+            <li><a href="hagelin.htm"><font size="2">The story of
+                Boris Hagelin and his Machines</font></a></li>
+            <li><a href="c52tech.htm"><font size="2">The Hagelin
+                C-52 and CX-52</font></a><font size="2"> </font></li>
+            <li><a href="m209sim.htm"><font size="2">The US M-209
+                Cipher Machine Simulator</font></a></li>
+            <li><a href="timeline.htm"><font size="2">Cipher
+                machines Timeline</font></a></li>
+        </ul>
+        <h4><font size="2">Off-site</font></h4>
+        <ul>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/hagelin/b21/index.htm"
+                target="_blank"><font size="2">The Hagelin B-21
+                on Cryptomuseum</font></a><font size="2">
+                including images and technical description<!-- Start of StatCounter Code --><script
+                language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font>
+                <script language="javascript"
+                type="text/javascript"
+                src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+                href="http://www.statcounter.com/"
+                target="_blank"><img
+                src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+                alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+                href="../nl/enigma.htm"><font color="#808080"
+                size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+                bot="HTMLMarkup" endspan --></font></a></li>
+        </ul>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a> <a
+                href="hagelinmenu.htm" class="menu">Menu</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

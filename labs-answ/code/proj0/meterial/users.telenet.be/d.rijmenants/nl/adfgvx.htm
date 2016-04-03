@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>ADFGVX
+                        </strong></font><font color="#808080"
+                        size="1"><strong><!--webbot
+                        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+                        bot="HTMLMarkup" endspan --></strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het ADFGVX-cijfer was tijdens de Eerste
+        Wereldoorlog het veldcijfer van het Duitse leger. ADFGVX
+        (6 X 6 matrix) was een uitbreiding op het ADFGX-cijfer (5
+        X 5 matrix), uitgevonden door Kolonel Fritz Nebel. Dit
+        cijfer combineerde fractionering van een
+        Polybiusvierkant, dat een monoalfabetische substitutie
+        bevat, met een enkelvoudige transpositie. Men koos voor
+        de letters ADFGVX omdat deze zeer duidelijk te
+        onderscheiden zijn in morsecode.</font></p>
+        <p><font size="2">We beginnen met het opstellen van een
+        vierkant van 6 X 6. We kiezen een sleutelwoord en vullen
+        dit in het vierkant in. In ons voorbeeld is het eerste
+        sleutelwoord <strong>NACHTBOMMENWERPER</strong> waarbij
+        we de dubbele letters weglaten en aanvullen met de rest
+        van het alfabet. Om de getallen aan te vullen kunnen we
+        deze vlak na hun letter plaatsen (1 na A, 2 na B enz...).
+        De kolommen en rijen worden benoemd met de letters
+        ADFGVX.</font></p>
+        <pre><font size="2"> | A D F G V X
+-+------------
+A| N A 1 C 3 H 
+D| 8 T B 2 O M
+F| E 5 W R P D
+G| 4 F 6 G 7 I
+V| 9 J 0 K L Q
+X| S U V X Y Z
+</font></pre>
+        <p><font size="2">dan zetten we de tekst om in bigrammen,
+        bestaande uit de kop-letters van de rij en de kolom.</font></p>
+        <pre><font size="2">d  i  t  i  s  z  e  e  r  g  e  h  e  i  m
+FX GX DD GX XA XX FA FA FG GG FA AX FA GX DX 
+</font></pre>
+        <p><font size="2">Vervolgens word op de gefractioneerde
+        tekst kolomstranspositie toegepast. In ons voorbeeld is
+        het tweede sleutelwoord <strong>PILOTEN</strong> (in
+        realiteit worden veel langer sleutelwoorden of zinnen
+        gebruikt). Het sleutelwoord is genummerd volgens het
+        alfabet. De bigrammen worden van links naar rechts en van
+        boven naar onder ingevuld.</font></p>
+        <pre><font size="2">P I L O T E N
+6 2 3 5 7 1 4
+-------------
+F X G X D D G
+X X A X X F A
+F A F G G G F
+A A X F A G X
+D X
+</font></pre>
+        <p><font size="2">Nu lezen we de tekst af volgens de
+        nummering per kolom, en verdelen in groepen van vijf.</font></p>
+        <pre><font size="2">De cijfertekst: DFGGX XAAXG AFXGA FXXXG FFXFA DDXGA
+</font></pre>
+        <p><font size="2">Om de cijfertekst te ontcijferen moeten
+        we eerst een tabel maken met het sleutelwoord en het
+        juiste aantal kolommen. Uit het aantal letters in de
+        cijfertekst kunnen we dan het aantal lange en korte
+        kolommen afleiden. We vullen de tabel met de cijfertekst,
+        kolom per kolom, in volgorde van het sleutelwoord.
+        Vervolgens lezen we de tekst van links naar recht en
+        boven naar onder af. De bekomen tekst splitsen we op in
+        bigrammen. Aan de hand van het vierkant zetten we de
+        bigrammen terug om in klare tekst.</font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2014
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

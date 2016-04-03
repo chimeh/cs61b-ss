@@ -1,0 +1,723 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="The Enigma cipher machine. Message procedures and description and use of Enigma code books">
+<meta name="keywords"
+content="Enigma, codebook, code book, code books, code sheet, code sheets, kenngruppenbuch, schlussel m, triton, nixe, schlussel henno, wehrmacht, kriegsmarine">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Enigma Procedure</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Enigma
+                        Message Procedures</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a>
+                        <a href="enigmamenu.htm" class="menu">Menu</a>
+                        <a href="enigma.htm" class="menu">History</a>
+                        <a href="enigmaproc.htm" class="menu">Procedures</a>
+                        <a href="enigmatech.htm" class="menu">Technical
+                        details</a> <a href="enigmasim.htm"
+                        class="menu" class="menu">Enigma
+                        Simulator</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        The Heer and Luftwaffe Procedures</font></h4>
+        <p><font size="2">To obtain secure communications, the
+        German Heer (Army) and Luftwaffe (Air Force) used
+        standard procedures to transmit and receive messages. For
+        a message to be correctly encrypted and decrypted, both
+        the sender and receiver needed to set up their Enigma in
+        exactly the same way. These settings were distributed in
+        key sheets. For reasons of security, different parts of
+        the armed forces had their own network, with different
+        key sheets and with a network having its own codename.</font></p>
+        <p><font size="2">Each key sheet contained the following
+        information:</font></p>
+        <ul>
+            <li><font color="#000000" size="2"><strong>Walzenlage</strong></font><font
+                size="2">: Choice and order of wheels</font></li>
+            <li><font color="#000000" size="2"><strong>Ringstellung</strong></font><font
+                size="2">: The ringsetting, the position of the
+                rotor wiring, relative to the alphabet rings</font></li>
+            <li><font color="#000000" size="2"><strong>Steckerverbindungen</strong></font><font
+                size="2">: The plug connections on the plugboard</font></li>
+            <li><font color="#000000" size="2"><strong>Kenngruppen</strong></font><font
+                size="2">: Groups to identify the key to the
+                receiver.</font></li>
+        </ul>
+        <p><font size="2">The key sheets were distributed on
+        beforehand, and contained the basic settings for a whole
+        month, per day. In general, the key sheets were in the
+        custody of an officer, responsible for setting up the
+        machine rotors and ringsettings. After setup, he could
+        lock the machine front panel with a key. The operator
+        could only select the rotor start position.</font></p>
+        <p><font size="2">Some Wehrmacht Enigma key sheets (click
+        to enlarge):</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrmachtkey-stab.jpg"><font
+                        color="#FFFFFF"><img
+                        src="../pics/wehrmachtkey-stab.jpg"
+                        border="0" width="428" height="314"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Army Staff Machine Key No 28</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrmachtkey-bgs.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/wehrmachtkey-bgs.jpg"
+                        border="0" width="425" height="314"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Special Machine key BGS</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">You might wonder why the order of the
+        days is reversed. The reason is quite simple. The
+        officer, responsible for handing out the key for that
+        day, could tear off the current day at the bottom of the
+        sheet and give it to the radio operator to set the
+        machine. After being used, the strip of paper with the
+        key was destroyed.</font></p>
+        <h4><font size="2">The Kenngruppen</font></h4>
+        <p><font size="2">To identify the key that was used for a
+        particular message, the operator had to insert a five
+        letter group called <em>Buchstabenkenngruppe</em> (letter
+        identification group) as the first group of the message.
+        The <em>Buchstabenkenngruppe</em> is composed of two
+        randomly selected letters and one of the four possible
+        three-letter <em>Kenngruppen</em> at the key sheet for
+        that day. If we take day 31 from the Army Staff key 28
+        (image above), we see the <em>Kenngruppen</em> JKM, OGI,
+        NCJ and GLP. In this case, some examples of a correct <em>Buchstabenkenngruppe
+        </em>are FDJKM, KVOGI or QNNCJ. This five letter group at
+        the start of the message should not be encrypted with the
+        rest of the message! If a message was devided into
+        several parts, the operator had to insert another <em>Buchstabenkenngruppe
+        </em>for each part of the message. When counting the
+        letters for the message header, the five letters of the <em>Buchstabenkenngruppe
+        </em>must be included. The receiving operator immediately
+        recognized which key was to be applied by looking at the
+        last three letters of the first group.</font></p>
+        <h4><font size="2">The Message Key</font></h4>
+        <p><font size="2">The setting of the machine was
+        typically valid for one day. Using the same settings for
+        a large number of messages would increase the statistical
+        amount of data to break a particular key. Therefore, each
+        message was sent with a different startposition of the
+        Enigma rotors, randomly selected by the operator. This
+        was called the <em>Spruchschlussel</em> or message key.</font></p>
+        <p><font size="2">Before 1940, the German military used
+        the daily key and startposition, according to the key
+        sheet. The operator selected a random message key. This
+        message key was encoded twice, to exclude errors. As
+        example, the trigram <strong>GHK</strong> is encoded
+        twice, resulting in <strong>XMC FZQ</strong>. Next, the
+        operator moved the rotors to the message key <strong>GHK</strong>
+        and encoded the message. The two trigrams, being the
+        encoded message key, were transmitted, together with the
+        message. The receiver sets his machine on the start
+        position, as described in the codebook, and decodes the
+        trigrams <strong>XMC FZQ</strong> back into the <strong>GHK</strong>
+        message key. Next, he sets the message key <strong>GHK</strong>
+        as start position on his machine, to continue decoding
+        the rest of the message. However, this procedure was
+        actually a security flaw. The message key is encoded
+        twice, resulting in a relation between first and fourth,
+        second and fifth, and third and sixth character.
+        Moreover, many message keys on a particular day would
+        have the same setup and startpositions. This security
+        problem enabled the Polish Cipher Bureau to break the
+        pre-war Enigma messages.</font></p>
+        <p><font size="2">However, German cryptologists were
+        aware of the security flaw and from 1940 on, the
+        Wehrmacht changed the message key procedures to increase
+        security. Wehrmacht radio operators now selected for each
+        message a new randomly chosen start position or <em>Grundstellung</em>,
+        let's say <strong>WZA</strong>, and random message key or
+        <em>Spruchschlussel</em>, let's say <strong>SXT</strong>.
+        He moved the rotors to the random startposition <strong>WZA</strong>,
+        and encoded the random message key <strong>SXT</strong>.
+        Let us presume that the result was <strong>UHL</strong>.
+        He sets up the message key <strong>SXT</strong> as
+        startposition and encodes the message. Next, he transmits
+        the random start position <strong>WZA</strong>, the
+        encoded message key <strong>UHL</strong> and the message.
+        The receiver sets up the start position according the
+        first trigram <strong>WZA</strong>, and decodes the
+        second trigram <strong>UHL </strong>to obtain the message
+        key <strong>SXT</strong> . Next, he uses the message key <strong>SXT
+        </strong>as startposition to decode the actual message.
+        If a message was devided into several parts, the operator
+        had to insert a new startposition and message key for
+        each part of the message.</font></p>
+        <p><font size="2">Example of a typical Wehrmacht message:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ 1230 = 3tle = 1tl = 250 = WZA UHL =   
+
+ FDJKM LDAHH YEOEF PTWYB LENDP
+ MKOXL DFAMU DWIJD XRJZY DFRIO
+ MFTEV KTGUY DDZED TPOQX FDRIU
+ CCBFM MQWYE FIPUL WSXHG YHJZE
+ AOFDU FUTEC VVBDP OLZLG DEJTI
+ HGYER DCXCV BHSEE TTKJK XAAQU
+ GTTUO FCXZH IDREF TGHSZ DERFG
+ EDZZS ERDET RFGTT RREOM MJMED
+ EDDER FTGRE UUHKD DLEFG FGREZ
+ ZZSEU YYRGD EDFED HJUIK FXNVB
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The message was created at 12h30,
+        consists of three parts (3 <em>teile</em>), of which this
+        is the first, and contains 250 characters (<em>Buchstabenkenngruppe</em>
+        included). WZA is the startposition (<em>Grundstellung</em>)
+        to decipher the encrypted message key (<em>Spruchschlussel</em>)
+        UHL. The <em>Buchstabenkenngruppe</em> FDJKM shows that
+        the key that was used is the one with <em>Kenngruppe</em>
+        JKM.</font></p>
+        <h4><font size="2">The Kriegsmarine Procedures</font></h4>
+        <p><font size="2">The Kriegsmarine (German Wartime Navy)
+        procedures on sending messages with the Enigma cipher
+        machine were far more complex and elaborate than the Heer
+        and Luftwaffe procedures. The Kriegsmarine Enigma key
+        sheets consisted of two parts.</font></p>
+        <ul>
+            <li><font size="2">Schlusseltafel M Allgemein -
+                Innere Einstellung (internal settings), contained
+                the three rotors and their ring settings, the
+                thin beta or gamma rotor and the reflector, and
+                this only for the odd days of a month.</font></li>
+            <li><font size="2">Schlusseltafel M Allgemein -
+                Aussere Einstellung (external settings),
+                contained the plugs and Grundstellung (basic
+                start position) for each day of the month.</font>.</li>
+        </ul>
+        <p><font size="2">An additional key existed for the
+        officers and a special Schlussel M NIXE was used for
+        private communication between the captain and U-boat
+        Command, without other U-boats being able to read the
+        message.</font></p>
+        <p><font size="2">Examples of Kriegsmarine TRITON keys
+        and Sonderschlussel (special key) NIXE (click to
+        enlarge).</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/triton1.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/triton1.jpg"
+                        alt="Image Copyright Frode Weierud"
+                        border="0" width="192" height="262"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Inner settings
+                        &quot;TRITON&quot;</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/triton2.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/triton2.jpg"
+                        alt="Image Copyright Frode Weierud"
+                        border="0" width="183" height="263"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">External settings
+                        &quot;TRITON&quot;</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><a
+                        href="../pics/triton3.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/triton3.jpg"
+                        alt="Image Copyright Frode Weierud"
+                        border="0" width="198" height="264"></font></a><p><font
+                        color="#FFFFFF" size="2">Schlussel M
+                        &quot;TRITON&quot; Officer</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><a
+                        href="../pics/nixe.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/nixe.jpg"
+                        alt="Image Copyright Frode Weierud"
+                        border="0" width="192" height="263"></font></a><p><font
+                        color="#FFFFFF" size="2">Sonderschlussel
+                        M &quot;NIXE&quot;</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Copyrighted Images, courtesy </font><a
+        href="http://cryptocellar.web.cern.ch/cryptocellar/"
+        target="_blank"><font size="2">Frode Weierud</font></a></p>
+        <h4><font size="2">Kriegmarine Kenngruppen</font></h4>
+        <p><font size="2">The Kriegsmarine system of Kenngruppen
+        was completely different to the Heer and Luftwaffe
+        Kenngruppen system. In addition to the key sheets, the
+        Kriegsmarine used a Kenngruppenbuch on their main cipher
+        nets to determine the message key. This Kenngruppen<u>buch</u>
+        is not to be confused with the Kenngruppen<u>heft</u> for
+        Short-signals (see </font><a href="kurzsignale.htm"><font
+        size="2">Kurzsignalen</font></a><font size="2">) which
+        has a completely different purpose. The Kenngruppenbuch
+        contained the following parts:</font></p>
+        <ul>
+            <li><font size="2">Zuteilungsliste (an allotment
+                list) that told the operator which table he
+                should use for a particular cipher net. This list
+                consisted of two parts. The first part showed the
+                table number, given the name of the cipher nets,
+                and the second part showed the different cipher
+                nets, given the table number.</font></li>
+            <li><font size="2">Tauschtafelplan (table pointer)
+                told the operator which column of a given table
+                was used to select the required trigrams.</font></li>
+            <li><font size="2">Spalten (columns) with the
+                Kenngruppen ( indicator and encryption groups).</font></li>
+        </ul>
+        <p><font size="2">The operator had to select two
+        three-letter kenngruppen or trigrams from the
+        Kenngruppenbuch:</font></p>
+        <ul>
+            <li><font size="2">Schlüsselkenngruppe ( key
+                indicator group) to identify which key was used</font></li>
+            <li><font size="2">Verfahrenkenngruppe (encryption
+                indicator group) to obtain the message key</font></li>
+        </ul>
+        <p><font size="2">Both Schlüsselkenngruppe and
+        Verfahrenkenngruppe had their own tables as determined in
+        the Zuteilungsliste.</font></p>
+        <p><font size="2">With the Enigma in the Grundstellung
+        (the basic position for that day) the operator typed in
+        the Verfahrenkenngruppe. The result would be the message
+        key, used as start position to encipher the message. The
+        two trigrams together (Schlüsselkenngruppe and
+        Verfahrenkenngruppe) were the message indicator.</font></p>
+        <p><font size="2">Finally, this message indicator
+        underwent an additional substitution encryption with a
+        bigram table called Doppelbuchstabentauschtafel or
+        double-letter conversion table(see next section below).</font></p>
+        <p><font size="2">Images of the Kenngruppenbuch (click to
+        enlarge)</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/kenngruppenbuch1.jpg"><font
+                        color="#FFFFFF"><img
+                        src="../pics/kenngruppenbuch1.jpg"
+                        border="0" width="148" height="201"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Kenngruppenbuch</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/kenngruppenbuch3.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/kenngruppenbuch3.jpg"
+                        border="0" width="135" height="198"></font></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Instructions</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><a
+                        href="../pics/kenngruppenbuch5.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/kenngruppenbuch5.jpg"
+                        border="0" width="135" height="198"></font></a><p><font
+                        color="#FFFFFF" size="2">Table selection
+                        by radionet</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><a
+                        href="../pics/kenngruppenbuch2.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/kenngruppenbuch2.jpg"
+                        border="0" width="134" height="197"></font></a><p><font
+                        color="#FFFFFF" size="2">Column selection
+                        by date</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><a
+                        href="../pics/kenngruppenbuch4.jpg"><font
+                        color="#FFFFFF" size="2"><img
+                        src="../pics/kenngruppenbuch4.jpg"
+                        border="0" width="133" height="195"></font></a><p><font
+                        color="#FFFFFF" size="2">Kenngruppen
+                        Table 681</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The Kriegsmarine Enigma messages were
+        formatted in four-letter groups. Some messages were
+        encoded with the Kurzsignalheft code book or the
+        Wetterkurzschlussel, prior to encryption with the Enigma.
+        The Kurzsignalheft (short-signal book) converted words,
+        numbers and all kinds of operational and technical
+        expressions and phrases into four-letter codes. The
+        Wetterkurzschlussel (weather-short signal key) converted
+        a complete weather report into a 23 or 24 letters code.
+        For more information on Kurzsignalen, please read the </font><a
+        href="kurzsignale.htm"><font size="2">Kurzsignalen
+        procedures</font></a><font size="2"> page.</font></p>
+        <h4><font size="2">The Bigram Table</font></h4>
+        <p><font size="2">The Kriegsmarine message indicator (the
+        Schlüsselkenngruppe and Verfahrenkenngruppe together)
+        were encoded with a bigram table called
+        Doppelbuchstabentauschtafel or double-letter conversion
+        table. A set of bigram tables consisted of nine different
+        tables, labelled A to J. A calendar determined which of
+        the substitution tables was used on a particular day. The
+        bigram table was reciprocal, meaning that if a bigram AB
+        was encoded in KW, the bigram KW would also decode to AB.
+        The operator wrote the two trigrams from the message
+        indicator underneath each other, but added one random
+        dummy letter at the beginning of the first trigram and
+        one dummy letter at the end of the second trigram. To
+        encode, bigrams were taken vertically from the message
+        indicator and encoded according to the bigram table. </font></p>
+        <p><font size="2">As an example, we will encode the
+        message indicator HLG KQK with Bigram Table
+        &#147;Fluss&#148;.</font></p>
+        <p><font size="2">The dummy random letters, in our
+        example A and Z, are added to the trigram
+        Schlüsselkenngruppe HLG and Verfahrenkenngruppe KQK:</font></p>
+        <p><font size="2"><u>A</u>HLG<br>
+        KQK<u>Z</u></font></p>
+        <p><font size="2">Bigram encoding with
+        Doppelbuchstabentauschtafel B:</font></p>
+        <p><font size="2">AK=BD HQ=BJ LK=EM GZ=EJ </font></p>
+        <p><font size="2">The resulting message indicator: BDBJ
+        EMEJ</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0"
+                bgcolor="#EEEEDD">
+                    <tr>
+                        <td align="center" valign="top"
+                        bgcolor="#808080"><p align="center"><a
+                        href="../pics/bigram-fluss-b.jpg"><img
+                        src="../pics/bigram-fluss-b.jpg"
+                        border="0" width="460" height="315"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Doppelbuchstabentauschtafel für
+                        Kenngruppen Tafel B - part A trough M<br>
+                        (click to enlarge)</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The receiving operator decoded the
+        eight letters of the message indicator with the help of
+        his bigram table. The resulting first trigram would show
+        him the proper key. Next, with the rotors in the
+        Grundstellung, he would type in the second trigram. The
+        resulting trigram was the recovered message key. He would
+        set this message key as rotor positions and finally
+        decipher the rest of the message.The above example was
+        used on the 3-rotor M3 Enigma. The procedure for the
+        four-rotor M4 Enigma was identical, but used all four
+        letters instead of three and one random letter.</font></p>
+        <p><font size="2">Typical format of a Kriegmarine
+        message:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ BDU 1540/8/107 24
+
+ BDBJ EMEJ DERH RFRS OQRV DTYH QWBV HILS CXHR OPOD  
+ GTQL DDHI KFTG EDZS WXQS EDFR HGYG EDZZ UYQV DTYY
+ EDGH KIRM BDBJ EMEJ
+
+ </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The message is for BDU, is created at
+        15h40 on the 8th day, has serial number 107 and consists
+        of 24 groups. At the beginning of the message we have the
+        message indicator BDBJ EMEJ, which is repeated at the end
+        of the message. The group length of four letters and the
+        repetition of the message indicator at the end were
+        characteristic for naval messages.</font></p>
+        <p><font size="2">The Navy procedure as describe above
+        was used by the main naval cipher areas. Many cipher
+        nets, used in less important areas such as in the Black
+        Sea, Balkan and the Far East didn&#146;t use this complex
+        procedure with the Kenngruppenbuch to select message
+        keys. Instead, they applied the insecure
+        &#147;throw-on&#148; system with double enciphered
+        message key that was abolished by the Wehrmacht in 1940.</font></p>
+        <h4><font size="2">Procedures and abbreviations</font></h4>
+        <p><font size="2">The Heer and Luftwaffe transmitted
+        their messages always in five-letter group. To make
+        cryptanalysis harder, it was forbidden to use more than
+        250 characters in a single message. Longer messages were
+        divided into several parts, each part using its own
+        message key. The Enigma machine could process letters
+        only. Therefore, numbers were written out and
+        punctuations were replaced by rare letter combinations.
+        The Wehrmacht used the following abbreviations:</font></p>
+        <p><font size="2">KLAM = Parenthesis<br>
+        ZZ = Comma<br>
+        X = Full stop (end of sentence)<br>
+        YY = Point or dot<br>
+        X****X = Inverted commas</font></p>
+        <p><font size="2">Question mark (Fragezeichen in German)
+        was usually abbreviated to FRAGE, FRAGEZ or FRAQ. Foreign
+        names, places, etc. are delimited twice by &quot;X&quot;,
+        as in XPARISXPARISX or XFEUERSTEINX. The letters CH were
+        written as Q. ACHT became AQT, RICHTUNG became RIQTUNG.</font></p>
+        <p><font size="2">Numbers were written out as NULL EINZ
+        ZWO DREI VIER FUNF SEQS SIEBEN AQT NEUN</font></p>
+        <p><font size="2">It was prohibited to encipher the word
+        &quot;NULL&quot; several times in succession, so they
+        used CENTA (00), MILLE (000) and MYRIA (0000). Some
+        examples: 200 = ZWO CENTA, 00780 = CENTA SIEBEN AQT NULL.</font></p>
+        <p><font size="2">To make cryptanalysis even harder, some
+        complications were introduced in the Wehrmacht message
+        procedures during the war. Since the third, left-most
+        rotor, only advanced every 676 keystrokes, this rotor
+        didn't have much effect during enciphering (such long
+        messages were forbidden for security reasons). However,
+        the operator could encipher a certain four letter code
+        into the message, for instance CYOP, and change the left
+        rotor position. When the receiving operator encountered
+        these letters during deciphering, he also turned the
+        left-most rotor to another position (in the case CYOP to
+        position O).</font></p>
+        <p><font size="2">Another complication, added at the end
+        of the war, was placing the rotors 'with rotation'. Every
+        8 hours, a given rotor placing was rotated clockwise. If
+        the rotors for that day were 241, this changed during the
+        day to 124 and 412. The ring setting for the individual
+        rotors did not change, and moved along with the rotors.</font></p>
+        <p><font size="2">The Kriegsmarine formatted their
+        messages in four-letter groups. They used the following
+        abbreviations:</font></p>
+        <p><font size="2">X = Period<br>
+        Y = Comma<br>
+        UD = Question Mark<br>
+        XX = Colon<br>
+        YY = Dash/Hyphen/Slant<br>
+        KK**KK = Parenthesis<br>
+        J******J = Stress Mark</font></p>
+        <p><a href="references.htm"><font size="2">References</font></a></p>
+        <h4><font size="2">Related Links on this site</font></h4>
+        <ul>
+            <li><a href="kurzsignale.htm"><font size="2">Kurzsignale
+                (Short Signals) on German U-boats</font></a></li>
+            <li><a href="enigmauboats.htm"><font size="2">Enigma
+                and the U-boat War</font></a></li>
+            <li><a href="m4project.htm"><font size="2">Break an
+                original M4 message and the story of U-264</font></a></li>
+            <li><a href="codebook.htm"><font size="2">Enigma
+                Codebook Tool</font></a></li>
+        </ul>
+        <h4><font size="2">Off-Site</font></h4>
+        <ul>
+            <li><a href="http://www.ilord.com/enigma-manual.html"
+                target="_blank"><font size="2">Wehrmacht Enigma
+                Manual and Key Setting Procedures</font></a><font
+                size="2"> from Bob Lord's webpages</font></li>
+            <li><a
+                href="../kmindicator.pdf"><font
+                size="2">The Kenngruppenbuch Indicator System by
+                Ralph Erskine</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"></font></li>
+            <li><a
+                href="http://www.codesandciphers.org.uk/documents/egenproc/eniggnix.htm"
+                target="_blank"><font size="2">General Procedure
+                for Kriegsmarine Schlussel M</font></a><font
+                size="2"> and its </font><a
+                href="http://www.codesandciphers.org.uk/documents/officer/officerx.htm"
+                target="_blank"><font size="2">Officer and Staff
+                procedure</font></a><font size="2"> document
+                translations on Tony Sale's site</font></li>
+            <li><a
+                href="http://ibiblio.org/hyperwar/ETO/Ultra/SRH-008/index.html"
+                target="_blank"><font size="2">Ultra in the
+                Atlantic: U-boat operations</font></a><font
+                size="2"> from NSA archives on </font><a
+                href="http://www.ibiblio.org" target="_blank"><font
+                size="2">ibiblio.org</font></a></li>
+            <li><a href="http://www.ellsbury.com/gne/gne-000.htm"
+                target="_blank"><font size="2">Naval Enigma</font></a><font
+                size="2"> by Hugh Alexander</font></li>
+            <li><a
+                href="http://www.informaworld.com/smpp/content~db=all~content=a927073153~frm=titlelink"
+                target="_blank"><font size="2">Enigma Message
+                Procedures Used by the Heer, Luftwaffe and
+                Kriegsmarine</font></a><font size="2"> My paper,
+                published in Cryptologia Volume 34, Issue 4,
+                October 2010, page 329-339, also available as </font><a
+                href="http://www.informaworld.com/smpp/title~db=all~content=g927073380"
+                target="_blank"><font size="2">complete issue
+                October 2010</font></a><font size="2">.</font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigmaproc.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a> <a
+                href="enigmamenu.htm" class="menu">Menu</a> <a
+                href="enigma.htm" class="menu">History</a> <a
+                href="enigmaproc.htm" class="menu">Procedures</a>
+                <a href="enigmatech.htm" class="menu">Technical
+                details</a> <a href="enigmasim.htm" class="menu"
+                class="menu">Enigma Simulator</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

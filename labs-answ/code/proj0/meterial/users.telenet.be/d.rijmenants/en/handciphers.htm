@@ -1,0 +1,978 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Hand Ciphers</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- <bgsound src="../numbers.mp3" loop="1"> -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Hand
+                        Ciphers</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        Hand ciphers, also known as pencil-and-paper ciphers or
+        field ciphers by the military, are encryption methods
+        that are performed with pencil and paper. Many of these
+        classical cipher were developed in two-thousand years of
+        cryptography. With each new cipher that was developed,
+        codebreakers found new attacks to break them, and
+        codemakers improved their ciphers and devised new
+        methodes to elevate the security of their ciphers.</font></p>
+        <p><font size="2">Hand ciphers have always been a
+        compromise between security and practical considerations.
+        Very secure ciphers were often very elaborate,
+        unpractical and prone to errors. This was a disadvantage
+        in tactical circumstances. On the other hand, practical
+        and less complex ciphers were often weak. Nonetheless,
+        these insecure ciphers proved to be interesting in some
+        tactical circumstances where time to break them would
+        exceed the tactical life span of the message.</font></p>
+        <p><font size="2">On this page you will find some methods
+        and techniques that are the result of many years of
+        evolution in cryptography. I won't go through the simple
+        types like Ceasars Shift, ROT-13 or all kinds of Vigenere
+        variations that are easy to break with nothing more than
+        pencil and paper, but will focus on the more complex
+        ciphers that earned their stripes in the 20th century.
+        Some of the explained techniques can be useful to develop
+        your own hand cipher.</font></p>
+        <h3><font size="2">One-time Pad</font></h3>
+        <p><font size="2">The one-time pad encryption is a
+        special kind of paper-and-pencil cipher and has its own
+        section on this website. Please visit the </font><a
+        href="onetimepad.htm"><font size="2">one-time pad page</font></a><font
+        size="2"> for more details.</font></p>
+        <h3><font size="2">Double Transposition</font></h3>
+        <p><font size="2">The double transposition or double
+        columnar transposition was probably the most secure and
+        most popular field cipher during the Second World War. It
+        was used by both Allied and Axis forces and a regular
+        change of good keys ensured a very good resistance
+        against cryptanalytic attacks. At the same time it was
+        rather easy to apply, although time consuming for long
+        messages. One disadvantage is that letter frequency
+        analysis will show a normal linguistic distribution,
+        similar to plaintext, which points to transposition. When
+        enough ciphertext available, encrypted with with the same
+        key, an attack by anagramming could be successful,
+        although very difficult. A very effective way to beat the
+        anagramming is to first fractionate the characters of the
+        plaintext (see further).</font></p>
+        <p><font size="2">The message to encrypt: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  WE CONFIRM THE DELIVERY OF THE DOCUMENTS X  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The final group is completed with X's
+        until it contains 5 letters.</font></p>
+        <p><font size="2">The keywords: <strong>ALADIN</strong>
+        and <strong>CONSPIRACY</strong></font></p>
+        <p><font size="2">Now we can make our first
+        transposition. Create a matrix and write the first
+        keyword in that matrix. Beneath the keyword we write the
+        sequence of how we will read off the letters. Assign 1 to
+        the keyword letter that is first in the alphabet. The
+        second letter 2 and so on. If two identical letters occur
+        in the keyword the most left letter will get the lowest
+        digit.</font></p>
+        <p><font size="2">The first transposition matrix:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  A L A D I N   
+  1 5 2 3 4 6
+  -----------
+  W E C O N F
+  I R M T H E
+  D E L I V E
+  R Y O F T H
+  E D O C U M
+  E N T S X   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Next, we create a second matrix with
+        the second keyword. Again we assign digits according to
+        the order of the letters in the alphabet. We then read
+        off the letters from the first transposition matrix
+        column by column according to the key order sequence and
+        put them row by row into the second matrix.</font></p>
+        <p><font size="2">The second transposition matrix:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  C O N S P I R A C Y   
+  2 6 5 9 7 4 8 1 3 10
+  --------------------
+  W I D R E E C M L O
+  O T O T I F C S N H
+  V T U X E R E Y D N
+  F E E H M </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The final ciphetext is again read off
+        column by column according to the key order sequence of
+        the second keyword.</font></p>
+        <p><font size="2">The final ciphertext in groups:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+ </font><font size="3">MSYWO VFLND EFRDO UEITT EEIEM CCERT XHOHN </font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">To decipher the double transposition we
+        work in exactly the opposite direction. First, we create
+        a matrix with the second keyword and determine the long
+        and short columns (free places at the end) according to
+        the message length. The ciphertext is written into the
+        matrix,, column by column, according to the keyword
+        sequence. Next, we create the matrix for the first
+        keyword, also determine the long and short columns
+        according to the message length and read off the matrix
+        from the second keyword row by row and write it into the
+        matrix of the first matrix, column by column, according
+        to the keyword sequence of that matrix. Finally we read
+        off the plaintext row by row.</font></p>
+        <p><font size="2">Note that in reality much larger
+        keywords or key sentences, 20 letters or more, are used
+        to enable the encryption of large pieces of plaintext.</font></p>
+        <h3><font size="2">Disrupted Transpositions</font></h3>
+        <p><font size="2">The disrupted transposition is as a
+        further complication to the normal transposition. Instead
+        of filling the matrix row by row, the rows are all filled
+        in a very irregular fashion, resulting in two separate
+        areas. This results in a very complex transposition of
+        the characters. First, we determine the exact number of
+        rows and columns to fill (don't forget to complete with
+        X's until we have a final group of five letters) Next we
+        fill a row until we reach the digit from the keyword
+        sequence. If the first digit is at the 8th place, we will
+        only fill that row up to that position. We continue the
+        next row until the second position and so on. If we have
+        reached the end position of the last line we continue by
+        filling the remaining empty places at each line. In our
+        example the difference between the two areas is visible
+        by the lower and upper case characters.</font></p>
+        <p><font size="2">The plaintext:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+ </font><font size="3">WE CONFIRM THE DELIVERY OF THE DOCUMENTS AND WILL SEND FURTHER INSTRUCTIONS X </font><font
+size="5">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We use the key <strong>CONSPIRACY</strong></font></p>
+        <p><font size="2">On the left we see the matrix after
+        filling the first area and on the right we see the same
+        matrix filled completely:</font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">  C O N S P I R A C Y      C O N S P I R A C Y   
+  2 6 5 9 7 4 8 1 3 10     2 6 5 9 7 4 8 1 3 10
+  --------------------     --------------------
+  W E C O N F I R . .      W E C O N F I R a n
+  M . . . . . . . . .      M d w i l l s e n d
+  T H E D E L I V E .      T H E D E L I V E f
+  R Y O F T H . . . .      R Y O F T H u r t h
+  E D O . . . . . . .      E D O e r i n s t r
+  C U . . . . . . . .      C U u c t i o n s x
+  M E N T S - - - - -      M E N T S - - - - -</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Once the matrix is filled we read it
+        off by the columns, according to the keyword sequence.</font></p>
+        <p><font size="2">There are several types of disruption
+        possible. Another possible method is that of large
+        triangles. Each triangular area starts at the first
+        keyword position and goes one step further to the right
+        with each lower row. In the example we can observe two
+        triangular areas. Again, we read off by the columns,
+        according to the keyword sequence. As you can see the
+        second method will result in a very different ciphertext.</font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+
+</font><font size="3">  C O N S P I R A C Y      C O N S P I R A C Y  
+  2 6 5 9 7 4 8 1 3 10     2 6 5 9 7 4 8 1 3 10
+  --------------------     --------------------
+  W E C O N F I R . .      W E C O N F I R w i
+  M T H E D E L I V .      M T H E D E L I V l
+  E R Y O F T H E D O      E R Y O F T H E D O
+  C . . . . . . . . .      C l s e n d f u r t
+  U M . . . . . . . .      U M h e r i n s t r
+  E N T . . . . . . .      E N T u c t i o n s
+  S A N D . - - - - -      S A N D x - - - - -   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Usually the disruption method is used
+        in one of the two transpositions of a double
+        transposition, making it much stronger. Probably the most
+        powerful German wartime hand ciphers was </font><a
+        href="rasterschlussel44.htm"><font size="2">Rasterschlüssel
+        44</font></a><font size="2">, a grid based cipher that
+        disrupted the text rows by a grid, followed by columnar
+        transposition.</font></p>
+        <h3><font size="2">Fractionation</font></h3>
+        <p><font size="2">Ciphers that are based purely on
+        transposition reveal statistical information when
+        subjected to letter frequency analysis. Breaking up or
+        fractionating letters before moving them around improves
+        the security of a cipher considerably. A simple matrix
+        can break up letters into a horizontal and vertical
+        coordinate. This Polybius square is the easiest way to
+        apply fractionation on plaintext. A scrambled alphabet
+        can be used to complicate the matrix. Of course,
+        fractionation offers no cryptographic strength unless
+        combined with other techniques. The Polybius square on
+        itselfe is a very weak mono-alphabetic substitution
+        cipher. The Russian Nihilist cipher used a keyword
+        scrambled polybius square where the plaintext digits were
+        added to a fixed number of digits, derived by a keyword
+        from the square. It was basically a pimped Vigenere
+        encryption and simple to break. So, good idea to use this
+        fractionation, bad idea to use it without combining it
+        with other techniques.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">   1  2  3  4  5  
+ 1 A  B  C  D  E
+ 2 F  G  H I/J K
+ 3 L  M  N  O  P
+ 4 Q  R  S  T  U
+ 5 V  W  X  Y  Z</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2">The Straddling Checkerboard</font></h3>
+        <p><font size="2">An important Russian improvement to the
+        fractionation of the Nihilist cipher is the straddling
+        checkerboard. Letters in a normal matrix are broken up
+        into ever equal parts. The checkerboard however produces
+        a most irregular pattern. Some letters are represented by
+        one digit, others by two digits. By assigning the most
+        frequent letters to one-digit values the resulting
+        ciphertext will be smaller than a normal Nihilist cipher.
+        Also, the irregular pattern of digits makes it much more
+        difficult to retrieve the matrix combinations. As a
+        further complication one could fill the matrix with a
+        scrambled alphabet instead of the default alphabetic
+        sequence.</font></p>
+        <p><font size="2">The combination of fractionation and
+        transposition proved to be very secure. A good example of
+        such a combination is the VIC Cipher with double
+        transposition and straddling checkerboard, used by
+        Russian intelligence during the Cold War. The cipher
+        resisted all cryptanalytic attacks for several years
+        until the agent who used it defected to the US.</font></p>
+        <p><font size="2">A straddling checkerboard matrix, with
+        one-digit values optimized for the English language:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">  | 0 1 2 3 4 5 6 7 8 9   
+  +---------------------
+  | A T   O N E   S I R
+ 2| B C D F G H J K L M
+ 6| P Q U V W X Y Z .fig   </font><font size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">To convert figures, we use
+        &quot;FIG&quot; before and after the digits and write out
+        each digit three times to exclude errors.</font></p>
+        <p><font size="2">Let us convert some text with the
+        checkerboard</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3"> </font><font size="2">Plaintext : P  L  E  A  S  E   C  O  N  T  A  C  T   M  E   A  T  [fig]  1   2   0   0  [fig] H   .   
+ conversion: 60 28 5  0  7  5   21 3  4  1  0  21 1   29 5   0  1    69  111 222 000 000  69   25  68</font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">In groups, completed with zero's: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3"> 60285 07521 34102 11295 01691 11222 00000 06925 68000</font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">It's easy to convert the digits back
+        into characters and seperate the one-digit values from
+        the two-digit values. If a digit combination starts with
+        a row number (2 or 6) it's a two-digit code and another
+        digit follows. In all other cases it's a one-digit code.
+        Again, this fractionation method should always be used in
+        combination with other cipher techniques such as
+        transpositions or a one-time pad. After converting the
+        text into digits one can transposition them or add a
+        one-time pad. If used with a transposition, we simply
+        transpose digits instead of letter as we do with the
+        double transposition cipher. Remember, a checkerboard on
+        its own does not provide any encryption nor security.
+        Always use it in combinations with some type of
+        encryption.</font></p>
+        <h3><font size="2">Extending the Straddling Checkerboard</font></h3>
+        <p><font size="2">The number of one-digit values
+        determines the possible number of rows and therefore the
+        number of supported characters. The CT-46 table is an
+        example of an extended checkerboard. It is optimised for
+        use in different languages. Other variations with
+        different character sets are possible. Another
+        checkerboard variation is TAPIR, used by the former
+        East-German intelligence, optimized for German language
+        with special German characters and even syllables.</font></p>
+        <p><font size="2">The CT-46 table:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  | 0  1  2  3  4  5  6  7  8  9
+  +-------------------------------
+  |    A  E  I  N  O  R
+ 7| B  C  D  F  G  H  J  K  L  M
+ 8| P  Q  S  T  U  V  W  X  Y  Z  
+ 9|SPC .  ,  :  ?  /  (  )  &quot; CODE   
+ 0| 0  1  2  3  4  5  6  7  8  9
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">On the CT-46 table, all frequent
+        letters in the top row have one digit, taken from the
+        columns (A=1, E=2 etc). All other characters are a
+        combination of a row digit and a column digit (B=70,
+        C=71, W=86, 2=02 etc).</font></p>
+        <p><font size="2">More conversion tables are found on the
+        </font><a href="table.htm"><font size="2">checkerboard
+        variations page</font></a><font size="2">. </font></p>
+        <h3><font size="2">More Fractionation</font></h3>
+        <p><font size="2">The Polybius and checkerboard matrices
+        cut your characters in two pieces. There are however
+        methods to divide them even more, which makes it harder
+        to get them puzzled together by the attacker. The Trifid
+        cipher works with 3 matrices with 9 characters each. Each
+        character is converted into 3 digits: one for the matrix,
+        one for the row and one for the column. Of course, we can
+        fill the three matrices with a scrambled alphabet. The
+        system is easy to expand. With three matrices of four by
+        four we can already support 48 characters.</font></p>
+        <p><font size="2">The Trifid fractionation:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+      1         2         3
+   +-----+   +-----+   +-----+
+  1|A B C|  1|D E F|  1|G H I|   
+  2|J K L|  2|M N O|  2|P Q R|
+  3|S T U|  3|V W X|  3|Y Z .|
+   +-----+   +-----+   +-----+
+    1 2 3     1 2 3     1 2 3   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The plaintext converted:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  M   Y   S   E   C   R   E   T      
+ 221 331 131 212 113 323 212 132
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">As with all fractionating ciphers, this
+        should always be used in combination with some sort of
+        transposition. However, a cryptanalyst would always
+        instantly see that the ciphertext contains only the
+        digits 1, 2 and 3, and will understand that at least one
+        stage of the encryption is a Trifid type cipher. Without
+        transposition, he could cut the ciphertext in pieces of
+        three digits and treat them as one character of a
+        mono-alphabetic substitution, which is very easy to
+        break.</font></p>
+        <p><font size="2">But there are ways to mislead the
+        attacker. We can assign several letters to each of the
+        three values and randomly pick out one. We need a table
+        that says which letters stand for which value. We could
+        fool the cryptanalyst even more. If we pick out
+        frequently used letters such as ETAOIN more than other
+        letters, we can create the illusion that it's not a
+        fractionated cipher but a simple transposition, since the
+        letter frequency analysis shows a normal distribution.
+        The attacker doesn't know that each letter isn't a
+        letter, but just one third of any other letter.</font></p>
+        <p><font size="2">We give the digits some letters. You
+        could use a scrambled alphabet. If you consider extending
+        to three matrices of four by four you must take in
+        account that digit 4 is used slightly less than the other
+        digits (the first digit of a character will never be 4
+        since you have only 3 matrices). In that case you it's
+        better to assign a few less letters to digit 4 to
+        compensate the unequal distribution (less letters to a
+        digit means that the individual letters are used more
+        often than when you had more choice for that digit).</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  1  2  3   
+  A  B  C
+  D  E  F
+  G  H  I
+  J  K  L
+  M  N  O
+  P  Q  R
+  S  T  U
+  V  W  X
+  Y  Z
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">This is the new result, with a random
+        letter for each of the 3 digits</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ Plaintext   M   Y   S   E   C   R   E   T      
+ Digits     221 331 131 212 113 323 212 132
+ Ciphertext BEV LOA JRP NAH MPO IKF WYE AXB
+
+ In groups  BEVLO AJRPN AHMPO IKFWY EAXB  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">To decipher this, just see which value
+        a letter is assigned to and you can recompose the digit
+        combinations. Note that a character can be represented by
+        many different combinations of three letters. In the
+        example we see that the letter E is converted in both NAH
+        and WYE. We can also observe that the ciphertext letter A
+        is one third of the plaintext letter Y, but also of E and
+        T. Even without combining it with transposition, it would
+        be very hard to find out that Trifid is used, and even if
+        we knew, letter frequency analysis is useless. In
+        combination with transposition, we could use one keyword
+        to scramble the matrices and the digit-letter
+        combinations and one or even two keywords for a single or
+        double transposition. A very hard nut to crack.</font></p>
+        <p><font size="2">Let us take this one final step
+        further. Four matrices, each a mini straddling
+        checkerboard! The irregular result is a code of two or
+        three digits, just as the straddling checkerboard, but
+        cut in two or three pieces instead of one or two. This
+        means more fractionation. The first digit of a code is
+        the martrix number. If the letter is in the top row it
+        will be a two-digit code. If the letter is in the bottom
+        row it will be a three-digit code. In the example I used
+        a scrambled alphabet, easy to make with a keyword, as
+        explained in the Keywords section. The top rows of the
+        matrices contain the top 12 most frequent letters (in
+        this case of English). These are E T A O I N S H R D L C.
+        It's not hard to fill the matrices with a scrambled
+        alphabet. You first mark the top 12 and fill them one by
+        one in the top row. Next, you fill the rest of the
+        letters into the bottom row. Again, the nr [414] is to
+        switch between letters and numbers.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+       1           2           3           4
+    1 2 3 4     1 2 3 4     1 2 3 4     1 2 3 4 
+   +-------+   +-------+   +-------+   +-------+   
+   |E - H R|   |S T - D|   |L N A -|   |- C I O|
+  2|V F X J|  3|U M P Q|  4|K B W G|  1|Z Y .nr|
+   +-------+   +-------+   +-------+   +-------+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Here's the scrambled alphabet I used
+        for the matrices:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ VF<u>E</u>X<u>H</u>J<u>R</u>U<u>S</u>MPQ<u>T</u>KB<u>D</u>W<u>LN</u>G<u>ACI</u>ZY<u>O</u>  
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">And here we see the Quadfid
+        Checkerboard, or whatever you want to call it because I
+        just invented that name, in action:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ Plaintext   M   Y   D   I   A   R   Y   I   S   S   E   C   R   E   T         
+ Digits     232 412  24  43  33  14 412  43  21  21  11  42  14  11  22
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Of course, we have to convert the
+        digits into letters, and this time we need a table with
+        the letters divided over four digits instead of three.
+        After a few transpositions, I wouldn't want to break this
+        one!</font></p>
+        <h3><font size="2">Improving Keywords</font></h3>
+        <p><font size="2">There are several methods to scramble
+        an alphabet with keywords or to stretch them. The most
+        common way to create an alphabet for use in a matrix is
+        by mixing an alphabet in a matrix with one or two
+        keywords.</font></p>
+        <p><font size="2">In our fist example we use the single
+        keyword ENTERPRISE. First, set up a matrix as wide as the
+        keyword, but use each letter only once. Now, there are
+        two ways to fill the matrix completely. The first method
+        is the fill the matrix with the remaining letters of the
+        alphabet. The second method is to also fill in the
+        remaining letters, but leave a space for each letter that
+        has already been used. The actual mixed alphabet is read
+        off column after column, by the order of the top letters.</font></p>
+        <p><font size="2">The two ways to fill the matrix with a
+        single keyword:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3">  1 3 7 5 4 2 6       1 3 7 5 4 2 6   
+  E N T R P I S       E N T R P I S
+  A B C D F G H       A B C D - F G
+  J K L M O Q U       H - J K L M -
+  V W X Y Z           O - Q - - - U
+                      V W X Y Z
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The key alphabet result of both
+        methods, read off by the columns. Notice the completely
+        different results: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ EAJVIGQNBKWPFOZRDMYSHUTCLX  
+
+ EAHOVIFMNBWPLZRDKYSGUTCJQX
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Let us now create a double keyword
+        alphabet with the words INDIGO and ENTERPRISE. First, set
+        up a matrix as wide as the first keyword and use that
+        keyword as column header. Next, we fill the matrix with
+        the second keyword, using each letter only once. We can
+        now complete the matrix with the remaining letters of the
+        alphabet. Again, we can choose between filling
+        continuously or with spaces. The actual mixed alphabet is
+        read off column after column, by the order first keyword.</font></p>
+        <p><font size="2">In this example we see the same double
+        keyword with the two ways to fill the matrix:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3">  I N D I G O          I N D I G O   
+  3 5 1 4 2 6          3 5 1 4 2 6
+  -----------          -----------
+  E N T R P I          E N T R P I
+  S A B C D F          S A B C D -
+  G H J K L M          F G H - J K
+  O Q U V W X          L M - O - Q
+  Y Z                  - - - U V W
+                       X Y Z</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The key alphabet results of both
+        methods read off by the columns: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ TBJUPDLWESGOYRCKVNAHQZIFMX  
+
+ TBHZPDJVESFLXRCOUNAGMYIKQW
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">There are many variations possible to
+        fill the matrix. One could fill them in a spiral from the
+        outside to the inside, clockwise or counterclockwise,
+        from right to left and so on. Your imagination is the
+        limit. These scrambled alphabets can be used to fill
+        Polybius matrices or checkerboards, or to create complex
+        transposition sequences.</font></p>
+        <h3><font size="2">Generating random digits</font></h3>
+        <p><font size="2">An easy way to create random digits is
+        the Lagged Fibonacci Generator. It is a method also
+        called chaining. Note that this is by no means a
+        cryptographically secure way of generating numbers, and
+        the output randomness depends highly on the initial state
+        and size of the generator. However, the chaining methode
+        can be usefull as a means of super-encryption or to
+        individualise an encryption scheme.</font></p>
+        <p><font size="2">To perform a chaining, we take add
+        first and second digit together modulo 10 and append the
+        result at the end of the array of digits. next, we take
+        the second and third and so on. The more distance between
+        the initial and the generated digits the more complicated
+        the relation between initial state and generated digits
+        will be.</font></p>
+        <p><font size="2">Example of a 10 Lagged Fibonacci
+        Generator (the first row is the initialisation).</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 5189566247
+ 6974128613
+ 5615304...</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Of course, we can vary the size of the
+        initial state, change the distance between the two digits
+        that we wand to add, or use another modulo value.</font></p>
+        <p><font size="2">This generator can be used to improve
+        resistance to cryptanalysis of encryption types such as
+        double transposition. We know that a high number of
+        ciphertext messages that are encrypted with the same key
+        will help cryptanalists to break double transpositions by
+        means of multiple anagramming. We can apply the usual
+        keywords to create the transposition matrices, but change
+        the final transposition sequences for individual
+        recipients by adding a secret series of digits. This
+        could be the recipient's personal number, a birthday or
+        easily memorized number. Although all users have the same
+        keys, they all have another transposition result and the
+        statistics guys have less material with the same key.
+        Even a scheme with a real individual message key for each
+        message could be developed.</font></p>
+        <p><font size="2">As an example we chain the personal
+        number 54826 until we have 10 random digits and add them
+        to a normal column header of a transposition matrix. The
+        result is a completely different transposition.<br>
+        <br>
+        The personal number 54826 chained:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 54826 9208512836</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">An example of a transposition that is
+        scrambled by a key number chain (we don't use the initial
+        state digits). The new transposition sequence is taken
+        from the sum where the 1 is the first, 2 the next and 0
+        the last. When identical digits occur in the sum, the
+        most left one is to be taken before the other.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> The transposition      5971304268    
+ Adding the chain      +9208512836
+                       -----------
+ Sum modulo 10          4179816094
+ The new transposition  3168725094</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2">Super-encryption</font></h3>
+        <p><font size="2">Chaining a secret number can also be
+        useful as super-encryption. Super-encryption is a second
+        encryption on top of a normal encryption. This offers
+        additional complexity to an existing encryption. One
+        could use it to super-encrypt a one-time pad ciphertext.
+        In case of a compromised key, it would not be possible
+        for the attacker to simply use the one-time pad to
+        decipher the message. The result would appear to be a
+        random series of values, and make them believe they have
+        the wrong one-time pad. In such a case, the chained
+        digits would act as an additional protection, next to the
+        physical protection that is required with one-time pads.</font></p>
+        <p><font size="2">Let us take a one-time pad with simple
+        conversion A=1 to Z=26 where encryption is performed by
+        subtracting. It is super-encrypted with the personal
+        number 54826.</font></p>
+        <p><font size="2">The personal number chained: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 54826 920851283630199310824180...</font><font
+size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">A one-time pad super-encrypted with the
+        key number chaine (subtraction is performed without
+        carry):</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3"> The plaintext         S E C R E T
+ Plain digit values    200503190521 
+ The one-time pad     -458956254748
+ The chain            -920851283630
+                      -------------
+ The final ciphertext  932806863253</font><font size="5">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">An example to explain multiple
+        subtraction modulo 10 without carry: 2 - 4 - 9 = 9
+        Because 2 - 4 = 12 - 4 = 8 and 8 - 9 = 18 - 9 = 9</font></p>
+        <p><font size="2">To decipher this one, just recreate the
+        chain with the personal number and add the ciphertext,
+        one-time pad and chain together without carry. The
+        resulting digits are simple converted into plaintext
+        letters. More about one-time pad on </font><a
+        href="onetimepad.htm"><font size="2">this page</font></a><font
+        size="2">.</font></p>
+        <h3><font size="2">Knock-Knock</font></h3>
+        <p><font size="2">An interesting variation on the
+        polybius square is what I call Knock-Knock, commonly
+        known as Tap Code. It allows a most basic form of
+        communication. Where other simple communication methods
+        like Morse need at least a light beam or have to produce
+        sound to transmit dots as well as lines, Knock-Knock
+        requires only pulses that can be transmit in all kinds of
+        forms, knocking being the most simple of all. Note that
+        this method is only a substitution cipher and therefore
+        very easy to break. It should be seen as a method of
+        transmission, rather than encryption.</font></p>
+        <p><font size="2">A simple Tap Code matrix:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">   1  2  3  4  5  
+ 1 A  B  C  D  E
+ 2 F  G  H I/J K
+ 3 L  M  N  O  P
+ 4 Q  R  S  T  U
+ 5 V  W  X  Y  Z</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Each transmitted code is formed by the
+        combination of rows and columns. According to the matrix,
+        the letter M is converted into 32. To transmit, we give 3
+        knocks, a small pause and 2 knocks. Take a larger pause
+        between the letters. In the example each X represents a
+        knock with whatever you have, on any surface (don't use
+        your head!). You could use it when your submarine is
+        stuck on the bottom of the ocean, when you're trapped
+        underneath a building after an earthquake, or to ask
+        another inmate in your favorite prison to pass the metal
+        saw after he's finished (a disclaimer could be useful
+        here).</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">    H         E       L       L        O  
+ XX XXX   X XXXXX   XXX X   XXX X   XXX XXXX </font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We can create a Letter frequency
+        optimised Tap Code matrix. To reduce the number of
+        'knocks', required to send the characters, we can assign
+        the smallest combinations to the most common letters. The
+        six most frequently used letters present about 50 percent
+        of text and assigning them short combination will reduce
+        transmission time considerably.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+                                    1 2 3 4 5 6   
+ A 21 G 43 M 51 S 23 Y 52 4 55    1 E T I D W V
+ B 61 H 32 N 31 T 12 Z 62 5 56    2 A O S C P Q
+ C 24 I 13 O 22 U 42 0 36 6 63    3 N H L F X 0
+ D 14 J 53 P 25 V 16 1 45 7 64    4 R U G K 1 2
+ E 11 K 44 Q 26 W 15 2 46 8 65    5 M Y J 3 4 5
+ F 34 L 33 R 41 X 35 3 54 9 66    6 B Z 6 7 8 9 </font><font
+size="2">
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2">Conclusion</font></h3>
+        <p><font size="2">A secure cipher should have keywords
+        that are easy to remember, is easy to apply without
+        errors and offer a good security. It should use
+        substitution, transposition as well as fractionation to
+        resist cryptanalysis. The user must determine whether he
+        focuses on security, applicability or speed. The
+        encryption techniques as described above provide the
+        latest and strongest encryption combinations before the
+        era of digitalisation in cryptography and can be a
+        guideline to the development of your own encryption
+        scheme. Many combinations, extensions and adaptations on
+        the above explained techniques are possible. However,
+        although attacking some of these ciphers requires
+        extensive and complex cryptanalytic techniques, modern
+        computational power will be able to break them by brute
+        force (with the exception of one-time pad).</font></p>
+        <p><font size="2">Nonetheless, these ciphers still
+        require good knowledge of cryptography and/or software
+        design to be broken. A ciphertext, produced by an unknown
+        secret encryption scheme, could even resist all modern
+        techniques when the attacker can't determine the nature
+        of the algorithm. As always, cryptography is a
+        risk-analysis, a balance between the efforts and costs
+        your protection is worth to you, and the amount of
+        effort, time and costs the potential attacker is willing
+        to spend to break it. Finally, modern cryptography of
+        course provides stronger and faster software algorithms,
+        and hand ciphers are to be considered as replacement in
+        case of unavailability of computers or other encryption
+        devices.</font></p>
+        <h3><font size="2">More on this Site</font></h3>
+        <ul>
+            <li><a href="onetimepad.htm"><font size="2">The
+                one-time pad system</font></a></li>
+            <li><a href="rasterschlussel44.htm"><font size="2">Rasterschlüssel
+                44</font></a></li>
+            <li><a href="cipherclassics.htm"><font size="2">The
+                Cipher Classics software</font></a></li>
+            <li><a href="secom.htm"><font size="2">SECOM</font></a></li>
+        </ul>
+        <h3><font size="2">Off-site Links (open in new window)</font></h3>
+        <ul>
+            <li><a href="http://cryptogram.org/cipher_types.html"
+                target="_blank"><font size="2">List of Cipher
+                Types from the American Cryptogram Association
+                (ACA)</font></a></li>
+            <li><a
+                href="http://practicalcryptography.com/ciphers/classical-era/"
+                target="_blank"><font size="2">Ciphers from the
+                Classical Era Cipher on Practical Cryptography</font></a></li>
+            <li><a
+                href="http://www.apprendre-en-ligne.net/crypto/bibliotheque/lanaki/lesson1.htm"
+                target="_blank"><font size="2">LANAKI's Classical
+                Cryptography Course</font></a></li>
+            <li><a
+                href="http://www.quadibloc.com/crypto/intro.htm"
+                target="_blank"><font size="2">Paper and Pencil
+                Systems on John Savard's Cryptographic Compendium</font></a></li>
+            <li><a
+                href="http://en.wikipedia.org/wiki/Category:Classical_ciphers"
+                target="_blank"><font size="2">Classical Ciphers
+                List on Wikipedia</font></a></li>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/manual.htm"
+                target="_blank"><font size="2">Hand Ciphers at
+                the Crypto Museum</font></a></li>
+            <li><a href="http://www.ciphermysteries.com/"
+                target="_blank"><font size="2">Nick Pelling's
+                Cipher Mysteries</font></a></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --> <script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --><br>
+        <font size="2">© Copyright 2004 - 2016 Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

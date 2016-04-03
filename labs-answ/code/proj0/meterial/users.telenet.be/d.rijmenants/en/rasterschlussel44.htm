@@ -1,0 +1,688 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description" content="Rasterschlüssel 44">
+<meta name="keywords"
+content="rasterschlüssel, rasterschlussel, rs-44, rs 44, cysquare, John H Tiltman, digraph, grid cipher">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Rasterschlüssel 44</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>German
+                        Rasterschlüssel 44 Field Cipher</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        The German Rasterschlüssel 44</font></h4>
+        <p><font size="2"><img src="../pics/rs44small.jpg"
+        align="right" hspace="0" width="361" height="475"></font><font
+        size="2">The Rasterschlüssel 44 (RS 44) was an excellent
+        German hand cipher for encryption of low-level military
+        traffic during the Second World War. Introduced in March
+        1944, RS 44 was a perfect mix of security and ease of
+        use. It took Allied codebreakers so much time to break
+        the messages that the content was no longer of tactical
+        use to them.</font></p>
+        <p><font size="2">On this page we will explain how the
+        cipher was used, as prescribed by the &quot;<em>Schlusselanleitung
+        zum Rasterschlüssel 44, 24 Marz 1944, Oberkommando der
+        Wehrmacht&quot;</em>, give a practical example and trace
+        its origins. An Excel sheet to generate and print RS 44
+        keys is also available for download.</font></p>
+        <h4><font size="2">Rasterschlüssel 44 Composition</font></h4>
+        <p><font size="2">The Rasterschlüssel 44 (see image
+        right) is a grid based transposition cipher that shuffles
+        the plaintext letters. To encipher, plaintext is written
+        in the rows and ciphertext taken from the columns. To
+        decipher, ciphertext is written in the columns and
+        plaintext is taken from the rows.</font></p>
+        <p><font size="2">The RS 44 grid (<em>Rasterschablone</em>)
+        has 600 cells (24 rows and 25 columns). Each row contains
+        10 irregularly placed white (empty) cells to hold the
+        message text and 15 black cells. The columns and rows
+        have unique randomly ordered digraphs (two-letter codes),
+        each composed with two from the letters a, b, c, d and e,
+        and ranging from &quot;aa&quot; to &quot;ee&quot;. The
+        columns also carries the randomly ordered numbers 1
+        through 25. In addition, the Rasterschlüssel has two
+        scrambled place name alphabets (<em>Ortsnamenalphabete</em>)
+        to encode place names and a scrambled letter conversion
+        table (<em>Buchstabentauschtafel</em>) to encode
+        digraphs. The selection of the place names alphabet was
+        prescribed by special order. The white and black cells,
+        the grid digraphs and numbering, the two alphabets and
+        the conversion table changed each day.</font></p>
+        <p><font size="2">The Rasterschlüssel template was
+        placed and aligned underneath the first sheet of the
+        message pad. The pad sheets were very thin, slightly
+        transparent and contained grid lines. This way, the
+        operator could see the template but wrote on the message
+        sheet.</font></p>
+        <h4><font size="2">Composing the Message</font></h4>
+        <p><font size="2">The message must be at least 60 letters
+        long and should never exceed 200 letters (always leaving
+        at least 40 cells unused). Random words (<em>Wahlworter</em>),
+        not related to the message, must be added when the
+        message contains less than 60 letters. To distinguish the
+        random words from the actual message, the random word
+        just before and/or just after the message has its last
+        two resp. first two letters written twice (e.g.
+        &quot;dunkeell&quot; &amp; message &amp;
+        &quot;rriichtung&quot;). Messages with more than 200
+        letters should be divided into several smaller messages.
+        Each message part should be enciphered independently.</font></p>
+        <p><font size="2">Place names must be encoded with the
+        place names alphabet. Place names should never be
+        repeated, unless confusion or errors could occur.
+        Repetitions must not be separated by an &quot;x&quot;.
+        The letters &quot;aa&quot; and &quot;ee&quot; are used
+        resp. before and after the encoded place names, to
+        distinguish them from the rest of the message.</font></p>
+        <p><font size="2">The operators were encouraged to use
+        unambiguous abbreviations as much as possible, even when
+        this results in a message of less than 60 letters (in
+        that case, the message is extended with random words). In
+        general, punctuations are never used unless they are
+        required to create a unambiguous text. If used, they are
+        spelled out. A period is written as &quot;stop&quot;, a
+        comma as &quot;koma&quot;, a question mark by
+        &quot;fraq&quot; and quotes by &quot;klam&quot;. Spaces
+        are never used and a separation by an &quot;x&quot; was
+        allowed only in ambiguous situations.</font></p>
+        <p><font size="2">The German Umlaute are written out (ä
+        = ae, ë = ae, ö = oe, ü = ue), the letter combinations
+        &quot;ch&quot; and &quot;ck&quot; are replaced by
+        &quot;q&quot; and &quot;ß&quot; by &quot;sz&quot;.
+        Numbers were spelled out, digit by digit. Multiple zeros
+        were spelled: 00 = zenta, 000 = mille, 0000 = mira (e.g.
+        5200 becomes funf zwei zenta). Roman numbers are preceded
+        by &quot;roman&quot;.</font></p>
+        <h4><font size="2">Enciphering with RS 44</font></h4>
+        <p><font size="2">A random column and row are selected
+        and are designated by the digraphs of the colums and row.
+        The start cell (the first letter of the plaintext) is
+        located at the crossing of the chosen column and row or,
+        if that cell is black, at the next-right white (empty)
+        cell. The start cells for successive messages should be
+        chosen all across the grid. If a row or column is used
+        once, its digraph is marked with one stroke. If it is
+        used again, the digraph is marked with a second stroke
+        (cross). Digraphs with a cross should never be reused
+        when there are still digraphs without a cross or a single
+        stroke available.</font></p>
+        <p><font size="2">To encipher, the plaintext is entered
+        from left to right in the empty cells. When reaching the
+        end of the grid, the plaintext continues at the next
+        empty cell in the top left corner of the grid. The
+        ciphertext is taken by columns, from top cell to bottom
+        cell, in the order as given by the numbers in the column.
+        The ciphertext is written out in groups of five letters.
+        However, the start column to take the ciphertext is
+        predetermined.</font></p>
+        <p><font size="2">Initially, the start column was
+        determined by the message time and letter count. First,
+        the total of the digits from the minutes in the message
+        time and the digits of the letter count is calculated. An
+        example: time 1725 and 83 letters gives 2 + 5 + 8 + 3 =
+        18. Next, we count 18 columns to the right, starting from
+        the column, right-next to the column that was selected to
+        determine the first cell (if we arrive at the far right
+        of the grid, we continue counting at the left of the
+        grid). If we arrive at the 18th column and it carries ,
+        for instance, the number 12, we take the ciphertext in
+        the columns that carries the number 12, 13, 14 and so on.</font></p>
+        <p><font size="2">In October 1944, the Supreme Command of
+        the Wehrmacht issued an order to drop this system and use
+        a new and easier procedure to determine the start column.
+        From then on, the start column was selected directly and
+        randomly by the operator. In this procedure, columns
+        should vary for each new message and the first column
+        should never be used. </font></p>
+        <h4><font size="2">The Message Key</font></h4>
+        <p><font size="2">The four letters of the column digraph
+        and row digraph (start cell position) are encoded with
+        the letter conversion table. The letters (a, b, c, d or
+        e) are replaced with a randomly chosen letter beneath it
+        in the conversion table. The use of chosen letters should
+        vary and all four digraph letters should be different.
+        The encoded digraphs are the so-called message key (<em>Spruchschlüssel</em>).
+        The complete message header, including the message key,
+        could look like:</font></p>
+        <p><font size="2" face="Courier New">1725 - 83 dacb -</font></p>
+        <p><font size="2">From October 1944 onwards, with the
+        change of start column procedure, the digraph that
+        represented the start column was encoded with the letter
+        conversion table, in the same way as the start cell
+        digraphs are encoded. Now, the message header, including
+        the encoded start column digraph, would look like:</font></p>
+        <p><font size="2" face="Courier New">1725 - 83 - dacb ed
+        -</font></p>
+        <p><font size="2">Some RS 44 keys had key identification
+        groups (<em>Kenngruppen</em>). If provided, there were
+        four three-letter identification groups for each day and
+        type of key. These identification groups were normally
+        only used when identification is required. The four key
+        identification groups were used alternately and inserted
+        in the message header. If , for example, the
+        identification group was &quot;xeh&quot;, the message
+        header would look like:</font></p>
+        <p><font size="2" face="Courier New">1725 - 83 - xeh dach
+        ed -</font></p>
+        <h4><font size="2">Deciphering with RS 44</font></h4>
+        <p><font size="2">The receiving operator retrieves the
+        message key by decoding it with the letter conversion
+        table. He looks which letter (a, b, c, d, or e) is placed
+        above the encoded digraph letter in the conversion table.
+        With the decoded column and row digraphs, he can
+        determine the start cell. The start column is either
+        calculated from the message time and letter count (old
+        procedure) or by decoding the start column digraph in the
+        message key (new procedure).</font></p>
+        <p><font size="2">He counts the empty cells, starting in
+        the start cell, row by row, in the same ways as you would
+        write a plaintext message. The unused cells beneath
+        and/or above the message cells and before or after the
+        message cells should be crossed out with a horizontal
+        line, making visible the area that is reserved for the
+        message text. </font></p>
+        <p><font size="2">He can now fill the ciphertext into the
+        reserved cells, column by column, beginning with the
+        start column and continues with the columns as determined
+        by the column header numbers. The ciphertext is entered
+        per column from top to bottom, but only in the cells that
+        are reserved for the message text. When the complete
+        message text area is filled with ciphertext, the operator
+        can read the plaintext, row by row, beginning at the
+        start cell.</font></p>
+        <h4><font size="2">A Practical Example</font></h4>
+        <p><font size="2">The following message is sent at 1400
+        Hr:</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+ Zurücktreten 3 Infanterie Regiment beendet wie befohlen. Verluste begrenzt.      
+ Umgruppierung in Hermonville vermutlich um 1800 Uhr beendet.</font>
+<font size="2">
+ Translation:
+
+ Withdrawal 3th Infantry Regiment finished as ordered. Losses limited.
+ Regrouping in Hermonville probably finished at 1800 hours.
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The place name Hermonville is converted
+        into &quot;wqfntckorre&quot; with the first alphabet:</font></p>
+        <p><img src="../pics/rs44alphabet.jpg" width="541"
+        height="71"></p>
+        <p><font size="2">The message, as it is entered in the
+        grid:</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+ zuruecktreten drei inf rgt beendet wie befolen stop verluste begrenzt stop       
+ umgruppierung in aa wqfntckorre wqfntckorre ee vermutliq um eins aqt uhr beendet
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">A random start cell is selected. In our
+        example key sheet below, we select column &quot;ce&quot;
+        and row &quot;bb&quot; and mark these digraphs. The
+        digraphs are also noted on the key sheet. Since this
+        position is a black cell, we take the next empty cell,
+        which is five cells further to the right. We start
+        filling in the message and continue at the top of the
+        grid to enter all 133 letters.</font></p>
+        <p><font size="2">The message key is the column digraph
+        and the row digraph, encoded with a randomly chosen
+        letter in the letter conversion table. We encode
+        &quot;cebb&quot; into &quot;mvxe&quot;, but we could just
+        as well encode it into &quot;atne&quot; or into
+        &quot;sibh&quot;. This clever method makes it very
+        difficult for the codebreakers to identify messages that
+        are enciphered with the same message keys</font></p>
+        <p><img src="../pics/rs44conversion.jpg" width="110"
+        height="138"></p>
+        <p><font size="2">Next, the column to start taking the
+        ciphertext is determined. Since the message is sent
+        before October 1944, we use the old procedure. The
+        message time is 1400 and the message contains 133
+        letters. Thus, 0 + 0 + 1 + 3 + 3 = 7. We start counting
+        from the cell next right of column &quot;ce&quot;, as
+        selected above. Thus, the column to start taking the the
+        ciphertext by columns is &quot;ee&quot;, with its value
+        15. We indicate this column by writing a cross in one of
+        its empty cells. After taking the letters from column 15,
+        we take columns 16, 17, 18 and so on. (note that in new
+        start column procedure the column would have been
+        selected randomly and its digraph also converted with the
+        letter conversion table from above and placed after the
+        message key).</font></p>
+        <p><font size="2">Below the RS 44 example, generated with
+        the RS 44 Excel sheet, which is </font><a
+        href="../rs44.zip"><font
+        size="2">available for download</font></a><font size="2">
+        to create your own RS 44 sheets.</font></p>
+        <p><img src="../pics/rs44grid.jpg" width="523"
+        height="649"></p>
+        <p><font size="2">The ciphertext is taken from the
+        columns and immediately written in five-letter groups.
+        For the sake of our example, we give the columns and
+        corresponding letters. Notice the irregular length of the
+        columns, caused by the fractioning of the rows.</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+   15    16     17      18     19     20   21   22   23  24  25
+ ETUEBU BCIVR NVUREEE RNETZP CRKIRIC UNGN QEHPF IOT IHRE RL EMEPG
+
+   1      2      3     4     5          6       7     8    9    10
+ FRRBUN KNRNLN RUQDTA TEM EELEEWESEQ RMAGENUP WUNBOR IZTE DFEGT TOK
+
+  11   12       13     14
+ QDE TTTTTIW OOSEFEUN RSSA
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The complete message, arranged in
+        five-letter groups and preceded by the message time,
+        letter count and message key, as it would be taken
+        directly from the grid.</font></p>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+ 1400 - 133 - MVXE -      
+
+ ETUEB UBCIV RNVUR EEERN
+ ETZPC RKIRI CUNGN QEHPF
+ IOTIH RERLE MEPGF RRBUN
+ KNRNL NRUQD TATEM EELEE
+ WESEQ RMAGE NUPWU NBORI
+ ZTEDF EGTTO KQDET TTTTI
+ WOOSE FEUNR SSA
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">To decipher this message, the receiving
+        operator decodes the message key &quot;MVXE&quot; with
+        the letter conversion table back into column
+        &quot;ce&quot; and row &quot;bb&quot;. He finds the start
+        cell, counts 133 empty cells and draws lines to indicate
+        the area where the ciphertext letters should come. Next,
+        he uses the minutes of the message time and the letter
+        count to calculate the offset value 7. He takes the
+        retrieved column pointer &quot;ce&quot;, counts 7
+        positions further to find the start column and indicates
+        this column. He writes the ciphertext column by column,
+        from top to bottom (but only in the message area cells!).
+        Finally, he reads the original plaintext in normal
+        reading direction, starting from the cell as determined
+        by the digraphs &quot;ce&quot; and &quot;bb&quot;.</font></p>
+        <h4><font size="2">Cryptographic Strength</font></h4>
+        <p><font size="2">How strong is RS 44? Let us first
+        calculate all possible variations of the RS 44 key sheet.
+        To do so, we need to take in account all possible ways to
+        set each of its components and multiply the result.</font></p>
+        <ul>
+            <li><font size="2">2.21 x 10<sup>156</sup> ways to
+                fill the 24 rows (3,268,760 ways to place 10
+                white cells in a single row)</font></li>
+            <li><font size="2">15,511,210,043,330,985,984,000,000
+                (25 x 24 x...x 2 x 1) ways to label the columns</font></li>
+            <li><font size="2">15,511,210,043,330,985,984,000,000
+                ways to number the columns</font></li>
+            <li><font size="2">620,448,401,733,239,439,360,000
+                (24 x 23 x ... x 2 x 1)) ways to label the rows</font></li>
+            <li><font size="2">15,511,210,043,330,985,984,000,000
+                ways to order one place name alphabet</font></li>
+            <li><font size="2">15,511,210,043,330,985,984,000,000
+                ways to order the letter conversion table</font></li>
+        </ul>
+        <p><font size="2">This gives a overall theoretical total
+        of 7,95 x 10<sup>280</sup> different ways to construct a
+        RS 44 key sheet, comparable with a 934 bit key. This,
+        however, is a theoretical number. In reality, there are
+        far less combinations, because a codebreaker won't not
+        care about how the columns and rows are labelled, or how
+        the message key is converted. He just needs to know how
+        the letters are actually placed in the 600 cells and how
+        they are taken from the columns. He takes in account the
+        following properties:</font></p>
+        <ul>
+            <li><font size="2">2.21 x 10<sup>156</sup> ways to
+                fill the 24 rows (3,268,760 ways to place 10
+                white cells in a single row)</font></li>
+            <li><font size="2">240 different positions to start
+                filling the cells with text (24 rows with 10
+                white cells each)</font></li>
+            <li><font size="2">25 column start positions to begin
+                taking the ciphertext</font></li>
+            <li><font size="2">15,511,210,043,330,985,984,000,000
+                ways to order the reading of the columns</font></li>
+        </ul>
+        <p><font size="2">The variables above give a total key
+        size of 2.06 x 10<sup>185</sup>. Unfortunately, the
+        Germans failed to apply this key space on RS-44. They
+        only produced 36 different rods to print the rows. Also,
+        the actual messages were mostly never longer than 60
+        letters, limiting the numers of rows that were used. With
+        all possible permutations for the transposition key and
+        start positions there's only a practical key space of 2 x
+        10<sup>35</sup>, comparible with a 117 bit key. The
+        conversion alphabet for place names is a simple
+        substitution and, although it has
+        15,511,210,043,330,985,984,000,000 possible combinations,
+        can be solved with simple letter frequency analysis.
+        This, of course, is only possible if the rest of message
+        is already broken successfully and the grid and column
+        order is restored correctly.</font></p>
+        <p><font size="2">A practical key size of 117 bits is
+        huge number, impossible to break by brute force (trying
+        out all combinations) with all present computational
+        power. However, codebreaking is more than trying out all
+        possible keys. In such transposition ciphers, the
+        positions of the letters always follow certain rules. For
+        instance, two consecutive ciphertext letters have a fair
+        chance to have been taken in the same column and it will
+        therefore be unlikely that they are placed next to each
+        other in the plaintext. The fixed number of 10 white
+        cells per row also enables to draw some conclusions on
+        the distance of plaintext letters in the ciphertext and
+        how they transpose. Any rule or assumption is a clue for
+        the codebreaker.</font></p>
+        <p><font size="2">Nevertheless, RS 44 creates a most
+        complex disrupted double transposition: the black cells
+        create a horizontal disrupted fractioning of the message
+        text which is followed by a wide column transposition.
+        The size of the column text segments varies very
+        irregularly, as you have seen in the message example
+        above. Note that the normal double transposition was one
+        of the strongest hand ciphers during the Second World War
+        and it's cryptanalysis was released only a few years ago.
+        Until today, no ciphertext-only cryptanalysis of the RS
+        44 had been published, if it already exists.</font></p>
+        <p><font size="2">In general, transposition ciphers are
+        solvable by multiple anagramming when several messages
+        with exactly the same transposition are available. With
+        this method, assumptions or clues on the transpositions
+        of letters on one message are tested and verified against
+        as many as possible other messages. For RS 44, the
+        transposition variables for a particular key are the
+        start cell and the start column, the so-called message
+        key. There are 6000 possible different message keys (240
+        start cells x 25 start columns). A first obstacle for any
+        codebreakers is that the message keys are encoded in a
+        random fashion, making it much harder to find messages
+        that are enciphered with the same transposition.
+        Secondly, it could take several thousands of messages
+        before a particular message key is reused, if the
+        selection of varying message keys is well applied. If
+        compartimentation of keys is applied on radio nets, and a
+        message load of less than 6000 messages for a particular
+        key is anticipated, there is little change that the
+        codebreaker has any messages with identical transposition
+        at his disposal, making it much more difficult to break
+        the messages.</font></p>
+        <p><font size="2">RS 44 proved to be a very secure hand
+        cipher, especially if the number of messages per key was
+        limited. British codebreakers had only limited success
+        and it required a huge 40-letter crib (known plaintext)
+        and about two weeks to make an initial break into the
+        traffic of a given grid. They had a far better success
+        rate with the (by the Germans) highly regarded Enigma
+        machine than with RS 44 (it should be noted that the
+        breaking of high-level Enigma traffic was more valuable
+        and therefore received more resources). The low level RS
+        44 traffic was generally local tactical information. The
+        time, required to break RS 44 messages, rendered its
+        tactical information outdate before it could be
+        exploited, making RS 44 an ideal hand cipher. Eventually,
+        the codebreakers gave up trying to break the Wehrmacht RS
+        44 messages and limited their efforts to German police RS
+        44 enciphered message traffic only. They even considered
+        RS44 as impossible to break if the Germans had not made
+        implementation mistakes.</font></p>
+        <p><font size="2">The German Army however was very
+        reluctant to introduce RS-44. TICOM reports on the
+        interrogation of German cryptologic personnel at the end
+        of the war showed that the German Army often put up
+        fierce resistance against the implementation of new
+        enciphering systems and procedures. The cipher clercks
+        often disliked new cipher systems and resented the
+        efforts, required to get familiar with them. RS-44 what
+        not an exception. Although straightforward and simple
+        from a cryptologists point of view, the cipher clercks
+        found it to be too complex for use at the battle front
+        and continiously made mistakes that jeopardized the
+        cipher's security.</font></p>
+        <p><font size="2">Although already an excellent hand
+        cipher, there was still room for improvement that hardly
+        increased the cipher clerk's work load. A variable number
+        of white cells per row would have increased the
+        combinations considerably. 10 white cell per row give
+        3,268,760 combinations per row, whereas 9 cells provide
+        2,042,975 combinations and 11 cells 4,457,400
+        combinations. A variable 9 to 11 white cells would
+        provide 9,769,135 combinations for a single row (with
+        more than 13 cells, the number of combinations decreases
+        again and transposition quality declines). Also, the use
+        of each of the four sides and front and back of the grid
+        template (as proposed for the Cysquare) would further
+        increase the key size by a factor of 8. Assigning 3
+        digraphs to each of the 8 template positions would enable
+        the use of a fourth (randomly) encoded message key
+        digraph. The selection of the alphabet for place names
+        could be determined more randomly by using the first
+        letter of the plaintext, taking the alphabet where that
+        letter appears as first. After successful decryption of
+        the overall message, the receiving operator would find
+        that plaintext letter and select the correct alphabet for
+        his place names. Even taking some of the columns from
+        bottom to top instead of top to bottom is feasible.</font></p>
+        <p><font size="2">But even without these improvements,
+        the Rasterschlüssel 44 can be considered as one of the
+        best hand ciphers ever to combine a good level of
+        security with a practical use.</font></p>
+        <h4><font size="2">Origins of the Rasterschlüssel</font></h4>
+        <p><font size="2">The origins of RS 44 are surprisingly
+        found on British soil. In 1941, Brigadier John H.
+        Tiltman, a Britsh officer and brilliant codebreaker at
+        the Government Communications &amp; Cypher School
+        (GC&amp;CS), proposed his new manual cipher Cysuare to
+        replace the insecure Army Stencil Cipher.</font></p>
+        <p><font size="2">The Cysquare has a grid with 676 (26 x
+        26) cells. Each row has 10 empty cells for the message
+        text and 16 black cells. However, three rows contained 20
+        empty cells and three other rows contained only black
+        cells. The daily key consisted of a randomly shuffled
+        alphabet and the numbers from 1 to 26 written underneath
+        them, also in random order. Both random alphabet and
+        numbers are written from left to right at the top of the
+        grid and from bottom to top on the left side of the grid.</font></p>
+        <p><font size="2">The square comes with a list of
+        four-letter indicator groups. Each letter corresponds to
+        the number, found underneath that particular letter in
+        the random alphabet. The first numbers represent the
+        position of the grid, which can be used with each of its
+        four sides at the top. The second and third numbers
+        represent the row and column, of which the coordinate
+        line shows the starting cell.</font></p>
+        <p><font size="2">The message text is written from left
+        to right in the empty cells, starting from the next empty
+        cell after the starting cell. If the text reaches the end
+        of the grid, the text is continued from the top left cell
+        of the grid. Finally, the forth number of the indicator
+        represents the initial read-off column. The final
+        ciphertext is taken, column by column, from top to
+        bottom, in the order of the numbers at the top of the
+        grid, starting and from the initial read-off column. The
+        final message text consists of the indicator, followed by
+        the ciphertext, the number of letters, the indicator
+        repeated, the time and the date.</font></p>
+        <p><font size="2">The system was designed to be used in
+        two versions: the &quot;stencil&quot; card with punched
+        holes to write into the empty fields on a sheet
+        underneath the card. This version even allowed the use of
+        both sides of the grid card, giving eight instead of four
+        grid positions. The pad version was a booklet with 50
+        identical grids. Despite being both a very secure and
+        practical hand cipher, its implementation proved to be a
+        complete flop. Unfortunately, the instructions encouraged
+        the operators to rub out the message and reuse the same
+        sheet as many times as possible. The Cysquare entered the
+        battlefield in the British Eight Army, operating in North
+        Africa. The cipher clerks refused to use the Cysquare
+        shortly after its introduction because the desert weather
+        and the gum soon turned the white cells on the grid
+        indistinguishable from the black cells.</font></p>
+        <p><font size="2">The Cysquare began an unexpected new
+        career when fieldmarchall Rommel's Afrika Korps overran
+        British units and captured the Cysquare pads with their
+        instructions. German cryptologists recognized it as an
+        excellent hand cipher and decided to develop their own
+        version of the Cysquare. The modified cipher, designated
+        Rasterschlüssel 44 or RS 44, was introduced in March
+        1944. Later, Brigadier Tiltman, the developer of
+        Cysquare, noted ruefully that the Allies had considerable
+        trouble in breaking RS44 enciphered messages.</font></p>
+        <h4><font size="2">Download</font></h4>
+        <ul>
+            <li><a
+                href="../rs44.zip"><font
+                size="2">Rasterschlüssel 44 template generator</font></a><font
+                size="2"> Microsoft Excel sheet to create your
+                own RS 44 keys</font></li>
+        </ul>
+        <h4><font size="2">More on this Site</font></h4>
+        <ul>
+            <li><a href="handciphers.htm"><font size="2">Hand
+                Ciphers</font></a><font size="2"> the basics of
+                pencil-and-paper ciphers</font></li>
+        </ul>
+        <h4><font size="2">External Links &amp; References</font></h4>
+        <ul>
+            <li><a href="http://www.cdvandt.org/RS44.pdf"
+                target="_blank"><font size="2">Schlüsselanleitung
+                zum Rasterschlüssel 44 (RS 44)</font></a><font
+                size="2">, from </font><a
+                href="http://www.cdvandt.org/" target="_blank"><font
+                size="2">Foundation for German communication and
+                related technologies</font></a><font size="2"><img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"></font></li>
+            <li><font size="2"><img src="../pics/new.gif"
+                width="31" height="12"></font><a
+                href="https://dl.dropboxusercontent.com/u/59392396/Docs/RS44%20English%20Translation.pdf"
+                target="_blank"><font size="2">English
+                translation of the Schlüsselanleitung zum
+                Rasterschlüssel 44</font></a><font size="2"> by
+                Rudiger Baumgart <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"></font></li>
+            <li><a
+                href="http://www.governmentattic.org/docs/21-NSA-Tech-Journal-Articles_1957-1965.pdf"
+                target="_blank"><font size="2">Description of
+                Cysquare by Brigadier John Tiltman</font></a><font
+                size="2"> NSA, Technical Journals 1957 - 1965,
+                p100 - p105 (redacted)<img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"></font></li>
+            <li><a
+                href="http://www.tandfonline.com/doi/abs/10.1080/0161-110491892827"
+                target="_blank"><font size="2">Rasterschlüssel
+                44 - The Epitome of hand Field Ciphers</font></a><font
+                size="2">, Cryptologia, Volume 28, Issue 2, 2004</font></li>
+            <li><a
+                href="http://www.nsa.gov/about/_files/cryptologic_heritage/publications/misc/tiltman.pdf"
+                target="_blank"><font size="2">Brigadier John
+                Tiltman - A Giant Amoung Cryptanalysts</font></a><font
+                size="2">, NSA, Cryptologic Heritage.<img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"></font></li>
+            <li><a
+                href="http://dl.dropbox.com/u/59392396/Docs/TICOM%20I-20.PDF"
+                target="_blank"><font size="2">TICOM I-20, p3 par
+                6-7 Dr. Fricke</font></a><font size="2">
+                Interrogation of Sonderfuehrer Dr. Fricke of
+                OKW/CHI - Rasterschlüssel <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"></font></li>
+        </ul>
+        <p align="center"><font color="#808080" size="1"><!-- Start of StatCounter Code --><script
+        language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigmaproc.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

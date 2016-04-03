@@ -1,0 +1,121 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>bifid</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="1"
+                cellpadding="0" cellspacing="0" width="100%"
+                bordercolor="#FFFFFF" bordercolordark="#FFFFFF"
+                bordercolorlight="#FFFFFF">
+                    <tr>
+                        <td width="100%"
+                        background="../pics/backheader.jpg"
+                        bordercolor="#000000"
+                        bordercolordark="#000000"
+                        bordercolorlight="#000000"><table
+                        border="0" cellspacing="10" width="100%">
+                            <tr>
+                                <td align="right"><font
+                                color="#000000" size="3"><strong>CODEERMACHINES
+                                EN CRYPTOGRAFIE</strong></font></td>
+                            </tr>
+                            <tr>
+                                <td><font color="#000000"
+                                size="5"><strong>Bifid </strong></font><font
+                                color="#808080" size="1"><strong><!--webbot
+                                bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+                                bot="HTMLMarkup" endspan --></strong></font></td>
+                            </tr>
+                        </table>
+                        <table border="0" cellpadding="2"
+                        cellspacing="0" width="100%">
+                            <tr>
+                                <td width="100%"
+                                bgcolor="#808080">&nbsp;</td>
+                            </tr>
+                        </table>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Bifid is een combinatie van substitutie
+        met fractionering. Eerst creëren we een 5 X 5 matrix van
+        letters, de rijen en kolommen genummerd van 1 tot 5. De
+        matrix vullen we met het alfabet aan de hand van een
+        sleutelwoord. In ons voorbeeld gebruiken we het
+        sleutelwoord <strong>NACHTBOMMENWERPER</strong>.</font></p>
+        <pre><font size="2"> | 1 2 3 4 5
+-+-----------
+1| N A C H T
+2| B O M E W
+3| R P D F G
+4| I J K L Q
+5| S U V X YZ
+</font></pre>
+        <p><font size="2">Vervolgens lezen we voor elke letter de
+        rij en kolom af en schrijven de getallen verticaal onder
+        de klare tekst. Zo heeft de I de waarde 41 omdat zij in
+        rij 4 en kolom 1 staat.</font></p>
+        <pre><font size="2">Klare tekst: D I T I S G E H E I M
+             ---------------------
+Rij:         3 4 1 4 5 3 2 1 2 4 2
+Kolom:       3 1 5 1 1 5 4 4 4 1 3
+</font></pre>
+        <p><font size="2">Nu schrijven we de cijfers opnieuw, van
+        links naar rechts en boven naar onder, in groepen van
+        twee. Dan zetten we de nieuwe getallen terug om in
+        letters.</font></p>
+        <pre><font size="2">34 14 53 21 24 23 15 11 54 44 13
+F  H  V  B  E  M  T  N  X  L  C</font></pre>
+        <pre><font size="2">De cijfertekst: FHVBE MTNXL C</font></pre>
+        <p><font size="2">Ontcijfering gebeurt door elke letter
+        van de cijfertekst terug om te zetten in een getal aan de
+        hand van de tabel. De getallenreeks wordt in twee
+        verdeeld en de twee delen onder elkaar geschreven.
+        Tenslotte zetten we elke verticale groep van twee
+        getallen terug om in een letter met behulp van de tabel.</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

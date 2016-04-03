@@ -1,0 +1,467 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Cryptografie</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Wat
+                        is Cryptografie?</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        </p>
+        <h4><font size="2">Wat is Cryptografie</font></h4>
+        <p><font size="2"><img src="../pics/codewheel.gif"
+        align="right" border="1" hspace="5" width="217"
+        height="213"></font><font size="2">Cryptografie (van het
+        Griekse Krypto 'verborgen' en Grafo 'schrift') is de
+        studie en toepassing van technieken om informatie te
+        verbergen of te beschermen tegen lezen door onbevoegden.
+        De beschermde informatie kan geschreven tekst zijn,
+        elektrische signalen zoals Telex, Morse of spraak,
+        allerhande digitale informatie zoals computerbestanden,
+        e-mail berichten of data transmissie.</font></p>
+        <p><font size="2">De onbewerkte leesbare informatie wordt
+        klare tekst of data genoemd. Het proces om de informatie
+        onleesbaar te maken noemt vercijfering of encryptie. Het
+        resultaat van encryptie is een cijfertekst of cryptogram.
+        Het omkeren van de vercijfering om de originele
+        informatie te bekomen noemt men ontcijfering of
+        decryptie. Om informatie te vercijferen of te ontcijferen
+        gebruikt men een algoritme of 'cijfer'.</font></p>
+        <p><font size="2">Hoe dat algoritme werkt wordt bepaald
+        door de sleutel, soms ook paswoord genoemd (bij crypto
+        machines is de sleutel de instelling van de machine). De
+        geheime sleutel is enkel gekend door diegene die bevoegd
+        is om toegang te hebben tot de informatie. Zonder kennis
+        van de sleutel is het normaal gezien onmogelijk het
+        vercijferingsproces om te keren, of zal een poging om het
+        proces om te keren zo lang duren om het dat de informatie
+        achterhaald en nutteloos is. </font></p>
+        <p><font size="2">Cryptanalyse of crypto-analyse is de
+        studie en analyse van bestaande cijfers of algoritmes, om
+        hun kwaliteit te beoordelen, zwakke punten te zoeken, of
+        een manier te vinden om het vercijferingsproces om te
+        keren. Ontcijfering van informatie zonder de sleutel
+        (veelal ook zonder toestemming) noemt men
+        cryto-analytische aanval of een cijfer of algoritme
+        breken of kraken.</font></p>
+        <p><font size="2">Een crypto-analytische aanval maakt
+        gebruik van zwakheden in het algoritme of het
+        crypto-apparaat, implementatiefouten of procedures, of
+        doorzoekt alle mogelijke sleutelinstellingen
+        (brute-kracht aanval). Er zijn twee belangrijke types van
+        aanval: de cijfertekst-alleen aanval, waarbij de
+        aanvaller enkel beschikt over de cijfertekst, en de
+        gekende-klaartekst aanval, waarbij de aanvaller beschikt
+        over zowel de cijfertekst en de klare tekst of vermoedde
+        klare tekst.</font></p>
+        <p><font size="2">Cryptologie omvat zowel cryptografie
+        (maken) en cryptanalyse (breken). De uitdrukkingen
+        'code', 'coderen' en 'decoderen' worden regelmatig
+        gebruikt bij cryptografie. Een code is echter een
+        eenvoudige vervanging van informatie door andere
+        informatie en gebruikt geen algoritme. Doorgaans zijn dit
+        codeboeken of tabellen die de ene waarde (letters,
+        woorden of zinnen) omzet in een andere waarde
+        (letterreeks, numerieke waarde of speciale symbolen).
+        Cryptografie daarentegen gebruikt een algoritme (meestal
+        een combinatie van fractionering, transpositie en
+        substitutie) om de informatie te manipuleren. Hoewel
+        technisch gezien fout, wordt de uitdrukking 'coderen'
+        vaak gebruikt om vercijfering of encryptie aan te duiden.</font></p>
+        <h4><font size="2">De Geschiedenis van Cryptografie in
+        een notendop</font></h4>
+        <p><font size="2">Sinds het bestaan van de mens heeft
+        deze geheimen en zijn er anderen die deze geheimen te
+        weten willen komen. De vroegste vormen van cryptografie
+        werden uitgevoerd met pen en papier en waren dan ook
+        enkel beschikbaar voor de hogere klasse die kon lezen en
+        schrijven. Deze klassieke cijfers waren meestal
+        transpositiecijfers, die de volgorde van letters in het
+        bericht wijzigde, en substitutiecijfers, die letters of
+        woorden vervingen door andere letters of woorden. Eén
+        van de vroegst gekende substitutiecijfers was Caesars
+        cijfer of Caesars shift, waarbij de letters van het
+        alfabet vervangen werden door een tweede alfabet dat
+        enkele plaatsen verschoven was tegenover het eerste. Het
+        cijfer was genoemd naar Julius Caesar, die het gebruikte
+        voor communicatie met zijn generaals.</font></p>
+        <p><font size="2">Cryptografie wordt sindsdien gebruikt
+        om de geheime communicatie te beveiligen van militaire
+        leiders, diplomaten, spionnen, kerk en staat. De vroegste
+        cijfers vertoonden echter statistische informatie die kon
+        gebruikt worden om het cijfer te breken. Al in de 9de
+        eeuw ontdekten Arabische wiskundigen de frequentieanalyse
+        en ontwikkelden methodes om vercijferingen te breken. De
+        race tussen codemakers en codebrekers begon.
+        Frequentieanalyse bleek de meeste cijfers te breken en
+        het was pas met de uitvinding van het polyalfabetische
+        cijfer door Leon Battista Alberti in de 15de eeuw dat de
+        codemakers terug een stap voor waren op de codebrekers.
+        Polyalfabetische cijfers zoals Vigenère gebruiken
+        meerdere alfabet sets bij het vercijferingsproces.
+        Eeuwenlang werden deze cijfers onbreekbaar geacht, totdat
+        Charles Babage in de 19de eeuw de techniek van multiple
+        frequentieanalyse ontwikkelde.</font></p>
+        <p><font size="2">Cryptografie werd intensief gebruikt
+        door overheden om hun diplomatieke post te beveiligen. In
+        de 18de eeuw begonnen alle belangrijke landen in Europa
+        cryptologen te rekruteren om ofwel hun eigen
+        communicatie, meestal brieven via postdienst, te
+        beveiligen, ofwel om die van andere landen te
+        ontcijferen. Deze bureaus werden bekend als de Zwarte
+        Kamers. Sommige van de meest beruchte Zwarte Kamers waren
+        de Oostenrijkse Geheime Kabinets-Kanzlei in Wenen, het
+        Franse Cabinet Noir en later de Britse Room 40. Berucht
+        in die zin dat zij zeer bedreven waren in het
+        onderscheppen en ontcijfering van allerhande militaire en
+        diplomatieke post van vriend en vijand. Cryptografie werd
+        al snel een belangrijk wapen in de politiek en de vele
+        oorlogen in Europa.</font></p>
+        <p><font size="2">Tegen het einde van de 19de eeuw kwam
+        er belangrijke vooruitgang in de cryptografie. Auguste
+        Kerckhoffs was één van de belangrijkste mensen die
+        cryptografie veranderde van donkere kunst in wetenschap.
+        Het was Kerckhoffs die het fundamentele principe
+        verklaarde dat goede vercijfering nooit mag gebaseerd
+        zijn op de geheimhouding van het algoritme - dat sowieso
+        vroeg of laat gecompromitteerd word - maar enkel
+        gebaseerd op de geheimhouding van de sleutel.</font></p>
+        <p><font size="2">Tijdens de Eerste Wereldoorlog werden
+        veel nieuwe pen-en-papier cijfers of handcijfers
+        ontwikkeld. Veel gebruikte cijfers waren ADFGVX, Playfair
+        en Dubbele Transpositie. Zij waren allen gebaseerd op
+        transpositie, substitutie en fractionering van letters.
+        Een belangrijke uitvinding was de one-time pad
+        vercijfering voor Telex signalen door Gilbert Vernam in
+        1917. Hij ontdekte dat wanneer een Telex signaal gemixt
+        werd met een willekeurige sleutel, even lang als het
+        bericht, het bericht onbreekbaar was. Pen-en-papier
+        versies, ook wel éénmalige blokcijfers genoemd, volgden
+        weldra. Met de opkomst van draadloze communicatie groeide
+        de vraag naar veilige communicatie exponentieel. De
+        onpraktische en tijdrovende handcijfers konden de
+        groeiende berichtenstroom niet aan en dit leidde tot de
+        ontwikkeling van de eerste codeermachines, ook wel
+        cijfermachines of cryptomachines genoemd.</font></p>
+        <p><font size="2">Na de Eerste Wereldoorlog domineerden
+        twee types codeermachines de markt. De elektromechanische
+        rotormachines zoals de Duitse Enigma, de Siemens &amp;
+        HalskeT-52 en de Britse Typex enerzijds, en de volledig
+        mechanische pin-en-lug type machines zoals de Hagelin
+        modellen anderzijds. Hoewel de machines het meeste werk
+        overnamen bleven handcijfers toch in gebruik voor
+        kortetermijn tactische doeleinden, waar de tijd, nodige
+        om het bericht te breken, de ontcijferde informatie
+        tactisch nutteloos maakte. Zo werd bijvoorbeeld de
+        Dubbele Transpositie vanwege zijn hoge veiligheid
+        gebruikt tijdens de Tweede Wereldoorlog door zowel de
+        Geallieerden als de As-mogendheden. Sommige pen-en-papier
+        cijfers zoals de one-time pads bleven in gebruik tot in
+        de Koude Oorlog en zelfs nadien nog door
+        inlichtingendiensten, vanwege hun absolute veiligheid.</font></p>
+        <p><font size="2">Alle belangrijke landen realiseerden
+        zich het belang van informatievergaring en nieuwe
+        organisaties zagen het licht. In Engeland werd Room 40
+        gereorganiseerd tot de Government Communications &amp;
+        Cipher School (GC&amp;CS), die een beslissende rol
+        speelde tijdens de Tweede Wereloorlog. Enkele van hun
+        meest bekende cryptologen waren Alastair Denniston, Dilly
+        Knox en John Tiltman. In de Verenigde Staten waren de
+        Signal Intelligence Service (SIS) en de Communications
+        Security section van het Office of Naval communications
+        (OP-20-G) de belangrijkste codebrekers, met legendarische
+        cryptologen zoals William Friedman en Meredith Gardner. </font></p>
+        <p><font size="2">De Tweede Wereldoorlog leidde tot een
+        hele reeks nieuwe codeermachines zoals de Amerikaans
+        SIGABA en SIGCUM, en de Duitse Lorenz SZ-40 en
+        Schlusselgeraet 41/42. Om het enorme aantal vercijferde
+        berichten te breken zochten de codebrekers naar nieuwe
+        geautomatiseerde technieken. In Bletchley Park
+        ontwikkelden Max Newton en Tommy Flowers de Colossus, de
+        eerste programmeerbare digitale computer, om de Lorenz
+        berichten te breken. Dit was de eerste stap in de
+        evolutie van cryptografie naar het tijdperk van de
+        computers. Modernere codeermachines zoals de KL-7, Fialka
+        M-125, Hagelin CX-52 en de KL-51 bleven echter domineren
+        tot eind jaren '80, toen de digitalizering definitief
+        doorbrak.</font></p>
+        <p><font size="2">Het was Claude Elwood Shannon die de
+        grondlegger was van de moderne cryptografie op basis van
+        wiskundige principes en in 1948 de Informatie Theorie
+        publiceerde. De ontwikkeling van elektronica en digitale
+        computers maakte het ontwerpen mogelijk van algoritmes
+        die complexer waren dan ooit tevoren. Deze nieuwe
+        algoritmes waren niet meer gebaseerd op eenvoudige
+        substitutie en transpositie, maar op grote aantallen
+        complexe bewerkingen op data bits. Eén van de eerste
+        blokcijfers - encryptie op blokken van data bits - was
+        het Lucifer algoritme, ontwikkeld door Feistel en
+        Coppersmith voor IBM, en gebaseerd op wat men een Feistel
+        netwerk noemt. Dit was de voorloper van DES, de
+        allereerste cryptografische standaard.</font></p>
+        <p><font size="2">De revolutie op gebied van computers
+        leidde echter niet alleen tot betere
+        vercijferingstechnieken maar ook tot betere en snellere
+        technieken om vercijferde data te breken. De race tussen
+        codemakers en codebrekers ging voort zoals voorheen.
+        Absolute veiligheid was één van de redenen dat one-time
+        pad systemen in gebruik bleven tot de jaren 80 voor o.a.
+        Telex verkeer, hoewel de duren en complexe
+        sleuteldistributie,' een typisch nadeel van one-time pad,
+        enkel haalbaar was voor het leger en de diplomatie.</font></p>
+        <p><font size="2">Tot de jaren '70 bleef de wereld van
+        cryptografie zeer gesloten en vooral gecontroleerd door
+        overheidsinstanties. Dit veranderde drastisch met de open
+        publicatie van DES, de Data Encryption Standard, en het
+        RSA Public Key Algoritme. Het principe van Kerckhoffs
+        volgend werden nieuw ontworpen algoritmes publiek
+        vrijgegeven, om hen te onderwerpen aan intensief
+        academisch onderzoek. Het voordeel is duidelijk. Een
+        grote open cryptografische gemeenschap kan nu nieuwe
+        algoritmes beoordelen, zwakheden ontdekken, verbeteringen
+        voorstellen of het gebruikt van zwakke algoritmes
+        afwijzen. Dit leidde tot een 'overleven van de sterkste',
+        met kwalitatieve crypto standaarden. Desalniettemin
+        worden nog steeds geheime algoritmes ontwikkeld, meestal
+        voor gebruik binnen overheidsdiensten. </font></p>
+        <p><font size="2">De meest gebruikte symmetrische
+        algoritmes van vandaag zijn de Advanced Encryptions
+        Standard (AES), International Data Encryption Algorithm
+        (IDEA), Blowfish en Triple DES. Een ander type computer
+        algoritmes waren de stream ciphers of stroomcijfers. Zij
+        werden ontwikkeld als antwoord op het distributieprobleem
+        van lange sleutels zoals gebruikt bij one-time pads. Waar
+        blokcijfers een cryptografische functie uitvoeren op een
+        blok data bits van vaste grootte, genereert men bij
+        stroomcijfers een lange reeks van willekeurige waarden,
+        die dan gemixt worden met de klare informatie. Enkele
+        bekende stroomcijfers zijn RC4, SEAL en SOBER.</font></p>
+        <p><font size="2">Een ander gebied van cryptografie is de
+        integriteit en authenticiteit van berichten. Hoe kunnen
+        we zeker zijn dat het bericht dat we ontvangen authentiek
+        is en niet werd vervalst of gewijzigd? De oplossing is
+        een Hash functie. Een Hash functie of één-wegs-functie
+        gebruikt een crypto algoritme om informatie om te zetten
+        in een getal van vaste lengte, de Hash waarde. Deze
+        waarde wordt gebruikt om het bericht te ondertekenen.
+        Deze unieke Hash waarde kan niet berekend worden zonder
+        de juiste geheime sleutel. Daarom is het onmogelijk om de
+        inhoud van een bericht te wijzigen, aangezien dit een
+        herberekening van de Hash waarde vereist. Ondertussen
+        zijn verschillende veilige Hash functies ontwikkeld zoals
+        MD5, SHA-2 en RIPEMD.</font></p>
+        <p><font size="2">De belangrijkste ontwikkeling in de
+        moderne cryptografie was de publieke-sleutel
+        cryptografie. Tot 1970 was alle encryptie gebaseerd op
+        symmetrische sleutel cryptografie. Zowel vercijfering als
+        ontcijfering worden uitgevoerd met dezelfde sleutel. De
+        verzender en ontvanger van de informatie dienen dezelfde
+        sleutel te bezitten. Het nadeel van dit systeem is de
+        sleuteldistributie met verscheidene veiligheidsrisico's.
+        De uitvinding van asymmetrische publieke-sleutel
+        cryptografie door James Ellis was een revolutie in de
+        wereld van cryptografie. Bij publieke-sleutel
+        cryptografie worden twee sleutels gebruikt. Een publieke
+        sleutel, die enkel gebruikt wordt voor vercijfering, en
+        een private - geheime - sleutel voor ontcijfering.
+        Sindsdien kan men de publieke sleutel vrij beschikbaar
+        maken. Iedereen kan een bericht, voor u bestemd,
+        vercijferen met uw publieke sleutel, maar enkel u kunt
+        het bericht ontcijferen met uw private sleutel. Het is
+        niet meer noodzakelijk om een geheime sleutel te delen!
+        James Ellis' uitvinding in het Government Communications
+        Headquarters (GCHQ), de opvolger van de GC&amp;CS, bleef
+        topgeheim. Maar in 1976 stelden Whitfield Diffie en
+        Martin Hellman hun eigen asymmetrisch publieke-sleutel
+        algoritme voor en in 1978 ontwikkelden Ronald Rivest, Adi
+        Shamir, en Len Adleman het RSA algoritme. Vanwege hun
+        oplossing van het probleem van sleuteldistributie zijn de
+        Diffie-Hellman en RSA algoritmes vandaag enkele van de
+        meest gebruikte ter wereld.</font></p>
+        <p><font size="2">Publieke-sleutel algoritmes zijn
+        gebaseerd op het probleem van complexe berekeningen. Het
+        Diffie-Hellman is gebaseerd op het probleem van discrete
+        logaritmes en RSA op het probleem van ontleden van grote
+        priemgetallen. Publieke-sleutel algoritmes hebben grote
+        sleutels en benodigen veel berekeningen, wat hen enkel
+        geschikt maakt voor vercijfering van kleine hoeveelheden
+        informatie. Daarom worden de traditionele symmetrische
+        algoritmes meestal gebruikt om informatie te vercijferen
+        en het publieke-sleutel algoritme om de geheime sleutel
+        van de symmetrische vercijfereng te vercijferen. Eén van
+        de populairste toepassingen van dit principe is Philip
+        Zimmermann's PGP, een combinatie van krachtige
+        symmetrische blokcijfers, de praktische publieke-sleutel
+        cryptografie en de digitale ondertekening door Hash
+        functies.</font></p>
+        <h4><font size="2">Cryptografie vandaag</font></h4>
+        <p><font size="2">Wat betekent cryptografie voor u?
+        Alles! Vandaag is cryptografie verweven in alle aspecten
+        van ons leven. Als u verbinding maakt met het Internet om
+        te surfen, te e-mailen of inloggen op uw favoriete forum,
+        dan is die verbinding beveiligd met TLS (Transport Layer
+        Security). Het TLS protocol maakt gebruik van sterke
+        encryptie om onderschepping of vervalsing te voorkomen.
+        En het is niet enkel uw computer die cryptografie
+        gebruikt. Als we gaan winkelen, scant men onze
+        klantenkaart en de gegevens gaan naar een beveiligde
+        database. Als u betaald met de bankkaart of geld afhaalt
+        van de bankautomaat worden de transacties beveiligd door
+        cryptografie. Informatie op de chip van uw
+        identiteitskaart is vercijferd. Uw gesprekken via GSM
+        worden gedigitaliseerd en vercijferd om afluisteren te
+        voorkomen. Telkens u de afstandbediening gebruikt van de
+        centrale vergrendeling van uw auto communiceert de
+        sleutel met uw auto om een nieuwe unieke sleutel te
+        genereren, beveiligd door cryptografie. Laat het ons zo
+        stellen: Wat zou u er van denken als iemand, bijvoorbeeld
+        uw makelaar van uw levensverzekering, eenvoudigweg via
+        het Internet de computerbestanden van uw dokter kan
+        inzien? Of iemand die uw gerechtelijk dossier kan inzien
+        zonder toestemming? Wat als uw werkgever uw
+        bankverrichtingen kan nazien? Cryptografie verhinderdt
+        mensen om uw privacy te schenden.</font></p>
+        <p><font size="2">Het belangrijkste voordeel van
+        cryptografie is inderdaad privacy. Vandaag zijn onze
+        levens echter volledig gedigitaliseerd. Vrijwel al uw
+        persoonlijke informatie is opgeslagen in één van de
+        vele databases van de overheid, politie,
+        gemeentediensten, sociale instellingen, banken,
+        commerciële instellingen en noem maar op. Al deze
+        informatie kan in de handen van onbevoegden komen of
+        zelfs misbruikt worden. Dit betekend dat we
+        kwaliteitsvolle encryptie nodig hebben en de technologie
+        in handen moeten houden om onze privacy te vrijwaren.
+        Overheden zijn terughoudend om hun burger sterke
+        cryptografie te laten gebruiken, en doen ze dat toch, dan
+        willen ze er controle over behouden. Een veel gebruikt
+        argument door de overheid is dat wanneer iedereen sterke
+        encryptie kan gebruiken, de criminelen dit ook kunnen.
+        Dit houdt natuurlijk geen steek want criminelen hebben
+        genoeg methodes om hun privacy te vrijwaren. Sterke
+        encryptie verbieden zou de strijd tegen criminaliteit
+        niet vergemakkelijken, en zou de overheid in staat
+        stellen om hun burgers in de gaten te houden. Wetten
+        kunnen gemaakt worden om de sterkte van cryptografische
+        software te beperken, gedeelde-sleutel protocollen te
+        verplichten, of inlichtingendiensten toe te laten uw
+        gegevens te kraken. Overheidsinstellingen,
+        verantwoordelijk voor goedkeuring en export van
+        cryptografie zouden patenten kunnen blokkeren of enkel
+        algoritmes toelaten die ze zelf kunnen kraken. U kunt
+        misschien geen bezwaar hebben tegen het schenden van uw
+        privacy door de regering, natuurlijk enkel 'in geval van
+        nood' en met toelating van justitie, maar regeringen en
+        wetten wijzigen en wat vandaag een democratisch verkozen
+        regering is kan morgen totalitaire trekjes krijgen.
+        Daarom moeten wij vrij kunnen beschikken over degelijke
+        cryptografische toepassingen om onze basisrechten te
+        vrijwaren, vandaag én morgen. Is cryptografie belangrijk
+        voor u? Absoluut!</font></p>
+        <h4><font size="2">Meer informatie over cryptografie</font></h4>
+        <ul>
+            <li><a
+                href="http://library.thinkquest.org/07aug/01676/"
+                target="_blank"><font size="2">Hash That! Can you
+                keep a secret?</font></a></li>
+            <li><a
+                href="http://nl.wikipedia.org/wiki/Cryptografie"
+                target="_blank"><font size="2">Cryptografie op
+                Wikipedia</font></a></li>
+            <li><a
+                href="http://www.esat.kuleuven.be/cosic/intro/"
+                target="_blank"><font size="2">Introduction to
+                Cryptography door de COSIC groep Leuven</font></a></li>
+            <li><a
+                href="http://www.garykessler.net/library/crypto.html"
+                target="_blank"><font size="2">Gary Kessler's
+                Overview of Cryptography</font></a><font size="2">
+                </font><font size="1"><img src="../pics/new.gif"
+                width="31" height="12"></font></li>
+            <li><a
+                href="http://www.simonsingh.net/Crypto_Corner.html"
+                target="_blank"><font size="2">Simon Singh's
+                Crypto Corner</font></a></li>
+            <li><a href="http://www.iacr.org/" target="_blank"><font
+                size="2">International Association for
+                Cryptologic Research</font></a></li>
+            <li><a href="http://www.cacr.math.uwaterloo.ca/hac/"
+                target="_blank"><font size="2">Handbook of
+                Applied Cryptography</font></a></li>
+            <li><font size="1"><img src="../pics/new.gif"
+                width="31" height="12"></font><a
+                href="http://www.youtube.com/watch?v=1BJuuUxCaaY"
+                target="_blank"><font size="2">Information
+                Security Before and After Publik Key Cryptography</font></a><font
+                size="2"> interessante video met Whitfield Diffie</font></li>
+        </ul>
+        <p align="center"><font color="#808080" size="1"><!-- Start of StatCounter Code --><script
+        language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="enigmaproc.htm"><font color="#808080" size="1"><!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The M4 Project and the story of U-264</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Stefan
+                        Krah's M4 Project and the Story of U-264</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a>
+                        <a href="enigmamenu.htm" class="menu">Menu</a>
+                        <a
+                        href="http://www.bytereef.org/m4_project.html"
+                        target="_blank" class="menu" class="menu">M4
+                        Project</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        The Project</font></h4>
+        <p><font size="2">The </font><a
+        href="http://www.bytereef.org/m4_project.html"
+        target="_blank"><font size="2">M4 Project</font></a><font
+        size="2"> is an effort by Stefan Krah to break 3 original
+        Kriegsmarine messages, enciphered on the notorious
+        four-rotor Enigma M4. This project attempts to break
+        these Naval messages with the help of distributed
+        computing, a large number of computers, working together
+        in a network. Stefan has already succeeded in breaking 2
+        of the 3 messages. Meanwhile, a few thousand people have
+        downloaded his software to help with the breaking
+        project.</font></p>
+        <p><font size="2">The messages were intercepted by the
+        British destroyer HMS Hurricane in the North Atlantic on
+        25 november 1942. This was during the ten months
+        black-out which occured after the introduction of the
+        notorious four-rotor Enigma. During that period, the
+        codebreakers in Bletchley Park were unable to decrypt the
+        Kriegsmarine radio traffic, encrypted with the Triton
+        keys on the new Enigma M4. More about Triton on </font><a
+        href="enigmauboats.htm"><font size="2">Enigma and the
+        U-boat War</font></a><font size="2">. The messages,
+        believed to be unbroken until today, were published by
+        Ralph Erskine in a </font><a
+        href="http://members.fortunecity.com/jpeschel/erskin.htm"
+        target="_blank"><font size="2">letter to Cryptologia</font></a><font
+        size="2">. On this page, we will explain the original
+        message and guide you through the deciphering. You can
+        even decrypt the message yourself with the Enigma
+        simulator! Next, we bring you the story of
+        Kapitänleutnant Hartwig Looks and his U-264. A real
+        thriller that makes the movie 'Das Boot' look like a
+        holiday trip!</font></p>
+        <h4><font size="2">The message</font></h4>
+        <p><font size="2">To perform the ciphertext-only attack,
+        Krah used a combination of brute force and the
+        hill-climbing algorithm. The program runs through all
+        possible settings of the Enigma, except the plugboard.
+        The plugboard settings are a huge portion of the key
+        space. Omitting them during the attack saves a huge
+        amount of time. For each machine setting, the hill
+        climbing algorithm is used to optimize the plugboard
+        settings. The algorithm tries to optimize the plugboard
+        settings, by changing the plugboard, step by step. After
+        each step, the 'quality' of the result is determined by a
+        scoring function. If the score is better, the change is
+        retained.</font></p>
+        <p><font size="2">Although the first message was broken
+        in less than two weeks, we should not forget the enormous
+        computer resources, available to Stefan, thanks to the
+        distributed computing. With this in mind, we must respect
+        the incredible work of the code breakers during the
+        Second World War who, with far less technology, still
+        managed to break into the German communication. At the
+        end of the war, with the combined help of more than 7000
+        employees in Bletchley Park, and many electromechanical
+        devices, called Bombes, Allied Forces were able to break
+        into the Kriegsmarine message traffic within 24 hours! Of
+        course, the BP codebreakers didn't have the technology to
+        perform any Brute Force attack. Instead, they used Signal
+        Intelligence, cryptanalysis and cribs, pieces of plain
+        text, guessed by traffic analysis, to reduce the key
+        settings, before feeding the messages to their Bombes. It
+        is estimated that the war was shortened by 2 to 3 years,
+        and uncountable lives were saved by this tremendous
+        achievement.</font></p>
+        <p><font size="2">Courtesy of Stefan, we will show the
+        first message break and the recovered settings. Those who
+        want to go 65 years back in time and decipher the
+        original message can use my </font><a
+        href="enigmasim.htm"><font
+        size="2">Enigma Simulator</font></a><font size="2">,
+        which is a great way of verifying the message.</font></p>
+        <p><font size="2">The original cipher text, stripped of
+        message indicator groups FCLC and QRKN that preceded the
+        message and were repeated at the end:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ NCZW VUSX PNYM INHZ XMQX 
+ SFWX WLKJ AHSH NMCO CCAK
+ UQPM KCSM HKSE INJU SBLK
+ IOSX CKUB HMLL XCSJ USRR
+ DVKO HULX WCCB GVLI YXEO
+ AHXR HKKF VDRE WEZL XOBA
+ FGYU JQUK GRTV UKAM EURB
+ VEKS UHHV OYHA BCJW MAKL
+ FKLM YFVN RIZR VVRT KOFD
+ ANJM OLBG FFLE OPRG TFLV
+ RHOW OPBE KVWM UQFM PWPA
+ RMFH AGKX IIBG 
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2">The recovered Settings</font></h4>
+        <p><font size="2">Enigma model: Kriegsmarine M4<br>
+        Reflector: B<br>
+        Rotors: Beta - II - IV - I<br>
+        Stecker: AT BL DF GJ HM NW OP QY RZ VX<br>
+        Ringsettings: A-A-A-V<br>
+        Rotor startposition: V-J-N-A</font></p>
+        <p><font size="2">Be sure to adjust all these settings on
+        the </font><a
+        href="enigmasim.htm"><font
+        size="2">Enigma Simulator</font></a><font size="2">
+        before deciphering the message! After adjusting the
+        internal and plugboard settings, set the rotors to the
+        startposition VJNA, and start deciphering. You can use
+        the keyboard or machine key buttons, or copy the
+        ciphertext into the Auto-typing window (menu or F6) of
+        the simulator. The result can be viewed and formatted
+        with the Enigma Clipboard (menu or F5). Success with
+        breaking your first authentic Kriegsmarine U-boat
+        message!</font></p>
+        <h4><font size="2">The plain message</font></h4>
+        <p><font size="2">This is a spoiler!</font></p>
+        <p><font size="2">If you want to break this Kriegsmarine
+        message yourself, don't proceed reading before you have
+        deciphered the ciphertext.</font></p>
+        <p><font size="2">The message after deciphering on the
+        Enigma:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ VONV ONJL OOKS JHFF TTTE 
+ INSE INSD REIZ WOYY QNNS
+ NEUN INHA LTXX BEIA NGRI
+ FFUN TERW ASSE RGED RUEC
+ KTYW ABOS XLET ZTER GEGN
+ ERST ANDN ULAC HTDR EINU
+ LUHR MARQ UANT ONJO TANE
+ UNAC HTSE YHSD REIY ZWOZ
+ WONU LGRA DYAC HTSM YSTO
+ SSEN ACHX EKNS VIER MBFA
+ ELLT YNNN NNNO OOVI ERYS
+ ICHT EINS NULL 
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The plain text rearranged:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ VON VON JLOOKSJ HFFTTT EINS EINS DREI ZWO YY QNNS NEUN   
+ INHALT XX BEI ANGRIFF UNTER WASSER GEDRUECKT Y WABOS X
+ LETZTER GEGNERSTAND NUL ACHT DREI NUL UHR
+ MARQU ANTON JOTA NEUN ACHT SEYHS DREI Y ZWO ZWO NUL GRAD Y ACHT SM Y STOSSE NACH X  
+ EKNS VIER MB FAELLT Y NNN NNN OOO VIER Y SICHT EINS NULL 
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">After converting abbreviations, spelled
+        numbers and so on, the message appears:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ Von Looks: Funktelegramm 1132/19</font></pre>
+                <pre><font size="2"> Inhalt:</font></pre>
+                <pre><font size="2"> Bei Angriff unter Wasser gedrueckt, Wasserbomben.  
+ Letzter Gegnerstandort 08:30 Uhr,
+ Marine Quadrat AJ 9863, 220 Grad, 8 Seemeilen, stosse nach.
+ 14 Millibar faellt, NNO 4, Sicht 10.
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Translated into English:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+
+ From Looks: Radio signal 1132/19</font></pre>
+                <pre><font size="2"> Contents:</font></pre>
+                <pre><font size="2"> Forced to submerge during attack, depth charges.
+ Last enemy location 08:30h, 
+ Naval Grid AJ 9863, 220 degrees, 8 nautical miles, (I am) following (the enemy). 
+ (Barometer) 1014 Millibar (tendency) falling, North North East 4, visibility 10. 
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2">The U-boat</font></h4>
+        <p><font size="2"><img src="../pics/looks.jpg"
+        align="right" hspace="5" width="245" height="320"></font><font
+        size="2">Who is Looks, and where did the message came
+        from? I did some research and discovered the amazing
+        history of Looks and his U-boat. The archives show us
+        that the message is written by Kapitänleutnant Hartwig
+        Looks, born on June 27, 1917 in Flensburg. At age 25 he
+        took command of U-264, a type VIIC boat laid in Bremen in
+        1941. The message was probably sent by one of the radio
+        operators, Funkobergefreiter Hans Ewald,
+        Funkobergefreiter Otto Karsten or Oberfunkmeister Ulrich
+        Reimund, on their first patrol.</font></p>
+        <p><font size="2">Between November 1942 and February 1944
+        U-264 sailed out on six patrols. U-264 operated from the
+        U-boat harbor in St-Nazaire, France. On its first patrol,
+        U-264 sank the Greek 'Mount Taurus' in convoy ONS-144. On
+        its second and third patrol the U-boat came under attack
+        from aircraft fire several times without any damage. On
+        the third patrol U-264 sank the British 'Harperley' and
+        the American 'West Maximus', both in convoy ONS-5.</font></p>
+        <p><font size="2">On February 5, 1944, U-264 left
+        St-Nazaire for its seventh and fatal patrol. U-264 was
+        one of 20 U-boats ordered to sweep area 48°30'N-21°30'W
+        in search of a reported convoy. U-264 arrived at the
+        location in the North Atlantic on February 18th. U-boat
+        command ordered it to submerge during daytime and surface
+        after 18.00h to search for the convoy. At 09.00h,
+        propeller noise was heard and ASDIC sonar located the
+        U-boat. Depth charges were dropped but U-264 only took
+        very little damage. The attacking boat left to the
+        south-west. U-264 surfaced as ordered at 18.00h and
+        mounted the FLAK anti aircraft gun. Ten minutes later, a
+        Sunderland aircraft was spotted and U-264 returned fire
+        with the FLAK gun. The first burst of fire was fatal and
+        another U-boat reported that the aircraft crashed into
+        the ocean.</font></p>
+        <p><font size="2">The next morning, February 19th at
+        02.00h, U-264 spotted two enemy destroyers and reported
+        this by radio with a short signal message. U-264, still
+        surfaced, was detected by the destroyers radar and
+        received artillery fire. U-264 managed to get away at
+        high speed. At 04.00h they received a message that the
+        convoy was located and U-264 sailed at high speed to the
+        presumed location. At 05.30h, still very dark, a
+        destroyer headed at high speed towards U-264. At 2000
+        meters U-264 fired a torpedo, missing the destroyer, and
+        sped away from the enemy. At that moment, U-264 spotted
+        the convoy and reported this with a short signal message.
+        At 800 meters the destroyer opened fire at the U-boat and
+        hit the U-boat's diving tanks. The U-boat's hull was not
+        damaged and the order was given to dive immediately. The
+        destroyer dropped several depth charges and stayed on the
+        spot until 06.00h, when she was joined by five other
+        ships that protected convoy ON-224. The five Sloops were
+        HMS Woodpecker, HMS Starling, HMS Kite, HMS Wren and HMS
+        Wild Goose, all specialized in destroying U-boats.</font></p>
+        <p><font size="2"><img src="../pics/ubootviic.jpg"
+        align="right" hspace="5" width="453" height="240"></font><font
+        size="2">U-264 took many series of a new type of depth
+        charges, the Mine-Depth-Charges, which detonated at 300
+        meters instead of the usual 120 meters, hitting the
+        U-boat bottom with devastating shockwaves from beneath.
+        U-264 sustained heavy damage. At 13.00h, the destroyers
+        lost track of U-264, but found her again at 18.00h
+        because of a wide oil trace, left behind by U-264 on the
+        surface. 24 more depth charges were dropped on U-264.
+        Since early that morning, 250 depth charges were dropped
+        near the U-264!</font></p>
+        <p><font size="2">Meanwhile at U-264, all electronics
+        were lost and many water leaks were reported. The main
+        pumps could not keep up with the raising water and a bent
+        port side propeller axle caused the port side electric
+        motor to overheat and caught fire. The starboard
+        propeller was jammed completely. U-264 was out of control
+        and sank to a depth of 230 meter. Kapitänleutnant
+        Hartwig Looks gave the order to blow the air tanks and
+        surface.</font></p>
+        <p><font size="2">As they surfaced, the five sloops were
+        in a circle of 3000 meter and immediately opened fire
+        .U-264 could not return fire or use any torpedo since the
+        torpedo hatches were jammed. Kapitänleutnant Looks gave
+        the order to leave the boat. With the port side engine
+        still rotating the U-boat, still under artillery fire,
+        put more and more distance between itself and the men in
+        the water. U-264 sank in the early evening of February
+        19th at position 48°31'N-22°05'W. Looks and all crew
+        members, 52 men in total, were picked up by HMS
+        Woodpecker. There were no casualties and only two sailors
+        had minor injuries. </font></p>
+        <p><font size="2">The crew of U-264 survived their
+        incredible nightmare of depth charges and spent the rest
+        of the war as prisoners, unlike many other U-boats crews.
+        An estimated 700 German U-boats and 30,000 crew men were
+        lost at sea.</font></p>
+        <h4><font size="2">The M4 Project Website</font></h4>
+        <p><font size="2">I would like to express my gratitude to
+        Stefan Krah for the permission to use the first message
+        as an example in this article. More information on the M4
+        Message Breaking Project and the original messages can be
+        found on </font><a
+        href="http://www.bytereef.org/m4_project.html"
+        target="_blank"><font size="2">Stefan Krah's Website</font></a><font
+        size="2">. On his site you can see the server logs and
+        download the software to help him break the last message.
+        You can also subscribe to Stefan's </font><a
+        href="http://www.bytereef.org/mailinglists.html"
+        target="_blank"><font size="2">mailing list</font></a><font
+        size="2">. If you want to use the contents of this
+        article, please contact Stefan Krah for his permission.</font></p>
+        <h4><font size="2">Related Links</font></h4>
+        <ul>
+            <li><a href="enigmauboats.htm"><font size="2">Enigma
+                and the U-boat War</font></a><font size="2">
+                Breaking the Kriegsmarine Enigma</font></li>
+            <li><a href="kurzsignale.htm"><font size="2">Kurzsignale
+                on German U-boats</font></a><font size="2">
+                Enigma message procedures on German U-boats</font></li>
+        </ul>
+        <h4><font size="2">Off-Site</font></h4>
+        <ul>
+            <li><a href="http://www.bytereef.org/m4_project.html"
+                target="_blank"><font size="2">Stefan Krah's M4
+                Message Breaking Project</font></a><font size="2">
+                with the enigma suite software, statistics and
+                results</font></li>
+            <li><font size="2"><img src="../pics/new.gif"
+                width="31" height="12"></font><a
+                href="http://www.enigma.hoerenberg.com/index.php?cat=M4%20Project%202006"
+                target="_blank"><font size="2">M4 Project</font></a><font
+                size="2"> on Michael Hoerenberg's website,
+                including the original Looks war diary with the
+                25 november 1942 message.</font></li>
+            <li><a
+                href="http://www.youtube.com/watch?v=6-ActtDyr_Q"
+                target="_blank"><font size="2">2003 interview
+                with Kapt Lt Hartwig Looks</font></a><font
+                size="2"> on Youtube</font></li>
+            <li><a
+                href="http://www.youtube.com/watch?v=zeH32dJnoG8"
+                target="_blank"><font size="2">Interview with
+                Kapt Lt Hartwig Looks</font></a><font size="2">
+                Video about convoy ONS-5 at The World At War,
+                Wolfpack</font></li>
+            <li><a href="http://uboatarchive.net/U-264.htm"
+                target="_blank"><font size="2">The attack on
+                U-264</font></a><font size="2"> Photographs,
+                reports from the attacking ASW airplanes and
+                interrogation reports on </font><a
+                href="http://uboatarchive.net/index.html"
+                target="_blank"><font size="2">U-boat Archive</font></a></li>
+            <li><a
+                href="http://www.u-boot-archiv.de/dieboote/u0264.html"
+                target="_blank"><font size="2">German U-boat
+                Archive</font></a><font size="2"> More on U-264
+                on the U-boat Archive</font></li>
+            <li><a
+                href="http://ubootwaffe.net/ops/boat.cgi?boat=264"
+                target="_blank"><font size="2">Ubootwaffe Net</font></a><font
+                size="2"> U-264 on Ubootfwaffe</font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigma.htm"><font color="#808080" size="1"><!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a> <a
+                href="enigmamenu.htm" class="menu">Menu</a> <a
+                href="http://www.bytereef.org/m4_project.html"
+                target="_blank" class="menu" class="menu">M4
+                Project</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

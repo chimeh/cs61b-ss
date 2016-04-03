@@ -1,0 +1,302 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="One-time pad encryption. Description, how it is used and practical examples">
+<meta name="keywords"
+content="one-time pad, one time pad, otp, vernam cipher, perfect cipher, cryptology, cryptography, encryption, crypto, unbreakable,  dirk rijmenants">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Checkerboards</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Straddling
+                        Checkerboards</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a>
+                        <a href="onetimepad.htm" class="menu">One-time
+                        pad</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        Deze pagina bevat verschillende voorbeelden van
+        straddling checkerboards die gebruikt worden om tekst te
+        coderen in cijfers. Deze codering is geen encryptie en
+        biedt absoluut geen cryptografische veiligheid! De
+        codering is enkel een voorbereiding van de klare tekst
+        ten behoeve van het eigenlijke encryptie-proces. Daarom
+        noemen we het resultaat van de codering de plaincode
+        (klare code), om duidelijk te maken dat het bericht nog
+        steeds leesbare is.</font></p>
+        <p><font size="2">Checkerboards zijn makkelijk aan te
+        passen of te ontwerpen vanaf nul. Dit kan gaan van
+        simpele tekstcodering tot het gebruik van speciale
+        karakters, woorden of codes voor specifieke toepassingen.
+        De hieronder getoonde checkerboards tonen de
+        basiseigenschappen en mogelijkheden van tekst-naar-cijfer
+        codering. Alles is mogelijk, zolang verzender en
+        ontvanger een gemeenschappelijk systeem gebruiken.</font></p>
+        <p><font size="2">Bij een straddling checkerboard worden
+        de meest gebruikte letters omgezet in één-cijfer
+        combinaties. Alle andere letters of tekens worden omgezet
+        naar twee-cijfer combinaties. Dit beperkt de grootte van
+        het bericht aanzienlijk (een 1.5 cijfer/letter ratio
+        tegenover 2.0 voor twee-cijferige systemen). Bij het
+        decoderen kunnen we de één-cijfer en twee-cijfer
+        combinaties gemakkelijk onderscheiden. Als het volgende
+        cijfer bij een letter in de bovenste rij hoort, dan is
+        het een één-cijfer combinatie die je direct in een
+        letter kan decoderen. Indien het cijfer bij een lege cel
+        hoort dan gaat het om een twee-cijfer combinatie en moet
+        je het eerstvolgende cijfer eraan toevoegen alvorens de
+        cijfercombinatie in een letter te decoderen.</font></p>
+        <p><font size="2">Deze manier van coderen is efficienter
+        dan vast twee-cijfer codering en beperkt de lengte van
+        het bericht. Een checkerboard breekt de karakters ook in
+        afzonderlijke stukken. Dit wordt fractioneren genoemd.
+        Bovendien is de fractionering onregelmatig (soms
+        één-cijfer en some tweecijfer combinaties). Wanneer een
+        checkerboard codering gevolgd word door een
+        encryptie-algoritme dat de plaincode cijfers
+        transpositioneert zal de onregelmatige fractionering de
+        karakters op een onregelmatige manier uiteen trekken en
+        daardoor een veel complexere encryptie geven. Dikwijls
+        gebruiken zulke encryptiemethodes ook checkerboards
+        waarvan de volgorde van de cijfers dooreengehaald werd,
+        dit om de veiligheid van de encryptie nog te verhogen.</font></p>
+        <p><font size="2">De fractionerende eigenschappen van het
+        checkerboard en het dooreenhalen van de cijfers zijn
+        echter irrelevant wanneer men one-time pad vercijfering
+        gebruikt, aangezien dit type van vercijfering sowieso
+        onbreekbaar is. Enkel de efficientie en economische
+        omzetting zijn hierbij van belang. Op mijn </font><a
+        href="onetimepad.htm"><font size="2">one-time pad</font></a><font
+        size="2"> pagina vind u meer informatie over dit type van
+        vercijfering.</font></p>
+        <p><font size="2">Een eenvoudig AT ONE SIR checkerboard,
+        gemakkelijk te onhouden en op te schrijven.</font></p>
+        <p><img src="../pics/atonesirpaper.gif" width="442"
+        height="162"></p>
+        <p><font size="2">Laat ons een kort voorbeeld geven van
+        hoe het straddling checkerboard werkt door de tekst
+        &quot;CONTACT JOHN AT 1830H&quot; te coderen. De letters
+        van de bovenste rij worden gecodeerd in het cijfer dat
+        erboven staat. Voor de andere letters nemen we het cijfer
+        van de rij en vervolgens het cijfer van de kolom. Eens de
+        tekst gecodeerd naar cijfers kunnen we het bericht met
+        eender welk encryptie-algoritme vercijferen.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2"> Plaintekt :  C  O  N  T  A  C  T   J  O  H  N    A  T  [fig]  1   8   3   0  [ltr] H   
+ Plaincode :  21 3  4  1  0  21 1   26 3  25 4    0  1   68   111 888 333 000  68   25
+
+ In groepen:  21341 02112 63254 01681 11888 33300 06825
+
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Hoewel het bovenstaande checkerboard
+        eenvoudig op te maken en te gebruiken is, is er een
+        formaat dat praktischer en sneller is bij complexere
+        checkerboards met een groter aantal cellen:</font></p>
+        <p><img src="../pics/atonesir.gif" width="402"
+        height="122"></p>
+        <p><font size="2">De tabel spreekt voor zichzelf .
+        &quot;L/F&quot; 68 dient voor het omschakelen tussen
+        letters en cijfers, waarbij men elk cijfer drie keer
+        schrijft om fouten te vermijden. De tekst A54H word dus
+        gecodeerd in &quot;0 68 555 444 68 25&quot;. De cel
+        &quot;/&quot; (69) dient voor scheiding van woorden en/of
+        zinnen. De volgorde van de letters en de lege cellen in
+        de bovenste rij kan gewijzigd worden naar believen.
+        Enkele andere anagrammen voor de letters bovenste letters
+        zijn &quot;A-NOTE-SIR&quot;, &quot;NATO-RISE-&quot;,
+        &quot;RAT-NOISE-&quot;, of &quot;NO-TEA-SIR&quot;.
+        Natuurlijk kunnen die letters vervangen worden door de
+        meest frequente letters van gelijk welke andere taal. In
+        dat geval worden de tweede en derde rij aangevuld met
+        andere overblijvende letters.</font></p>
+        <p><font size="2">De volgende standaard tabel is
+        geoptimaliseerd voor Engels. Bij bevat verschillende
+        leestekens en de spatie &quot;SPC&quot; (90).
+        &quot;FIG&quot; (90) heeft hier dezelfde funtie als
+        &quot;F/L&quot; in de vorige tabel. De &quot;REQ&quot;
+        (98) cel is een afkorting van REQUEST zoals in
+        &quot;request help&quot; of &quot;request supplies&quot;.
+        Deze tabel bevat ook een &quot;CODE&quot; (0) cel. Deze
+        &quot;CODE&quot; prefix wordt gebruikt in combinatie met
+        een bijkomend codeboek. Zo'n codeboek bevat allerlei
+        verschillende woorden, uitdrukkingen en standaard zinnen,
+        elk voorzien van een drie-cijferige of vier-cijferige
+        code, naargelang het gebruikte codeboek. Indien
+        &quot;245&quot; bijvoorbeeld staat voor de tekst
+        &quot;vraag om meer informatie&quot; dan coderen we dit
+        in &quot;0245&quot;. Gerbuik steeds de &quot;CODE&quot;
+        prefix (in deze tabel 0) net vóór de eigenlijke code.
+        Wanneer de ontvanger als volgende cijfer 0 tegenkomt dan
+        weet hij dat de volgende drie cijfers met een codeboek
+        omgezet moeten worden in tekst. Het gebruik van een
+        codeboek is optioneel maar kan de lengte van het bericht
+        aanzienlijk verkorten..</font></p>
+        <p><font size="2">De bovenste rij met meest frequente
+        engelse letters in onderstaand checkerboard kan onthouden
+        worden met de woorden ON A TIE. We kunnen deze tabel
+        optimaliseren voor het Frans door het woord SAINTE in
+        alfabetische volgorde te zetten.. Voor Duits is dat
+        ANREIS en voor Spaans SENORA. Natuurlijk moeten we bij
+        gebruik van andere letters in de bovenste rij de tweede
+        en derde rij op ander wijze aanvullen.</font></p>
+        <p><font size="2"><img src="../pics/aeinot.gif"
+        width="402" height="162"></font></p>
+        <p><font size="2">De volgende tabel, tevens
+        geoptimaliseerd voor engels, bevat de meest gebruikte
+        bigrammen voor engels. Dit verminderd wederom het aantal
+        cijfers, nodig voor sommmige woorden.</font></p>
+        <p><img src="../pics/aeiot.gif" width="402" height="202"></p>
+        <p><font size="2">De CT37 omzettingstabel is een
+        uitgebreide versie van de checkerboard en bevat
+        bijkomende karakters. De tabel is makkelijk te onthouden.
+        De 7 meest gebruikte letter (in de Engelse taal)
+        &quot;ESTONIA&quot; staan in de bovenste rij. De volgende
+        twee rijen bevatten de overige letters, aangevuld met de
+        &quot;FIG&quot; veld. De vierde rij bevat
+        &quot;SPACE&quot; en &quot;CODE&quot; met daartussen de
+        leestekens (minder belangrijk om te onthouden).</font></p>
+        <p><img src="../pics/ct37.gif" width="402" height="162"></p>
+        <p><font size="2">De CT-37-words tabel gebruikt een mix
+        van letters, woorden en codes. CODE 6 is een verkortte
+        prefix voor codes van vaste lengte. De veelgebruikte
+        woorden &quot;acknowledge&quot;, &quot;request&quot;,
+        &quot;message&quot;, &quot;rendez-vous punt&quot;,
+        &quot;grid&quot; (coordinaten), &quot;send&quot; en
+        &quot;supply&quot; worden omgezet in een kleine
+        twee-cijfer code. Het weglaten van één bijkomende
+        letter of CODE in de bovenste rij maakt een bijkomende
+        volledige rij beschikbaar van 10 woorden, uitdrukkingen
+        of korte zinnen (CODE kan eventueel in de nieuwe rij
+        komen). Deze methode kan de lengte van een bericht
+        aanzienlijk verkorten.</font></p>
+        <p><img src="../pics/ct37w.jpg" width="402" height="202"></p>
+        <p><font size="2">In de CT-46 tabel hebben we vier volle
+        rijen aangezien we vier lege vakken hebben in de bovenste
+        rij. Deze tabel is niet zo moeilijk te onthouden. De
+        eerste rij bevat de zes meest voorkomende letters AEINOR,
+        genummerd van 1 tot 7. Elke nieuwe rij start met de
+        overblijvende cijfers 7, 8, 9 en 0. De tweede en derde
+        rij bevatten de overgebleven letters van het alfabet. De
+        vierde rij bevat links SPC en rechts CODE met daartussen
+        de leestekens (minder belangrijk om te onthouden) De
+        vijfde rij bevat de getallen, voorafgegaan door een 0.</font></p>
+        <p><img src="../pics/ct46.gif" width="402" height="202"></p>
+        <p><font size="2">De CT-55 tabel heeft een nog meer
+        uitgebreide set van karakters. In deze tabel wordt L/F 89
+        gebruikt voor omschakeling tussen letters (geel) en
+        tekens (groen). Dit maakt het mogelijk om meerdere tekens
+        dezelfde conversiewaarde toe te kennen. De rode velden
+        kunnen zowel in letter als teken mode gebruikt worden. Zo
+        dient men in een tekst niet om te schakelen voor bvb een
+        spatie of punt. Nummers worden omgezet in hun dubbele
+        code om vergissingen uit te sluiten. Een voorbeeld: F-16B
+        wordt omgezet in 73 89 84 11 66 89 70. CODE is ook hier
+        de prefix voor vier-cijferige codes en RPT wordt gebruikt
+        om een belangrijk stuk tekst te herhalen. Deze
+        conversietabel heeft de 7 meeste frequente letters
+        (geoptimaliseerd voor engels) en is geschikt voor tekst
+        met veel getallen en tekens.</font></p>
+        <p><img src="../pics/ct55.gif" width="402" height="242"></p>
+        <p><font size="2">Er zijn natuurlijk veel ander manieren
+        om karakters om te zetting in getallen. De methode zelf
+        dient niet veilig te zijn omdat de one-time pad encryptie
+        voor de veiligheid zorgt. Elke methode is goed, zolang
+        zij maar praktisch is, de cijfertekst niet te lang maakt
+        en niet gevoelig is voor fouten.<br>
+        <br>
+        </font></p>
+        <p><font size="2"><strong>Bijkomende informatie</strong></font></p>
+        <ul>
+            <li><a href="onetimepad.htm"><font size="2">One-time
+                pad</font></a><font size="2"> Geschiedenis en
+                gedetailleerde beschrijving van het one-time pad
+                systeem</font></li>
+            <li><a href="../papers/one_time_pad.pdf"><font
+                size="2">Guide to Secure Communications with the
+                One-time Pad Cipher</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"> how to
+                use one-time pads, digit conversion systems and
+                codebooks</font></li>
+            <li><a href="http://scz.bplaced.net/m.html"
+                target="_blank"><font size="2">SAS und
+                Chiffrierdienst website</font></a><font size="2">
+                met veel verschillende omzettingstabellen en
+                vercijferingsmethodes, gebruikt door
+                inlichtingendiensten.<br>
+                <br>
+                </font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --> <script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --><font size="2"><br>
+        © Copyright 2004 - 2016 Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a> <a
+                href="onetimepad.htm" class="menu">One-time pad</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

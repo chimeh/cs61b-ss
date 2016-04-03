@@ -1,0 +1,1220 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="The TSEC/KL-7. Technical and historical details, and software simulation of the KL-7">
+<meta name="keywords"
+content="KL-7, TSEC/KL-7, ADONIS, POLLUX, AFSAM-7, crypto machines, cryptology, simulator, software, kurzsignale, dirk rijmenants">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>TSEC/KL-7</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>TSEC/KL-7
+                        ADONIS &amp; POLLUX</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a>
+                        <a href="kl-7sim.htm" class="menu">KL-7
+                        Simulator</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        <img src="../iotm/iotm0909.jpg"
+        alt="Photo Cpoyrighted by Paul Reuvers - Crypto Museum"
+        align="right" hspace="0" width="515" height="490"></font><font
+        size="2">The TSEC/KL-7 is an American off-line
+        non-reciprocal rotor cipher machine, introduced by the
+        National Security Agency (NSA) in 1952. It was the first
+        tactical lightweight electronic (vacuum tubes) crypto
+        machine, specially developed as a standard crypto device
+        for all parts of the U.S. armed forces. The machine was
+        widely used by the U.S. and several of its NATO partners
+        until the mid 1960s, and served later on as backup, often
+        superenciphered on other systems, until its withdrawal
+        from service in 1983.</font></p>
+        <p><font size="2">The machine was a marvel of technology
+        in the 1950s and combined the latest cryptologic
+        knowledge and electronics in a machine that weighs a mere
+        20.5 lbs (9,3 Kg). Its cleverly designed keyboard with a
+        sliding permuter board replaced the complex and large
+        switch, usually required to change the signal direction
+        through the rotor pack. Notch rings on its rotors
+        controlled the rotor movement in a most complex fashion
+        and vacuum tubes controlled the timing signals of the
+        newly designed miniature printer system. The machine was
+        introduced under the name AFSAM-7, but had its name
+        changed to TSEC-KL-7 in the early 1960s.</font></p>
+        <p><font size="2">The machine had excellent cryptographic
+        properties and was designed to resist any cryptanalytic
+        attack by the Soviets at that time, even when its
+        technical details would have been compromised.
+        Unfortunately, Chief Warrent Officer John Walker not only
+        compromised the KL-7 design in 1967 by selling the
+        complete technical manual to the Soviets, but also
+        provided them with the key lists over a period of almost
+        two decades. Walker's treason added even more to the Cold
+        War myth, surrounding this fascinating machine for
+        decades.</font></p>
+        <p><font size="2">The KL-7's history and technical
+        specifications were kept secret for decades and
+        information about the machine only gradually surfaced in
+        recent years. This page is a tribute to the finest ASA
+        and AFSA engineers and cryptologist who designed the
+        KL-7, and to the men who worked with this beautiful
+        machine while serving their country in all corners of the
+        world. You can also download a freeware realistic </font><a
+        href="kl-7sim.htm"><font size="2">TSEC/KL-7 simulator</font></a><font
+        size="2"> on this website.</font></p>
+        <p><font size="2">The KL-7 image on the right is
+        copyrighted by Paul Reuvers from </font><a
+        href="http://www.cryptomuseum.com" target="_blank"><font
+        size="2">Cryptomuseum.com</font></a><font size="2">.</font></p>
+        <h4><font size="2">Technical Details </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The TSEC/KL-7 is a classical off-line
+        non-reciprocal rotor cipher machine with
+        electro-mechanical and electronic components (vacuum
+        tubes).The machine is powered by 24 Volts DC which drives
+        a DC motor, which in turn drives a 400 Volts AC
+        generator. The generator provides power to the
+        electronics. The base unit is called KLB-7. The stepping
+        unit, on top of the base unit, is designated KLA-7 and
+        contains the stepping mechanism, the notch switches and
+        supports the rotor cage. The detachable rotor cage KLK-7
+        holds 8 rotors with 36 pins on each side. Each individual
+        rotor performs a substitution cipher. The output of the
+        KL-7 is printed on a paper tape.</font></p>
+        <p><font size="2">Each rotor has an adjustable outer ring
+        with letters, a wired core with the substitution wiring,
+        and a white notch ring. The notch rings activate switches
+        in the KLA-7 stepping unit that control the stepping of
+        the rotors. The secret key settings comprise the
+        selection and order of 8 cores from a set of 12 (a 13th
+        rotor was introduced later), the position of the alphabet
+        rings on the rotors, and the selection and position of 7
+        notch rings from a set of 11. The fourth &#150;
+        non-moving &#150; rotor must be fitted with the special
+        wide ring to fixate it in the rotor cage.</font></p>
+        <h4><font size="2">General Schematics </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The continuously rotating motor drives,
+        through a 3 to 1 reduction gear, the pulse generator and
+        print drum (both on the same axle). The pulse generator
+        drives the timing unit through another reduction gear.
+        The permuter board switches the direction of the keyboard
+        signal through the rotors. The rotors scramble the signal
+        on its way to the pulse generator. The pulse generator
+        has a magnetic armature that rotates inside a double
+        circle of 37 coils: 26 coils for A through Z, 10 coils
+        for figures 1 through 0, and 1 coil for the space. All
+        coils are arranged in a 360-degree pattern, in two
+        separate rings. These coils produce the timing pulse for
+        the print hammer and clutch.</font></p>
+        <p><font size="2">Depressing a key will ground one of the
+        pulse coils. When the rotating magnetic armature passes
+        that grounded coil, it induces a pulse which is passed to
+        the step-up transformer. The pulse is cleaned up by the
+        sharpener tube and fed to the print tube, which activates
+        the print hammer and the printer clutch. The pulse timing
+        ensures that the print hammer hits the print drum when
+        the proper character passes the hammer. The printer
+        clutch causes the timing unit to perform one cycle. This
+        cycle activates four cam switches for timing signals,
+        advances the paper tape and provides mechanical power to
+        step the rotors under control of the stepping logic.</font></p>
+        <p><font size="2">The keyboard top row letters have two
+        pulse coils in series: a normal coil for the letter and a
+        coil with a larger core and more windings for the
+        corresponding figure. This combination of two coils
+        produces a double pulse of which the second pulse has a
+        higher amplitude. In FIG mode, the shift tube will switch
+        the B gate of the gate tube, changing a grid on the print
+        tube. This causes a slight delay and also requires a
+        higher pulse to activate the print hammer, as provided by
+        the double coils. The result is a slightly delayed
+        activation of the print hammer, which prints the
+        appropriate figure instead of its corresponding letter.
+        The KL-7 holds a spare 2D21 and a 12AX7 tube.</font></p>
+        <p><img src="../pics/kl7base.jpg" border="1" width="668"
+        height="456"></p>
+        <h4><font size="2">The Permuter </font><a href="kl-7.htm#top"><font
+        size="2"><img src="../pics/up1.gif" alt="Top" border="0"
+        width="12" height="9"></font></a></h4>
+        <p><font size="2">The KL-7 has a simple and compact
+        solution to swap the signal through the rotors: the
+        complete keyboard is one large sliding switch, the
+        so-called permuter board. The keys and wired contacts
+        never move. Only the sliding contact board (with T-shaped
+        contacts) moves from right to left between the keys and
+        contacts. The spring-loaded keys are all grounded and
+        pressing them down will ground the T-shaped contact plate
+        at the top side of the permuter. Two rails on the
+        permuter press down the permuter board onto the
+        spring-loaded pins at the base of the keyboard, meanwhile
+        ensuring easy movement of the board from right to left.
+        The KL-7's main switch has a pawl on its bottom that
+        grasps into a vertical slot on the left of the permuter
+        board. Turning the switch from left to right will move
+        the permuter from right to left.</font></p>
+        <p><font size="2">Each key has its own three connections
+        underneath the permuter board, called (from left to
+        right) &quot;E&quot;, &quot;P&quot; and &quot;D&quot;. In
+        Plain, the depressed key is connected via the center of
+        the T-shape and the &quot;P&quot; connection directly to
+        the pulse generator. In Encipher mode, the depressed key
+        is connected via the right part of the same T-shape and
+        the &quot;E&quot; connection to the left side of the
+        rotor pack. In Decipher mode, the depressed key is
+        connected via the left part of the next-right T-shape and
+        the &quot;D&quot; connection to the right side of the
+        rotor pack. The use of two neighbouring T-shapes for each
+        key enables the O-P-E-D sequence from right to left.</font></p>
+        <p><font size="2">The improper functioning of the
+        permuter and the rotor contacts affects the reliability
+        of the KL-7. When a bad connection occurs inside the
+        permuter board or between two of the rotors, the proper
+        pulse coil will not be grounded and consequently the
+        print hammer, printer step clutch and rotor stepping are
+        not activated. This is called a dead-rove, usually caused
+        by poor maintenance.</font></p>
+        <p><font size="2"><img src="../pics/kl7permuter.jpg"
+        border="1" width="719" height="248"></font></p>
+        <p><font size="2">The above is a simplified example with
+        3-pin rotors. In reality, the KL-7 uses 36-pin rotors.
+        Note that, to perform the piggy-back functions (see
+        Letter and Figures section below), some E, P and D
+        connections from &#147;J&#148;, &#147;V&#148;,
+        &#147;X&#148;, &#147;Y&#148;, &#147;Z&#148;, SPACE, FIG
+        and LET are swapped, and additional contacts on the
+        permuter board switch some piggy-back wires and other
+        control functions.</font></p>
+        <p><font size="2">The permuter board also has a notched
+        part in front of the printer mechanism. In the Encipher
+        position, this cam pushes a pin into the printer
+        mechanism causing the KL-7 to print a space after each
+        fifth character.</font></p>
+        <h4><font size="2">The Rotors </font><a href="kl-7.htm#top"><font
+        size="2"><img src="../pics/up1.gif" alt="Top" border="0"
+        width="12" height="9"></font></a></h4>
+        <p><font size="2">Each rotor core has 36 contact plates
+        on the left side that are wired in a scrambled fashion
+        with 36 spring-loaded contacts on the right side (rotors
+        as positioned in the rotor cage). The wiring performs a
+        substitution encryption. </font></p>
+        <p><font size="2">An alphabet ring, visible through the
+        rotor cage window, is attached to the rotor core. The
+        adjustable alphabet ring can be set by aligning it to the
+        numbers 1 trough 36 on the side the core. This changes
+        the position of the alphabet, relative to rotor wiring.
+        The 36 positions on all alphabet rings are labelled as
+        show in the table below. Note that 10 of the positions
+        are left blank.</font></p>
+        <div align="left"><table border="1" cellpadding="3"
+        cellspacing="0" width="600">
+            <tr>
+                <td bgcolor="#FFFFD9"><font size="2">Pin</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">01</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">02</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">03</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">04</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">05</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">06</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">07</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">08</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">09</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">10</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">11</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">12</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">13</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">14</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">15</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">16</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">17</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">18</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">19</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">20</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">21</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">22</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">23</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">24</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">25</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">26</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">27</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">28</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">29</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">30</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">31</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">32</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">33</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">34</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">35</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">36</font></td>
+            </tr>
+            <tr>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Label </font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">A</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">B</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">C</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">D</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">E</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">F</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">G</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">H</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">I</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">J</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">K</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">L</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">M</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">N</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">O</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">P</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Q</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">R</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">S</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">T</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">U</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">V</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">W</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">X</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Y</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Z</font></td>
+                <td align="center" bgcolor="#FFFFD9">&nbsp;</td>
+            </tr>
+        </table>
+        </div><p><font size="2">There was a set of 12 rotors to
+        choose from, later expanded to 13, labelled &quot;A&quot;
+        through &quot;M&quot;. The rotor core wiring is still
+        classified and most surviving machines are either
+        sanitized or their rotors are inaccessible. Moreover, its
+        wiring was changed on a regular basis, in contrast to,
+        for instance, the German Enigma where the wiring never
+        changed during its whole service time (the cryptologists
+        had learned their lessons).</font></p>
+        <h4><font size="2">The Rotor Cage </font><a href="kl-7.htm#top"><font
+        size="2"><img src="../pics/up1.gif" alt="Top" border="0"
+        width="12" height="9"></font></a></h4>
+        <p><font size="2">The KLK-7 detachable rotor cage holds
+        the eight rotors. The KL-7 uses a complex re-entry system
+        that can cause multiple encryptions of a single
+        character. When the signal leaves the exit rotor there
+        are two possible situations: the signal either is passed
+        immediately to the pulse generator through one of the 26
+        wires, or it leaves the exit rotor on one of the 10
+        re-entry contacts. In the latter case, the signal is sent
+        back to one of the 10 re-entry contacts at the entry
+        rotor, to perform a new pass through the rotors. When the
+        signal leaves the exit rotor again, the situation is
+        repeated. Depending on the internal wiring and current
+        position of the rotors, the signal performs one or more
+        passes (theoretically up to 10 passes) through all rotors
+        before leaving the exit rotor towards the pulse
+        generator. This results in a most complex signal path
+        that constantly changes in both number of passes and its
+        way through the rotors.</font></p>
+        <p><font size="2"><img src="../pics/kl7rotors.jpg"
+        border="1" width="718" height="221"></font></p>
+        <p><font size="2">The above is a simplified example with
+        three 6-pin rotors and 2 re-entry connections. In
+        reality, we have eight 36-pin rotors and 10 re-entry
+        wires.</font></p>
+        <p><font size="2">Each side of the detachable rotor cage
+        has at the bottom a 26 plates connector (coming from
+        permuter) and a 10 plates connector (re-entry), to
+        connect the cage with its corresponding springloaded
+        contacts on the KLA-7 stepping unit. The &#147;E and
+        &#147;D&#148; connections of the 26 letters from the
+        keyboard permuter are connected (through the KLA-7) with
+        respectively the left and right contact plates of the
+        rotor cage. These rotor cage contact plates each have a
+        circle of 36 pins, to connect the base with the rotors.
+        The table below shows the wiring order between base and
+        contact plate pins. The pins are numbered clockwise (seen
+        from the left) and pin 1 (the permuter&#146;s
+        &#147;Q&#148; wire) is aligned with the white index
+        stripe on the rotor cage. Both rotor contact plates are
+        wired identically. The letter &#147;Q&#148; from the
+        permuter is wired to contact plate pin 1, letter
+        &#147;P&#148; to pin 2 and so on. The re-entry wires (1
+        through 0) are connected straightforward between left and
+        right contact plate (1 to 1, 2 to 2, 3 to 3 ...). </font></p>
+        <div align="left"><table border="1" cellpadding="3"
+        cellspacing="0" width="600">
+            <tr>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Base </font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Q</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">P</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">0</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">N</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">F</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">C</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">3</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Y</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">O</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">M</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">9</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">G</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">R</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">8</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">U</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">I</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">7</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">B</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">H</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">2</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">V</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">T</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">W</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">6</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">X</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">S</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">4</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">J</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">L</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">Z</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">5</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">D</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">K</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">E</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">A</font></td>
+                <td align="center" bgcolor="#FFFFD9"><font
+                size="2">1</font></td>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFFD9"><font size="2">Pins</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">01</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">02</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">03</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">04</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">05</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">06</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">07</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">08</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">09</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">10</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">11</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">12</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">13</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">14</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">15</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">16</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">17</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">18</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">19</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">20</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">21</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">22</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">23</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">24</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">25</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">26</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">27</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">28</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">29</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">30</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">31</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">32</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">33</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">34</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">35</font></td>
+                <td bgcolor="#FFFFD9"><font size="2">36</font></td>
+            </tr>
+        </table>
+        </div><h4><font size="2">The Notch Rings </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The KL-7 had a set of 11 white plastic
+        notch rings, labelled 1 through 11. The notch rings are
+        responsible for the highly irregular movement of the
+        rotors. As part of the key settings, seven of them are
+        attached to the seven moving rotors. The notch rings are
+        aligned to one of the 36 positions of the alphabet ring.
+        Since there are some blanks on the alphabet ring, these
+        positions were marked with a plus sign in the key sheet
+        (e.g. after M follows M+). The fourth (non-moving) rotor
+        must carry the wide ring. The notches and cams on the
+        rings control seven stepping switches in the KLA-7
+        stepping unit. These notch rings were also part of the
+        key settings and still considered secret. </font></p>
+        <h4><font size="2">The Stepping System </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The KLA-7 stepping unit holds the rotor
+        cage and controls the stepping of the rotors. On the
+        front of the cradle, there are seven levers to manually
+        advance each individual rotor. Behind them are seven cams
+        that read the notch rings of the rotors. These cams
+        control the seven pile-up switches of the stepping logic,
+        connected to the solenoids. In the middle of the cradle
+        are the seven stepping pawls to advance the rotors. These
+        pawls are mechanically powered by the timing unit, under
+        controlled by the seven solenoids. At the rear of the
+        cradle, there are eight locking pawls that prevent the
+        non-moving rotors from moving along with neighbouring
+        moving rotors. The fourth locking pawl normally isn't
+        used, but keeps the rotor in place when testing the
+        rotors on a special axle without the rotor cage shell.</font></p>
+        <p><font size="2">The stepping logic must avoid a
+        situation where none of the rotors move, because this
+        would cause the rotors to halt permanently. The KL-7
+        stepping logic ensures that at least thee rotors move on
+        each cycle. When we consider the required cryptographic
+        properties and observe the stepping of the rotors at
+        different rotor positions, we can deduce the following
+        logic table:</font></p>
+        <div align="left"><table border="1" cellpadding="3"
+        cellspacing="0" width="350">
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><p
+                align="center"><font size="2"><strong>Moving
+                Rotor</strong></font></p>
+                </td>
+                <td valign="top" width="300" bgcolor="#FFFFE6"
+                nowrap><font size="2"><strong>Notch Rings ( 0 =
+                inactive &amp; 1 = active )</strong></font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>1</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 7 = 0 AND (Ring 2 = 0 OR Ring 3 =
+                0)</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>2</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 5 = 0 OR Ring 6 = 0</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>3</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 2 = 1 OR Ring 6 = 1</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>4</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 2 = 0 OR Ring 3 = 0</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>5</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 1 = 0 OR Ring 3 = 1</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>6</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 1 = 1 OR Ring 5 = 1</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="20" bgcolor="#FFFFE6"><font
+                size="2"><strong>7</strong></font></td>
+                <td width="300" bgcolor="#FFFFE6" nowrap><font
+                size="2">Ring 4 = 0 AND (Ring 2 = 0 OR Ring 3 =
+                0)</font></td>
+            </tr>
+        </table>
+        </div><p><font size="2">Knowing the operation of the
+        machine&#146;s KLB-7 base unit and the composition of the
+        unwired switches, we can put this in a schematic which
+        uses only the available components, a solution as most
+        likely incorporated in the KL-7. </font></p>
+        <p><font size="2"><img src="../pics/kl7stepping.jpg"
+        border="1" width="716" height="316"></font></p>
+        <p><font size="2">All switches are shown inactive. Each
+        switch is one single pile-up of the two parts Sa and Sb.
+        Note that the order of upper switches is as actually
+        positioned on stepping unit. The order of the lower
+        switches and the solenoids is mixed to make the circuit
+        diagram more readable. In reality, the lower switches and
+        solenoids are placed from left to right according to its
+        number. Of course, there are only 7 switches and
+        solenoids because the fourth rotor is skipped.</font></p>
+        <p><font size="2">Solenoids 2 through 6 are each
+        controlled by two switches in OR logic: the solenoid is
+        activated if at least one of the two switches has the
+        appropriate state. Solenoids 1 and 7 are controlled by
+        three switches and are activated if one switch is
+        inactive AND at least one of two other switches is
+        inactive. At least two solenoids are always active at any
+        given moment. Switches S1b through S7b are used for the
+        manual stepping (small levers in front of rotors). On the
+        KL-7, the stepping of a single rotor is controlled by two
+        or three separate notch rings. Two notch rings can
+        produce a maximum period (unique movement sequence) of
+        1,296 and three rings a maximum period of 46,656. This is
+        for one single rotor. The combination of seven notch
+        rings therefore provides a most complex stepping
+        sequence.</font></p>
+        <h4><font size="2">The Printer Mechanism </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The KL-7 has a continuously rotating
+        print drum, fixed on the same axle as the pulse
+        generator. The print drum has the complete set of letters
+        and digits on its circumference. The moment that the
+        magnetic armature of the pulse generator passes a
+        grounded coil, the sharpener and print tubes pass this
+        signal to the print hammer and the printer clutch. The
+        print hammer pushes the paper upwards against the print
+        drum (with the inked ribbon between them) at the exact
+        moment that the required character passes the print
+        hammer.</font></p>
+        <p><font size="2">The activated printer clutch causes the
+        timing unit axle to perform a single cycle, providing
+        mechanical power to advance both the paper and the rotors
+        (adjusting the individual rotors manually also activates
+        the clutch and therefore will also advance the paper). A
+        pin, controlled by the permuter board, mechanically
+        switches between continuously printing (plaintext) and
+        five-letter groups with a space between each group
+        (ciphertext). The paper roll is stored in the black
+        circular casing between the motor block and the rotor
+        cage.</font></p>
+        <h4><font size="2">Letters and Figures </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The KL-7 can process 37 different
+        characters: the letters A through Z, the figures 0
+        through 9 and the SPACE. The rotors, however, can only
+        process 26 characters because 10 of the 36 connections,
+        from and to the rotor cage, are hard-wired from output to
+        input for the re-entry function (the 36 rotor contacts
+        have no relation with the 36 letters and digits).
+        Moreover, the encryption reduces the 37 characters to a
+        26 letters ciphertext. </font></p>
+        <p><font size="2">To enable encryption of 37 different
+        characters into letter-only code groups, the KL-7 uses a
+        system, similar to the teletype code. Two signals, LET
+        and FIG, switch the machine between letters and figures.
+        Both character sets use the same signals and they are
+        distinguished only by the FIG or LET mode on that
+        particular moment. The characters &#147;QWERTYUIOP&#148;
+        are processed as &#147;1234567890&#148; in FIG mode.</font></p>
+        <p><font size="2">This still gives 26 alpha (-numeric)
+        keys, the additional SPACE, LET and FIG. The KL-7 must
+        encipher these three additional characters into a
+        letters-only ciphertext. Therefore, the KL-7 design
+        permits the special functions to piggy-back on some of
+        the existing alphabet letters. The letters &#147;J&#148;,
+        &#147;V&#148;, &#147;X&#148;, &#147;Y&#148; and
+        &#147;Z&#148; were selected because they are some of the
+        less frequently used letters.</font></p>
+        <ul>
+            <li><font size="2">Before enciphering, the letter
+                &#147;Z&#148; is changed into &#147;X&#148; and
+                the SPACE key into the letter &#147;Z&#148;.</font></li>
+            <li><font size="2">After deciphering, &#147;Z&#148;
+                is translated back into a SPACE and the letter
+                &#147;X&#148; (originally the letter
+                &#147;Z&#148;) remains an &#147;X&#148;.</font></li>
+        </ul>
+        <ul>
+            <li><font size="2">Before enciphering, the letter
+                &#147;J&#148; is changed into &#147;Y&#148; and
+                the FIG key is changed into &#147;J&#148;.</font></li>
+            <li><font size="2">After deciphering, the letter
+                &#147;J&#148; is not printed, but causes the KL-7
+                to go into FIG mode. The letter &#147;Y&#148;
+                remains &#147;Y&#148;.</font></li>
+        </ul>
+        <ul>
+            <li><font size="2">Before enciphering, both the
+                letter &#147;V&#148; and the LET (letters) key
+                are changed into the letter &#147;V&#148;.</font></li>
+            <li><font size="2">After deciphering, if the KL-7 is
+                in LET (letters) mode at that time, the letter
+                &#147;V&#148; remains &#147;V&#148;. If the KL-7
+                is in FIG mode, the letter &#147;V&#148; causes
+                the KL-7 to switch back into LET (letters) mode
+                and also prints a space</font></li>
+        </ul>
+        <p><font size="2">This system of additional characters
+        that piggy-back on normal letters is the most practical
+        method and also the least invasive for the readability of
+        the text. Nonetheless, the design came with a cost. The
+        KL-7 test phrase shows the small changes that occur. The
+        first sentence is the text before enciphering and the
+        second sentence is the same text after it is deciphered
+        back into plain text. To show the changes in spaces after
+        switching to LET-mode more clearly, the spaces in the
+        example below are replace by a dash:</font></p>
+        <div align="left"><table border="0" cellspacing="0"
+        width="600" bgcolor="#C0C0C0">
+            <tr>
+                <td><div align="left"><table border="0"
+                cellpadding="2" cellspacing="5">
+                    <tr>
+                        <td bgcolor="#FFFFE6" nowrap><font
+                        size="3" face="Courier New">THE-236TH-QUICK-RED-FOX-JUMPED-780-TIMES-OVER-THE-1459-LAZY-BROWN-DOGS</font></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFE6" nowrap><font
+                        size="3" face="Courier New">THE-236-TH-QUICK-RED-FOX-YUMPED-780--TIMES-OVER-THE-1459--LAXY-BROWN-DOGS</font></td>
+                    </tr>
+                </table>
+                </div></td>
+            </tr>
+        </table>
+        </div><p><font size="2">Notice that only the seldom used
+        letters &#147;J&#148; and &#147;Z&#148; are affected by
+        the piggy-back system. </font></p>
+        <h4><font size="2">Cryptographic Strength </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">We can calculate the theoretical
+        strength of the KL-7 by taking all cryptographic
+        variables for a complete machine set-up, knowing the
+        machine&#146;s general principle of operation, but
+        without any information on the internal wiring of the
+        rotors and shape of the notch rings. The 8 rotor cores
+        can be wired in 3.66322 different ways. This comprises
+        all positions, relative to the machine, making the
+        alphabet ring superfluous (the alphabet is only a visual
+        representation of the rotor alignment). This also
+        comprises all positions of the non-moving 4th core, set
+        by its wide ring. The notch rings can be shaped in 7.23<sup>75</sup>
+        different ways. This comprises all combinations of
+        notches, relative to the stepping pawls. This gives a
+        total of 2.65<sup>408</sup> purely cryptographic
+        combinations, or a 1357 bit key.</font></p>
+        <p><font size="2">Next, we look at the practical settings
+        for the operator. He must select 8 rotors from a set of
+        13, giving 51,891,840 combinations. He has 78,364,164,096
+        ways to set 7 alphabet ring. There are 1,663,200 ways to
+        select 7 notch rings from a set of 11. The 7 notch rings
+        and the wide ring (4th rotor) can be set in
+        2,821,109,907,456 different ways. Finally, there are
+        78,364,164,096 possible rotor alignments at the start of
+        a message. In total, this gives 1.49<sup>48</sup> ways to
+        adjust the key settings, both internal and external. This
+        resembles a 161 bit key.</font></p>
+        <p><font size="2">When the machine&#146;s specifications
+        are known to the adversary (espionage, capture) he has to
+        find 8 cores from a set of 13, giving 51,891,840
+        combinations. There are 1,663,200 ways to combine 7 notch
+        rings from a set of 11. There are 2,821,109,907,456 ways
+        to set 7 notch rings and 1 wide ring. Finally, there are
+        78,364,164,096 ways to set all core/notch combinations,
+        relative to the machine. The alphabet ring, only visual
+        reference of position of core/notch combination, is
+        disregarded. This gives the adversary a total of 1.90<sup>37</sup>
+        combinations or a 124 bit key.</font></p>
+        <p><font size="2">Trying out all possible keys, a
+        so-called brute force attack, on a 124 bit key is
+        considered infeasible with all present and future
+        computer power. However, cryptanalysis is more than key
+        size, brute force attacks and theoretical security. Rotor
+        cipher machines have proven vulnerable to certain types
+        of cryptanalytic attacks, performed on fast computers.
+        Therefore, the KL-7 is no longer considered secure.
+        Nevertheless, even today, skilled cryptanalysts with
+        current resources would still face a formidable task to
+        mount a successful attack against the KL-7, especially
+        when they have only a limited number of messages their
+        disposal.</font></p>
+        <h4><font size="2">Developement of the KL-7 </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The roots of the KL-7 are found in the
+        Second World War. In the 1940&#146;s, the
+        electromechanical rotor cipher machine ECM (SIGABA) had
+        set a new standard for secure high-level communications.
+        At tactical level, the lightweight mechanical M-209 was
+        widely used. By the end of the war, the M-209 was no
+        longer considered secure and the Army expressed the need
+        for a lightweight secure crypto machine that could
+        replace the M-209 but that would have a cryptographic
+        strength, comparable with cipher machines like the
+        SIGABA. The Navy was also seeking a small cipher machine
+        with the qualities of the ECM, with a focus on saving
+        weight. In March 1945, the Army headquarter requested the
+        Signal Security Service (SSS) to develop a machine that
+        would fit their needs. Soon after, the SSS was renamed
+        into the Army Security Agency (ASA), who initiated the
+        research.</font></p>
+        <p><font size="2"><img src="../pics/smallpatent.jpg"
+        align="right" border="1" hspace="5" width="336"
+        height="336"></font><font size="2">The project was
+        designated MX-507 and ASA saw it as a long-range research
+        project. The ASA researchers quickly decided to opt for a
+        rotor-based machine. A design with 36-point rotors came
+        on the forefront. They also had to design a completely
+        new lightweight printing system, as the new machine was
+        required to operate off-line and print out the messages
+        on paper. Eventually, they were able to reduce a printer
+        system to one quarter of its original size and weight.
+        ASA decided to apply a new cryptographic principle,
+        called re-entry. The re-entry or re-flexing was
+        discovered by Albert Small, who filed it for patent in
+        1944. The idea was to take parts of the cipher output,
+        re-enter the output back into the enciphering process and
+        re-encipher it once again (see image right). In 1949, the
+        Armed Forces Security Agency (AFSA) was created. It was
+        the first American central cryptologic organisation and
+        one of its goals was to provide standardization of secure
+        communications devices and to determine a general policy
+        for crypto equipment. The research of the ASA was
+        transferred to AFSA in December 1949.</font></p>
+        <p><font size="2">Meanwhile, in April 1949, the United
+        States and its Allies had formed the North Atlantic
+        Treaty Organisation or NATO, and deteriorating relations
+        with the Soviet Union resulted into a grim Cold War.
+        Secure communications between the NATO members was an
+        important part of making a front against the USSR. An
+        additional challenge that AFSA faced was to design a
+        machine for themselves that could also be distributed to
+        their NATO allies, without disclosing vital secret crypto
+        technology that could come into Soviet hands, either
+        directly or through infiltration of NATO members. With
+        such a large organization as NATO, it was more than
+        likely that this machine or its specifications would
+        sooner or later reach Russian soil. The design had to
+        resist by far any possible cryptanalytic attack by Soviet
+        codebreakers, even when the technical details of the
+        machine were disclosed. The security of the machine had
+        to depend solely on the secrecy of the key settings, thus
+        obeying Kerckhoffs&#146; well known law on cryptography.</font></p>
+        <p><font size="2">The MX-507 was renamed to AFSAM-7,
+        which stands for Armed Forces Security Agency Machine No
+        7, and by September 1950, AFSA demonstrated an
+        engineering model. The final design used 8 rotors with 36
+        contacts, a re-entry of ten rotor signals, and a most
+        complex irregular stepping, electrically controlled by
+        notch rings on the rotors. The problems with the printer
+        timing and the shift system were solved by a clever
+        design with vacuum tubes, making the KL-7 the first
+        tactical cipher machine ever to use electronics.</font></p>
+        <p><font size="2">The AFSAM-7 was approved and the Army
+        was allowed to build prototype models. By December 1950,
+        the Army declared the AFSAM-7 ready for production. The
+        machine would become the first standard crypto machine in
+        the US Armed Forces. The cryptosystem was designated
+        POLLUX. Contractors were selected and operational and
+        maintenance manuals were composed. In February 1951,
+        contracts were signed to produce 25,000 AFSAM-7&#146;s at
+        a rate of 5,000 per year. The first repair and
+        maintenance course for Army and Air Force personnel was
+        scheduled in September 1951.</font></p>
+        <p><font size="2">In October 1951, AFSA announced two
+        types of operation: the AFSAM-7 traffic for high-level
+        communications was designated ADONIS and the traffic for
+        the Army and Air Force was designated POLLUX. The
+        differences between the two systems were the rotor sets
+        and the message keying procedure. The final production
+        contract was signed on February 9, 1952. The AFSAM-7 was
+        introduced in the US armed forces by the newly formed
+        National Security Agency (NSA), and some units were also
+        bought by the Central Intelligence Agency and the Federal
+        Bureau of Investigation. The AFSAM-7 was
+        cryptographically more than capable to resist any attack
+        at the moment of its release. In the early 1960&#146;s,
+        the AFSAM-7 was renamed TSEC/KL-7, according to the new
+        nomenclature for crypto equipment.</font></p>
+        <p><font size="2">A Baudot paper tape reader called
+        TSEC/HL-1 was developed for the KL-7. With this HL-1, the
+        KL-7 could directly read and decipher five bit level
+        punched paper tapes, as received from standard
+        teleprinters. A larger variant of the KL-7, designated
+        KL-47, could also punch five-bit level paper tapes.
+        Individual components of the KL-7 and KL-47 were
+        manufactured by several different US government
+        contracted companies. After final assembly at different
+        locations, the machines became the property of the
+        National Security Agency and were distributed within the
+        US and to NATO members. All machines, used in other
+        countries, were in loan from the NSA.</font></p>
+        <h4><font size="2">The KL-7 in Service </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">Despite the KL-7's extensive use within
+        the armed forces, it wasn't always the most popular one.
+        The KL-7 was notorious for its keyboard and rotor contact
+        problems. The operator often had to push firmly on the
+        keys to get the machine cycling, not allowing him to get
+        any speed on the KL-7. To avoid contact problems, the
+        rotors had to be cleaned regularly. The KL-7 also had a
+        high acoustical signature. TEMPEST, the &#145;art&#146;
+        of shielding devices against eavesdropping on emitted
+        electrical pulses and, in the case of the KL-7 also
+        sounds, wasn&#146;t given priority during the development
+        of the KL-7. When the machine is turned on, the motor
+        slowly takes speed and the reduction gears for the pulse
+        generator and print drum produce its characteristic high
+        pitched noise. The advancing rotors also produce their
+        typical sound. On start-up, the KL-7's vacuum tubes need
+        to heat up before one can type on its keyboard, as the
+        printer timing is controlled by the electronics. Usually,
+        two rotor cages were available for each KL-7. The rotor
+        cage of the previous day was kept on a secure location.
+        If a message of the previous day arrived, the operator
+        simply detached the current rotor cage and attached the
+        old rotor cage on the KL-7 to decipher the message with
+        the previous key settings. </font></p>
+        <p><font size="2">During its service time, the rotors of
+        the KL-7 and KL-47 were rewired on a regular basis. Some
+        rotors were rewired on a yearly basis on national or NATO
+        level and some rotors, often referred to as the NSA
+        rotors, were to be sent directly to NSA and were rewired
+        by NSA personnel only. It was strictly forbidden to
+        operators, even to the maintenance technicians with
+        crypto clearance for KL-7, to check out the internal
+        wiring of the rotors. The technicians were not allowed to
+        test the rotors pin-to-pin but were instructed to place
+        the rotor on a large conductive plate that made contact
+        with all rotor pins at once, and then check out the
+        connection on each pin at the other side with an Ohm
+        meter. This way, the technician would see if a wire was
+        broken, but didn&#146;t know to which pin it corresponded
+        on the other side.</font></p>
+        <p><font size="2">With its large key size (the number of
+        possible different key settings) the KL-7 and KL-47 were
+        considered secure against any attempt by the Soviets to
+        decipher the messages, even when its specifications would
+        be compromised sooner or later. The machine was therefore
+        certified for Top Secret messages at the start of its
+        career. However, advances in technology and the
+        introduction of miniature electronic components increased
+        the computational power tremendously in the next decades.
+        As a result, the KL-7 had become operationally insecure
+        by the mid 1960&#146;s, and vital message traffic was
+        often superenciphered on other systems after being
+        enciphered with the KL-7.</font></p>
+        <p><font size="2">From the 1970&#146;s on, the KW-26 and
+        KW-37 online cipher equipment largely replaced the
+        outdated KL-7. Some KL-7&#146;s stayed in service, mostly
+        as back-up, and retired in the 1980&#146;s. The last
+        known recorded message, enciphered with a KL-7, was sent
+        by the Canadian armed forces in June 1983. The fully
+        electronic KL-51 RACE off-line cipher machine could be
+        seen as the successor of the KL-7. The KL-7 machine
+        itself was unclassified. However, the rotor cage wiring,
+        the rotor entry plates and the stepping circuitry were
+        confidential. Maintenance rotors were considered
+        confidential and operational rotors secret. After its
+        service time, all KL-7&#146;s and KL-47&#146;s and their
+        rotors were recalled. All surviving KL-7&#146;s were
+        carefully stripped from the stepping mechanism and rotor
+        entry wiring. A process, commonly denoted as
+        &#145;sanitized&#146;.</font></p>
+        <p><font size="2">The KL-7 is a unique machine in many
+        ways. It was the first machine to be developed under one
+        centralized cryptologic organisation and introduced as a
+        standard crypto device in all parts of the armed forces.
+        At that time, the KL-7 used the latest cryptologic
+        techniques and was the first ever cipher machine with
+        electronics, yet its rotor based design would soon lose
+        the battle against miniaturisation of electronics and
+        computational power. It proved to be the last of a breed
+        of true cipher machines. Many operators cursed the
+        machine for its quirky keyboard and regular contact
+        problems. They welcomed its electronic successors, but
+        today they speak with sentiment about that wonderful
+        machine and even remember vividly the typical sound of
+        its stepping rotors. Maybe it is because of the era in
+        which the KL-7, and the men, gave their best. Maybe
+        because the KL-7 served all over the world, collecting
+        secrets and memories about the Cold War, companionship,
+        and even exciting stories&#133;about treason and
+        espionage.</font></p>
+        <p><font size="2">Because this was not the end of the
+        KL-7 story...</font></p>
+        <h4><font size="2">Major Security Breaches </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">In 1981, former US Army Warrant Officer
+        Joseph Helmich, was arrested by the FBI for the sale of
+        critical information on the KL-7. In 1963, he served as
+        crypto custodian in France and later at Fort Bragg, North
+        Carolina. Being faced with financial problems, Helmich
+        contacted the Soviet Embassy in Paris, France. He
+        received $131,000 in return for critical information on
+        the KL-7. At that moment, the KL-7 was the most widely
+        used crypto machines in the US military. After returning
+        to the United States, Helmich continued to provide KL-7
+        key lists to the Soviets until 1966. Although already
+        under suspicion in 1964 and admitting in 1980 to have
+        received money from Soviet agents, it was only in early
+        1981 that he was observed with Soviet agents in Canada.
+        Helmich eventually confessed and was sentenced to life
+        imprisonment. </font></p>
+        <p><font size="2">In 1985, FBI received a tip from the
+        ex-wife of John Anthony Walker, a retired US Navy
+        communications specialist. Later on, he was observed by
+        the FBI while dropping a grocery bag alongside a road
+        north of Washington D.C. The bag contained 129 copies of
+        stolen secret U.S. Navy documents. At the same moment and
+        a few miles further, a Soviet KGB agent left a grocery
+        bag with $200,000. It was clearly a dead drop exchange to
+        covertly exchange documents and money without meeting
+        face-to-face. The following night, John Walker was
+        arrested by the FBI in a motel. The investigation shook
+        up the military intelligence community. As later turned
+        out, already in 1967, Chief Warrent Officer John Walker
+        simply walked into the Soviet Embassy in Washington DC
+        with a KL-47 key list and offered the Soviets to sell
+        secret Navy documents for cash. It was the beginning of a
+        spying career of no less than 18 years. During a search
+        of his house after his arrest, the FBI discovered a
+        special device, provide by the KGB, to read the internal
+        wiring of the KL-7 rotors. During interrogations, Walker
+        admitted providing the Soviets with complete technical
+        maintenance manuals which enabled the reconstruction of a
+        fully operational KL-7. He was also sentenced to life
+        imprisonment.</font></p>
+        <p><font size="2">The importance Soviet Intelligence gave
+        to the key sheets, despite possessing all technical
+        details of the KL-7, shows that they were probably unable
+        to break the KL-7 message traffic purely by
+        cryptanalysis, or that they had no sufficient computer
+        power to decipher them within reasonable time for
+        practical use, at least in the early 1960&#146;s.</font></p>
+        <h4><font size="2">TSEC/KL-7 Simulator </font><a
+        href="kl-7.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><a href="kl-7sim.htm"><img src="../pics/kl7.jpg"
+        align="right" border="0" hspace="5" width="239"
+        height="254"></a><font size="2">You can download a
+        freeware realistic simulation of the TSEC/KL-7 on this
+        website. The simulator is based on the most recent
+        available information on the KL-7 and operates in exactly
+        the same way as the real machine. With most surviving
+        KL-7's sanitized, this simulator is the only remaining
+        way to actually work with this beautiful machine, and the
+        simulator serves as an attempt to keep this machine and
+        its history alive. The simulator has a very complete 20
+        page manual that includes the use of the simulator, the
+        technical and historical details on the KL-7 and some
+        example messages. Please visit the </font><a
+        href="kl-7sim.htm"><font size="2">KL-7 Simulator page</font></a><font
+        size="2"> to download the software, <br>
+        <br>
+        </font></p>
+        <h4><font size="2">More information on the TSEC/KL-7 (off
+        site) </font><a href="kl-7.htm#top"><font size="2"><img
+        src="../pics/up1.gif" alt="Top" border="0" width="12"
+        height="9"></font></a></h4>
+        <ul>
+            <li><a
+                href="https://dl.dropboxusercontent.com/u/59392396/Docs/KL-7%20ADONIS%20Operating%20Instructions.pdf"
+                target="_blank"><font size="2">KL-7 ADONIS
+                Operating Instructions</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15">
+                Complete KAO-41C/TSEC user manual and operating
+                instructions, released under IAI</font></li>
+            <li><a
+                href="https://dl.dropboxusercontent.com/u/59392396/Docs/KL-7%20POLLUX%20Interim%20Operating%20Instructions.pdf"
+                target="_blank"><font size="2">KL-7 POLLUX
+                Interim Operating Instructions</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> First year of operation report and
+                user manual, released under IAI</font></li>
+            <li><a
+                href="http://www.nsa.gov/public_info/_files/crypto_almanac_50th/AFSAM_7.pdf"
+                target="_blank"><font size="2">NSA Almanac 50th
+                Anniversary Series</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"> History
+                of the developement of the AFSAM-7.</font></li>
+            <li><a
+                href="http://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf"
+                target="_blank"><font size="2">History of U.S.
+                Communications Security vol I &amp; vol II</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> <img src="../pics/new.gif"
+                width="31" height="12">NSA, David Boak Lectures,
+                Volume I, Third Lecture; TSEC/KL-7, p33</font></li>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/usa/kl7/index.htm"
+                target="_blank"><font size="2">The TSEC/KL-7 on
+                Cryptomuseum.com</font></a><font size="2"> Paul
+                Reuvers' and Marc Simoens' Crypto Museum with
+                detailed technical information and many
+                high-quality images.</font></li>
+            <li><a href="http://www.jproc.ca/crypto/kl7.html"
+                target="_blank"><font size="2">The TSEC/KL-7 On
+                Cryptomachines</font></a><font size="2"> Jerry
+                Proc's webpage on the KL-7, with information from
+                various sources and former operators.</font></li>
+            <li><a href="http://www.jproc.ca/crypto/kl7.html"
+                target="_blank"><font size="2">The TSEC/KL-47 On
+                Cryptomachines</font></a><font size="2"> Jerry
+                Proc's webpage on the KL-47 (KL-7 with paper tape
+                punch and tape reader)</font></li>
+            <li><a href="http://www.jproc.ca/crypto/x22.html"
+                target="_blank"><font size="2">The TSEC/HL-1 tape
+                reader</font></a><font size="2"> Jerry Proc's
+                Baudot puched paper tape reader for KL-7</font></li>
+            <li><a
+                href="http://www.freepatentsonline.com/2984700.pdf"
+                target="_blank"><font size="2">Albert W. Small's
+                Patent on Re-Entry Principle</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> at Free Patents On-line.</font></li>
+            <li><a
+                href="http://www.usni.org/magazines/navalhistory/2010-06/navys-biggest-betrayal"
+                target="_blank"><font size="2">John Walker on the
+                U.S. Naval Institute</font></a><font size="2">
+                The story of John Walker's spy ring.</font></li>
+            <li><a href="http://www.fas.org/irp/eprint/heath.pdf"
+                target="_blank"><font size="2">Analysis of
+                Security Weaknesses Exploited by CWO John Walker</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> by Laura J. Heat, Maj USA, M.S.,
+                Georgia Institute of Technology, 2001</font></li>
+            <li><a
+                href="http://operationtinkerbell.blogspot.be/p/briefing.html"
+                target="_blank"><font size="2">Operation Tinker
+                Bell</font></a><font size="2"> <img
+                src="../pics/new.gif" width="31" height="12">
+                Decipher a series of KL-7 messages and join the
+                hunt for a KGB defector</font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigma.htm"><font color="#808080" size="1"><!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a> <a
+                href="kl-7sim.htm" class="menu">KL-7 Simulator</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="The Hagelin C-52 and CX-52 Cipher Machines. Technical details and software simulations.">
+<meta name="keywords"
+content="hagelin, cx-52, c-52, cipher machines, cipher machine, pin and lug, dirk rijmenants">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Hagelin B-21</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Hagelin
+                        B-21 Codeermachine</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a>
+                        <a href="hagelinmenu.htm" class="menu">Menu</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        </font></p>
+        <table border="0" cellpadding="10" cellspacing="0">
+            <tr>
+                <td valign="top"><h4><font size="2">Geschiedenis
+                van de B-21</font></h4>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td valign="top"><p align="left"><font size="2">De
+                B-21 was de eerste codeermachine, uitgevonden
+                door Boris Hagelin, die gecommercialiseerd werd
+                door A.B Cryptograph. Toen de zweedse Generale
+                Staf in 1925 een alternatief zocht voor de Duitse
+                Enigma vertelde Hagelin hen dat hij ervaring had
+                in codeermachines en dat hij binnen zes maanden
+                een machine zou ontwikkelen die superieur was aan
+                de Enigma. Dit was echter een sterk staaltje van
+                blufpoker aangezien Hagelin van nul diende te
+                starten. Zij waren echter akkoord en Boris kreeg
+                zijn machine binnen de tijd klaar. De enige
+                vergelijking met de Enigma was het toetsenbord en
+                de lampjes.</font></p>
+                <p align="left"><font size="2">U kunt op de
+                afbeeldingen klikken om ze te vergroten. Alle
+                foto's copyrighted en met toestemming van John
+                Alexander, Leicester.</font><br>
+                <font size="2"><br>
+                <br>
+                </font></p>
+                <h4 align="left"><font size="2">Technische
+                Beschrijving</font></h4>
+                <p align="left"><font size="2">De B-21 was een
+                baanbrekend ontwerp en gaf het startschot tot het
+                commerciële succes van Hagelin Cryptos. Hagelin
+                startte met een bestaand ontwerp van Arvid Damm,
+                de <em>vereenvoudigde rotors</em> in een vijf op
+                vijf matrix. Deze rotors waren compleet
+                verschillend in ontwerp en werking dan de rotors
+                van de Duitse Enigma machine. De Enigma had drie
+                rotors met 26 contacten, één voor elke letter
+                van het alfabet, en een reflector om het signaal
+                terug in de rotors te leiden. Het ontwerp van
+                Damm gebruikte slechts twee rotors met vijf
+                ingangscontacten en tien uitgangscontacten.</font></p>
+                <p align="left"><font size="2">Hieronder het
+                vereenvoudigde schema van de B-21. Onder het
+                toetsenbord zitten 10 horizontale regels [1] die
+                in twee groepen van vijf verdeeld zijn. Als een
+                letter op het toetsenbord [2] is ingedrukt worden
+                één regel van de eerste groep en één regel
+                van de tweede groep horizontaal verschoven. Alle
+                25 toetsen hebben een andere combinatie van twee
+                regels, één in elke groep van vijf. De regels
+                bedienen 10 schakelaars [3] die ook in twee
+                groepen verdeeld zijn. Bij de eerste groep van
+                vijf contacten gaat de ene zijde naar de
+                positieve kant van de voeding en een andere zijde
+                naar de eerste rotor [4]. Bij de tweede groep van
+                vijf contacten gaat de ene zijde naar de
+                negatieve kant van de voeding en een andere zijde
+                naar de tweede rotor [5]. Elke rotor heeft 5 ring
+                contacten en 10 uitgangscontacten. De 5
+                ingangscontacten zijn gescrambled naar de 5
+                oneven uitgangscontacten op één manier en naar
+                de 5 even uitgangscontacten op een andere manier.
+                Met elke van de 10 mogelijke stappen van de rotor
+                word er gewisseld tussen de even en oneven
+                contacten om het signaal door te geven aan de
+                vaste uitgangsrotor [6]. De uitgang van beide
+                rotors gaat naar een vijf op vijf matrix met 25
+                lampjes [7] (één letter is weggelaten of
+                gecombineerd met een andere letter). De 10 rotor
+                posities zijn gemarkeerd met de letters A tot K
+                (de letter J is weggelaten).</font></p>
+                <p align="left"><img src="../pics/b21plan.jpg"
+                border="1" width="510" height="429"></p>
+                <h4 align="left"><font size="2"><br>
+                <br>
+                De Pin-wielen</font></h4>
+                <p align="left"><font size="2">Het ontwerp van
+                deze rotors was niet nieuw maar deed zijn werk
+                prima om de electrische signalen te vercijferen.
+                De innovatie in Hagelin's ontwerp was echter hoe
+                deze rotors werden voortbewogen. Dit volledig
+                nieuw concept zou de unieke Hagelin machines
+                kenmerken in de volgende decennia. De B-21 is de
+                eerste machine om gerbuik te maken van de alom
+                bekende pin-wielen, ook wel sleutel-wielen
+                genoemd. De B-21 heeft vier van deze pin-wielen
+                met 17 (A tot R), 19 (A tot T), 21 (A tot V) and
+                23 (A tot X) pinnen, die allen tegelijk één
+                stap zetten bij elke toetsaanslag. De letter J is
+                niet gebruikt bij de markeringen op de
+                pin-wielen. De combinatie van deze priemgetallen
+                en de 10 mogelijke stappen van de
+                vercijferingsrotor geeft een maximum periode van
+                1.560.090.</font></p>
+                <p align="left"><font size="2">De twee pinwielen
+                aan de linkerkant sturen de linkse rotor en de
+                twee pinwielen aan de rechter kant de rechtse
+                rotor. Als een pin in positie komt op het ene
+                pin-wiel, op het andere pin-wiel of op beide
+                pin-wielen van zo'n paar, zal de bijhorende rotor
+                één stap verder gaan. Dit systeem geeft een
+                zeer onregelmatig stappen van de
+                vercijferingsrotors. Het aantal mogelijke
+                pincombinaties voor alle pin-wielen is een enorme
+                10<sup>24</sup>.</font></p>
+                <p align="left"><font size="2">De
+                sleutelinstelling van de machines bestaat uit
+                twee delen. Het eerste deel is de instelling van
+                de pinnen op de vier pin-wielen (actief of
+                passief). Deze instelling werd meestal elke 24
+                uur gewijzigd. Het tweede deel is de initiële
+                positie van de pin-wielen en de
+                vercijferingsrotors bij het begin van een
+                bericht, de zogenaamde berichtsleutel. Deze
+                berichtsleutel diende voor elk bericht uniek te
+                zijn. Om de positie van de pin-wielen manueel te
+                wijzigen werden met een halve draai aan een
+                concentrische knop de pinwielen ontkoppeld.</font></p>
+                <p align="left"><font size="2">Als het deksel van
+                de machine geopend is zien we links boven het
+                gedeelte van het vercijferingsmechanisme. De vier
+                grote pin-wielen zijn onderaan het compartiment
+                te zien. Net boven deze pin-wielen ligt de as met
+                tandwielen die de positie van de pinnen in een
+                bewegen van de rotors vertalen. De
+                vercijferingsrotors zijn de twee kleine rotors
+                bovenaan met vijf sleepcontacten op hun as aan de
+                ene kant en vijf contactpinnen van de andere
+                kant. Hoewel zij niet lijken op gewone rotors
+                hebben zij ook een ingang en uitgang en
+                dooreengehaspelde bedrading.</font></p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21closeup.jpg"><img
+                        src="../pics/b21closeup.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="545" height="405"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">De twee rotors (boven) en de
+                        vier pin-wielen (onder)</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21-2r.jpg"><img
+                        src="../pics/b21-2r.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="300" height="319"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Hagelin B-21</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21-1.jpg"><img
+                        src="../pics/b21-1.jpg"
+                        alt="B-21 - Image © John Alexander"
+                        border="0" width="300" height="499"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Hagelin B-21 met open deksel</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/b21patent.jpg"><img
+                        src="../pics/b21patent.jpg" border="0"
+                        width="300" height="215"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Het B-21 Patent voor de
+                        Verenigde Staten</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4 align="left"><font size="2">Andere Machines met
+        Pin-wielen</font></h4>
+        <p align="left"><font size="2">Het gebruik van deze
+        pin-wielen zou later terugkomen in vele Hagelin machines,
+        met groot commercieel succes voor o.a. de C-36, M-209 en
+        C(X)-52. Het prototype van de B-21, gebouwd in 1925, werd
+        goedgekeurd door het Zweedse leger en later ook verkocht
+        aan verschillende andere landen. De commerciële
+        doorbraak kwam er echter met een aangepaste versie voor
+        het Franse leger. Deze draagbare machine, de B-211, heeft
+        een afdrukmechanisme en kan bedient worden met een
+        zwengel in geval van stroomuitval. Het circuit van de
+        vercijferingsrotors wordt gevoed door een batterij.</font></p>
+        <p align="left"><font size="2">In de B-21 en B-211 worden
+        de vier pin-wielen enkel gebruikt voor het complexe
+        voortbewegen van de rotors. In latere Hagelin machines
+        zoals de C-36, C-38/M-209 en C-52 worden de pin-wielen
+        gebruikt voor de offset van de reciproke afdrukrol. De
+        CX-52 gebruikte de pin-wielen, in combinatie met een
+        drum, voor zowel de offset van de reciproke afdrukrol als
+        het onregelmatig voortbewegen van de pin-wielen zelf,
+        waarbij het ingenieuze pin-wiel ontwerp eindelijk ten
+        volle benut werd.<br>
+        <br>
+        <br>
+        </font></p>
+        <h4><font size="2">Meer over Hagelin</font></h4>
+        <ul>
+            <li><a href="hagelin.htm"><font size="2">Het verhaal
+                van Hagelin Cryptos</font></a></li>
+            <li><a href="c52tech.htm"><font size="2">De Hagelin
+                C-52 and CX-52</font></a></li>
+            <li><a href="m209sim.htm"><font size="2">De US M-209
+                Codeermachine Simulator</font></a></li>
+            <li><a href="timeline.htm"><font size="2">Cipher
+                machines Timeline</font></a></li>
+        </ul>
+        <h4><font size="2">Offsite</font></h4>
+        <ul>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/hagelin/b21/index.htm"
+                target="_blank"><font size="2">Hagelin B-21 op
+                Cryptomuseum</font></a><font size="2"> </font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="enigma.htm"><font color="#808080" size="1"><!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a> <a
+                href="hagelinmenu.htm" class="menu">Menu</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

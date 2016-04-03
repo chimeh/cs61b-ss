@@ -1,0 +1,153 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>checkerboard</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Straddling
+                        Chekerboards</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het Straddling checkerboard of spreidend
+        schaakbord is is een fractionerend monoalfabetisch
+        substitutie cijfer. De tabel heeft 10 kolommen en 3
+        rijen. De eerste rij mag slechts 8 letters bevatten.
+        Aangezien er 28 vakjes gevuld dienen te worden, kan men
+        aanvullen met een slash ( / om begin en einde van
+        getallen aan te geven waarbij A = 1, B = 2 enz...) en een
+        punt.</font></p>
+        <p><font size="2">Als bovendien in de bovenste rij van de
+        tabel de meest voorkomende letters geplaatst worden is
+        het cijfer beter bestand tegen letterfrequentie-analyse
+        door het onderdrukken van pieken in de frequentietabel en
+        kunnen we spreken van een homofoon cijfer. Tip: De meest
+        vookomende letters kan je onthouden met het woord
+        ANTIROES(T).</font></p>
+        <p><font size="2">Men kan een vast alfabet gebruiken en
+        de nummering van de tabel bepalen aan de hand van een
+        sleutelwoord, of een tabel gebruiken met vaste nummering
+        en het alfabet invullen aan de hand van een sleutelwoord.
+        In ons voorbeeld passen we de eerste methode toe. We
+        gebruiken in de eerste rij het woord ANTIROES(T) en
+        vullen de tweede en derde rij alfabetisch aan. Vervolgens
+        nemen we de eerste 10 letters van het sleutelwoord
+        UBOOTJAGER en nummeren deze alfabetisch, met 0 als
+        laatste getal.</font></p>
+        <pre><font size="2">U B O O T J A G E R
+0 2 6 7 9 5 1 4 3 8
+</font></pre>
+        <p><font size="2">Met de bekomen getallen nummeren we de
+        kolommen van de tabel. De getallen die in de eerste rij
+        geen letter hebben worden ook gebruikt om de tweede en
+        derde rij te nummeren.</font></p>
+        <pre><font size="2"> |0 2 6 7 9 5 1 4 3 8
+-+-------------------
+ |A N T I R O E S
+3|B C D F G H J K L M
+8|P Q U V W X Y Z . /
+</font></pre>
+        <p><font size="2">Als bijkomende veiligheid kunnen we
+        eventueel de tweede en derde rij laten verschuiven
+        volgens het getal van die rij. De tweede rij, met het
+        getal 3, zou dan &quot;K L M B C D F G H J&quot; worden
+        en de derde rij zouden we dan 8 plaatsen verschuiven naar
+        &quot;U V W X Y Z . / P Q&quot;. Voordeel van deze
+        methode bij een vast alfabet is dat het niet steeds
+        dezelfde lettercombinaties per kolom bevat. In ons
+        voorbeeld gebruiken we echter geen verschuivingen om de
+        alfabetische aanvulling duidelijk te maken.</font></p>
+        <p><font size="2">De vercijfering gebeurt door omzetting
+        van de letters naar de getallen van de rij en kolom. Voor
+        de letters in de bovenste rij wordt echter het getal
+        erboven genomen. Zo krijgt in ons voorbeeld de letter D
+        de getallen 36 en krijgt de letter T enkel het getal 6.</font></p>
+        <pre><font size="2">Klare tekst: D  I  T  I  S  Z  E  E  R  G  E  H  E  I  M
+Cijfertekst: 36 37 6  37 4  84 1  1  9  39 1  35 1  7  38 </font></pre>
+        <p><font size="2">Aangezien onbestaande combinaties niet
+        kunnen gevormd worden bij ontcijfering, kunnen alle
+        getallen samengevoegd worden. Zo kan in ons voorbeeld
+        36376... de eerste 3 niet alleen gebruikt worden en moet
+        dus wel aan de 6 gekoppeld worden. De volgende twee
+        getallen, 3 en 7, zijn dus ook een paar. Het volgende
+        getal 6 is een alleenstaand getal want er is geen rij met
+        het nummer 6. Het is deze voor Straddling Checkerboard
+        typische onregelmatige nummering die cryptoanalyse
+        bemoeilijkt.</font></p>
+        <pre><font size="2">De cijfertekst: 36376 37484 11939 13517 38 </font></pre>
+        <p><font size="2">Het resultaat van deze vercijfering
+        wordt meestal gevolgd door een bijkomende vercijfering
+        zoals een dubbele transpositie, uitgevoerd op de
+        getallenrij. Dit verhoogt de sterkte van het cijfer
+        aanzienlijk.</font></p>
+        <p><font size="2">Een beroemde variant is het vic cijfer.
+        Bij dit cijfer initialiseerd het sleutelwoord een LFG
+        (Lagged Fibonacci Generator). De gegenereerde
+        getallenreeks wordt gebruikt om eerst een gewone en
+        daarna een onderbroken transpositie te nummeren. Het VIC
+        cijfer werd gebruikt door VICTOR, de Russische spion
+        Reino Hayhanen. De met VIC vercijferde berichten
+        weerstonden alle pogingen van cryptoanalyse door FBI en
+        NSA, tot Hayhanen in 1957 overliep naar het westen. Het
+        VIC cijfer wordt beschouwt als het meest complex
+        handcijfer dat ooit gebruikt werd. U kunt een uitgebreide
+        beschrijving van het VIC cijfer vinden op de website van </font><a
+        href="http://www.quadibloc.com/crypto/pp1324.htm"
+        target="_blank" class="external"
+        title="http://home.ecn.ab.ca/~jsavard/crypto/pp1324.htm"
+        rel="nofollow"><font size="2">John Savard</font></a><font
+        size="2">.</font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,1030 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="De Duitse Enigma codeermachine. Technische en historische details, bericht procedures en software simulator.">
+<meta name="keywords"
+content="codeermachines, enigma, enigma simulator, kriegsmarine M4, wehrmacht enigma, crypto machine, cryptografie, simulator, software, kurzsignale, dirk rijmenants">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Enigma Codeermachine</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>De
+                        Duitse Enigma Codeermachine</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a>
+                        <a href="enigmamenu.htm" class="menu">Menu</a>
+                        <a href="enigma.htm" class="menu">Geschiedenis</a>
+                        <a href="enigmaproc.htm" class="menu">Procedures</a>
+                        <a href="enigmatech.htm" class="menu">Technische
+                        details</a> <a href="enigmasim.htm"
+                        class="menu" class="menu">Enigma
+                        Simulator</a> </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het verhaal van de berucht Enigma
+        codeermachine versmelt technisch vernuft, militaire
+        geschiedenis en de geheimzinnige wereld van spionage,
+        codebrekers en inlichtingendiensten tot een echte
+        thriller. Nooit eerder werd het lot van zoveel levens in
+        zulke enorme mate beïnvloed door een cryptografisch
+        toestel, dan tijdens de Tweede Wereldoorlog. Enigma is
+        het bekendste en meest tot de verbeelding sprekende
+        voorbeeld van de strijd tussen codemakers en codebrekers,
+        en maakte het belang duidelijk van cryptoanalyse voor
+        militaire en burger inlichtingendiensten.</font></p>
+        <p><font size="2">Alle foto's copyright D. Rijmenants.
+        Klik de foto's om ze in hogere resolutie te bekijken.</font></p>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tr>
+                <td valign="top"><h4><font size="2">Ontwikkeling
+                van Enigma </font><a href="enigma.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">Toen begin 1900 het gebruik van
+                draadloze communicatie toenam voor zowel
+                militaire als civiele toepassingen werd de
+                noodzaak duidelijk om op een veilige manier
+                gegevens te kunnen versturen. Men ging op zoek
+                naar een alternatief voor de omslachtige
+                handcijfers, het vercijferen van berichten met
+                pen en papier. In 1917 ontwikkelde de Amerikaan
+                Edward Hugh Hebern een codeermachine met
+                roterende schijven waarbij elke schijf een
+                polyalfabetische substitutie uitvoerde. Hebern
+                lag daarmee aan de basis van verscheidene
+                gelijkaardige toestellen die rond dezelfde
+                periode werden ontwikkeld.</font></p>
+                <p><font size="2">De Duitse ingenieur Arthur
+                Scherbius vroeg in 1918 patent aan voor een
+                codeermachine met rotors en noemde deze de
+                Enigma. Hij richtte met zijn vennoot de firma
+                Scherbius &amp; Ritter op. De Duitse Marine en
+                het ministerie van Buitenlandse Zaken werden
+                benaderd, maar toonden geen interesse. De
+                patenten gingen in 1923 over naar
+                Chiffriermaschinen AG, waar Scherbius in de
+                directie zetelde. In 1927 kocht Scheribus het
+                patent uit 1919 voor een gelijkaardige machine
+                over van de Nederlander Koch, om zijn eigen
+                patent, dat pas in 1925 was toegekend, veilig te
+                stellen.</font></p>
+                <p><font size="2">Het eerste toestel, de Enigma
+                A, werd in 1923 voorgesteld. Het was een log
+                toestel dat voorzien was van een schrijfmachine
+                en ongeveer 50 kg woog. Korte tijd later werd ook
+                de Enigma B geintroduceerd. Vanwege hun gewicht
+                en afmetingen waren deze toestellen onbruikbaar
+                voor militaire doeleinden. De ontwikkeling van de
+                reflector, een idee van Scherbius&#146; collega
+                Willi Korn, maakte de ontwikkeling mogelijk van
+                de veel compactere Enigma C. Dit toestel was
+                uitgerust met gloeilampen in plaats van een
+                schrijfmachine en was daardoor veel kleiner en
+                lichter. In 1927 kwam zijn opvolger Enigma D op
+                de markt en werd gecommercialiseerd in
+                verschillende versies met verschillende
+                rotorbedradingen.. De Enigma D had drie rotors en
+                een reflector die instelbaar was in één van de
+                26 posities.</font></p>
+                <p><font size="2">De toestellen werden verkocht
+                in Europa en ver daarbuiten aan militaire
+                diensten en diplomatie. Het berichtenverkeer van
+                al deze modellen werd door verscheidene
+                inlichtingendiensten gebroken, vooral door de
+                beperkte veiligheid vanwege het gebrek aan een
+                stekkerbord, een militaire optie die pas in 1935
+                geïntroduceerd werd. De Italiaanse marine
+                gebruikte de commerciele Enigma D, net als Spanje
+                tijdens de Spaanse burgeroorlog. In Zwitserland
+                werd de Enigma K gebruikt, een licht gewijzige
+                versie van de Enigma D. Japan gebruikte de Enigma
+                T, ook wel Tirpiz Enigma genoemd, een aangepaste
+                Enigma D met gewijzigde bedrading van de
+                ingangsrotor. Japan ontwikkelde ook een eigen
+                versie van de Enigma T, met horizontaal
+                geplaatste rotors. Zowel de K als T modellen
+                waren niet bestand tegen de codebrekers. De
+                Spoorweg Enigma, nog een kloon van de Enigma D en
+                gebruikt door de Duitse Reichsbahn in Oost
+                Europa, is deels gebroken vanaf 1941.</font></p>
+                </td>
+                <td valign="top"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehr3.jpg"><img
+                        src="../pics/wehr3.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="284" height="395"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">De Duitse Wehrmacht Enigma</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4 align="left"><font size="2">De militaire versies </font><a
+        href="enigma.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2"><img src="../pics/enigmagtest.jpg"
+        alt="Transitiemodel tussen Enigma D en Abwehr Enigma G"
+        align="left" border="1" hspace="5" width="311"
+        height="259"></font><font size="2">In 1926 kocht de
+        Duitse Marine commerciële Enigma&#146;s aan, paste deze
+        toestellen aan voor militair gebruik en noemde ze
+        Funkschlüssel C. Ondertussen ontwikkelde
+        Chiffriermaschinen-AG een speciale Enigma met rotors die
+        dezelfde plaatsing van de rotor contacten had als de
+        normale D rotors, maar met tanden en meerdere nokken en
+        voorbewogen door een tandwielmechanisme in plaats van
+        pallen en tanden (zie patent tekening links). Deze had
+        ook een roterende reflector en een teller aan de
+        linkerkant. Er is vandaag slechts één exemplaar gekend.
+        Dit vermoedelijk experimenteel toestel, gepresenteerd in
+        1928 maar uitzonderlijk pas gepatenteerd in 1931, leidde
+        tot de Enigma G. De Enigma G had echter andere rotors met
+        zigzag pinposities en een teller aan de rechterkant. De
+        rotors van de Enigma G, die ook voorzien waren van
+        meerdere nokken, werden voortbewogen door een
+        tandwielmachanisme, gelijkaardig aan zijn voorloper uit
+        1928. In 1928 kocht de Duitse Abwehr (inlichtingendienst)
+        de 12 kg lichte Enigma G, ook wel de Zahlwerk Enigma
+        genoemd, naar de teller die op het toestel zat. </font></p>
+        <p><font size="2">In 1932 reviseerde de Wehrmacht de
+        commerciële Enigma D en voegde het stekkerbord eraan
+        toe. Het is dit toestel, de Enigma I, dat bekend werd als
+        de Wehrmacht Enigma. Dit toestel werd op grote schaal
+        verspreid in de Heer (Duitse leger) en overheidsdiensten.
+        De Luftwaffe (Luchtmacht) volgde in 1935 het voorbeeld
+        van de Heer. Het toestel was initiëel uitgerust met drie
+        rotors, die in de gewenste volgorde geplaatst konden
+        worden. Vanaf 1939 werd de Wehrmacht voorzien van vijf in
+        plaats van drie rotors, waardoor het aantal
+        rotor-combinaties sterk steeg.</font></p>
+        <p><font size="2">De Marine nam in 1934 de Wehrmacht
+        Enigma over, die van het veiliger stekkerbord was
+        voorzien, en breidde de standaard set van drie rotors
+        eerst tot vijf en in 1939 tot acht rotors uit. Het Marine
+        toestel kreeg de naam Funkschlüssel M of M3. In 1941
+        drong admiraal Karl Dönitz aan op verbetering van de
+        Kriegsmarine Enigma&#146;s. Hoewel de Abwehr hem ervan
+        verzekerde dat de M3 onbreekbaar was, voerde Dönitz
+        begin 1942 het beruchte M4 model met vier rotors in. </font></p>
+        <p><font size="2">Tijdens de oorlog werden verschillende
+        types reflector gebruikt. De normale B en C reflectoren
+        werden gebruikt in de Heer en Luftwaffe modellen, en ook
+        in de Kriegsmarine M3. De Kriegsmarine M4 gebruikte
+        smallere B en C reflectoren om in de vier-rotor machine
+        te passen, met andere bedrading maar indien op 'nul'
+        ingesteld en in combinatie met de vierde rotor compatibel
+        met de Heer en Luftwaffe modellen. Tegen het einde van de
+        oorlog trachtte het Duitse commando een nieuw type
+        instelbare D reflector te introduceren. Het eerste
+        gebruik van deze reflector bleek een belangrijke
+        bedreiging voor het werk van de Geallieerde codebrekers,
+        maar problemen met de distributie van de D reflector en
+        organisatie van bijhorende codesleutels verhinderden
+        veralgemeend gebruikt, tot grote opluchting van de
+        codebrekers. Een andere militaire toevoeging,
+        geintroduceerd in 1944 door de Luftwaffe was een speciale
+        stekkerbordschakelaar, Enigma Uhr (klok) genoemd. Het was
+        een schakelaar met 40 posities die elk in een andere
+        stekkerbordbedrading resulteerden. Meer informatie over
+        Enigma codeboeken en hoe men berichten verstuurde vind u
+        op de </font><a href="enigmaproc.htm"><font size="2">enigma
+        procedures</font></a><font size="2"> pagina. De pagina
+        met </font><a href="enigmatech.htm"><font size="2">technische
+        details</font></a><font size="2"> toont hoe de Enigma
+        werkt en wat er in de machine zit.</font></p>
+        <p><font size="2">In totaal werden naar schatting 100.000
+        Enigma-machines geproduceerd. Hoewel algemeen bekend
+        onder de merknaam Enigma, droegen slechts zeer weinig
+        machines werkelijk de naam Enigma en het logo. De meeste
+        machines hadden enkel een serienummer en een
+        fabricatiecode. De Enigma machines werden geproduceerd in
+        verschillende fabrieken op verscheidene locaties zoals
+        Ertel-Werk für Feinmechanik in München, Olympia
+        Büromaschinenwerke in Erfurt,
+        Chiffriermaschinengesellschaft Heimsoeth &amp; Rinke in
+        Berlijn, Atlas-Werke Maschinenfabrik in Bremen en Konski
+        &amp; Krüger in Berlijn. De machines die de oorlog
+        overleefden werden in beslag genomen door de Geallieerden
+        en veelal verkocht aan andere landen. De rotors van die
+        machines kregen meestal een andere bedrading. Natuurlijk
+        vergat men erbij te vertellen dat zij in staat waren de
+        Enigma berichten te breken.</font></p>
+        <div align="left"><table border="0" cellpadding="5"
+        cellspacing="0">
+            <tr>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-gclose.jpg"><img
+                        src="../pics/gclose.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="230" height="240"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Zeldzame voorloper van de Enigma
+                        G</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-m4inside.jpg"><img
+                        src="../pics/m4inside.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="324" height="240"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">De Enigma M4 met geopend deksel</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td align="center" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehr3rotors.jpg"><img
+                        src="../pics/wehr3rotors.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="255" height="240"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Uitgenomen Wehrmacht rotors op
+                        hun as</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        </div><p><br>
+        </p>
+        <table border="0" cellpadding="2" cellspacing="1">
+            <tr>
+                <td valign="top"><h4><font size="2">De code
+                gebroken </font><a href="enigma.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">Toen de Wehrmacht het
+                stekkerbord introduceerde op de militaire Enigma,
+                verhoogde het aantal mogelijke instelling tot
+                astronomische properties. Er werd algemeen
+                aangenomen dat deze militaire Enigma, in
+                tegenstelling to de commerciële types,
+                onbreekbaar was. Er werden zelfs geen pogingen
+                ondernomen. In 1932 startte het Poolse Biuro
+                Szyfrow met pogingen om Enigma te analyseren en
+                te breken. Hoewel het hoofd van dit bureau kopies
+                ontving van codeboeken, verkocht door de Duitse
+                spion Hans-Thilo Schmidt, voorzag hij zijn
+                codebrekers niet van deze informatie, om hen te
+                stimuleren. Marian Rejewski, Henryk Zygalski en
+                Jerzy Rozicki waren er van overtuigd dat wiskunde
+                het probleem kon oplossen en slaagden er
+                inderdaad in om met Enigma vercijferde berichten
+                te breken. Ze bouwden ook een electromechanische
+                machine, Bomba genoemd, om het werk te
+                versnellen. Het dubbel verzenden van de
+                berichtensleutel door Duitse operatoren bleek de
+                zwakke schakel te zijn, waardoor de Poolse
+                cryptologen een kier vonden in Enigma's
+                veiligheid. In 1939 waren de Polen echter niet
+                langer in staat Enigma te breken door
+                verbeteringen aan Enigma, wijzigingen in de
+                verzendingsprocedures en gebrek aan financiële
+                middellen. Vlak voor de Blitzkrieg en de val van
+                Polen werd de kennis van het Biuro Szyfrow samen
+                met enkele Enigma replica's overgedragen aan de
+                onthutste Franse en Britse inlichtingendiensten.
+                Het werk van de Polen was niet alleen van vitaal
+                belang omwille van hun pionierswerk maar ook
+                omdat het de andere codebrekers overtuigde dat
+                het wel degelijk mogelijk was om het Enigma
+                berichtenverkeer te ontcijferen.<br>
+                <br>
+                </font></p>
+                <h4><font size="2">Bletchley Park </font><a
+                href="enigma.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">De Government Code and Cipher
+                School (GC&amp;CS) in het Engelse Bletchley Park
+                brak Enigma aanvankelijk met de hand. Bletchley
+                Park werd al gauw een bonte verzameling van
+                wiskundigen, universitairen, militaire
+                cryptologen en zelfs verwoedde puzzelaars.
+                Iedereen met talent om codes te breken werd
+                ingezet op deze topgeheime locatie. In augustus
+                1940 startten ook zij met het gebruik van hun
+                eigen Bombe, ontworpen door Alan Turing en Gordon
+                Welchman. Dit was ook een electromechanische
+                rotormachine maar werkte volgens een heel ander
+                princiepe als het Poolse toestel.</font></p>
+                <p><font size="2">De Turing Bombe zocht naar de
+                Enigma instellingen die hoorden bij een opgegeven
+                combinatie van cijfertekst en klare tekst. Als
+                een Enigma bericht onderschept was zochten de
+                codebrekers naar zogenaamde &quot;cribs&quot;.
+                Een crib was een vermoedde stukje klare tekst
+                binnen een gecodeerd bericht. Dit kon &quot;An
+                Der Oberbefehlshaber&quot;, &quot;An
+                Gruppe&quot;, &quot;Es Lebe Den Fuhrer&quot; of
+                elk ander stukje gestandariseerde tekst zijn.
+                Eens zo'n crib gelokaliseerd (daar had men
+                speciale technieken voor) werden de associaties
+                tussen de letters van de gecodeerde tekst en hun
+                klare versie ingesteld op de Bombe. De Bombe, die
+                een groot aantal rotors bevat die elk de rotors
+                van de Enigma nabootsten, liep dan door alle
+                mogelijke instelling die die bij de opgegeven
+                lettercombinaties hoorde, om zo de Enigma
+                instellingen te vinden. Eens deze instellingen
+                gevonden konden alle berichten, gecodeerd met die
+                sleutel, ontcijferd worden. </font></p>
+                <p><font size="2">Alle informatie, verkregen door
+                cryptoanalyse van het Duitse berichtenverkeer,
+                kreeg de codenaam Ultra en speelde een zéér
+                belangrijke en dikwijls beslissende rol gedurende
+                de ganse oorlog. Ultra bleek vooral succesvol in
+                de Atlantische Oceaan. Om geen achterdocht te
+                wekken bij het Duitse leger werd de Ultra
+                informatie zéér voorzichtig ingezet. In alle
+                hoofdkwartieren van de geallieerden en op het
+                terrein werden speciale verbindingsofficieren
+                geplaatst die verantwoord konden omgaan met het
+                doorspelen van de informatie. Die werd trouwens
+                enkel gebruikt indien deze daarna ook nog door
+                andere bronnen kon bevestigd worden. Dit om
+                vermoedens van compromittering volledig uit te
+                sluiten.<br>
+                <br>
+                </font></p>
+                <h4><font size="2">De Kriegsmarine </font><a
+                href="enigma.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">In het begin van de oorlog was
+                de Duitse Kriegsmarine zeer succesvol in het
+                toepassen van hun rüdel-taktik
+                (wolvenroede-taktiek) door hun gevreesde
+                duikboten, de U-boten. Zij joegen individueel op
+                konvooien en eens gevonden, riepen zij andere
+                U-boten op het toneel om het hele konvooi tot
+                zinken te brengen met een goed gecoördineerde
+                aanval. Deze techniek was zo vernietigend voor de
+                geallieerde bevoorrading dat de oorlog bijna werd
+                beslist in het voordeel van Duitsland.
+                Communicatie was het sleutelwoord voor de
+                rüdeltaktik en de U-boten gebruikten Enigma om
+                hun aanvallen de coördineren. Meer over de
+                Kriegsmarine verzendingsprocedures vind u op de </font><a
+                href="enigmaproc.htm"><font size="2">enigma
+                procedures</font></a><font size="2"> en </font><a
+                href="kurzsignale.htm"><font size="2">Kurzsignalen</font></a><font
+                size="2"> pagina's. Na een moeilijke beginperiode
+                kon Bletchley Park de berichten vrijwel dagelijks
+                breken. De teruglopende resultaten van zijn
+                U-boten maakten Admiraal Dönitz achterdochtig.
+                Ondanks geruststelling van zijn
+                inlichtingendiensten dat Enigma onbreekbaar was
+                drong hij toch aan op verbetering van de
+                veiligheid. Begin 1942 werd de beruchte 4-rotor
+                Enigma machine, de M4, met Triton codes
+                geïntroduceerd in de Kriegsmarine. De
+                gecompliceerde 'Haai-codes&quot;, zoals de
+                Britten ze noemden, veroorzaakten een grote
+                crisis in Bletchley Park. De Kriegsmarine noemde
+                de lente van '42 dan ook de &quot;Glücklichen
+                Zeiten&quot; omdat de geallieerden hun
+                U-boot-berichten niet konden ontcijferen en een
+                enorm tonnage aan schepen tot zinken gebracht
+                werd. Meer details op </font><a
+                href="enigmauboats.htm"><font size="2">Enigma en
+                de U-boot Oorlog</font></a><font size="2">.<br>
+                <br>
+                </font></p>
+                <h4><font size="2">Het tij gekeerd </font><a
+                href="enigma.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">De codebrekers ontdekten door
+                cryptoanalyse dat een vierde rotor
+                geïntroduceerd was. Na tien zenuwslopende
+                maanden en zware verliezen lukte Bletchley Park
+                er in de Haai codes te breken. Dit was ondermeer
+                mogelijk door codeboeken, in beslag genomen door
+                de Britse Navy bij de entering van zwak
+                verdedigde Duitse weerschepen , en aanvallen op
+                U-boten zoals de aanval op Kapitanleutenant
+                Heidtmann's U-559 door HMS Petard. Er werden
+                nieuwe Bombes ontworpen en tegen eind '43 werden
+                bovendien nog eens 50 vier-rotor Bombes in
+                gebruik genomen door de Amerikaanse Navy. Het tij
+                van de U-boot-oorlog was nu definitief gekeerd.
+                Op enkele korte periodes na werd het volledige
+                Duitse berichtenverkeer onderschept door een
+                groot aantal luisterstations, Y-stations genoemd,
+                en gebroken in Bletchley Park, dat op zijn piek
+                meer dan 7000 personeelsleden telde. Het elite
+                speerpunt van de Kriegsmarine werd gedecimeerd en
+                dit eiste een zeer zware tol onder de U-boot
+                bemanningen. Naar schatting 700 U-boten en 30.000
+                bemanningsleden gingen verloren op zee. Het
+                Duitse commando schreef de grote verliezen bij
+                hun U-boten toe aan de invoering van betere
+                geallieerde opsporingstechnieken zoals het ASDIC
+                sonar systeem en duikboot-opsporingsvliegtuigen.
+                De tegenvallende successen van de overgebleven
+                U-boten werden toegeschreven aan de invoering
+                door de geallieerden van konvooivaren, begeleid
+                door destroyers, de gevreesde duikbootjagers.</font></p>
+                <p><font size="2">Alle verbeteringen die door de
+                Duitse cryptologen werden ingevoerd om de
+                veiligheid van de Enigma machine te verhogen
+                werden tenietgedaan door de codebrekers. De
+                introductie van de instelbare D reflector, met
+                een andere bedraging elke tien dagen, bleek een
+                zeer groot probleem voor de codebrekers. Een
+                algemeen gebruik van de D reflector zou het
+                breken van de sleutel vijf tot tien dagen
+                vertragen, waardoor tactische informatie
+                nutteloos werd. Zonder D reflector werden de
+                sleutels doorgaans binnen 24 uur gebroken.
+                Gelukkig verhinderden logistieke problemen
+                veralgemeend gebruik van de programeerbare
+                reflector binnen alle gelederen van het Duitse
+                leger. Er was ook veel verzet bij de Duitse
+                operators zelf, vanwege het omzichtige instellen
+                van de D reflector in tactische situaties.
+                Hierdoor werd beslist om het gebruik van de
+                standaard B reflector te behouden en de D
+                reflector enkel te gebruiken voor belangrijke
+                berichten in bepaalde radionetten, en dit met
+                dezelfde basisinstellingen voor rotors en
+                stekkerbord. Met de sleutels van machines met B
+                reflector echter reeds gebroken dienden de
+                codebrekers enkel nog de bedrading van de D
+                reflector te achterhalen. Een werk dat met de
+                hand kon gedaan worden. Het fatale gemengde
+                gebruik van zowel de B als D reflector liet de
+                codebrekers toe om de zo gevreesde, met D
+                reflector vercijferde, berichten toch te breken.
+                De Enigma Uhr (klok), gebruikt door de Luftwaffe,
+                was een andere nutteloze poging om de veiligheid
+                van de Enigma te verbeteren. De Enigma Uhr was
+                een schakelaar die de kabels van het stekkerbord
+                verving en 40 verschillende bedradingen mogelijk
+                maakte. Het unieke ontwerp van de Gealliëerde
+                Bombes, gebruikt om de sleutelinstellingen uit te
+                vissen, omzeilde sowieso de bedrading van het
+                stekkerbord. De Enigma Uhr had daardoor weinig
+                tot geen effect op de resultaten van de
+                codebrekers.</font></p>
+                </td>
+                <td valign="top"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td align="center" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-m4.jpg"><img
+                        src="../pics/m4.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="257" height="521"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Kriegsmarine Enigma M4</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-m4ukwbeta.jpg"><img
+                        src="../pics/m4ukwbeta.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="257" height="151"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Enigma M4 smalle reflector
+                        (links) en speciale Beta rotor met
+                        verende contacten aan beide zijden</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-m4box.jpg"><img
+                        src="../pics/m4box.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="257" height="222"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Kriegsmarine M4 box voor het
+                        bewaren van de vijf niet gebruikte
+                        normale rotors en een beta of gamma rotor</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrbox.jpg"><img
+                        src="../pics/wehrbox.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="251" height="255"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Box om de twee niet gebruikte
+                        rotors van een set van vijf in te bewaren</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-uhr.jpg"><img
+                        src="../pics/uhr.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="250" height="200"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Enigma Uhr</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrplugs.jpg"><img
+                        src="../pics/wehrplugs.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="354" height="200"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Enigma stekkerbord</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrrotor1.jpg"><img
+                        src="../pics/wehrrotor1.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="203" height="200"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Rechterzicht op een Enigma rotor
+                        </font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">De Ultra informatie werd de ganse
+        oorlog topgeheim gehouden en speelde niet alleen in de
+        Atlantische Oceaan een belangrijke rol. Het breken van de
+        Heer en Luftwaffe berichten was zo mogelijk nog
+        belangrijker dan het succes op zee. De codebrekers
+        slaagden er ondermeer in de achillespees van
+        Veldmaarschalk Rommels roemruchte Afrikakorps bloot te
+        leggen. Door de snelheid waarmee het Afrikakorps zijn
+        successen boekte, vielen zij terug op een lang uitgerekte
+        en zwak verdedigde bevoorrading. Ultra informatie voorzag
+        Veldmaarschalk Montgommery van een belangrijk tactisch
+        voordeel in Afrika. In de aanloop naar de invasie in
+        Normandie voorzag de Wehrmacht, zonder het zelf te
+        beseffen, de geallieerden van een enorme hoeveelheid
+        gedetailleerde informatie over de verdediging van de
+        kusten, locatie en sterkte van de Duitse tankeenheden en
+        toepenbewegingen in Frankrijk. Experts schatten dat het
+        breken van Enigma de oorlog met ongeveer drie jaar heeft
+        ingekort. Het aantal gespaarde mensenlevens is dan ook
+        niet te overzien. Duitsland bleef Enigma de ganse oorlog
+        in vol vertrouwen verder gebruiken in alle onderdelen van
+        het leger.</font></p>
+        <h4><font size="2">Theoretische versus Praktische
+        Veiligheid </font><a href="enigma.htm#top"><font size="2"><img
+        src="../pics/up1.gif" alt="Top" border="0" width="12"
+        height="9"></font></a></h4>
+        <p><font size="2">Hoe veilig was de Enigma machine
+        werkelijk en waarom was het uiteindelijk de Achilleshiel
+        van de superieure Duitse oorlogsmachine? Tijdens een
+        topgeheime Geallieerde operatie in de laatste dagen van
+        de oorlog namen speciale TICOM teams Duitse cryptologen
+        en SIGINT personeel gevangen. Het antwoord op onze vraag
+        vinden we in de onlangs vrijgegeven TICOM rapporten, vol
+        2, &#147;Notes on German High Level Cryptography and
+        Cryptanalysis&#148; (</font><a
+        href="http://www.nsa.gov/public_info/_files/european_axis_sigint/volume_2_notes_on_german.pdf"
+        target="_blank"><font size="2">zie link NSA website</font></a><font
+        size="2">). </font></p>
+        <p><font size="2">Samengevat komt het hier op neer: om
+        veilige crypto apparatuur te ontwikkelen heb je zowel
+        uitstekende codemakers als codebrekers nodig. Men kan de
+        veiligheid van een codeermachine niet evalueren tenzij
+        men zelf het toestel niet met alle middelen trachtte te
+        breken. Volgens TICOM had Duitsland zeer bekwame
+        cryptologen en ontwikkelden zij enkele uitstekende
+        crypto-machines. Helaas haalden hun vaardigheden als
+        cryptoanalist (codebreker) nét niet het niveau van hun
+        briljante Poolse, Britse en Amerikaanse tegenhangers.</font></p>
+        <p><font size="2">Het was dit kleine verschil in niveau
+        dat de Duitsers ervan overtuigde dat Enigma veilig was.
+        Hun studies toonden enkel theoretische zwakke plekken in
+        de Enigma, die volgens hun echter praktisch niet uit te
+        buiten waren. Het was datzelfde kleine verschil in niveau
+        dat de Geallieerden toch in staat stelde om een
+        praktische oplossing the vinden voor de theoretisch
+        zwakke plekken. De Duitse cryptologen bleven de ganse
+        oorlog door nieuwe en betere crypto-toestellen
+        ontwikkelen waarvan sommige, volgens de TICOM rapporten,
+        onmogelijk te kraken waren door de Geallieerden. Gelukkig
+        verhinderden, naar mate de oorlog vorderde, logistieke
+        problemen, tekort aan grondstoffen en gebrek aan tijd en
+        geld dat deze nieuwe toestellen in dienst kwamen.</font></p>
+        <h4><font size="2">De erfenis van Enigma </font><a
+        href="enigma.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">Na de Tweede Wereldoorlog was Enigma de
+        basis voor vele electromechanische rotor-codeertoestellen
+        zoals het Zwitserse NEMA-toestel met tien rotors, de
+        Amerikaanse KL-7 ADONIS en het geavanceerde Russische
+        M-125 FIALKA toestel, dat tot voor kort topgeheim was.
+        Hoewel Enigma een zeer goed ontwerp was en een voor die
+        tijd onbreekbare veiligheid bezat, waren het
+        onvoorzichtig verzendingsprocedures door het Duitse leger
+        en in beslag genomen codeboeken die van dit toestel een
+        Trojaans paard maakten. Door Enigma werd het belang
+        duidelijk van informatievergaring door cryptoanalyse en
+        de nood aan veilige communicatie. Vandaag is
+        Signal-intelligence een vitaal onderdeel van de moderne
+        oorlogsvoering.</font></p>
+        <p><font size="2">Alle foto's op deze pagina copyright D
+        Rijmenants.</font></p>
+        <p><a href="references.htm"><font size="2">Referenties</font></a></p>
+        <h4><font size="2">Meer over Enigma op deze site </font><a
+        href="enigma.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <ul>
+            <li><a href="enigmaproc.htm"><font size="2">Enigma
+                Codeboeken en Berichtenprocedures</font></a></li>
+            <li><a href="enigmatech.htm"><font size="2">Technische
+                Details van de Enigma</font></a></li>
+            <li><a href="enigmauboats.htm"><font size="2">Enigma
+                en de U-boot oorlog</font></a></li>
+            <li><a href="kurzsignale.htm"><font size="2">Kurzsignale
+                op Duitse U-boten</font></a></li>
+            <li><a href="m4project.htm"><font size="2">Breek een
+                M4 bericht, en het verhaal van U-264</font></a><font
+                size="2"> </font></li>
+            <li><a href="challenge.htm"><font size="2">Enigma
+                Cipher Challenge</font></a></li>
+            <li><a href="faq.htm"><font size="2">Enigma FAQ
+                pagina</font></a></li>
+            <li><a href="enigmasim.htm"><font size="2">Enigma
+                simulator</font></a></li>
+        </ul>
+        <h4 align="left"><font size="2">Off-site Enigma
+        gerelateerd</font></h4>
+        <ul>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/enigma/index.htm"
+                target="_blank"><font size="2">Paul Reuvers' and
+                Marc Simons' CryptoMuseum.com</font></a><font
+                size="2"> Paul's en Marc's Crypto Museum website
+                met een uitgebreid Enigma hoodstuk, voorzien van
+                gedetailleerde informatie en vele prachtige
+                foto's bevat van verschillende Enigma machines.</font></li>
+            <li><a href="http://enigmamuseum.com/"
+                target="_blank"><font size="2">Tom Perera's
+                Enigma museum</font></a><font size="2"> Tom is
+                een verzamelaar van Enigma machines, met zeer
+                veel gedetailleerde foto's van verschillende
+                toestellen.</font></li>
+            <li><a href="http://w1tp.com/enigma/eia1w.htm"
+                target="_blank"><font size="2">Tom's Enigma In
+                Action video</font></a><font size="2"> Tom
+                creëerde een prachtige video die het instellen
+                van de dagelijkse sleutel toont, het verwisselen
+                van de rotors, de ring instellingen, het
+                stekkerbord en hoe een bericht vercijfert wordt.</font></li>
+            <li><a href="http://cryptocellar.org" target="_blank"><font
+                size="2">Frode Weierud's Crypto Pages</font></a><font
+                size="2"> Als lid van de Crypto Simulation Group
+                heeft Frode een hele collectie simulators van
+                verschillende Enigma versies. Bovendien vind je
+                op deze site veel historische informatie en
+                documenten. CSG is momenteel bezig een groot
+                aantal originele Duitse WO2 berichten te
+                ontcijferen, waarvan enkele gepubliceerd op
+                Frode's site.</font></li>
+            <li><a href="http://www.enigma.hoerenberg.com/"
+                target="_blank"><font size="2">Breaking German
+                Navy Cyphers</font></a><font size="2"> Michael
+                Hoerenberg's website over het breken van
+                authentieke Enigma M4 berichten, ontdekt tijdens
+                de berging van U-534</font></li>
+            <li><a
+                href="http://www.matematiksider.dk/enigma_eng.html"
+                target="_blank"><font size="2">Erik Vestergaard's
+                Enigma pagina</font></a><font size="2"> Een goede
+                en mooi geillustreerde uitleg over het breken van
+                de Enigma machine</font></li>
+            <li><a
+                href="http://www.di.unisa.it/~ads/corso-security/www/CORSO-9900/crittografiaclassica/home.us.net/~encore/Enigma/enigma.html"
+                target="_blank"><font size="2">Lech Maziakowski's
+                Enigma History</font></a><font size="2"> Hier
+                krijg je de Poolse kijk op het verhaal van Enigma
+                en het breken ervan. Lech belicht de zeer
+                belangrijke eerste successen door het Poolse
+                cijferbureau.</font></li>
+            <li><a href="http://www.codesandciphers.org.uk"
+                target="_blank"><font size="2">Tony Sale's Codes
+                &amp; Ciphers</font></a><font size="2"> Tony is
+                een wandelend stukje computergeschiedenis. Hij
+                heeft de beroemde Colossus computer, de eerste
+                elektronische computer in produktie (twee jaar
+                vóór de ENIAC, maar topgeheim) volledig
+                heropgebouwd in Bletchley Park.</font></li>
+            <li><a href="http://www.bletchleypark.org.uk"
+                target="_blank"><font size="2">Bletchley Park,
+                England</font></a><font size="2"> Officiële site
+                van de Bletchley Park Thrust. Het beroemde
+                landhuis, waar de codebrekers van de Covernment
+                Code &amp; Cipher School tijdens de Tweede
+                Wereldoorlog het Duitse berichtenverkeer braken.</font></li>
+            <li><a
+                href="http://www.uboat.net/technical/enigma.htm"
+                target="_blank"><font size="2">Enigma op de
+                Duitse U-boten</font></a><font size="2">
+                Uboat.Net is een zeer complete site over de
+                beruchte Duitse U-boten, en het verhaal van de
+                Enigma bij de Kriegsmarine. Voorts is hier een
+                enorm archief van bijna alle Duitse U-boten en
+                hun geschiedenis.</font></li>
+            <li><a href="http://www.uboat.net/boats/u110.htm"
+                target="_blank"><font size="2">Entering van de
+                U-110</font></a><font size="2"> De Entering van
+                deze U-boot door de Britse Navy, en de
+                inbeslagename van de codeboeken met Enigma
+                sleutels was zeer belangrijk in de strijd tegen
+                de Duitse onderzeeërs.</font></li>
+            <li><a href="http://www.ellsbury.com/enigmabombe.htm"
+                target="_blank"><font size="2">Enigma and the
+                Bombe</font></a><font size="2"> Het verhaal van
+                het breken van de enigma berichten en het gebruik
+                van de bombes door Graham Ellsbury.</font></li>
+            <li><a
+                href="https://www.nsa.gov/about/cryptologic_heritage/museum/"
+                target="_blank"><font size="2">NSA's National
+                Cryptologic Museum</font></a><font size="2"> NSA
+                museum pagina's met veel informatie over
+                inlichtingendiensten, cryptografie en Enigma</font></li>
+            <li><a
+                href="http://www.nsa.gov/public_info/_files/european_axis_sigint/volume_2_notes_on_german.pdf"
+                target="_blank"><font size="2">TICOM rapport
+                Enigma</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"> Volume
+                2, &quot;Notes on German High Level Cryptography
+                and Cryptanalysis&quot;</font></li>
+            <li><a
+                href="http://www.nsa.gov/public_info/declass/european_axis_sigint.shtml"
+                target="_blank"><font size="2">European Axis
+                Signal Intelligence in World War IIpage</font></a><font
+                size="2">.NSA's vrijgegeven TICOM documenten.</font></li>
+            <li><a
+                href="http://www.cdvandt.org/enigma_patents.htm"
+                target="_blank"><font size="2">Enigma patenten</font></a><font
+                size="2"> Een uitgebreide verzameling van
+                verschillende types Enigma machines op de
+                Foundation for German communication and related
+                technologies website.</font></li>
+            <li><a href="http://www.enigmaworldcodegroup.com/"
+                target="_blank"><font size="2">Enigma World Code
+                Group</font></a><font size="2"> Bruce Culp's
+                website om Enigma liefhebbers te verenigen en
+                wereldwijd Enigma berichten uit te wisselen.</font></li>
+            <li><a
+                href="http://www.mathcomp.leeds.ac.uk/turing2012"
+                target="_blank"><font size="2">2012 ALAN TURING
+                YEAR</font></a><font size="2"> Eerbetoon aan Alan
+                Turing, de beroemde Britse codebreker en
+                uitvinder van de Turing Bombe</font></li>
+            <li><a href="http://operationturing.tumblr.com/"
+                target="_blank"><font size="2">OPERATION TURING</font></a><font
+                size="2"> Mitchel Thomas en Indiana Popovich
+                maakten een website waar je enigma berichten
+                ontcijfert (sleutels bijgevoegd) om een
+                fascinerende geheime operatie in 1938 te
+                ontdekkten in een prachtige vooroorlogse
+                atmosfeer. Meer info over hoe en waarom </font><a
+                href="http://rijmenants.blogspot.be/2013/03/operation-turing.html"
+                target="_blank"><font size="2">op mijn weblog</font></a><font
+                size="2">.</font></li>
+        </ul>
+        <h4><font size="2">Enigma Replica's en Simulaties </font><a
+        href="enigma.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <ul>
+            <li><a href="http://www.cryptomuseum.com/kits/"
+                target="_blank"><font size="2">Enigma-E
+                electronisch bouwpakket</font></a><font size="2">
+                Op deze site stellen Paul Reuvers en Marc Simons
+                de Do-It-Yourself elektronisch versie van de
+                Enigma voor. Een bouwpakket met alle nodige
+                onderdelen. Iedereen die ervaring heeft men een
+                soldeerbout kan hier aan de slag.</font></li>
+            <li><a
+                href="http://cryptocellar.org/simula/index.html"
+                target="_blank"><font size="2">Enigma Variations</font></a><font
+                size="2"> Een reeks Enigma simulaties en andere
+                crypto machines van de </font><a
+                href="http://cryptocellar.org/CSG/csginfo.html"
+                target="_blank"><font size="2">Crypto Simulation
+                Group</font></a><font size="2"> </font></li>
+            <li><a href="http://www.enigma-replica.com/"
+                target="_blank"><font size="2">Jim Oram's Enigma
+                Replica</font></a><font size="2"> Als technisch
+                alleskunner en perfectionist besliste Jim een
+                paar jaar terug zelf een Enigma te bouwen. Het
+                liep een beetje uit de hand en het resultaat is
+                een perfect nagebouwde machine. Enigma
+                verzamelaars bestellen nu zelfs wisselstukken bij
+                hem!</font></li>
+            <li><a href="http://www.enigma-maschine.de/en/"
+                target="_blank"><font size="2">Enigma Nachbau</font></a><font
+                size="2"> Accurate Enigma replica project door
+                Paul Zetzmann uit Duitsland</font></li>
+            <li><a
+                href="https://www.tindie.com/products/ArduinoEnigma/arduino-enigma-simulator-simulates-enigma-i-m3-and-m4-machines/"
+                target="_blank"><font size="2">Arduino Enigma
+                Simulator</font></a><font size="2"> Een project,
+                gebaseerd op de ATmega168 microcontroller, dat
+                verschillende Enigma versies nauwkeurig simuleert
+                met een kleine touch screen interface. Meer info
+                is beschikbaar op </font><a
+                href="http://arduinoenigma.blogspot.be/"
+                target="_blank"><font size="2">een project weblog</font></a><font
+                size="2">.</font></li>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/enigma/sim/riscos.htm"
+                target="_blank"><font size="2">Enigma simulators
+                voor RISC OS platform</font></a><font size="2">
+                Hier vind je simulators voor PC's die werken op
+                het RISC platform. Paul Reuvers van X-Ample
+                Technology heeft hier ondermeer sims van de M3,
+                M4, Luftwaffe en G312 Abwehr Enigma's.</font></li>
+            <li><a href="http://enigmaco.de/enigma/enigma.html"
+                target="_blank"><font size="2">Enigmaco On-line
+                Flash Enigma simulation </font></a><font size="2">toont
+                de route van het signaal door de rotors.</font></li>
+            <li><a
+                href="http://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html"
+                target="_blank"><font size="2">Daniel Palloks
+                Javascript Enigma's</font></a><font size="2">
+                Uitstekende Javascript simulatie van 12
+                verschillende Enigma versies waaronder de Abwehr
+                G, de Kriegsmarine M3 en M4 en toevoeging van de
+                Enigma Uhr.</font></li>
+            <li><a
+                href="http://www.mtholyoke.edu/~adurfee/cryptology/enigma_j.html"
+                target="_blank"><font size="2">Enigma Applet</font></a><font
+                size="2"> Andy Carlson's Jave Enigma simulatie</font></li>
+            <li><a href="http://www.nivaro.com/enigma.php"
+                target="_blank"><font size="2">Nivaro Enigma </font></a><font
+                size="2">Nico's PHP simulatie</font></li>
+            <li><a href="http://www.terrylong.org/"
+                target="_blank"><font size="2">Enigma Simulator
+                voor MAC OS</font></a><font size="2"> Terry
+                Long's Enigma simulator voor Mac.</font></li>
+            <li><a
+                href="http://dl.dropbox.com/u/59392396/CMAC/enigma_bernasconi.zip"><font
+                size="2">Alberto Bernasconi's Enigma I en M4
+                Simulatie in MS Excel</font></a><font size="2">
+                3-rotor en 4-rotor Enigma, toont de vercijfering
+                per rotor en letter.</font></li>
+            <li><a
+                href="http://paper-replika.com/index.php/Military/German-M4-Naval-Enigma-Machine.html"
+                target="_blank"><font size="2">Paper Replika
+                Enigma M4</font></a><font size="2"> Maak je eigen
+                Kriegsmarine Enigma met enkel een printer, schaar
+                en wat lijm. Zeer mooi!</font></li>
+        </ul>
+        <h4 align="left"><font size="2">De Enigma simulator </font><a
+        href="enigma.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p align="left"><a href="enigmasim.htm"><font size="2"><img
+        src="../pics/Enigmafrontmini.jpg"
+        alt="Klik hier om de Enigma Simulator te downloaden"
+        align="left" border="0" hspace="5" width="176"
+        height="221"></font></a><font size="2">Dit programma is
+        een exacte simulatie van de 3-rotor Wehrmacht en
+        Luftwaffe Enigma, de 3-rotor Kriegsmarine M3, ook wel
+        Funkschlussel M genoemd, en de beruchte 4-rotor
+        Kriegsmarine M4 Enigma codeermachine, zoals deze gebruikt
+        werden tijdens de Tweede Wereldoorlog. U kunt kiezen
+        tussen de drie versies, de machine openen en rotors
+        verwisselen, de ringinstelling van de rotors wijzigen en
+        verbindingen maken op het stekkerbord.</font></p>
+        <p align="left"><a href="enigmasim.htm"><font size="2">Download
+        Enigma simulator</font></a></p>
+        <p align="left"><a href="codebook.htm"><font size="2">Enigma
+        Codebook Tool</font></a><font size="2"> software om
+        Enigma codeboeken te genereren.</font><br clear="all">
+<!-- Start of StatCounter Code -->        <script language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <font
+        color="#808080" size="1"><!--webbot bot="HTMLMarkup"
+        startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot bot="HTMLMarkup" endspan --></font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a> <a
+                href="enigmamenu.htm" class="menu">Menu</a> <a
+                href="enigma.htm" class="menu">Geschiedenis</a> <a
+                href="enigmaproc.htm" class="menu">Procedures</a>
+                <a href="enigmatech.htm" class="menu">Technische
+                details</a> <a href="enigmasim.htm" class="menu"
+                class="menu">Enigma Simulator</a> </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

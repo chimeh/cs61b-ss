@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Playfair</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Playfair</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        Het Playfair cijfer werd in 1854 uitgevonden door Sir
+        Charles Wheatstone. De eenvoud in gebruik en zijn
+        veiligheid, vergeleken met substitutiecijfers en
+        polyalfabetische substitutiecijfers zoals Vigenère,
+        maakten van Playfair een populaire cijfermethode die al
+        snel werd overgenomen als veldcijfer.</font></p>
+        <p><font size="2">We beginnen met het opstellen van een
+        vierkant van 5 X 5. We kiezen een sleutelwoord en vullen
+        dit in het vierkant in. Dit kan spiraalgewijs, van onder
+        naar boven, van recht of van links zijn, zolang beide
+        partijen maar een invulmethode afspreken. Hier gebruiken
+        we het woord STALINGRAD. De letters I en J worden als
+        één letter aanzien.</font></p>
+        <pre><font size="2">S T A L I/J
+N G R D B
+C E F H K
+M O P Q U
+V W X Y Z
+</font></pre>
+        <p><font size="2">Eerst breken we de klare tekst op in
+        bigrammen, groepen van twee letters. Indien een bigram
+        uit twee identieke letters bestaat, voegen we een X
+        tussen de tekst in. Indien er één letter overblijft,
+        vullen we aan met een X. Laat ons beginnen met &quot;DIT
+        IS EEN ZEER GEHEIM BERICHT&quot;:</font></p>
+        <pre><font size="2">DI TI SE EN ZE ER GE HE IM BE RI CH TX</font></pre>
+        <p><font size="2">Nu vercijferd we per bigram. Hiervoor
+        maken we een denkbeeldig vierkant met de letters en
+        zoeken de letters in de tegenoverliggende hoeken. We
+        beginnen met de tegenoverliggende letter in dezelfde rij
+        als de eerste letter van het bigram.</font></p>
+        <pre><font size="2">. . . L I/J
+. . . D B
+. . . . .
+. . . . .
+. . . . .
+</font></pre>
+        <p><font size="2">Voor het vierkant DI is dit BL.</font></p>
+        <pre><font size="2">DI TI SE EN ZE ER GE HE IM BE RI CH TX
+BL</font></pre>
+        <p><font size="2">Bij het volgend bigram TI liggen beide
+        letters op dezelfde rij. We nemen dan de letters
+        onmiddellijk rechts ervan op diezelfde rij.</font></p>
+        <pre><font size="2">S T A . I/J
+. . . . .
+. . . . .
+. . . . .
+. . . . .
+</font></pre>
+        <p><font size="2">Voor het bigram TI is dit dus AS.</font></p>
+        <pre><font size="2">DI TI SE EN ZE ER GE HE IM BE RI CH TX
+BL AS TC CG WK FG</font></pre>
+        <p><font size="2">Bij het bigram GE liggen beide letters
+        in dezelfde kolom. We nemen dan de letters onmiddellijk
+        eronder op diezelfde rij.</font></p>
+        <pre><font size="2">. . . . .
+. G . . .
+. E . . .
+. O . . .
+. . . . .
+</font></pre>
+        <p><font size="2">Voor het trigram GE is dit dus EO.</font></p>
+        <p><font size="2">Alle mogelijke situaties zijn nu
+        beschreven en we kunnen alle bigrammen verder
+        vercijferen.</font></p>
+        <pre><font size="2">DI TI SE EN ZE ER GE HE IM BE RI CH TX
+BL AS TC CG WK FG EO KF SU GK BA EK AW</font></pre>
+        <pre><font size="2">De cijfertekst: BLAST CCGWK FGEOK FSUGK BAEKA W</font></pre>
+        <p><font size="2">Om de cijfertekst te ontcijferen moeten
+        we enkel het proces omkeren. Voor de vierkanten kiezen we
+        gewoon de tegenover liggende hoeken, voor letters in
+        dezelfde rij kiezen we de letters onmiddellijk links
+        ervan, en voor letters in dezelfde kolom kiezen we de
+        letters onmiddellijk erboven.</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

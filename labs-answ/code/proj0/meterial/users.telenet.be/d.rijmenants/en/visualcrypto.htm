@@ -1,0 +1,229 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Visual Cryptography</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Visual
+                        Cryptography</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        What is Visual Cryptography</font></h4>
+        <p><font size="2">Visual Cryptography is a special
+        encryption technique to hide information in images in
+        such a way that it can be decrypted by the human vision
+        if the correct key image is used. The technique was
+        proposed by Naor and Shamir in 1994. Visual Cryptography
+        uses two transparent images. One image contains random
+        pixels and the other image contains the secret
+        information. It is impossible to retrieve the secret
+        information from one of the images. Both transparent
+        images or layers are required to reveal the information.
+        The easiest way to implement Visual Cryptography is to
+        print the two layers onto a transparent sheet.</font></p>
+        <p><font size="2">When the random image contains truely
+        random pixels it can be seen as a </font><a
+        href="onetimepad.htm"><font size="2">one-time pad system</font></a><font
+        size="2"> and will offer unbreakable encryption. In the
+        overlay animation you can observe the two layers sliding
+        over each other until they are correctly aligned and the
+        hidden information appears. To try this yourself, you can
+        copy the example layers 1 and 2, and print them onto a
+        transparent sheet or thin paper. Always use a program
+        that displays the black and white pixels correctly and
+        set the printer so that all pixels are printed accurate
+        (no diffusion or photo enhancing etc). You can also copy
+        and past them on each other in a drawing program like
+        paint and see the result immediately, but make sure to
+        select transparent drawing and align both layers exactly
+        over each other.</font></p>
+        <table border="1" cellpadding="10" cellspacing="0"
+        bgcolor="#FFFFFF" bordercolor="#000000"
+        bordercolordark="#FFFFFF" bordercolorlight="#000000">
+            <tr>
+                <td align="center"><font size="2">Layer 1</font><p><font
+                size="2"><img src="../pics/vcslayer1.GIF"
+                width="196" height="196"></font></p>
+                </td>
+                <td align="center"><font size="2">Layer 2</font><p><font
+                size="2"><img src="../pics/vcslayer2.GIF"
+                width="196" height="196"></font></p>
+                </td>
+                <td align="center"><font size="2">Overlay</font><p><img
+                src="../pics/vcsanimation.gif" width="240"
+                height="196"></p>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2">How Visual Cryptography works</font></h4>
+        <p><font size="2"><img src="../pics/vispixel.GIF"
+        align="right" border="1" hspace="5" width="348"
+        height="364"></font><font size="2">Each pixel of the
+        images is divided into smaller blocks. There are always
+        the same number white (transparent) and black blocks. If
+        a pixel is divided into two parts, there are one white
+        and one black block. If the pixel is divided into four
+        equal parts, there are two white and two black blocks.
+        The example images from above uses pixels that are
+        divided into four parts.</font></p>
+        <p><font size="2">In the table on the right we can see
+        that a pixel, divided into four parts, can have six
+        different states.If a pixel on layer 1 has a given state,
+        the pixel on layer 2 may have one of two states:
+        identical or inverted to the pixel of layer 1. If the
+        pixel of layer 2 is identical to layer 1, the overlayed
+        pixel will be half black and half white. Such overlayed
+        pixel is called grey or empty. If the pixels of layer 1
+        and 2 are inverted or opposite, the overlayed version
+        will be completely black. This is an information pixel.</font></p>
+        <p><font size="2">We can now create the two layers. One
+        transparent image, layer 1, has pixels which all have a
+        random state, one of the six possible states. Layer 2 is
+        identical to layer 1, except for the pixels that should
+        be black (contain information) when overlayed. These
+        pixels have a state that is opposite to the same pixel in
+        layer 1. If both images are overlayed, the areas with
+        identical states will look gray, and the areas with
+        opposite states will be black. </font></p>
+        <p><font size="2">The system of pixel can be applied in
+        different ways. In our example, each pixel is divided
+        into four blocks. However, you can also use pixels,
+        divided into two rectangle blocks, or even divided
+        circles. Also, it doesn't matter if the pixel is divided
+        horizontally or vertically. There are many different
+        pixel systems, some with better contrast, higher
+        resolution or even with color pixels.</font></p>
+        <p><font size="2">If the pixel states of layer 1 are
+        truly (crypto secure) random, both empty and information
+        pixels of layer 2 will also have completely random
+        states. One cannot know if a pixel in layer 2 is used to
+        create a grey or black pixel, since we need the state of
+        that pixel in layer 1 (which is random) to know the
+        overlay result. If all requirements for true randomness
+        are fulfilled, Visual Cryptography offers absolute
+        secrecy according to the Information Theory.</font></p>
+        <p><font size="2">If Visual Cryptography is used for
+        secure communications, the sender will distribute one or
+        more random layers 1 in advance to the receiver. If the
+        sender has a message, he creates a layer 2 for a
+        particular distributed layer 1 and sends it to the
+        receiver. The receiver aligns the two layers and the
+        secret information is revealed, this without the need for
+        an encryption device, a computer or performing
+        calculations by hand. The system is unbreakable, as long
+        as both layers don't fall in the wrong hands. When one of
+        both layers is intercepted it's impossible to retrieve
+        the encrypted information.</font></p>
+        <h4><font size="2">Additional information</font></h4>
+        <ul>
+            <li><a href="onetimepad.htm"><font size="2">One-time
+                pad</font></a><font size="2"> description of
+                one-time pad encryption, including secret
+                splitting</font></li>
+            <li><a href="http://www.r-hansen.com/tech/oti.html"
+                target="_blank"><font size="2">Visual Crypto -
+                One-time Image</font></a><font size="2"> Create
+                two secure images from one by Robert Hansen</font></li>
+            <li><a href="http://www-sec.uni-regensburg.de/vc/"
+                target="_blank"><font size="2">Visual Crypto Java
+                Applet</font></a><font size="2"> at the
+                University of Regensburg</font></li>
+            <li><a href="http://www.cl.cam.ac.uk/~fms27/vck/"
+                target="_blank"><font size="2">Visual
+                Cryptography Kit</font></a><font size="2">
+                Software to create image layers</font></li>
+            <li><a
+                href="http://www.cacr.math.uwaterloo.ca/~dstinson/visual.html"
+                target="_blank"><font size="2">Visual Crypto Page</font></a><font
+                size="2"> by Doug Stinson</font></li>
+            <li><a
+                href="http://www.leemon.com/crypto/VisualCrypto.html"
+                target="_blank"><font size="2">On-line Visual
+                Crypto Applet</font></a><font size="2"> by Leemon
+                Baird</font></li>
+            <li><a
+                href="http://wscg.zcu.cz/wscg2002/Papers_2002/A73.pdf"
+                target="_blank"><font size="2">Extended Visual
+                Cryptography (pdf)</font></a><font size="2"> by
+                Mizuho Nakajima and Yasushi Yamaguchi</font></li>
+            <li><a
+                href="http://www.mathmagic.cn/Crypt1981-1997/HTML/PDF/E94/1.PDF"
+                target="_blank"><font size="2">Visual
+                Cryptography</font></a><font size="2"> Paper by
+                Moni Noar and Adi Shamir</font></li>
+            <li><a
+                href="http://homes.esat.kuleuven.be/~fvercaut/talks/visual.pdf"
+                target="_blank"><font size="2">Visual Crypto Talk
+                (pdf)</font></a><font size="2"> by Frederik
+                Vercauteren ESAT Leuven</font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="http://users.telenet.be/d.rijmenants/en/..\nl\kurzsignale.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

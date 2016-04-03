@@ -1,0 +1,1211 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Enigma details</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Technische
+                        details van de Enigma</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a>
+                        <a href="enigmamenu.htm" class="menu">Menu</a>
+                        <a href="enigma.htm" class="menu">Geschiedenis</a>
+                        <a href="enigmaproc.htm" class="menu">Procedures</a>
+                        <a href="enigmatech.htm" class="menu">Technische
+                        details</a> <a href="enigmasim.htm"
+                        class="menu" class="menu">Enigma
+                        Simulator</a> </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        </p>
+        <table border="0" cellpadding="5" cellspacing="1"
+        width="100%">
+            <tr>
+                <td valign="top"><font size="2">Op deze pagina
+                vind u de technische details van de Wehrmacht en
+                Luftwaffe Enigma, en de Kriegsmarine Enigma M4. U
+                kunt alle foto's in hogere resolutie bekijken
+                door ze aan te klikken. All afbeeldingen
+                copyright D Rijmenants</font><h4><font size="2">Inhoud</font></h4>
+                <ul>
+                    <li><a href="enigmatech.htm#stroomdiagram"><font size="2">Stroomdiagram</font></a></li>
+                    <li><a href="enigmatech.htm#rotors"><font size="2">De
+                        Rotors</font></a></li>
+                    <li><a href="enigmatech.htm#reflector"><font size="2">De
+                        Reflector</font></a></li>
+                    <li><a href="enigmatech.htm#bedrading"><font size="2">Interne
+                        bedrading rotors en reflectors</font></a></li>
+                    <li><a href="enigmatech.htm#rotorencryption"><font size="2">De
+                        rotor encryptie</font></a></li>
+                    <li><a href="enigmatech.htm#stappenmechanisme"><font
+                        size="2">Het stappenmechanisme</font></a></li>
+                    <li><a href="enigmatech.htm#stekkerbord"><font size="2">Het
+                        stekkerbord</font></a></li>
+                    <li><a href="enigmatech.htm#accessoires"><font size="2">Accessoires</font></a></li>
+                    <li><a href="enigmatech.htm#maths"><font size="2">Mathematische
+                        veiligheid</font></a></li>
+                </ul>
+                </td>
+                <td align="right" valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td align="right" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-wehr3.jpg"><img
+                        src="../pics/wehr3.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="227" height="316"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Wehrmacht Enigma</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td><table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td align="right" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-m4.jpg"><img
+                        src="../pics/m4.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="151" height="313"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Enigma M4</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><!--webbot bot="HTMLMarkup" startspan --><a NAME="stroomdiagram"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan -->Stroomdiagram van het toestel
+        </font><a href="enigmatech.htm#top"><font size="2"><img
+        src="../pics/up1.gif" alt="Top" border="0" width="12"
+        height="9"></font></a></h4>
+        <p><font size="2">De Enigma-machine is een
+        elektromechanisch toestel, bestaande uit een toetsenbord
+        (Duits type QWERTZ), een lampenpaneel dat het alfabet
+        voorstelt, en drie of vier rotors waarvan de interne
+        bedrading telkens een alfabetische substitutie uitvoert.
+        Bij het indrukken van een letter op het toetsenbord
+        beweegt een stappenmechanisme de rotors en vertaald het
+        elektrisch systeem de toets in een oplichtende lamp die
+        de gecodeerde letter voorstelt. Er bevindt zich een
+        batterijvak in het toestel maar op het frontpaneel er is
+        ook een aansluiting voorzien om de machine te voeden met
+        een uitwendige stroombron, of men kan de ingebouwde
+        kleine transformator gebruiken om het toestel op het
+        elektriciteitsnet aan te sluiten.</font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td valign="top"><font size="2"><img
+                src="../pics/wiring.jpg"
+                alt="Enigma bedrading, © Dirk Rijmenants"
+                align="left" border="1" hspace="5" width="290"
+                height="381"></font></td>
+                <td width="400"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-wehrinside.jpg"><img
+                        src="../pics/wehrinside.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="407" height="269"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Een Wehrmacht Enigma met open
+                        deksel. Van links naar rechts: de B
+                        reflector, de drie rotors, de
+                        ingangsrotor (zwart) en het
+                        batterijcompartiment. Onder het
+                        batterijcompartiment zien we de contacten
+                        van de schakelaar. Onder de rotors ligt
+                        het lampenpaneel. Op de tweede rij van
+                        het lamppaneel links zit een
+                        reserevelampje en rechts een uitsparing
+                        om lampjes te testen.</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We beschrijven de werking aan de hand
+        van het stroomdiagram hierboven. Om het geheel te
+        vereenvoudigen zijn er telkens slechts vier van elk van
+        de componenten getekend. In werkelijkheid zijn er dus 26
+        lampjes, toetsen, pluggen en doorverbindingen in de
+        rotors. Van de batterij [1] vloeit de stroom door de
+        wisselschakelaar [2], die bediend wordt door de
+        ingedrukte letter-toets, naar het stekkerbord [3]
+        (Steckerbrett). Dit stekkerbord maakt het mogelijk de
+        bedrading tussen toetsenbord [2] en vaste ingangsrotor
+        [4] (Eintrittwalze) te wijzigen met kabeltjes [8]. De
+        stroom gaat vervolgens van de - ongebruikte en dus
+        gesloten - stekker 'A' [3] door de ingangsrotor [4] en
+        door de drie beweegbare rotors [5] (Walzen), om
+        vervolgens door de reflector [6] (Umkehrwalze) via een
+        andere weg teruggestuurd te worden door de rotors [5],
+        langs het stekkerbord [7], door twee - in ons voorbeeld
+        plug 'S' en 'D' - met een kabeltje doorverbonden stekkers
+        [8], langs een niet ingedrukte toets [9], naar een
+        gloeilamp. Opgelet: Bij vercijfering zal het indrukken
+        van de toets eerst de rotors voortbewegen en daarna de
+        stroom door rotors en lamp sturen. Als de letter-toest
+        wordt losgelaten gaat de lamp uit. Als er geen toets is
+        ingedrukt, is dus de rotorpositie van de <em>vorige</em>
+        vercijferde letter zichtbaar in de venstertjes!</font></p>
+        <p><font size="2">De tekening hieronder toont het
+        inwendige van de Enigma, gezien van rechts, met ongeveer
+        hetzelfde stroomdiagram als hierboven.</font></p>
+        <p><img src="../pics/enigmaplan.jpg"
+        alt="Enigma inwendig, © Dirk Rijmenants" border="1"
+        width="650" height="258"></p>
+        <h4><font size="2"><!--webbot bot="HTMLMarkup" startspan --><a NAME="rotors"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan -->De Rotors </font><a
+        href="enigmatech.htm#top"><font size="2"><img src="../pics/up1.gif"
+        alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2"><img
+        src="../pics/enigmarotorintern.jpg"
+        alt="Bron: Wikipedia Commons - Enigma rotor exploded view. Getekend door Eric Piercing"
+        align="left" border="1" hspace="5" width="302"
+        height="360"></font><font size="2">De rotors (Walzen in
+        Duits) zijn de belangrijkste elementen van de codering.
+        Deze ronde schijven [9] van ongeveer 10 cm zijn
+        vervaardigd uit bakeliet en metaal, met in het midden een
+        kern met aan de rechterkant zijn er 26 verende contacten
+        [6] en aan de linkerzijde 26 vlakke contacten [4] en een
+        holle as [8]. De contacten aan beide zijden zijn
+        verbonden door middel van een interne bedrading [5]. Rond
+        de kern met de bedrading zit een beweegbare ring [3] met
+        26 letters of cijfers en een nok [1]. Deze ring kan
+        gedraaid en vergrendeld worden met een verende pin [7]
+        (Wehrmacht) of twee verende bogen (Kriegsmarine) zodat de
+        positie ten opzichte van de interne bedrading wijzigt.
+        Dit is de ringinstelling of Ringsstellung en deze positie
+        is zichtbaar met een dot markering [2]. Elke rotor heeft
+        aan één zijde een getande ring [10] en aan de andere
+        zijde een nok [1]. Beiden worden gebruikt om met het
+        stappenmechanisme de rotors te bewegen. De rotors kunnen
+        ook manueel in de gewenste positie gezet worden. De
+        bedrading is de feitelijke code en verschilt voor elk van
+        de beschikbare rotors. Elke rotor functioneert als een
+        eenvoudige substitutie-vercijfering. Het is de combinatie
+        van verschillende rotors in serie, in verschillende
+        posities, die de codering zo complex maakt. </font></p>
+        <p><font size="2">Initieel werd de Enigma geleverd met
+        drie rotors. Vanaf 1939 werden de Wehrmacht en Luftwaffe
+        machines uitgerust met een set van vijf verschillende
+        rotors om uit te kiezen, genaamd I, II, III, IV en V.
+        Deze rotors hadden één nok. De Kriegsmarine werd
+        initieel voorzien van vijf, dan zeven, en tenslotte acht
+        rotors, genaamd VI, VII en VIII. Deze drie extra rotors
+        hadden twee nokken, waardoor de snelheid van
+        rotorbewegingen verdubbelde bij de rotors die volgden op
+        zo'n rotor.</font></p>
+        <p><font size="2">Vanaf begin 1942 werd een vierde rotor,
+        ook Griekse rotor genoemd, geïntroduceerd op het
+        beruchte M4 Kriegsmarine model. Er waren twee
+        verschillende, genaamd Beta en Gamma. Deze waren echter
+        niet verwisselbaar met de andere rotors. Om een vierde
+        rotor te kunnen plaatsen werd een nieuwe versmalde
+        reflector gebruikt waartegen de vierde rotor werd
+        geplaatst. Deze vierde rotor kon niet bewegen door het
+        ontbreken van een vierde pal, maar kon manueel in 26
+        verschillende posities worden gezet.<br clear="all">
+        </font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehr3rotors.jpg"><img
+                        src="../pics/wehr3rotors.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="234" height="217"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">De drie rotors op hun as</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-wehrrotor1.jpg"><img
+                        src="../pics/wehrrotor1.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="222" height="217"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Linkerzijde rotor met de nok
+                        (links)</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td><table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-wehrrotor2.jpg"><img
+                        src="../pics/wehrrotor2.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="217" height="216"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Rechterzijde rotor met tanden</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        </p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><a
+                        href="../pics/hires-kriegsmarinerotor.jpg"><img
+                        src="../pics/kriegsmarinerotor.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="224" height="222"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Kriegsmarine rotor met twee
+                        nokken<br>
+                        (klik om te vergroten)</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><img
+                        src="../pics/wehr-ring.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        width="142" height="222"></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Wehrmacht<br>
+                        ring met pin</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td valign="top" bgcolor="#808080"><p
+                        align="center"><img
+                        src="../pics/kriegs-ring.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        width="141" height="221"></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">Kriegsmarine<br>
+                        ring met bogen</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        </p>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tr>
+                <td valign="top"><h4><font size="2"><!--webbot
+                bot="HTMLMarkup" startspan --><a NAME="reflector"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->De reflector </font><a
+                href="enigmatech.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">De reflector, Umkehrwalze of
+                UKW in het Duits, is wat de Enigma machine
+                onderscheidde van andere elektromechanische
+                codeertoestellen. Bij de interne bedrading van de
+                beweegbare rotors kan elke letter met een andere
+                verbonden worden. Zo kan &#145;A&#146; met
+                &#145;F&#146; verbonden worden, en &#145;F&#146;
+                met &#145;K&#146;. Bij de reflector worden de
+                letters echter in lussen verbonden. Als
+                &#145;A&#146; met &#145;F&#146; is verbonden, is
+                dit ook omgekeerd het geval. Hierdoor ontstaat
+                een reciproke codering. Het grote voordeel is dat
+                wanneer bijvoorbeeld &#145;G&#146; in
+                &#145;X&#146; wordt gecodeerd, men enkel maar
+                dezelfde codering hoeft toe te passen op de
+                &#145;X&#146; om de &#145;G&#146; terug te
+                bekomen. Hierdoor hoefde de operator tijdens het
+                decoderen geen andere handelingen uit te voeren
+                dan tijdens het coderen. Een nadeel dat later een
+                zwakke schakel in de codering bleek, is dat een
+                letter nooit in zichzelf gecodeerd kan worden.</font></p>
+                <p><font size="2">Tijdens de Tweede Wereldoorlog
+                zijn voor de Wehrmacht machine twee typen
+                reflectors gebruikt: B en C. Beiden hebben
+                verende contacten. De vier-rotor Kriegsmarine
+                Enigma had speciale speciale smalle reflectors,
+                ook B en C genoemd, maar met een andere interne
+                bedrading. Deze waren echter compatibel met de
+                brede B en C reflectoren indien de smalle B met
+                de Beta rotor in A positie of small C met Gamme
+                rotor gebruikt werd. Hierdoor was communicatie
+                tussen Wehrmacht, M3 en M4 modellen mogelijk. De
+                smalle reflectors hadden geen verende maar vaste
+                vlakke contacten. Daarom hadden de speciale Beta
+                en Gamma rotors verende contacten aan beide
+                zijden.</font></p>
+                <p><font size="2">Tegen het einde van de oorlog
+                werd de D reflector geintruduceerd in de
+                Luftwaffe. Deze kon door middel van 12 draden met
+                24 stekkers worden aangepast. De dertiende
+                verbinding was vast aangebracht. De
+                vier-rotormachines van de Kriegsmarine zijn
+                voorzien van speciale smalle reflectors, ook B en
+                C genaamd, maar met een andere interne bedrading.<br>
+                <br>
+                </font></p>
+                <h4><font size="2"><!--webbot bot="HTMLMarkup"
+                startspan --><a NAME="bedrading"></a> 
+
+<!--webbot bot="HTMLMarkup"
+                endspan -->Interne bedrading van rotors en
+                reflectors </font><a href="enigmatech.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">De interne bedrading van de
+                rotors voert de eigenlijke encryptie uit. Als
+                voorbeeld voor de werking van de inwendige
+                bedrading als substitutiecijfer nemen we de rotor
+                type I met ringsetting A-01. De input is aan de
+                rechterkant van de rotor! U kan in de tabel zien
+                dat een 'A' vercijferd wordt als een 'E', een 'B'
+                als 'K', en een 'K' als 'N'. Merk op dat elke
+                letter is vercijferd in een andere.</font></p>
+                <p><font size="2">Hieronder de tabel met de
+                bedrading van de standaard rotors voor Wehrmacht,
+                Luftwaffe en Kriegsmarine:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0"
+                bgcolor="#FFFFCC">
+                    <tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rechterzijde rotor)   
+        ||||||||||||||||||||||||||
+I     = EKMFLGDQVZNTOWYHXUSPAIBRCJ
+II    = AJDKSIRUXBLHWTMCQGZNPYFVOE
+III   = BDFHJLCPRTXVZNYEIWGAKMUSQO
+IV    = ESOVPZJAYQUIRHXLNFTGKDCMWB
+V     = VZBRGITYUPSDNHLXAWMJQOFECK</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top" width="300"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrukw.jpg"><img
+                        src="../pics/wehrukw.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="290" height="186"></a></p>
+                        <p align="center"><font color="#FFFFFF"
+                        size="2">De B reflector van de Wehrmacht
+                        Enigma</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-m4ukwbeta2.jpg"><img
+                        src="../pics/m4ukwbeta2.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="290" height="216"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Kriegmarine Beta rotor met
+                        smalle B reflector</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tr>
+                <td colspan="2"><font size="2">Bijkomende rotors,
+                enkel gebruikt door Kriegsmarine voor het M3 en
+                M4 model:<br>
+                <br>
+                </font><table border="1" cellpadding="3"
+                cellspacing="0" bgcolor="#FFFFCC">
+                    <tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rechterzijde rotor)   
+        ||||||||||||||||||||||||||
+VI    = JPGVOUMFYQBENHZRDKASXLICTW
+VII   = NZJHGRCXMYSWBOUFAIVLPEKQDT
+VIII  = FKQHTLXOCBJSPDZRAMEWNIUYGV</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                <p><font size="2">De speciale vierde rotor, ook
+                wel Zusatzwalzen of Griekse rotors genoemd. Enkel
+                gebruikt bij de Kriegsmarine M4:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0"
+                bgcolor="#FFFFCC">
+                    <tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rechterzijde rotor)   
+        ||||||||||||||||||||||||||
+Beta  = LEYJVCNIXWPBQMDRTAKZGFUHOS
+Gamma = FSOKANUERHMBTIYCWLQPZXVGJD</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                <p><font size="2">In de tabel voor reflectoren
+                zien we dat bij de brede B reflector de 'A' is
+                verbonden met de 'Y', en de 'Y' met de 'A'. Zoals
+                u merkt zijn de letters, in tegenstelling tot de
+                rotor, verbonden in lussen.</font></p>
+                <p><font size="2">De normale brede reflectors
+                voor Wehrmacht en Luftwaffe:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0"
+                bgcolor="#FFFFCC">
+                    <tr>
+                        <td><pre><font size="2">
+Contacten   = ABCDEFGHIJKLMNOPQRSTUVWXYZ                 
+              ||||||||||||||||||||||||||
+Reflector B = YRUHQSLDPXNGOKMIEBFZCWVJAT
+Reflector C = FVPJIAOYEDRZXWGCTKUQSBNMHL</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                <p><font size="2">De smalle Kriegsmarine
+                reflectoren, enkel gebruikt bij het M4 model:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0"
+                bgcolor="#FFFFCC">
+                    <tr>
+                        <td><pre><font size="2">
+Contacten        = ABCDEFGHIJKLMNOPQRSTUVWXYZ            
+                   ||||||||||||||||||||||||||
+Reflector B smal = ENKQAUYWJICOPBLMDXZVFTHRGS
+Reflector C smal = RDOBJNTKVEHMLFCWZAXGYIPSUQ</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                <p><font size="2">De hierboven beschreven
+                bedradingen zijn voor de rotors van Wehrmacht,
+                Luftwaffe en Kriegsmarine Enigma's. De rotors van
+                andere versies van het Enigma toestel hebben een
+                andere interne bedrading.</font></p>
+                <h4><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a NAME="rotorencryption"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan --><font size="2">De
+                rotor encryptie</font><a href="enigmatech.htm#top"><font
+                size="2"><img src="../pics/up1.gif" alt="Top"
+                border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">Een rotor bestaat uit twee
+                hoofddelen. Het eerste deel is de beweegbare ring
+                met het alfabet (zichtbaar in het kleine
+                venstertje) en nok voor het stappen van de
+                rotors. Het tweede deel is de kern met de
+                inwendige bedrading (de eigenlijke codering) en
+                de 2 x 26 contacten. Deze kern is bevestigd aan
+                het grote duimwiel. De positie van de ring
+                veranderen noemt men de ringinstelling of
+                'Ringstellung' en veranderd de positie van de
+                alfabet-ring en zijn nok, ten opzichte van de
+                interne bedrading.</font></p>
+                <p><font size="2">In de onderstaande tekeningen
+                gebruiken we de Enigma rotor type I (Romeinse 1).
+                De verstelbare ring is het vertikaal grijze
+                gedeelte. De bedradingskern, met het duimwiel
+                eraan vast, is wit (in werkelijkheid staan er
+                geen letters op het witte vlak). De positie van
+                de rotor is aangegeven door de letter in het
+                zwarte kadertje (het venstertje op het deksel).
+                De kleine zwarte rechthoek, rechts van de ring,
+                is de vergrendelingspin om de rings vast te
+                zetten, en geeft de ringinstelling aan.</font></p>
+                <p><font size="2">Hieronder een voorbeeld van hoe
+                Rotor I (met ringinstelling A-01) twee
+                opeenvolgende ingedrukte A toetsen vercijferd.
+                Links ziet u rotor I in de A positie (zichtbaar
+                in het kleine venstertje). Het signaal, komende
+                van de ingedrukte A toets, gaat via het A contact
+                door de inwendige bedrading naar het E contact
+                dat zich op de E positie bevind. </font></p>
+                <p><font size="2">Rechts ziet u dat de rotor
+                één stap werd voortbewogen naar de B positie.
+                Het signaal komt weer toe op de A positie en gaat
+                via het B contact door de bedrading naar het K
+                contact. Aangezien de hele rotor één positie
+                verschoven is, bevind het K contact zich nu
+                echter op de J positie en zal het signaal daarom
+                de rotor verlaten op de J positie naar de
+                volgende rotor!</font></p>
+                <p><font size="2"><img
+                src="../pics/rotorencode.jpg"
+                alt="Image © D Rijmenants 2011" border="1"
+                hspace="2" width="424" height="474"></font></p>
+                <p><font size="2">Op de rotors is de
+                'Ringstellung' aangeduid door de blokkeerpin
+                (Wehrmacht) of door een kleine dot markering
+                (Kriegmarine) op de draaibare kern van de rotor
+                en toont de positie van het eerste contact (A)
+                van de bedrading. Ringinstelling F of 06 zal de
+                letter C of de cijfers 06 op de buitenste ring
+                dus op één lijn brengen met het eerste contact
+                van de rotor, aangeduid met de pin of dot. Als de
+                ringsinstelling één positie verschuift zal ook
+                en encryptie één positie verschuiven. De
+                ringinstelling mag niet verward worden met de
+                rotorpositie, aangeduid door de letter op de
+                buitenste ring, zichtbaar is in het kleine
+                venstertje op het deksel van de machine.</font></p>
+                <p><font size="2">Hieronder twee voorbeelden om
+                de werking van de ringinstelling te
+                verduidelijken. Links ziet u rotor I met een
+                ringinstelling B-02 (pin of dot op B) en de rotor
+                staat in de A positie (zichtbaar in het kleine
+                venster). Het signaal, komende van de ingedrukte
+                A toets, komt toe op de A positie en gaat via het
+                Z contact door de bedrading naar het J contact.
+                Vanwege de ringinstelling is de bedradingskern
+                één positie opgeschoven en de uitgangscontacten
+                zijn dus ook opgeschoven. Daarom bevind het J
+                contact zich nu in de K positie en verlaat het
+                signaal de rotor dus in de K positie naar de
+                volgende rotor.</font></p>
+                <p><font size="2">Rechts ziet u dezelfe rotor I,
+                maar met ringinstelling F-06. De rotor staat in
+                de Y positie. Het signaal komt toe op de A
+                positie en gaat via het T contact door de
+                bedrading naar het P contact. Echter, de
+                combinatie van de rotorpositie en de
+                ringinstelling veroorzaakt een verschuiving van
+                zeven posities val alle uitgangscontacten. Daarom
+                bevind het P contact zich nu in de U positie en
+                verlaat het signaal de rotor dus in de W positie
+                naar de volgende rotor.</font></p>
+                <p><font size="2"><img
+                src="../pics/rotorencodewithring.jpg"
+                alt="Image © D Rijmenants 2011" border="1"
+                width="424" height="474"></font></p>
+                <p><font size="2">Denk er aan dat, wanneer men
+                een toets indruk, de rotors voortbewegen alvorens
+                het electrische signaal door de rotors loopt. Om
+                de weg van de stroom door de rotor in A positie
+                te volgen moet men de rotor dus in Z positie
+                zetten alvorens de toest in te drukken (zo ook
+                bij de andere rotors indien die net gaan
+                bewegen)! In de voorbeelden hierboven zijn er
+                geen stekkers gebruikt op het stekkerbord en gaat
+                het signaal dus van de A toets rechtstreeks via
+                de ingangsrotor naar rotor I.</font></p>
+                <p><font size="2">Er is een uitstekende on-line </font><a
+                href="http://enigmaco.de/enigma/enigma.html"
+                target="_blank"><font size="2">Flash Enigma
+                simulation</font></a><font size="2"> op de
+                enigmaco website die duidelijk de route van het
+                signael door de rotors toont.<br>
+                </font></p>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tr>
+                <td valign="top"><h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a NAME="stappenmechanisme"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->Het stappenmechanisme
+                </font><a href="enigmatech.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">Het continu veranderen van de
+                positie van de verschillende rotors zorgt ervoor
+                dat elke letter telkens weer anders gecodeerd
+                wordt. De rechtse (snelste) rotor beweegt telkens
+                wanneer een toets gedrukt wordt. De middelste
+                rotor beweegt slechts één maal per 26 stappen
+                van de rechtse rotor (wanneer de rechtse rotor
+                één nok heeft). De linkse rotor beweegt één
+                maal per 26 stappen van de middelste rotor.</font></p>
+                <p><font size="2">Bij het drukken van een toets
+                beweegt het stappenframe [1] naar beneden en de
+                as [2] met drie (spiraal-verende) pallen omhoog.
+                Als deze as omhoog komt bewegen de pallen in de
+                richting van de rotors. Elke pal [3] is voor de
+                helft geplaatst over de alfabetring (met nok) van
+                de ene rotor; de andere helft over de getande
+                ring van de rotor links daarvan. Als een rotor in
+                zijn nok-positie staat kan zijn pal verder
+                richting rotor bewegen, in de getande ring
+                grijpen en de rotor één stap voorbewegen. Als
+                de rechtse rotor niet in de nok-positie is zal de
+                pal over zijn nok-ring glijden en niet in de
+                tanden van de rotor links ervan kunnen grijpen.
+                Gezien er rechts van de meest rechtse rotor geen
+                rotor is met nok, zal de rechtse pal bij elke
+                toetsaanslag de rotor voortbewegen.</font></p>
+                <p><font size="2">Wanneer er geen toets gedrukt
+                is, duwt de as [2] de drie pallen naar beneden.
+                De onderkant van de pal-constructie duwt hierdoor
+                tegen de bodem van het toestel waardoor de
+                bovenkant van de pal - die in de tanden of nok
+                grijpt - wordt weggedrukt van de rotor. Hierdoor
+                kan men alle rotors manueel in beide richtingen
+                draaien indien er geen toets ingedrukt is.</font></p>
+                <p><img src="../pics/stepping.jpg"
+                alt="Stepping Mechanism by Dirk Rijmenants"
+                border="1" width="504" height="183"></p>
+                <p><font size="2">De positie van de nok is
+                verschillend voor elk van de rotors. In
+                onderstaande tabel zien we dat rotor I een nok
+                heeft aan letter Y. Als deze nok tegenover zijn
+                pal staat is de letter Q zichtbaar in het kleine
+                venstertje. Daarom zal de rotor links van rotor I
+                een stap maken als rotor I van Q naar R stapt
+                (cryptanalisten gebruikten het ezelsbrugje <u>R</u>oyal
+                <u>F</u>lags <u>W</u>ave <u>K</u>ings <u>A</u>bove
+                om de posities van de rotors na het stappen te
+                onthouden). Bemerk dat de Kriegsmarine rotors VI,
+                VII en VIII twee in plaats van één nok hebben.
+                Hierdoor zal de rotor links van zo'n rotor eens
+                zo snel voortbewegen als normaal.</font></p>
+                <table border="1" cellpadding="3" cellspacing="0"
+                bgcolor="#FFFFCA">
+                    <tr>
+                        <td valign="top"><font size="2">Rotor</font></td>
+                        <td valign="top" bgcolor="#FFFFD2"><font
+                        size="2">Nok</font></td>
+                        <td valign="top"><font size="2">Venster</font></td>
+                        <td><font size="2">Rotor links van deze
+                        rotor stapt als deze stapt van: </font></td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><pre><font size="2">I
+II
+III
+IV
+V
+VI VII VIII </font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Y
+M
+D
+R
+H
+H + U</font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Q
+E
+V
+J
+Z
+Z + M</font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Q -&gt; R
+E -&gt; F
+V -&gt; W
+J -&gt; K
+Z -&gt; A
+Z -&gt; A + M -&gt; N</font></pre>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td valign="top" width="300"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrentry.jpg"><img
+                        src="../pics/wehrentry.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="338" height="225"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">De drie pallen op hun as,
+                        rustend op de bodem-pads. De as is
+                        bevestigt aan het stappenframe (zilveren
+                        L-vorm). Rechts van de pallen zien we de
+                        vaste ingangsrotor.</font></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-gmechanism.jpg"><img
+                        src="../pics/gmechanism.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="340" height="223"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Tandwielmechanisme van de
+                        speciale voorganger van de Enigma G.
+                        Bemerk de normale plaatsing van de rotor
+                        contacten in plaats de latere speciale G
+                        rotors met smalle geschraagde contacten</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><strong>Belangrijke opmerking i.v.m.
+        het Stappen</strong>: Hoewel het stappenmechanisme op het
+        eerste zicht lijkt te werken als een kilometerteller, is
+        er een belangrijk verschil. Eenmaal per volledige
+        omwenteling zal de middelste rotor twee maal na elkaar
+        een stap zetten. Dit word de dubbel-stap genoemd. Een
+        voorbeeld: KDO, KDP, KDQ, KER, LFS, LFT (gebruikte rotors
+        zijn III,II,I). Een dubbel-stap gebeurt als volgt:
+        Wanneer de eerste (rechtse) rotor in zijn nok-positie
+        staat en men een toets drukt neemt hij de middelste rotor
+        één stap mee. Indien de middelste rotor door deze stap
+        in zijn eigen nok-positie komt kan bij de volgende stap
+        de derde pal de linkse rotor - via de tandring - één
+        stap verder duwen, maar zal diezelfde pal eveneens in de
+        nok van de middelste rotor duwen en deze een stap verder
+        bewegen. Hierdoor stapt de middelste rotor dus twee maal
+        na elkaar. Er dient nog vermeld dat het drukken van een
+        toets eerst de rotors zal bewegen en pas daarna de stroom
+        door de contacten zal laten vloeien om de letter te
+        coderen.</font></p>
+        <p><font size="2">Het stappenmechanisme zoals hierboven
+        beschreven werd gebruikt door de Wehrmacht en de
+        Kriegsmarine machines. De Enigma-G van de Abwehr werkt
+        totaal verschillend. De Enigma-G heeft een draaiende
+        reflector en drie rotors met meerdere nokken met
+        onregelmatige tussenafstanden, die worden aangedreven
+        door tandwielen.</font></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+            <tr>
+                <td valign="top"><h4><font size="2"><!--webbot
+                bot="HTMLMarkup" startspan --><a NAME="stekkerbord"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->Het stekkerbord </font><a
+                href="enigmatech.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">Het stekkerbord of Steckerbrett
+                werd in 1930 geïntroduceerd op de eerste versies
+                van de Wehrmacht. Dit stekkerbord is vooraan de
+                machine geplaatst. Zonder stekkers vloeit de
+                stroom van elke toets naar de corresponderende
+                letter van de ingangsrotor. Indien een kabel met
+                twee stekkers wordt geplaatst, verbindt men een
+                letterpaar. Hierdoor worden de twee letters
+                gewisseld voor ze naar de ingangsrotor gaan. Er
+                werden standaard per machine een set van 10
+                kabeltjes voorzien. Het stekkerbord was een
+                uitbreiding die de sterkte van encryptie van de
+                Enigma-machines flink verbeterde.</font></p>
+                <p><font size="2">Elke letter heeft twee bussen.
+                Inbrengen van een tweepolige stekker verbreekt de
+                bovenste bus, komende van het toetsenbord, en de
+                onderste bus, die naar de ingangsrotor gaat. De
+                stekker aan het andere einde van de gekruiste
+                kabel steekt in een andere letter, waardoor de
+                verbinding tussen de twee letters gewisseld
+                wordt.</font></p>
+                </td>
+                <td valign="top" width="300"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-wehrplugs.jpg"><img
+                        src="../pics/wehrplugs.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="358" height="199"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">Het stekkerbord van de Wehrmacht
+                        Enigma</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        </p>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tr>
+                <td valign="top"><h4><font size="2"><!--webbot
+                bot="HTMLMarkup" startspan --><a NAME="accessoires"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->Accessoires </font><a
+                href="enigmatech.htm#top"><font size="2"><img
+                src="../pics/up1.gif" alt="Top" border="0"
+                width="12" height="9"></font></a></h4>
+                <p><font size="2">Een handige toevoeging aan de
+                M4 Enigma was de Schreibmax, een kleine printer
+                die op een smalle papierstrook de 26 letters kon
+                afdrukken, waardoor een tweede operator voor het
+                aflezen van de lampjes overbodig was. De
+                Schreibmax werd bovenop de Enigma-machine
+                geplaatst en was aangesloten op het lampenpaneel.
+                Hiervoor dienden het lampenpaneel en alle lampjes
+                verwijderd te worden.</font></p>
+                <p><font size="2">De taak van de tweede operator
+                kon ook vereenvoudigd worden door een extern
+                lampenpaneel of Fernlesegerät. Als de machine
+                was voorzien van zo'n extern paneel was de
+                behuizing van de Enigma breder om het extra
+                paneel te kunnen bewaren. Er was ook een
+                uitvoering die nadien kon aangesloten worden,
+                maar daarvoor moest net als bij de Schreibmax het
+                lampenpaneel en de lampjes verwijderd worden. Een
+                ander voordeel van dit paneel was extra
+                veiligheid. Een gemachtigd persoon kon het
+                ontcijferde bericht lezen, terwijl dit voor de
+                operator onzichtbaar was.</font></p>
+                <p><font size="2">In 1944 werd op de Luftwaffe
+                Enigma een extra mechanisme geïntroduceerd, de
+                zogenaamde Uhr (klok). Dit was een los kastje met
+                daarin een schakelaar met 40 standen. Hiermee kon
+                men de kabels, ingesteld volgens de
+                Tagesschlüssel op eenvoudige wijze op 40
+                verschillende manieren verbinden. De meeste van
+                deze instellingen waren niet paargewijs, zoals
+                gebruikelijk met de normale kabels.</font></p>
+                </td>
+                <td valign="top" width="300"><br>
+                <br>
+                <table border="0" cellpadding="10"
+                cellspacing="0">
+                    <tr>
+                        <td bgcolor="#808080"><p align="center"><a
+                        href="../pics/hires-uhr.jpg"><img
+                        src="../pics/uhr.jpg"
+                        alt="Image © D Rijmenants 2008"
+                        border="0" width="357" height="281"></a></p>
+                        <p align="left"><font color="#FFFFFF"
+                        size="2">De Uhr met zijn kabels die de
+                        normale stekkers vervangen.</font></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><!--webbot bot="HTMLMarkup" startspan --><a NAME="maths"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan --><font size="2">Mathematische
+        veiligheid </font><a href="enigmatech.htm#top"><font size="2"><img
+        src="../pics/up1.gif" alt="Top" border="0" width="12"
+        height="9"></font></a></h4>
+        <p><font size="2">Om de mathematische veiligheid van de
+        Enigma machine te berekenen moeten we alle mogelijke
+        verschillende instellingen vinden. Daarvoor moeten we
+        naar de volgende eigenschappen van de machine kijken: de
+        selectie en volgorde van de rotors, hun bedrading, de
+        ringsinstelling op elk van de rotors, de startpositie van
+        de rotors bij het begin van de vercijfering, de reflector
+        en het stekkerbord. Nu zijn er verschillende manieren om
+        het totaal aan combinaties te berekenen. In </font><a
+        href="http://ed-thelen.org/comp-hist/NSA-Comb.html"
+        target="_blank"><font size="2">deze NSA publicatie</font></a><font
+        size="2"> werden alle mogelijke variaties van bedrading
+        voor elk van de rotors en de reflector in acht genomen.
+        Dit resulteert in een astronomische 3 x 10<sup>114</sup>.
+        Hoewel correct, is dit getal misleidend en geeft het
+        enkel het aantal theoretisch mogelijke variaties weer.</font></p>
+        <p><font size="2">Helaas voor de Duitsers kenden de
+        Geallieerden de machine, de rotors én de inwendige
+        bedrading van die rotors. Daarom dienden ze enkel
+        rekening te houden met het effectief aantal van mogelijke
+        instellingen van de machine, de eigenlijke
+        sleutelgrootte. Dit is wat we de praktische veiligheid
+        noemen, die in het geval van de Enigma vele malen kleiner
+        is dan de theoretische veiligheid. Voor de Duitse
+        cryptologen kon de bedrading van één enkele rotor 4 x
+        10<sup>26</sup> verschillende variaties hebben. Het
+        combineren van drie rotors en een reflector geeft dan al
+        gauw astronomische getallen. Voor de Geallieerde
+        codebrekers, die de inwendige bedrading al kenden, waren
+        er slechts 26 variaties, zijnde elk van de 26 posities
+        die de rotor kon aannemen in de machine. Zij hoefden het
+        immense aantal variaties van de bedrading niet te
+        doorzoeken. De Duitse cryptologen maakten een fatale fout
+        door Auguste Kerckhoff's wet te negeren dat de veiligheid
+        van een cryptografisch systeem nooit mag afhankelijk zijn
+        van de geheimhouding van het systeem (o.a. rotor
+        bedrading, ontwerp) dat sowieso zal gecompromitteerd
+        worden, maar enkel mag steunen op de geheimhouding van de
+        sleutelinstellingen (rotor selectie en instelling,
+        stekkerbord). In het interessante </font><a
+        href="http://findarticles.com/p/articles/mi_qa3926/is_200304/ai_n9181646/"
+        target="_blank"><font size="2">R.A. Ratcliff document</font></a><font
+        size="2"> voor Cryptologia kunt u lezen hoe gevaarlijk
+        het is om te vertrouwen op theoretische veiligheid.</font></p>
+        <p><font size="2">Laat ons kijken naar alle dingen die we
+        effectief kunnen instellen aan de Enigma en die onbekend
+        zijn voor de codebrekers. In ons voorbeeld nemen we de
+        3-rotor Wehrmacht Enigma met standaard B reflector en een
+        keuze uit vijf rotors. We gebruiken 10 kabelstjes op het
+        stekkerbord, het standaard aantal dat geleverd werd bij
+        de machine (vraag me niet waarom ze geen 11 kabels
+        gebruikten wat de meeste combinaties zou opleveren).</font></p>
+        <p><font size="2">Om 3 rotors uit een mogelijke 5 te
+        selecteren zijn er 60 combinaties (5 x 4 x 3). Elke
+        rotor, met ander woorden zijn inwendige bedrading, kon in
+        26 standen staan. Daarom zijn er met 3 rotors 17.576
+        mogelijke combinaties (26 x 26 x 26). De ring van elke
+        rotor bevat de zichtbare letters/cijfers (hier niet van
+        belang) en de nok die het stappen van de links-volgende
+        rotor bepaald. Elke ring kan in één van de 26 posities
+        ingesteld worden. Aangezien er links van de derde (meest
+        linkse) rotor geen volgende rotors is hebben enkel de
+        ringen van de uiterst rechtse en middelste rotor een
+        effect op de berekening. Dit geeft 676 ring combinaties
+        (26 x 26).</font></p>
+        <p><font size="2">Het stekkerbord levert de grootste brok
+        combinaties. De eerste stekker van een kabel kan elk van
+        de 26 posities hebben en de tweede stekker 25 posities.
+        Omdat elke combinatie en het omgekeerde daarvan identiek
+        zijn (A-B is hetzelfde als B-A) moeten we alle dubbele
+        combinaties eruit halen. We hebben dus (26 x 25) / (1! x
+        2<sup>1</sup>) of 325 unieke manieren om één kabel te
+        verbinden. Voor twee kabels hebben we (26 x 25) voor de
+        eerste kabel en, aangezien er al twee stekkers gebruikt
+        zijn, (24 x 23 ) voor de tweede kabel. We moeten nu
+        rekening houden met de dubbele combinaties voor twee
+        kabels, dus (26 x 25 x 24 x 23) / (2! x 2<sup>2</sup>) =
+        44.850 unieke combinaties. Voor drie kabels hebben we dan
+        (26 x 25 x 24 x 23 x 22 x 21) / (3! x 2<sup>3</sup>) = 3.453.450
+        combinaties, enzovoort. Voor het standaard aantal van 10
+        kabels hebben we dus 150.738.274.937.250 verschillende
+        manieren om de kabels te verbinden op het stekkerbord. De
+        formule, met <em>n</em> als het aantal kabeltjes, is 26!
+        / (26 - 2<em>n</em>)! &middot; <em>n</em>! &middot; 2<sup><em>n</em></sup></font></p>
+        <p><font size="2">In totaal geeft dit: 60 x 17.576 x 676
+        x 150,738,274,937,250 = <strong>107.458.687.327.250.619.360.000</strong>
+        of <strong>1,07 x 10</strong><sup><strong>23</strong></sup></font></p>
+        <p><font size="2">In werkelijkheid kon de Wehrmacht
+        machine dus ingesteld worden op 1,07 x 10<sup>23</sup>
+        verschillende manieren, vergelijkbaar met een hedendaagse
+        77 bit sleutel.</font></p>
+        <p><font size="2">Er zijn enkele bemerkingen bij dit
+        getal. In werkelijkheid is de periode - het aantal
+        stappen alvorens de machine zich herhaalt - iets kleiner
+        dan 17.576. Dit komt door de dubbel-stap eigenschap van
+        het mechanisme. De effectieve periode hangt af van de
+        gebruikte rotors. De drie dubbel-nok rotors van de
+        Kriegsmarine hebben zelfs een nog kleinere periode dan de
+        Wehrmacht rotors aangezien zij meer dubbele stappen van
+        de middelste rotor veroorzaken. De maximum periode maakt
+        echter geen deel uit van de variabele sleutelinstellingen
+        en zal daarom de sleutelgrootte niet beïnvloeden. De
+        Wehrmacht machine kon uitgerust worden met de B of C
+        reflector. Meestal gebruikte een radionet steeds dezelfde
+        reflector aangezien het gebruik van verschillende
+        reflectoren logistieke en praktische problemen
+        veroorzaakte. Als we toch de keuze tussen B en C
+        reflector meerekenen zal dit de sleutelgrootte slechts
+        vermeerderen met een factor 2.</font></p>
+        <p><font size="2">Het toevoegen van de vierde rotor aan
+        de Kriegmarine M4 Enigma, om zijn veiligheid te verhogen,
+        was een mooie maar nutteloze aanpassing. De niet
+        bewegende vierde rotor compliceerde de machine enkel met
+        een factor 26 en kon samen met zijn smalle reflector
+        aanzien worden als een instelbare reflector met 26
+        posities, waarvan de Geallieerden al snel de bedrading
+        vonden (na 10 maanden paniek). De introductie van de 8
+        Kriegmarine rotors was een veel betere aanpak. Zij
+        verhoogden het aantal rotor combinaties van 60 naar 336
+        en brachten een bijkomende complexiteit met de drie
+        dubbel-nok rotors VI, VII en VIII.</font></p>
+        <p><font size="2">Laat ons de praktische sleutelgrootte
+        berekenen van de Kriegsmarine Enigma M4. Deze machine
+        gebruikt 3 gewone rotors, gekozen uit een mogelijke 8
+        (waarvan drie met dubbele nok). Dit geeft 336
+        verschillende combinaties (8 x 7 x 6). De M4 heeft ook
+        een speciale vierde rotor, genaamde Beta of Gamma (zonder
+        ring), wat ons twee mogelijkheden geeft. Deze zijn niet
+        compatibel met de andere rotors en kunnen enkel gebruikt
+        worden als vierde (uiterst linkse) rotor. De vier rotors
+        kunnen in 456.976 verschillende posities ingesteld worden
+        (26 x 26 x 26 x 26). De M4 heeft een smallere B of C
+        reflector om de plaatsing van de speciale vierde rotor
+        toe te laten. We houden geen rekening met de keuze van
+        reflector omdat die doorgaans nooit werd veranderd. Ook
+        hier zijn slechts twee ringen van belang aangezien de
+        derde rotor de vierde rotor nooit liep stappen. De M4
+        werd ook voorzien van 10 kabeltjes voor het stekkerbord.</font></p>
+        <p><font size="2">In totaal geeft dit: 336 x 2 x 456.976
+        x 676 x 150.738.274.937.250 = <strong>31.291.969.749.695.380.357.632.000</strong>
+        of <strong>3,1 x 10</strong><sup><strong>25</strong></sup>,
+        vergelijkbaar met een 84 bit sleutel.</font></p>
+        <p><font size="2">Dit is ongeveer 291 keer veiliger dan
+        de Wehrmacht machine. Dit komt geheel op rekening van de
+        verhoogde keuze van rotors (reeds beschikbaar op de M3
+        vóór de oorlog) en de mogelijke startposities voor 4 in
+        plaats van 3 rotors. Hoewel de vierde rotor wél de
+        mogelijke instellingen verhoogd zorgde hij echter niet
+        voor meer complexiteit bij het vercijferen, aangezien de
+        vierde rotor niet bewoog bij het vercijferingsprocces.
+        Een betere oplossing was wellicht het volledig
+        her-bedraden zijn van sommige rotors op regelmatige
+        basis. Eén enkel variabele rotorbedrading zou de
+        sleutelgrootte verhogen met een factor 4 x 10<sup>26 </sup>wat
+        veel meer is dan de programmeerbare reflector met zijn
+        7,8 x 10<sup>12</sup> variaties. Eén enkele praktische,
+        dagelijks veranderende rotor met zijn 4 x 10<sup>26</sup>
+        variaties zou veel effectiever geweest zijn dan het
+        overschatte niet-bewegende stekkerbord met slechts 2 x 10<sup>14</sup>
+        variaties (het stekkerbord werkt met paren). Het gebruik
+        van zo'n rotor, bijvoorbeeld samen met een dunne
+        reflector zoals in de M4, en de twee andere rotors uit
+        een keuze van vier, zou een echte ramp geweest zijn voor
+        de codebrekers. De introductie van zo'n programmeerbare
+        rotor tijdens de oorlog zou echter zeer omslachtig
+        geweest zijn en een logistieke en financiële nachtmerrie
+        blijken, net zoals de programmeerbare D reflector dat
+        bleek te zijn. Te weinig, te laat. De D reflector
+        veroorzaakte aanvankelijk paniek bij de codebrekers, tot
+        zij zich realiseerden dat de D reflector gelijktijdig met
+        standaard reflectors gebruikt werd in dezelfde
+        radionetten vanwege praktische overwegingen. Dit dubbel
+        gebruik maakte het zelfs mogelijk hem met de hand te
+        breken. Meer over de D reflector een andere pogingen op
+        de </font><a href="enigma.htm"><font size="2">Enigma
+        geschiedenis</font></a><font size="2"> pagina.</font></p>
+        <p><font size="2">Elke crypto expert zou ook de 17.576
+        ring combinaties negeren. Zelfs met een volledig foute
+        ringinstelling zal er initiëel een correcte ontcijfering
+        zijn. Zodra er onleesbare tekst opduikt dient de ring van
+        de rechtse rotor aangepast te worden (een 1/26 kans op
+        succes) en indien je geluk hebt zijn er geen problemen
+        meer voor de volgende 676 letters. Bij minder geluk moest
+        ook de ring van de middelste rotor reeds na 26
+        ontcijferde letters aangepast worden. Dit alles kon
+        on-the-fly gebeuren. Helaas voor de Duitsers maakte het
+        ontwerp van de ingenieuze Turing Bombe het overbodig om
+        het immense aantal stekkerbord combinaties te doorzoeken,
+        wat meteen een binnenweg van factor 2 x 10<sup>14</sup>
+        betekende om hun cribs (gekende stukjes klare en
+        cijfertekst) te linken aan een bepaalde rotor instelling.</font></p>
+        <p><font size="2">Niettegenstaande was het breken van de
+        Enigma nog steeds een enorme uitdaging met een
+        sleutelgrootte die onvoorstelbaar was voor het
+        elektromechanische tijdperk van toen. Met een praktische
+        sleutelgrootte van 1,07 x 10<sup>23</sup> was het
+        doorzoeken van alle instellingen onmogelijk in de jaren
+        '40 en is zijn vergelijkbare 77 bit sleutel zelfs enorm
+        naar hedendaagse computernormen. Om u een idee te geven
+        van de grootte van dit getal kan je met 1,07 x 10<sup>23</sup>
+        vellen papier (0,1 mm per vel) zo'n 70.000.000 stapels
+        papier maken die elk van de Aarde tot de zon reiken. 1,07
+        x 10<sup>23</sup> millimeter is gelijk aan 11.358
+        lichtjaren. Een enorm getal dus! De Duitse cryptologen
+        waren correct in hun veronderstelling dat de Enigma
+        theoretisch onbreekbaar was. Het breken van codes is
+        echter meer dan getallen, theoretische veiligheid en
+        zoeken naar de juiste combinatie. Meer over hoe de
+        Geallieerden Enigma ontcijferden vind u </font><a
+        href="enigmauboats.htm"><font size="2">op deze pagina</font></a><font
+        size="2">.</font></p>
+        <p><a href="references.htm"><font size="2">Referenties<!-- Start of StatCounter Code --><script
+        language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font></a>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <font
+        color="#808080" size="1"><!--webbot bot="HTMLMarkup"
+        startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot bot="HTMLMarkup" endspan --></font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a> <a
+                href="enigmamenu.htm" class="menu">Menu</a> <a
+                href="enigma.htm" class="menu">Geschiedenis</a> <a
+                href="enigmaproc.htm" class="menu">Procedures</a>
+                <a href="enigmatech.htm" class="menu">Technische
+                details</a> <a href="enigmasim.htm" class="menu"
+                class="menu">Enigma Simulator</a> </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

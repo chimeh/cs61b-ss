@@ -1,0 +1,493 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="Straddling Checkerboard variations for the one-time pad">
+<meta name="keywords"
+content="checkerboard, straddling checkerboard, text to digit conversion, on a tie, senora, anreis, sainte">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Checkerboards</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Straddling
+                        Checkerboards</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a>
+                        <a href="onetimepad.htm" class="menu">One-time
+                        pad</a> </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2"><br>
+        This page contains some examples of straddling
+        checkerboards, a system to encode plain text into digits.
+        This encoding is not a type of encryption and offers
+        absolutely no cryptographic security whatsoever! The
+        encoding only prepares the plaintext for the actual
+        encryption process. Therefore, we call the result of
+        encoding a plaincode, to stress that the message is still
+        in its plain readable form.</font></p>
+        <p><font size="2">These checkerboards are easily designed
+        from scratch or customized to fit the requirements of its
+        users. This can range from simple text-only encoding to
+        the use of special characters, words or codes for
+        specific purposes or languages. The presented examples
+        show the basic properties and possibilities of the
+        checkerboard text-to-digit encoding. Anything is
+        possible, as long as both sender and receiver agree upon
+        a common system. The straddling checkerboard encodes the
+        most frequently used letters into one-digit values. All
+        other letters are encoded into two-digit values. This
+        reduces the size of the message considerably (approx 1.5
+        digit/letter ratio against 2.0 for fixed two-digit
+        systems). </font></p>
+        <p><font size="2">A checkerboard also breaks up
+        individual letters into seperate parts. This is called
+        fractionation. Moreover, it does this irregularly (some
+        are single and some double-digit values). When the
+        checkerboard encoding is followed by an encryption
+        algorithm that transposes the plaincode digits, then the
+        irregular fractionation will cause the characters to be
+        torn apart in a most irregular fashion and produce a far
+        more complex encryption. Often, such encryption methods
+        also use a checkerboard that has the order of its letters
+        or digits scrambled to increase the total strength of the
+        encryption.</font></p>
+        <p><font size="2">Note that the fractionation properties
+        and scrambled letters or digits are irrelevant when the
+        checkerboard encoding is followed by one-time pad
+        encryption, as this type of encryption is unbreakable
+        anyway. Here, only the checkerboard's efficiency matters.
+        Please visit the </font><a href="onetimepad.htm"><font
+        size="2">one-time pad</font></a><font size="2"> page for
+        more information about the use of checkerboards for
+        one-time pad encryption.</font></p>
+        <p><font size="2"><strong>Some Checkerboard Variations</strong></font></p>
+        <p><font size="2">A basic checkerboard, letter-optimised
+        for English and based on the &quot;AT ONE SIR&quot;
+        mnemonic, a table easily composed and wirtten out on
+        paper.</font></p>
+        <p><img src="../pics/atonesirpaper.gif" width="442"
+        height="162"></p>
+        <p><font size="2">The table speaks for itself.
+        &quot;F/L&quot; (68) is used to switch to figures and
+        back to letters. Numbers are usually written out three
+        times to exclude errors. The text &quot;A54H&quot; will
+        therefore encode into &quot;0 68 555 444 68 25&quot;. The
+        field &quot;/&quot; (69) is used to seperate letters or
+        sentences. We can change the order of the top row letters
+        to any desired combination. Some other anagram
+        arragements for the &quot;AT-ONE-SIR&quot; top row
+        letters are &quot;SENORITA--&quot; are
+        &quot;A-NOTE-SIR&quot;, &quot;NATO-RISE-&quot;,
+        &quot;RAT-NOISE-&quot;, or &quot;NO-TEA-SIR&quot;. If we
+        change the position of the two blank fields in the top
+        row, then we also need to replace the digit labels for
+        the second and third row with the digits that correspond
+        to the top row empty cells. We can also replace the top
+        row letters by to the most frequently used letters of
+        another language. These can vary quite a bit depending on
+        the language. For more details, visit the </font><a
+        href="https://en.wikipedia.org/wiki/Letter_frequency"
+        target="_blank"><font size="2">letter frequency wiki page</font></a><font
+        size="2">.</font></p>
+        <p><font size="2">Let's give a short example of how the
+        checkerboard works by encoding the text &quot;CONTACT
+        JOHN AT 1830H&quot;. The top row letters are encoded into
+        a single-digit value by taking the digit above the
+        letter. The other letters are encoded in a two-digit
+        value by taking the row digit, followed by the column
+        digit. Once encoded into digits, we can encrypt the
+        message with any digits based encryption algorithm.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2"> Plaintext:  C  O  N  T  A  C  T   J  O  H  N    A  T  [fig]  1   8   3   0  [ltr] H   
+ Plaincode:  21 3  4  1  0  21 1   26 3  25 4    0  1   68   111 888 333 000  68   25
+
+ In groups:  21341 02112 63254 01681 11888 33300 06825
+
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">When decoding the message back from
+        digits into text, we can easily distinguish single-digit
+        from double-digit combinations. If the first next digit
+        represents a letter in the top row, we have a
+        single-digit value and simply take the letter underneath
+        that digit. If however the digit is located on the
+        left-hand side of a row then we have encoutered the first
+        part of a double-digit value and must take the
+        intersection of that digit's row and the following
+        digit's column to find the letter that corresponds to
+        that double-digit value.</font></p>
+        <p><font size="2">Although the checkerboard from above is
+        simple to compose and to use, you can format such a table
+        in another more practical and faster format for complex
+        checkerboards with a larger number of cells:</font></p>
+        <p><img src="../pics/atonesir.gif" width="402"
+        height="122"></p>
+        <p><font size="2">The following standard checkerboard is
+        also optimised for English and has some extre features.
+        Note that each additional empty cell in the top row
+        enables the creation of an additional row with 10 new
+        characters.</font></p>
+        <p><font size="2"><img src="../pics/aeinot.gif"
+        width="402" height="162"></font></p>
+        <p><font size="2">This checkerboard incorporates several
+        puntuation and the space &quot;SPC&quot; (99). Here,
+        &quot;FIG&quot; (90) has the same function as the
+        &quot;L/F&quot; field from the previous table. The
+        &quot;REQ&quot; (98) field is the abbreviation of
+        &quot;REQUEST&quot; as in &quot;request help&quot; or
+        &quot;request new supplies&quot;. The table also contains
+        a &quot;CODE&quot; field. This &quot;CODE&quot; prefix is
+        used in combination with an additional codebook. Such
+        codebooks contain all kinds of words, expressions or
+        standard sentences, represented by a three-figure or
+        four-figure code, depending on the codebook that is used.
+        If, for example, &quot;245&quot; represents &quot;Request
+        more information&quot; in the codebook, this would be
+        encoded into &quot;0245&quot;. Always use the
+        &quot;CODE&quot; prefix (in this example &quot;0&quot;)
+        as prefix just before the actual code. When the receiver
+        encounters the &quot;CODE&quot; prefix, he knows that he
+        must decode the following three digits with the proper
+        codebook into a word or phrase. The use of a codebook is
+        optional but can reduce the message length considerably.</font></p>
+        <p><font size="2">The top row with most frequently used
+        English letters for this checkerboard is memorised by the
+        words &quot;ON A TIE&quot; in alphabetic order. We can
+        optimise this checkerboard for French by using, in
+        alphabetic order, the letters from the word
+        &quot;SAINTE&quot;. For German this would be &quot;ANREIS
+        &quot;and for Spanish &quot;SENORA&quot;. This, of
+        course, requires a different completion of the second and
+        third row with the remaining letters.</font></p>
+        <p><font size="2">The following checkerboard, also
+        optimised for English, includes the most common English
+        digraphs. This again reduces the required digits for
+        certain words. </font></p>
+        <p><img src="../pics/aeiot.gif" width="402" height="202"></p>
+        <p><font size="2">The CT-37 table is another extended
+        version of the straddling checkerboard that includes
+        additional characters. The table is easy to remember. It
+        uses the 7 most frequent English letters
+        &quot;ESTONIA&quot; in the top row. The two following
+        rows are the remaining letters, completed with the
+        &quot;FIG&quot; (89) field. The fourth row contains the
+        &quot;SPACE&quot; (90) and &quot;CODE&quot; (99) field
+        with the punctuation marks between them (less critical to
+        remember).</font></p>
+        <p><img src="../pics/ct37.gif" width="402" height="162"></p>
+        <p><font size="2">The CT-37-Words table uses a mix of
+        letters, words and code. &quot;CODE&quot; (6) is a
+        shortened prefix for fixed length codes. The commonly
+        used words &quot;acknowledge&quot;, &quot;request&quot;,
+        &quot;message&quot;, &quot;rendez-vous point&quot;,
+        &quot;grid&quot; (coordinates), &quot;send&quot; and
+        &quot;supply&quot; are respresented by a small two-digit
+        code. Omitting one more top-row letter or the CODE field
+        will give another full row which could held 10 more
+        words, expressions or short sentences (CODE could be
+        added to this new row). This approach can reduce the
+        message length enormously if the set of two-digit
+        expressions is selected carfully.</font></p>
+        <p><img src="../pics/ct37w.jpg" width="402" height="202"></p>
+        <p><font size="2">In the CT-46 encoding table, we can use
+        four full rows since we have four unused digits in the
+        top row. This encoding table is not that hard to
+        memorize. In the first row the 6 most frequent letters
+        AEINOR get the single digits. Each next row starts with
+        the remaining digits 7, 8, 9 or 0. The second and third
+        row are the remaining letters of the alphabet. The fourth
+        row contains the &quot;SPC&quot;(90) and &quot;CODE&quot;
+        (99) with the signs in between (less important to
+        memorize). The fifth row are simply the numbers preceded
+        by a zero.</font></p>
+        <p><img src="../pics/ct46.gif" width="402" height="202"></p>
+        <p><font size="2">The CT-55 table has even more
+        additional characters. &quot;L/F&quot; (89) is used to
+        switch from Letters (yellow) to Figures (green) and from
+        Figures to Letters. This enables more characters with the
+        same encoding value. The Red fields can be used in both
+        Letters and Figures mode, thus a space, period, etc in a
+        text doesn't require switching to Figures. Numbers are
+        represented by its double code to exclude digit errors.
+        An example: &quot;F-16B&quot; is encoded into 73 89 84 11
+        66 89 70. &quot;CODE&quot; (91) is again used as a prefix
+        for four-digit codes and &quot;RPT&quot; (92) is used to
+        repeat important pieces of text. This encoding table has
+        the 7 most frequent letters, optimized for English, and
+        is suitable for text with more figures and signs.</font></p>
+        <p><img src="../pics/ct55.gif" width="402" height="242"></p>
+        <p><font size="2">Of course, there are many other ways to
+        encode characters into digits. The system of encoding
+        characters into digits doesn't need to be scrambled or
+        secure in any way when one-time pad encryption provides
+        the security. Any method to encode into digits is good,
+        as long as it is practical, doesn't make the message too
+        long and isn't prone to critical errors. The shown
+        examples are easily adapted to anyone's specific
+        purposes.</font></p>
+        <p><font size="2"><strong>Scrambled Checkerboards</strong></font></p>
+        <p><font size="2">As explained before, checkerboards that
+        are used in combination with an encryption method, other
+        than one-time pad, preferably contain a scrambled
+        alphabet or digits. This will strengthen the subsequent
+        encryption considerably</font>. <font size="2">Note that
+        there are far more possible ways to scramble the alphabet
+        than to scramble 10 digits. Therefore, we will focus on
+        creating keyword based scrambled alphabets that include
+        optimised letter frequency for a given language.</font></p>
+        <p><font size="2">Our first example uses two keywords and
+        a double transposition. Let's use the keywords
+        &quot;OVERTURE&quot; and &quot;INTERGALACTIC&quot;. A
+        first matrix is created with the first keyword and filled
+        with the normal alphabet. A second, for now empty matrix,
+        is created with the second keyword. The letters of both
+        keywords are numbered according to their order in the
+        alphabet. Doe letters that occure more than once we
+        assign the lowest number to the most-left letter.</font></p>
+        <p><font size="2">Read off the letters of the first
+        matrix, column by column, as determined by the first
+        keyword order, and fill the second matrix, row by row,
+        with those letters. </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2">  O V E R T U R E    I  N  T  E  R  G  A  L  A  C  T  I  C    
+  3 8 1 4 6 7 5 2    7  10 12 5  11 6  1  9  2  3  13 8  4 
+  ---------------    -------------------------------------
+  A B C D E F G H    C  K  S  H  P  X  A  I  Q  Y  D  L  T
+  I J K L M N O P    G  O  W  E  M  U  F  N  V  B  J  R  Z
+  Q R S T U V W X
+  Y Z
+
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Next, read off and write down the
+        letters from the second matrix, column by column, in the
+        order as determined by the second keyword, and mark all
+        most-frequent English letters, as provided by the
+        mnemonic &quot;AT ONE SIR&quot;.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2">  AF QV YB TZ HE XU CG LR IN KO PM SW DJ   
+  x        x   x        x xx  x    x
+
+</font><font size="2" face="Times New Roman">
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Finally, the checkerboard is filled
+        with the scrambled letters, the marked most-frequent
+        letters in the top row, followed by the remaining
+        letters. If we use the &quot;AT-ONE-SIR&quot;
+        checkerboard from the first example on this page, the
+        result is as follows:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+   | 0  1  2  3  4  5  6  7  8  9    
+ --|------------------------------
+   | A  T     E  R  I     N  O  S
+ 2 | F  Q  V  Y  B  Z  H  X  U  C
+ 6 | G  L  K  P  M  W  D  J FIG /
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">The second example uses two keywords
+        and a single transposition. Let's again take the keywords
+        &quot;OVERTURE&quot; and &quot;INTERGALACTIC&quot;. Write
+        out the letters of the first keyword and number them
+        according to their order in the alphabet. Also here,
+        letters that occure more than once have the lowest number
+        assigned to the most-left letter. Next, the matrix is
+        filled with the second key word, without repeating any of
+        the letters from that keyword. Complete the matrix with
+        the remaining letters of the alphabet.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2">  O V E R T U R E    
+  3 8 1 4 6 7 5 2
+  ---------------
+  I N T E R G A L
+  C B D F H J K M
+  O P Q S U V W X
+  Y Z
+
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Read off the letters in the matrix,
+        column by column, in the order as determined by the first
+        keyword and mark all most-frequent English letters
+        &quot;AT ONE SIR&quot;.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2">  TDQ LMX ICOY EFS AKW RHU GJV NBPZ   
+  x       x x  x x x   x       x
+
+</font><font size="2" face="Times New Roman">
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Finally, the checkerboard is filled
+        with the marked frequent letters first, followed by the
+        remaining letter in the &quot;AT-ONE-SIR&quot;
+        checkerboard:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="2">
+   | 0  1  2  3  4  5  6  7  8  9    
+ --|------------------------------
+   | T  I     O  E  S     A  R  N
+ 2 | D  Q  L  M  X  C  Y  F  K  W
+ 6 | H  U  G  J  V  B  P  Z FIG /
+
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Notice the completely different
+        alphabets, created with the same two keywords but another
+        transposition method. Although both methods create an
+        excellent mix, it should be noted that the double
+        transposition with two matrices creates the superior mix.
+        Of course, these scrambled alphabets are useable for
+        various differently formatted checkerboard and we could
+        even fill the matrices with a mix of letters, digits,
+        codes or punctuations.</font></p>
+        <p><font size="2">On its own, these scrambled
+        checkerboards constitue a monoalphabetic cipher, somewhat
+        complicated by the irregular fractionation of the single
+        and double digit combinations. This however will not
+        provide any serious protection agains basic
+        cryptalanysis, even by a novice codebreaker. It's real
+        potential is only fully exploited when a text, encoded
+        with a scrambled checkerboard, is followed by a double
+        transposition of the plaincode digits. A final increase
+        of complexity is achieved if one or both of the these
+        transpositions are disrupted. This combination creates
+        one of the most powerfull manual cipher system that
+        exist. This is due to the suppression of high frequency
+        letters in combination with the highly irregular
+        fractionation of the digit combinations by the two
+        transpositions. Note that the matrices of this subcequent
+        duoble transposition should preferably be unequal in
+        width, one of even and one of odd width, and at least 15
+        to 20 columns wide. Remember, it's not required to
+        scrambled a checkerboard when the encoded message is
+        followed by one-time pad encryption, as this type of
+        encryption provides absolute security on its own.</font></p>
+        <p><font size="2"><strong>Additional information</strong></font></p>
+        <ul>
+            <li><a href="onetimepad.htm"><font size="2">One-time
+                pad</font></a><font size="2"> History and
+                description of one-time pad encryption</font></li>
+            <li><a href="../papers/one_time_pad.pdf"><font
+                size="2">Guide to Secure Communications with the
+                One-time Pad Cipher</font></a><font size="2"> <img
+                src="../pics/pdficon.jpg" alt="PDF Format"
+                align="absmiddle" width="15" height="15"> how to
+                use one-time pads, text-to-digit encoding systems
+                and codebooks</font></li>
+            <li><a href="http://scz.bplaced.net/m.html"
+                target="_blank"><font size="2">SAS und
+                Chiffrierdienst website</font></a><font size="2">
+                contains many different encoding tables and
+                manual encryption methods, used by Intelligence
+                agencies.</font></li>
+            <li><a href="http://letterfrequency.org/"
+                target="_blank"><font size="2">Letterfrequency.org</font></a><font
+                size="2"> Various letter and word frequencies in
+                different languages, useful to optimize
+                checkerboards<br>
+                <br>
+                </font></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --> <script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --><br>
+        <font size="2">© Copyright 2004 - 2016 Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a> <a
+                href="onetimepad.htm" class="menu">One-time pad</a>
+                </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

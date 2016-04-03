@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>dubbeletranspositie</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Dubbele
+                        Transpositie</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het dubbele transpositie cijfer, ook wel
+        veldcijfer genoemd vanwege zijn militair gebruik, was
+        één van de veiligste handcijfers dat door alle partijen
+        gebruikt werd tijdens de Tweede Wereldoorlog. De zwakke
+        schakel in dit cijfers is wanneer vele berichten met
+        dezelfde sleutelwoorden vercijferd worden, deze door een
+        ingewikkelde techniek van multiple-anagramming kunnen
+        gebroken worden. Indien men echter regelmatig van
+        sleutelwoorden wisselt is deze methode zeer veilig.</font></p>
+        <p><font size="2">Het dubbele transpositie cijfer bestaat
+        uit twee verschillende kolom-transposities. Men kan
+        hierbij hetzelfde sleutelwoord voor beide stappen
+        gebruiken, of twee verschillende sleutelwoorden kiezen.
+        Men kiest best twee sleutelwoorden van verschillende
+        lengte, het ene met even en het andere met oneven lengte.
+        In ons voorbeeld is het eerste sleutelwoord LEONARDO. De
+        letters van dit woord worden volgens alfabet genummerd,
+        van links naar rechts. Onder dit woord schrijven we de
+        klare tekst van links naar recht en boven naar onder.</font></p>
+        <pre><font size="2">L E O N A R D O
+4 3 6 5 1 8 2 7
+---------------
+D I T I S E E N
+Z E E R G E H E
+I M B E R I C H
+T
+</font></pre>
+        <p><font size="2">Vervolgens lezen we de tekst af per
+        kolom, beginnende met het kleinste nummer. Kolom 1 is dus
+        SGR, kolom 4 is DZIT. De nieuwe tekst schrijven we onder
+        het tweede sleutelwoord DAVINCI eveneens van links naar
+        rechts en van boven naar onder.</font></p>
+        <pre><font size="2">D A V I N C I
+3 1 7 4 6 2 5
+-------------
+S G R E H C I
+E M D Z I T I
+R E T E B N E
+H E E I
+</font></pre>
+        <p><font size="2">Tenslotte lezen we de tekst nogmaals af
+        per kolom en volgens nummer. Daarna verdelen we in
+        groepen van vijf.</font></p>
+        <pre><font size="2">De cijfertekst: GMEEC TNSER HEZEI IIEHI BRDTE
+</font></pre>
+        <p><font size="2">Om de cijfertekst te ontcijferen moeten
+        we eerst een tabel maken met het tweede sleutelwoord en
+        het juiste aantal kolommen. Uit het aantal letters in de
+        cijfertekst kunnen we dan het aantal lange en korte
+        kolommen afleiden. We vullen de tabel met de cijfertekst,
+        kolom per kolom, in volgorde van het sleutelwoord. Dan
+        lezen we de tekst af van links naar rechts en boven naar
+        onder, en plaatsen die dan in een tweede tabel, met het
+        eerste sleutelwoord. Ook hier vullen we de tabel kolom
+        per kolom, in volgorde van het sleutelwoord. Tenslotte
+        lezen we een laatste keer de tekst af van links naar
+        rechts en boven naar onder om zo de klare tekst te
+        bekomen.</font></p>
+        <p><font size="2">Aangezien berichten normaal veel langer
+        zijn dan deze voorbeelden worden voor de sleutelwoorden
+        van kolom-transpositie dikwijls woorden of zinnen
+        gebruikt met een lengte van 20 of meer letters.</font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

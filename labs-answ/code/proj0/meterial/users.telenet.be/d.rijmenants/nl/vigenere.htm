@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Vigenere</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Vigenère</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het Vigenèrecijfer werd uitgevonden door
+        Giovanni Batista Belaso in 1553, maar het was door Blaise
+        de Vigenère dat het algemeen bekend raakte, waardoor het
+        zijn naam kreeg. Het werd echter lange tijd zelden
+        gebruikt vanwege zijn complexiteit.</font></p>
+        <p><font size="2">Het is een polyalfabetische
+        substitutie, het vervangen van letters aan de hand van
+        verschillende alfabetische reeksen. Daarbij gebruiken we
+        het zogenaamd Vignèretableau, een tabel waarop op iedere
+        regel een alfabet staat waarvan elk alfabet steeds één
+        letter verschoven is.</font></p>
+        <pre><font size="2">   A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+------------------------------------------------------
+A| A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+B| B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
+C| C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+D| D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+E| E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+F| F G H I J K L M N O P Q R S T U V W X Y Z A B C D E
+G| G H I J K L M N O P Q R S T U V W X Y Z A B C D E F
+H| H I J K L M N O P Q R S T U V W X Y Z A B C D E F G
+I| I J K L M N O P Q R S T U V W X Y Z A B C D E F G H
+J| J K L M N O P Q R S T U V W X Y Z A B C D E F G H I
+K| K L M N O P Q R S T U V W X Y Z A B C D E F G H I J
+L| L M N O P Q R S T U V W X Y Z A B C D E F G H I J K
+M| M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+N| N O P Q R S T U V W X Y Z A B C D E F G H I J K L M
+O| O P Q R S T U V W X Y Z A B C D E F G H I J K L M N
+P| P Q R S T U V W X Y Z A B C D E F G H I J K L M N O
+Q| Q R S T U V W X Y Z A B C D E F G H I J K L M N O P
+R| R S T U V W X Y Z A B C D E F G H I J K L M N O P Q
+S| S T U V W X Y Z A B C D E F G H I J K L M N O P Q R
+T| T U V W X Y Z A B C D E F G H I J K L M N O P Q R S
+U| U V W X Y Z A B C D E F G H I J K L M N O P Q R S T
+V| V W X Y Z A B C D E F G H I J K L M N O P Q R S T U
+W| W X Y Z A B C D E F G H I J K L M N O P Q R S T U V
+X| X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+Y| Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+Z| Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+</font></pre>
+        <p><font size="2">Men kiest eerst een geheim
+        sleutelwoord, bijvoorbeeld <strong>ZODIAK</strong>. Dit
+        schrijft men onder de klare tekst. Vervolgens zoekt men
+        de klare letter op in het verticale alfabet en de letter
+        van het sleutelwoord in het horizontale alfabet. De
+        kruising van beiden is de resulterende codeletter. Zo
+        kunnen we zien dat de kruising van <strong>D</strong> en <strong>Z</strong>
+        in de tabel de letter <strong>C</strong> is.</font></p>
+        <pre><font size="2">Klare tekst : D I T I S Z E E R G E H E I M
+Sleutelwoord: Z O D I A K Z O D I A K Z O D
+              -----------------------------
+Cijfertekst : C W W Q S J D S U O E R D W P
+</font></pre>
+        <pre><font size="2">De cijfertekst: CWWQS JDSUO ERDWP</font></pre>
+        <p><font size="2">Om te ontcijferen schrijft men het
+        sleutelwoord boven de cijfertekst. Vervolgens zoekt men
+        elke sleutelletter op in het horizontale alfabet en gaat
+        naar beneden tot men de betrokken codeletter tegenkomt.
+        De letter, in het verticale alfabet, die zich op dezelfde
+        rij bevindt is de klare letter.</font></p>
+        <p><font size="2">Merk op dat de letter E kan vercijferd
+        worden als D, maar ook als Q en als E. Als het
+        sleutelwoord 6 letters lang is kan een klare letter tot 6
+        verschillende coderingen hebben. Dit maakt vigenère
+        moeilijker te breken dan enkelvoudige substitutie, maar
+        het is toch mogelijk. Indien er voldoende cijfertekst is
+        kan men de grootte van het sleutelwoord eruit afleiden
+        door de grootst gemene deler te nemen van alle afstanden
+        tussen identieke stukjes cijfertekst. Indien het
+        sleutelwoord 6 letters lang blijkt hoeft men enkel
+        letterfrequentie-analyse toe te passen op de 6
+        afzonderlijke stukken van de tekst. Eén analysetekst zou
+        dan de eerste, zevende, dertiende... letter bevatten. De
+        tweede tekst de tweede, achtste, veertiende letter enz.</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Autokey</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Autokey</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het Autokey-cijfer, ook wel Autoclave- of
+        Autosleutelcijfer genoemd, werd uitgevonden door Blaise
+        de Vigenère en is een verbetering van het
+        vigenèrecijfer, uitgevonden door Giovanni Batista Belaso
+        in 1553, maar genoemd naar Blaise de Vigenère.</font></p>
+        <p><font size="2">Het is een polyalfabetischesubstitutie,
+        het vervangen van letters aan de hand van verschillende
+        alfabetische reeksen. Daarbij gebruiken we een tabel
+        waarvan elk alfabet één letter verschoven is. Dit is
+        dezelfde tabel als gebruikt bij het vigenèrecijfer.</font></p>
+        <pre><font size="2">   A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+------------------------------------------------------
+A| A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+B| B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
+C| C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+D| D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+E| E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+F| F G H I J K L M N O P Q R S T U V W X Y Z A B C D E
+G| G H I J K L M N O P Q R S T U V W X Y Z A B C D E F
+H| H I J K L M N O P Q R S T U V W X Y Z A B C D E F G
+I| I J K L M N O P Q R S T U V W X Y Z A B C D E F G H
+J| J K L M N O P Q R S T U V W X Y Z A B C D E F G H I
+K| K L M N O P Q R S T U V W X Y Z A B C D E F G H I J
+L| L M N O P Q R S T U V W X Y Z A B C D E F G H I J K
+M| M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+N| N O P Q R S T U V W X Y Z A B C D E F G H I J K L M
+O| O P Q R S T U V W X Y Z A B C D E F G H I J K L M N
+P| P Q R S T U V W X Y Z A B C D E F G H I J K L M N O
+Q| Q R S T U V W X Y Z A B C D E F G H I J K L M N O P
+R| R S T U V W X Y Z A B C D E F G H I J K L M N O P Q
+S| S T U V W X Y Z A B C D E F G H I J K L M N O P Q R
+T| T U V W X Y Z A B C D E F G H I J K L M N O P Q R S
+U| U V W X Y Z A B C D E F G H I J K L M N O P Q R S T
+V| V W X Y Z A B C D E F G H I J K L M N O P Q R S T U
+W| W X Y Z A B C D E F G H I J K L M N O P Q R S T U V
+X| X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+Y| Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+Z| Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+</font></pre>
+        <p><font size="2">Het sleutelwoord, of in dit geval beter
+        de sleutelzin, is gevormd door een kort sleutelwoord,
+        gevolgd door de klare tekst. Hierdoor vercijfert men,
+        mits een kleine verschuiving, de klare tekst met
+        zichzelf. In ons voorbeeld is het sleutelwoord <strong>ZODIAK</strong>.</font></p>
+        <p><font size="2">Vervolgens zoekt men de elke klare
+        letter op in het verticale alfabet en de letter van het
+        sleutelwoord in het horizontale alfabet. De kruising van
+        beiden is de resulterende codeletter. Zo kunnen we zien
+        dat de kruising van <strong>D</strong> en <strong>Z</strong>
+        in de tabel de letter <strong>C</strong> is.</font></p>
+        <p><font size="2">Hierbij word de tekst zelf gebruikt om
+        de tekst te vercijferen. De substitutietabel is dezelfde
+        als bij het gewone Vigenère cijfer.</font></p>
+        <pre><font size="2">Klare tekst : D I T I S Z E E R G E H E I M . . . .
+Sleutelwoord: Z O D I A K D I T I S Z E E R G E H E I M....
+              ---------------------------------------------
+Cijfertekst : C W W Q S J H M K O W G I M D .....</font></pre>
+        <pre><font size="2">De cijfertekst: CWWQS JHMKO WGIMD ..... .....</font></pre>
+        <p><font size="2">Om de tekst te kunnen ontcijferen dient
+        men te beginnen met het korte sleutelwoord, om dan de
+        ontcijferde tekst beetje bij beetje verder aan te vullen
+        achter het sleutelwoord. Indien er één fout is bij het
+        ontcijferen zal de rest van de vercijfering ook fout
+        zijn.</font></p>
+        <p><font size="2">De sterkte van dit cijfer ligt erin dat
+        niet steeds opnieuw hetzelfde sleutelwoord gebruikt is,
+        maar de steeds varierende klare tekst. Voor de
+        cryptoanalyse van dit cijfer kunnen bepalen van
+        sleutellengte en letterfrequenties hier niet toegepast
+        worden zoals bij de gewone vigenèrevercijfering.</font></p>
+        <p align="center"><font size="2">© Copyright 2004 - 2016
+        Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

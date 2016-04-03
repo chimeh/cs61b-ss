@@ -1,0 +1,124 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>monoalfabetische substitutie</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Monoalfabetische
+                        Substitutie</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu-sized">Home</a>
+                        <a href="cryptoindex.htm"
+                        class="menu-sized">Klassieke Cryptografie</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Het eenvoudigste substitutiecijfer is de
+        monoalfabetische substitutie. Hierbij wordt elke letter
+        vervangen door een andere letter.</font></p>
+        <pre><font size="2">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+W Q A E D C X S Z R F V B G T Y H N J U I K L O P M</font></pre>
+        <p><font size="2">Als we de klare tekst omzetten
+        vervangen we gewoon de D door E, de I door Z enz.</font></p>
+        <pre><font size="2">Klare tekst: D I T I S Z E E R G E H E I M
+Cijfertekst: E Z U Z J M D D N X D S D Z B</font></pre>
+        <pre><font size="2">De cijfertekst: EZUZJ MDDNX DSDZB</font></pre>
+        <p><font size="2">Eeuwen lang werd dit cijfer als
+        onbreekbaar beschouwd vanwege de ontelbare mogelijke
+        schikkingen van het alfabet, totdat Arabische wiskundigen
+        in de 9e eeuw het systeem van letterfrequentie-analyse
+        ontwikkelden. Aangezien bij substitutie elke gecodeerde
+        letters steeds voor dezelfde klare letter staat, kan men
+        dit cijfer gemakkelijk breken met behulp van
+        letterfrequentie-analyse.</font></p>
+        <p><font size="2">Elke taal heeft een typische
+        frequentietabel van letters. Zo komen de E, N en A het
+        meeste voor in onze taal. Als men de letterfrequenties
+        van een cijfertekst vergelijkt met de normale waarden en
+        ziet dat de X, P en T het meeste voorkomen, kan men
+        besluiten dat X staat voor E, P voor N en T voor A. Hoe
+        meer letters men zo kan vinden, hoe makkelijker de
+        ontbrekende letters in de tekst kunnen bijeengepuzzeld
+        worden. Zo zien we in bovenstaande cijfertekst dat de
+        codeletter D veruit het meeste voorkomt, en deze
+        inderdaad de meestvoorkomende letter E voorsteld. Hoe
+        meer cijfertekst er ter beschikkings is, hoe nauwkeuriger
+        frequentie-analyse kan toegepast worden.</font></p>
+        <pre><font size="2">        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+|       |                 |       |
+|       |       |         | |     |   |
+|     | |       |         | |     |   |
+|     | |       |     |   | |     | | | 
+| |   | |   | | |   | | | | |     | | | | 
+| | | | | | | | |   | | | | | |   | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | |
+---------------------------------------------------
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+Typische letterfrequentie-tabel voor Nederlands
+</font></pre>
+        <p><font size="2">Hoewel de monoalfabetische substitutie
+        op zich een zwakke vercijfering is, wordt deze veel
+        gebruikt in ander klassieke vercijferingen in combinatie
+        met andere technieken. Bij vercijferingen zoals </font><a
+        href="bifid.htm"><font size="2">Bifid</font></a><font
+        size="2">, </font><a href="trifid.htm"><font size="2">Trifid</font></a><font
+        size="2"> en </font><a href="adfgvx.htm"><font size="2">ADFGVX</font></a><font
+        size="2"> wordt het alfabet eerst door elkaar gehaald met
+        monoalfabetische substitutie alvorens de letters te
+        fractioneren.</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu-sized">Home</a>
+                <a href="cryptoindex.htm" class="menu-sized">Klassieke
+                Cryptografie</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

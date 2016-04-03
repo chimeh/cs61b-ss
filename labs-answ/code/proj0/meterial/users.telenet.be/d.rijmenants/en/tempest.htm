@@ -1,0 +1,404 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="The Origin of TEMPEST (Telecommunications Electronics Materials Protected from Emanating Spurious Transmissions)">
+<meta name="keywords"
+content="tempest, equipment, crypto, crypto machines, cryptography, 131-B2, PYTHON, Bell Telephone, sigint, COMSEC, EMSEC, Signal Corps, NSA">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>TEMPEST</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>The
+                        Origin of TEMPEST</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font color="#FF0000" size="2"><br>
+        </font><font size="2">TEMPEST and Secure Communications</font></h4>
+        <p><font size="2">Electronic communications should not
+        only be efficient and reliable, but also secure. This
+        means that it must be impossible for the adversary to
+        intercept and read sensitive information. The most
+        obvious solution is encryption, making the message
+        unintelligible for anyone who eavesdrops on insecure
+        communications channels. Cryptography has been used
+        extensively since the early 20th century to protect the
+        rapidly expanding military communications. However, in
+        the 1940s it was discovered that, despite using secure
+        encryption algorithms, the crypto equipment itself could
+        unintentionally emanate signals that enable the adversary
+        to read the communications. The answer to this threat was
+        TEMPEST.</font></p>
+        <p><font size="2">The codename TEMPEST (not an acronym
+        but sometimes written out as Telecommunications
+        Electronics Material Protected from Emanating Spurious
+        Transmissions) refers to the whole of technical
+        recourses, standards and regulations to protect
+        communications equipment against unwanted radiation of
+        signals that might be intercepted, analyzed and exploited
+        by the adversary.</font></p>
+        <h4><font size="2">From Small Signal to Big Problem</font></h4>
+        <div align="left"><table border="0" cellpadding="0"
+        cellspacing="0">
+            <tr>
+                <td valign="top"><font size="2">During the Second
+                World War, the U.S. Signal Corps encrypted
+                high-level teletype communications with one-time
+                tapes (OTT's). This system uses Vernam&#146;s
+                original principle where a five-bit teletype
+                signal is mixed with a key tape, containing
+                random five-bit values. The system is quite
+                simple but absolutely unbreakable, even with
+                todays or any future technology. A famous example
+                is the Washington-Moscow hotline. </font><p><font
+                size="2">Bell Telephone provided the Signal Corps
+                with the 131-B2 PYTHON mixer that combined the
+                teleprinter output signal with the one-time
+                tapes. The machine was also know as the as the
+                AN/FGQ-1 or CSP-2599 in military nomenclature.</font></p>
+                <p><font size="2">In 1943, Bell engineers
+                discovered little spikes on the screen of an
+                oscilloscope near a working one-time tape mixer.
+                Upon further investigation, they discovered that
+                the oscilloscope had picked up electrical
+                signals, emitted by the one-time tape mixer. To
+                their surprise, the spikes on the screen
+                represented the readable unencrypted five-bit
+                signal. They could read the plain text directly
+                from their oscilloscope!</font></p>
+                <p><font size="2">It was obvious that these
+                undesirable interference signals arose from the
+                crypto equipment, even before the signal was
+                encrypted. Bell Labs informed the Signal Corps
+                about this dangerous vulnerability in their
+                crypto system. The Signal Corps, however, met
+                Bell&#146;s findings with a lot of skepticism and
+                believed that it would be impossible for an
+                adversary to intercept these tiny electrical
+                spikes in operational conditions. They answered
+                that, and I quote, &#147;we can&#146;t bring our
+                cryptographic equipment to a screeching halt
+                based on a dubious and esoteric laboratory
+                phenomenon. If this is really dangerous, prove
+                it.&quot;</font></p>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top"><table border="0"
+                        cellpadding="10" cellspacing="5">
+                            <tr>
+                                <td align="center" valign="top"
+                                bgcolor="#808080"><a
+                                href="../pics/an-fgq-1.jpg"><img
+                                src="../pics/an-fgq-1.jpg"
+                                border="0" width="289"
+                                height="258"></a><br>
+                                <font color="#FFFFFF" size="2"><br>
+                                The AN/FGQ-1 Teletypewriter
+                                Repeater-Mixer</font></td>
+                            </tr>
+                        </table>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        </div><p><font size="2">Bell Labs was assigned a building
+        at Varick Streek, New York, right across the Signal Corps
+        crypto center. During an improvised test they recorded
+        signals over a one hour period. Within three hours, the
+        engineers succeeded in recovering 75 percent of the plain
+        text of so-called encrypted traffic, and this without any
+        physical connection to the crypto center. Shocked by the
+        results, the Signals Corps asked Bell to examine the
+        problem and to modify the 131-B2 mixer.</font></p>
+        <h4><font size="2">Searching for Solutions</font></h4>
+        <p><font size="2">After six months, Bell Labs had
+        identified three phenomena. The first problem were small
+        radio emissions of electrical pulses, carrying at least
+        half a mile, caused by electrical contacts in relays. The
+        second issue was induction. Some of the emitted pulses
+        were picked up by the communication lines and traveled
+        more than a mile on those lines. The third phenomenon was
+        the radiation of magnetic fields, originating from coils
+        in relays, reaching some 30 feet but virtually impossible
+        to suppress. To make it even worse, all the different
+        types of radiation occurred on a very wide frequency
+        spectrum.</font></p>
+        <p><font size="2">The solutions to suppress these
+        unwanted signals were shielding to contain the emitted
+        signals, filtering to block induction on lines and
+        masking the remaining signals by adding interference
+        signals. The latter of course proved unacceptable for the
+        Radio Advisory Committee. The modified 131-A1 mixer was
+        fitted with various filters and completely encapsulated,
+        causing heat dissipation problems. The machine was very
+        heavy and difficult to operate and maintain. The Signal
+        Corps turned down the impractical monster and opted for
+        the only other solution: they ordered communications
+        centers to be located within a controlled free zone of at
+        least 100 feet. Case closed.</font></p>
+        <p><font size="2">Seven years later the problem was long
+        forgotten when it was rediscovered in 1951 by the CIA
+        during tests with the very same 131-B2 mixer. They were
+        able to intercept plain text half a mile along a
+        communications line. The CIA asked the American Forces
+        Security Agency (AFSA) if they were interested in this
+        problem. Of course they were. AFSA solved the induction
+        problem but some emissions remained. This resulted in the
+        first AFSA radiation policies, providing recommendations
+        about how to securely operate crypto devices. With too
+        small a budget, NSA took over the research to eliminate
+        the annoying signals from its precursor AFSA .</font></p>
+        <p><font size="2">More problems surfaced. Acoustic
+        radiation of crypto devices provided information that
+        could be exploited and electrical motors and coils in
+        crypto machines and teleprinters caused voltage
+        variations on the electrical net, revealing additional
+        intelligible information. By then, five problems were
+        identified and emission distances kept increasing. This
+        initiated a race between the engineers who searched for
+        solutions to contain the problem and the analysts who
+        found new ingenious ways to intercept the persistent
+        signals at even larger distances. They were criticized
+        for finding methods to increase the distance and were
+        asked to focus on decreasing the distance.</font></p>
+        <p><font size="2">Unfortunately, another even more
+        serious problem surfaced: crypto equipment, connected to
+        radio transmitters, emitted very weak plain text signals.
+        These signals were picked up by the nearby transmitter
+        and modulated onto the transmitted radio waves. The plain
+        text piggy-backed on the transmitter&#146;s powerful
+        radio waves, making it possible to filter out and read
+        the plain text at distances of tens or hundreds of miles.
+        This was by far the most serious security issue.</font></p>
+        <h4><font size="2">From Solutions to Policies</font></h4>
+        <p><font size="2">In 1956, after years of research and
+        numerous unsuccessful experiments, the Navy Research
+        Laboratory came up with the first major breakthrough.
+        Instead of trying to filter and shield the annoying
+        signals, they simply reduced the cause of the problem. By
+        running the critical components on a much lower voltage
+        and replacing electromechanical components by transistors
+        and semi-conductors they reduced the amplitude of the
+        signal considerably or eliminated it completely. A signal
+        with an amplitude of 2 volts simply doesn&#146;t carry as
+        far as a 120 volts signal, and switching currents with
+        transistors avoided the sparking of relay contacts.</font></p>
+        <div align="left"><table border="0" cellpadding="0"
+        cellspacing="0">
+            <tr>
+                <td valign="top"><font size="2">NSA took over the
+                technique of filtering and lower voltages for all
+                new one-time tape mixers. The emission distances
+                were reduced from half a mile to a mere 20 feet.
+                All new equipment, from crypto machines to
+                teleprinters and other on-line devices were now
+                developed with the gained knowledge.</font><p><font
+                size="2">The first extensive regulations on
+                TEMPEST were drafted by the Military
+                Communications Board (MCB) in 1958. The
+                classification of the various problems and
+                recommendations were finally put on paper and
+                generally accepted. Canada and the U.K. followed
+                in 1959 and the first real Communications
+                Security or COMSEC plan was written out the same
+                year. The consequences of the COMSEC policies
+                were far-reaching.</font></p>
+                <p><font size="2">Many insecure devices,
+                buildings and procedures were identified and
+                security measures were taken. Technical test and
+                standards for communications equipment followed.
+                The policies regarding TEMPEST and COMSEC were
+                finally implemented in 1966 and a TEMPEST
+                laboratory for non-crypto equipment was founded
+                in 1970.</font></p>
+                <p><font size="2">On the right you see a fine
+                example of mid 1960&#146;s TEMPEST design. The
+                KW-7, a second generation teletype encryption
+                unit, was fully filtered, shielded and operated
+                on low voltage electronics. In front of the
+                machine, on the left, is one of its 12 cards,
+                carrying 21 small modules. Each module contained
+                several transistors, diodes and passive
+                components. These &quot;Flyball&quot; modules
+                were the precursor of todays integrated circuits
+                or IC&#146;s. The KW-7 was quite an improvement
+                over the electro-mechanical 131-B2 in its wooden
+                cabinet.</font></p>
+                </td>
+                <td valign="top"><table border="0"
+                cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top"><table border="0"
+                        cellpadding="10" cellspacing="5">
+                            <tr>
+                                <td align="center" valign="top"
+                                bgcolor="#808080"><a
+                                href="../pics/orestes.jpg"><img
+                                src="../pics/orestes-small.jpg"
+                                border="0" width="289"
+                                height="231"></a><br>
+                                <font color="#FFFFFF" size="2"><br>
+                                KW-7 ORESTES Teletype Unit<br>
+                                Displayed at NSA's National
+                                Cryptologic Museum</font></td>
+                            </tr>
+                        </table>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        </div><p><font size="2">These technical improvements and
+        regulations came none too soon. Already in the early
+        1950s, the Soviets published a comprehensive set of
+        regulations on suppressing signals from teleprinters and
+        communications equipment. These regulations were much
+        stricter than generally accepted in their industry. The
+        Soviets clearly recognized the potential hazards of those
+        annoying signals and were rightly worried. Undoubtedly,
+        they also understood the potential of intercepting these
+        signals from early on. Whether they also exploited the
+        ignorance of their adversaries remains hidden in the
+        Soviet intelligence archives.</font></p>
+        <p><font size="2">Today, many security related
+        communications devices are TEMPEST designed. Probably the
+        largest TEMPEST object on earth is the massive NSA
+        building at Fort Meade, encased in copper meshing to
+        shield it from eavesdropping. TEMPEST now resorts under
+        the broader EMSEC (Emission Security). Today&#146;s
+        electronics provide new possibilities to suppress
+        unwanted radiation but also enable the development of new
+        sophisticated and very sensitive equipment to intercept
+        those signals. The development and operation of secure
+        communications equipment will always remain a technical
+        challenge.</font></p>
+        <h4><font size="2">More on this Website</font></h4>
+        <ul>
+            <li><a href="coldwarsignals.htm"><font size="2">Cold
+                War Signals</font></a><font size="2"> SIGINT and
+                the war over radio waves</font></li>
+            <li><a href="onetimepad.htm"><font size="2">One-time
+                pad</font></a><font size="2"> History of one-time
+                pad encryption, including one-time tape
+                equipment.</font></li>
+        </ul>
+        <h4><font size="2">External Links and References</font></h4>
+        <ul>
+            <li><a
+                href="http://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf"
+                target="_blank"><font size="2">History of U.S.
+                Communications Security vol I &amp; vol II</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> NSA, David Boak, Vol I, 10th
+                Lecture, Tempest, p89 (pdf p83) and Vol II,
+                Tempest Update, p39 (pdf p297)</font></li>
+            <li><a href="http://www.jproc.ca/crypto/b_02.html"
+                target="_blank"><font size="2">The Bell 131-B2
+                PYTHON one-time tape mixer</font></a><font
+                size="2"> on Jerry Proc's Crypto Machines</font></li>
+            <li><a
+                href="http://www.virhistory.com/navy/manuals/94200/94200.1a_7-3.pdf"
+                target="_blank"><font size="2">AN/FGQ-1
+                Teletypewriter Repeater-Mixer</font></a><font
+                size="2"> <img src="../pics/pdficon.jpg"
+                alt="PDF Format" align="absmiddle" width="15"
+                height="15"> at Nick Englands </font><a
+                href="http://www.virhistory.com/navy/manuals/94200.htm"
+                target="_blank"><font size="2">US Navy Radio
+                Communications</font></a></li>
+            <li><a href="http://www.jproc.ca/crypto/tempest.html"
+                target="_blank"><font size="2">TEMPEST</font></a><font
+                size="2"> on Crypto Machines</font></li>
+            <li><a href="http://www.jproc.ca/crypto/flyball.html"
+                target="_blank"><font size="2">Flyball Electronic
+                Modules</font></a><font size="2"> on Crypto
+                Machines </font></li>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/mixer.htm"
+                target="_blank"><font size="2">Various One-time
+                Tape Mixers</font></a><font size="2"> at the
+                Crypto Museum</font></li>
+            <li><a
+                href="http://electrospaces.blogspot.nl/2012/10/the-washington-moscow-hot-line.html"
+                target="_blank"><font size="2">The
+                Washington-Moscow Hotline</font></a><font
+                size="2"> on Peter's Top Level Communications
+                blog</font></li>
+            <li><a href="http://www.cryptome.org/nsa-tempest.htm"
+                target="_blank"><font size="2">Cryptome's TEMPEST
+                Page</font></a><font size="2"> containing various
+                documents</font></li>
+        </ul>
+        <p align="center"><font color="#808080" size="1"><!-- Start of StatCounter Code --><script
+        language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigmaproc.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Visual Cryptography</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- Enigma site (c) Dirk Rijmenants 2005 -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Visual
+                        Cryptography</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        Wat is Visual Cryptography</font></h4>
+        <p><font size="2">Visual Cryptography is een speciale
+        coderingstechniek om informatie in afbeeldingen te
+        verbergen, waarbij ontcijfering mogelijk is met het
+        menselijke oog. De techniek was voorgesteld door Naor en
+        Shamir in 1994. Visual Cryptography gebruikt twee
+        transparante afbeeldingen of layers. Eén layer bevat
+        willekeurige beeldpunten of pixels, de andere layers
+        bevat de geheime informatie. Het is onmogelijk om de
+        verborgen informatie uit één layer te halen, beide
+        layers zijn noodzakelijk. De eenvoudigste toepassing van
+        Visual Cryptografie is het printen van de layers op
+        transparante bladen. Als de eerste layer werkelijk
+        willekeurige pixels bevat kan Visual Cryptography aanzien
+        worden als een </font><a href="onetimepad.htm"><font
+        size="2">one-time pad systeem</font></a><font size="2">
+        met absolute veiligheid. In de overlay animatie kunt u
+        het zien hoe de twee layers over elkaar schuiven tot ze
+        excact gelijnd zijn en de verborgen informatie
+        verschijnt. Om dit zelf te proberen kunt u de layers 1 en
+        2 uit het voorbeeld kopiëren en afdrukken op de
+        transparant blad of dun vel papier. Gebruik steeds een
+        programma dat de witte en zwarte pixels nauwkeurig
+        weergeeft en stel de printer zodanig in dat de pixels
+        correct worden afgedrukt (geen diffusie, foto-verbetering
+        etc). U kunt de beide layers ook kopiëren en plakken in
+        een tekenprogamma zoals Paint en het resultaat
+        onmiddellijk bekijken, maar u dient dan wel transparant
+        tekenen te gebruiken en beide layers exact over elkaar te
+        leggen.</font></p>
+        <table border="1" cellpadding="10" cellspacing="0"
+        bgcolor="#FFFFFF" bordercolor="#000000"
+        bordercolordark="#FFFFFF" bordercolorlight="#000000">
+            <tr>
+                <td align="center"><font size="2">Layer 1</font><p><font
+                size="2"><img src="../pics/vcslayer1.GIF"
+                width="196" height="196"></font></p>
+                </td>
+                <td align="center"><font size="2">Layer 2</font><p><font
+                size="2"><img src="../pics/vcslayer2.GIF"
+                width="196" height="196"></font></p>
+                </td>
+                <td align="center"><font size="2">Overlay</font><p><img
+                src="../pics/vcsanimation.gif" width="240"
+                height="196"></p>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2">Hoe Visual Cryptography werkt</font></h4>
+        <p><font size="2"><img src="../pics/vispixel.GIF"
+        align="right" border="1" hspace="5" width="348"
+        height="364"></font><font size="2">Elke pixel van een
+        afbeelding is verdeelt in kleinere blokjes. Er zijn
+        steeds hetzelfde aantal witte (transparante) en zwarte
+        blokjes. Als een pixel in twee verdeeld is zullen er
+        één wit en één zwart blokje zijn. Is de pixel in vier
+        gelijke delen verdeeld zullen er twee witte en twee
+        zwarte blokjes zijn. Het Visual Cryptography voorbeeld
+        van hierboven gebruikt pixels met vier blokjes.</font></p>
+        <p><font size="2">In de tabel rechts zien we dat een
+        pixel, verdeeld in vier blokjes, zes verschillende
+        toestanden kan hebben. Als een pixel op layer 1 een
+        bepaalde toestanden heeft kan diezelfde pixel op layer 2
+        twee toestanden hebben: identiek aan of het negatief van
+        de pixel op layer 1. Als de pixel van layer 2 identiek is
+        aan die van layer 1 zal de overlay half wit en half zwart
+        zijn. Zo'n overlay resultaat noemen we een grijze of lege
+        pixel. Als de pixel van layer 1 en 2 tegenovergesteld of
+        negatief zijn zal het overlay resultaat een volledig
+        zwarte pixel zijn. Dit is een informatie pixel.</font></p>
+        <p><font size="2">We kunnen nu de twee layers creëren.
+        Eén transparante afbeelding, layer 1, is volledig
+        samengesteld met pixels in één van de zes willekeurige
+        toestanden. Layer 2 is identiek aan layer 1, met
+        uitzondering van de pixels die zwart (informatie) moeten
+        zijn bij overlay. Deze pixels hebben een toestand die
+        tegenovergesteld is aan die van layer 1. Als beide
+        afbeeldingen exact over elkaar worden uitgelijnd zullen
+        de gebieden met identieke pixels grijs zijn en gebieden
+        met tegenovergestelde pixels zwart.</font></p>
+        <p><font size="2">Het systeem va pixel verdeling kan op
+        verschillende manieren toegepast worden. In ons voorbeeld
+        zijn de pixels in vier verdeeld, maar u kunt ze ook enkel
+        in twee rechthoeken verdelen, of zelfs in gedeelde
+        cirkels. Het speelt ook geen rol of de verdeling
+        horizontaal of verticaal is. Er zijn pixel systemen met
+        hogere resolutie, beter contrast of zelfs met kleuren.</font></p>
+        <p><font size="2">Indien de toestanden van de pixels in
+        layer 1 werkelijk willekeurig (crypto secure random)
+        zijn, zullen zowel de lege als informatie pixels van
+        layer 2 ook werkelijk willekeurig zijn. Men kan nooit
+        weten of een pixel uit layer 2 gebruikt wordt om een
+        grijze of zwarte pixel te creëren, aangezien we de
+        toestand van die pixel in layer 1 (die willekeurig is)
+        nodig hebben om het overlay resultaat te kennen. Als aan
+        alle voorwaarden voor werkelijke willekeur is voldaan
+        biedt Visual Cryptografie absolute veiligheid volgens de
+        Informatie Theory .</font></p>
+        <p><font size="2">Als Visual Cryptography gebruikt wordt
+        voor veilige communicatie zal de verzender één of
+        meerdere willekeurige layers 1 op voorhand overmaken aan
+        de ontvanger. Als de verzender een bericht wil sturen zal
+        hij een layer 2 creëren voor een specifieke layer 1 en
+        deze verzenden aan de ontvanger. De ontvanger legt de
+        twee layers exact over elkaar en de geheime informatie
+        wordt zichtbaar, zonder gebruik van een codeertoestel,
+        computer of manuele berekeningen. Zolang niet beide
+        layers in verkeerde handen vallen biedt dit systeen
+        absolute veiligheid en is onbreekbaar. De verborgen
+        informatie kan onmogelijk uit slechts één van de layers
+        gehaald worden.</font></p>
+        <h4><font size="2">Bijkomende informatie</font></h4>
+        <p><a href="http://www.r-hansen.com/tech/oti.html"
+        target="_blank"><font size="2">Visual Crypto - One-time
+        Image</font></a><font size="2"> door Robert Hansen<br>
+        </font><a href="http://www-sec.uni-regensburg.de/vc/"
+        target="_blank"><font size="2">Visual Crypto Java Applet</font></a><font
+        size="2"> op de Universiteit van Regensburg<br>
+        </font><a href="http://www.cl.cam.ac.uk/~fms27/vck/"
+        target="_blank"><font size="2">Visual Cryptography Kit</font></a><font
+        size="2"> Software om layers te creëren<br>
+        </font><a
+        href="http://www.cacr.math.uwaterloo.ca/~dstinson/visual.html"
+        target="_blank"><font size="2">Visual Crypto Page</font></a><font
+        size="2"> door Doug Stinson<br>
+        </font><a
+        href="http://www.leemon.com/crypto/VisualCrypto.html"
+        target="_blank"><font size="2">On-line Visual Crypto
+        Applet</font></a><font size="2"> van Leemon Baird<br>
+        </font><a
+        href="http://wscg.zcu.cz/wscg2002/Papers_2002/A73.pdf"
+        target="_blank"><font size="2">Extended Visual
+        Cryptography (pdf)</font></a><font size="2"> door Mizuho
+        Nakajima en Yasushi Yamaguchi<br>
+        </font><a
+        href="http://www.mathmagic.cn/Crypt1981-1997/HTML/PDF/E94/1.PDF"
+        target="_blank"><font size="2">Visual Cryptography</font></a><font
+        size="2"> Paper door Moni Noar and Adi Shamir<br>
+        </font><a
+        href="http://homes.esat.kuleuven.be/~fvercaut/talks/visual.pdf"
+        target="_blank"><font size="2">Visual Crypto Talk (pdf)</font></a><font
+        size="2"> door Frederik Vercauteren ESAT Leuven</font></p>
+        <p align="center"><!-- Start of StatCounter Code --><script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="http://users.telenet.be/d.rijmenants/nl/..\nl\kurzsignale.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

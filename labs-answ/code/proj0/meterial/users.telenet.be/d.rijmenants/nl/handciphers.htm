@@ -1,0 +1,1036 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Handcijfers</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+<!-- <bgsound src="../numbers.mp3" loop="1"> -->
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CODEERMACHINES EN
+                        CRYPTOGRAFIE</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>Handcijfers</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index-nl.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <p><br>
+        <font size="2">Handcijfers, ook pen-en-papier cijfers of
+        door militairen veldcijfers genoemd, zijn
+        encryptiemethodes die uitgevoerd worden met pen en
+        papier. Veel van deze klassieke cijfers werden ontwikkeld
+        in de tweeduizend jaar van cryptologische geschiedenis.
+        Met elk nieuw cijfer dat ontwikkeld werd, vonden
+        codebrekers nieuwe cryptoanalytische aanvallen om deze te
+        breken, en verbeterden de codemakers hun cijferalgoritmes
+        of vonden zij nieuwe methodes om de veiligheid van hun
+        handcijfers te verbeteren.</font></p>
+        <p><font size="2">Handcijfers zijn steeds een compromis
+        geweest tussen veiligheid en praktische overwegingen.
+        Zeer veilige cijfers waren meestal ingewikkeld,
+        onpraktisch en gevoelig voor fouten. Dit was een nadeel
+        in tactische omstandigheden. Anderzijds waren praktische
+        en minder complexe cijfers meestal minder veilig.
+        Niettemin bewezen deze minder veilige cijfers dikwijls
+        hun nut in omstandigheden waar de tijd om ze te breken de
+        tactische waarde overschreed.</font></p>
+        <p><font size="2">Op deze pagina vindt u enkele methodes
+        en technieken die het resultaat zijn van vele jaren
+        evolutie in klassieke cryptografie. We zullen het hier
+        niet hebben over de simpele cijfermethodes zoals Caesar
+        Shift, ROT-13 of de vele variaties op Vigenere, welke
+        gemakkelijk te breken zijn met niet meer dan een pen en
+        wat papier, maar beperken we ons tot de meer complexe
+        cijfers die hun strepen verdienden tot in de twintigste
+        eeuw. Sommige van de beschreven technieken kunnen nuttig
+        zijn om uw eigen handcijfer te ontwikkelen.</font></p>
+        <h3><font size="2"><br>
+        One-time Pad</font></h3>
+        <p><font size="2">De one-time pad encryptie is een
+        speciaal type pen-en-papier cijfer en heeft zijn eigen
+        pagina op deze website. Gelieve de </font><a
+        href="onetimepad.htm"><font size="2">one-time pad pagina</font></a><font
+        size="2"> te bezoeken voor meer informatie.</font></p>
+        <h3><font size="2"><br>
+        Dubbele Transpositie</font></h3>
+        <p><font size="2">De Dubbele Transpositie of Dubbele
+        Kolomtranspositie was één van de veiligste en
+        populairste handcijfers tijden de Tweede Wereldoorlog.
+        Het cijfer werd gebruikt door zowel de Geallieerden als
+        de Asmogendheden en een regelmatige verandering van goed
+        geselecteerde sleutels bood een goede weerstand tegen
+        cryptanalytische aanvallen. Het was tevens eenvoudig in
+        gebruik, hoewel langzaam bij langere berichten. Een
+        nadeel is dat letterfrequentie analyse een normale
+        letterdistributie toont, gelijkaardig aan klare tekst,
+        wat transpositie verraad. Indien genoeg cijfertekst
+        voorhanden is die met dezelfde sleutel werd vercijferd,
+        kan een aanval met meervoudig anagramming succesvol zijn,
+        hoewel zeer moeilijk. Een zeer effectieve manier om het
+        anagramming tegen te gaan is de letters van de klare
+        tekst eerst fractioneren (zie verder) </font></p>
+        <p><font size="2">Bericht om de vercijferen: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  WE CONFIRM THE DELIVERY OF THE DOCUMENTS X  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">De laatste groep is vervolledigd met
+        X-en tot deze vijf letters telt.</font></p>
+        <p><font size="2">De sleutelwoorden: <strong>ALADIN</strong>
+        en <strong>CONSPIRACY</strong></font></p>
+        <p><font size="2">We kunnen nu onze eerste transpositie
+        uitvoeren. Maak een raster met de breedte van het eerste
+        sleutelwoord en schrijf het sleutelwoord in het raster.
+        Onder het sleutelwoord schrijven we de volgorde van het
+        aflezen van de klare tekst. Geef het volgnummer 1 aan de
+        sleutelwoordletter die eerst voorkomt in het alfabet, de
+        volgende 2, enzovoort. Indien twee identieke letter
+        voorkomen in het sleutelwoord zal de meest linkse letter
+        het laagst volgnummer krijgen. Schrijf de klare tekst in
+        het raster, links boven beginnend en rij per rij.</font></p>
+        <p><font size="2">Het eerste transpositieraster:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  A L A D I N   
+  1 5 2 3 4 6
+  -----------
+  W E C O N F
+  I R M T H E
+  D E L I V E
+  R Y O F T H
+  E D O C U M
+  E N T S X   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Vervolgens maken we een tweede raster
+        met het tweede sleutelwoord. We geven de letter van het
+        sleutelwoord opnieuw volgnummers volgens hun positie in
+        het alfabet. We lezen nu de tekst in het eerste raster af
+        per kolom in de volgorde van het eerste sleutelwoord.
+        Schrijf de afgelezen letters in het tweede raster, ook
+        hier linksboven beginnen en rij per rij.</font></p>
+        <p><font size="2">Het tweede transpositieraster:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  C O N S P I R A C Y   
+  2 6 5 9 7 4 8 1 3 10
+  --------------------
+  W I D R E E C M L O
+  O T O T I F C S N H
+  V T U X E R E Y D N
+  F E E H M </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">De uiteindelijke cijfertekst wordt
+        kolom per kolom afgelezen volgens de volgorde van het
+        sleutelwoord.</font></p>
+        <p><font size="2">De uiteindelijke cijfertekst in groepen
+        van vijf letters:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+ </font><font size="3">MSYWO VFLND EFRDO UEITT EEIEM CCERT XHOHN </font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Om de Dubbele Transpositie te
+        ontcijferen werken we in omgekeerde volgorde. Eerst maken
+        we een raster met het tweede sleutelwoord en bepalen we
+        de korte en lange kolommen (vanwege de lege plaatsen op
+        het einde van het raster). De cijfertekst wordt kolom per
+        kolom in het raster geschreven volgens de volgorde van
+        het tweede sleutelwoord. Vervolgens maken we een raster
+        voor het eerste sleutelwoord en bepalen ook hier de lange
+        en korte kolommen. We lezen het raster van het tweede
+        sleutelwoord rij per rij, en voeren de tekst kolom per
+        kolom in het raster van het eerste sleutelwoord.
+        Tenslotte lezen we de klare tekst rij per rij af.</font></p>
+        <p><font size="2">In werkelijkheid worden veel langere
+        sleutelwoorden of zinnen gebruikt van 20 of meer letters
+        om grote stukken tekst te vercijferen.</font></p>
+        <h3><font size="2"><br>
+        Onderbroken Transpositie</font></h3>
+        <p><font size="2">De Onderbroken Transpositie is een
+        verdere complicatie van de normale transpositie. In
+        plaats van het raster rij per rij in te vullen wordt de
+        tekst op zeer onregelmatige wijze in het raster
+        geschreven door het gebruik van twee gebieden. Dit
+        resulteert in een complexe transpositie van de letters.
+        Eerst bepalen we het exacte aantal rijen en kolommen
+        (vergeet niet aan te vullen met X'en om een laatste groep
+        van vijf letters te bekomen). Vervolgens vullen we een
+        rij met letters totdat we een bepaald getal tegen komen
+        van het sleutelwoord. Als het eerste getal op de achtste
+        positie staat vullen we de eerste rij in tot de achtste
+        positie. We vervolgen op de volgende rij tot aan de
+        tweede positie en zovoort. Als we aan het einde van de
+        laatste positie komen vervolgen we met de resterende
+        letters in de overblijvende lege plaatsen in te vullen.
+        In ons voorbeeld is hete verschil tussen de twee gebieden
+        zichtbaar door de grote en kleine letters.</font></p>
+        <p><font size="2">De klare tekst:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+ </font><font size="3">WE CONFIRM THE DELIVERY OF THE DOCUMENTS AND WILL SEND FURTHER INSTRUCTIONS X </font><font
+size="5">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We gebruiken het sleutelwoord <strong>CONSPIRACY</strong></font></p>
+        <p><font size="2">Links zien we het raster na het vullen
+        de het eerste gebied en recht zien we hetzelfde raster
+        volledig gevuld:</font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">  C O N S P I R A C Y      C O N S P I R A C Y   
+  2 6 5 9 7 4 8 1 3 10     2 6 5 9 7 4 8 1 3 10
+  --------------------     --------------------
+  W E C O N F I R . .      W E C O N F I R a n
+  M . . . . . . . . .      M d w i l l s e n d
+  T H E D E L I V E .      T H E D E L I V E f
+  R Y O F T H . . . .      R Y O F T H u r t h
+  E D O . . . . . . .      E D O e r i n s t r
+  C U . . . . . . . .      C U u c t i o n s x
+  M E N T S - - - - -      M E N T S - - - - -</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Eens het raster gevuld is lezen we het
+        kolom per kolom af volgens de volgorde van het
+        sleutelwoord, net als bij een gewone transpositie.</font></p>
+        <p><font size="2">Er zijn verschillende mogelijkheden van
+        onderbroken transpositie. Zo is er de methode met grote
+        driehoeken. Elk driehoekig gebied start bij de eerste
+        sleutelwoordpositie en gaat met elke volgende rij één
+        stap verder naar rechts. In onderstaand voorbeeld zien we
+        twee driehoekige gebieden. Ook hier lezen we de kolommen
+        af volgens de volgorde van het sleutelwoord. Zoals u
+        merkt geeft deze methode een heel ander resultaat dan de
+        normale transpositie.</font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+
+</font><font size="3">  C O N S P I R A C Y      C O N S P I R A C Y  
+  2 6 5 9 7 4 8 1 3 10     2 6 5 9 7 4 8 1 3 10
+  --------------------     --------------------
+  W E C O N F I R . .      W E C O N F I R w i
+  M T H E D E L I V .      M T H E D E L I V l
+  E R Y O F T H E D O      E R Y O F T H E D O
+  C . . . . . . . . .      C l s e n d f u r t
+  U M . . . . . . . .      U M h e r i n s t r
+  E N T . . . . . . .      E N T u c t i o n s
+  S A N D . - - - - -      S A N D x - - - - -   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Gewoonlijk is de onderbroken
+        transpositie één van de twee transposities binnen een
+        dubbele transpositie, waardoor deze sterker en complexer
+        word. Een van de sterkste handcijfers tijdens de Tweede
+        Wereldoorlog was ongetwijfels </font><a
+        href="rasterschlussel44.htm"><font size="2">Rasterschlüssel
+        44</font></a><font size="2">, een grille systeem, waarbij
+        de tekstrijen onderbroken werden door zwarte vakken,
+        gevolgd door een transposition.</font></p>
+        <h3><font size="2"><br>
+        Fractioneren</font></h3>
+        <p><font size="2">Op transpositie gebaseerde cijfers
+        vertonen typische statistische informatie wanneer
+        onderworpen aan letterfrequentie analyse. Het
+        fractioneren of opbreken in verschillende delen van
+        letters alvorens ze te transpositioneren verbeterd de
+        veiligheid van een cijfer aanzienlijk. Een eenvoudige
+        matrix kan letters fractioneren in een horizontaal en een
+        vertikaal coördinaat. Het Polybius vierkant is de
+        eenvoudigste manier om fractionering op klare tekst te
+        verrichten. Een dooreen gehaspeld alfabet kan gebruikt
+        worden om de matrix te compliceren. Natuurlijk biedt
+        fractionering geen cryptografische sterkte tenzij
+        gecombineerd met andere technieken. Het Polybius vierkant
+        op zich is een zwak mono-alfabetisch substitutiecijfer.</font></p>
+        <p><font size="2">Het Russische Nihilist cijfer gebruikte
+        een Polybius vierkant met dooreen gehaspeld alfabet,
+        waarbij de in cijfers omgezette klaartekst letters werden
+        opgeteld bij een vast aantal cijfers, verkregen uit een
+        sleutelwoord van het vierkant. Het was dus eigenlijk een
+        'opgepimpte' Vigenere encryptie en daardoor eenvoudig te
+        breken. Dus, goed idee om zulke fractionering te
+        gebruiken, slecht idee om dit Nihilist cijfer niet te
+        combineren met andere technieken.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">   1  2  3  4  5  
+ 1 A  B  C  D  E
+ 2 F  G  H I/J K
+ 3 L  M  N  O  P
+ 4 Q  R  S  T  U
+ 5 V  W  X  Y  Z</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2"><br>
+        Het Straddling Checkerboard</font></h3>
+        <p><font size="2">Een belangrijke Russische verbetering
+        aan de fractionering door het Nihilist cijfer is het
+        Straddling Checkerboard, vrij vertaald het spreidend
+        schaakbord. Letters in een normale coördinatenmatrix
+        worden opgebroken in steeds gelijke delen. Het
+        Checkerboard resulteert echter in een zeer onregelmatig
+        patroon. Sommige letters worden voorgesteld door één
+        cijfer, andere door twee cijfers. Door het toewijzen van
+        één-cijferige waarden aan frequent gebruikte letters
+        zal de resulterende cijfertekst kleiner zijn dan een
+        normaal Nihilist cijfer. Bovendien maakt het
+        onregelmatige patroon het ook veel moeilijker om de
+        matrixcombinaties te vinden. Een mogelijke verdere
+        complicatie is het gebruikt van een door elkaar gehaspeld
+        alfabet.</font></p>
+        <p><font size="2">De combinatie van fractionering en
+        transpositie bewees er veilig te zijn. Een goed voorbeeld
+        van zo'n combinatie is het VIC Cijfer met dubbele
+        onderbroken transpositie en straddling checkerboard,
+        gebruikt door de Sovjet inlichtingendienst tijdens de
+        Koude Oorlog. Een bericht, op deze wijze vercijferd,
+        weerstond jarenlang alle cryptoanalyse door de
+        codebrekers van het FBI, tot een Sovjetspion die het
+        cijfer gebruikte over liep naar de Amerikanen.</font></p>
+        <p><font size="2">Een straddling checkerboard matrix, met
+        de één-cijfer waarden geoptimaliseerd voor de engelse
+        taal:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">  | 0 1 2 3 4 5 6 7 8 9   
+  +---------------------
+  | A T   O N E   S I R
+ 2| B C D F G H J K L M
+ 6| P Q U V W X Y Z . nr</font><font size="4"> </font><font
+size="3"> </font><font size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">De letters van de bovenste rij worden
+        omgezet naar de ééncijferige waarden net erboven. Alle
+        andere letters worden omgezet naar tweecijferige waarden
+        door de rijhoofding en vervolgens de kolomhoofding te
+        nemen. Om getallen om te zetten gebruiken we
+        &quot;FIG&quot; net voor en na getallen, waarbij we de
+        cijferen drie maal uitschrijven om vergissingen bij het
+        verzenden of ontcijferen te vermijden.</font></p>
+        <p><font size="2">Laat ons een tekst omzetten met het
+        checkerboard.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="2"> Klare tekst: P  L  E  A  S  E   C  O  N  T  A  C  T   M  E   A  T  [fig]  1   2   0   0  [fig] H   .   
+ Omzetting  : 60 28 5  0  7  5   21 3  4  1  0  21 1   29 5   0  1    69  111 222 000 000  69   25  68</font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">In groepen, vervolledigd met nullen:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3"> 60285 07521 34102 11295 01691 11222 00000 06925 68000</font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Het is eenvoudig om de cijfers terug in
+        letters om te zetten en de één-cijferige combinaties te
+        onderscheiden van twee-cijferige. Als een
+        cijfercombinatie begint met het rijnummer 2 of 6 is het
+        een twee-cijferige code en volgt er dus nog een cijfer
+        voor diezelfde letter. In alle andere gevallen is het een
+        ééncijferige combinatie. Nogmaals, deze fractionering
+        dient gebruikt te worden met ander
+        vercijferingstechnieken zoals transpositie of one-time
+        pad. Na converteren van de klare tekst in cijfers kunnen
+        we gewoon de cijfers in plaats van letters
+        transpositioneren. natuurlijk kunnen we de volgorde van
+        de letters of van de getallen wijzigen om de complexiteit
+        te vergroten.</font></p>
+        <h3><font size="2"><br>
+        Het Uitgebreidde Straddling Checkerboard</font></h3>
+        <p><font size="2">Het aantal één-cijferige combinaties
+        bepaald het aantal mogelijke rijen en dus het aantal
+        verschillend karakters die mogelijk zijn. De CT-46 tabel
+        is een voorbeeld van een uitgebreid Straddling
+        Checkerboard. Het is geoptimaliseerd voor gebruik in
+        verschillende talen. Andere variaties met verschillende
+        karaktersets is mogelijk. Een andere versie is TAPIR,
+        gebruikt door de voormalige Oost-Duitse
+        inlichtingendienst en is geoptimaliseerd voor de Duitse
+        taal met speciale karakters en lettercombinaties.</font></p>
+        <p><font size="2">De CT-46 tabel:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  | 0  1  2  3  4  5  6  7  8  9
+  +-------------------------------
+  |    A  E  I  N  O  R
+ 7| B  C  D  F  G  H  J  K  L  M
+ 8| P  Q  S  T  U  V  W  X  Y  Z  
+ 9|SPC .  ,  :  ?  /  (  )  &quot; CODE   
+ 0| 0  1  2  3  4  5  6  7  8  9
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">In de CT-46 tabel hebben alle frequent
+        gebruikte letters in de bovenste rij één cijfer,
+        genomen uit de kolommen (A=1, E=2, I=3 etc). Alle andere
+        karakters zijn een combinatie van een rij-cijfer en een
+        kolom-cijfer (B=70, C=71, W=86, 2=02 etc).</font></p>
+        <h3><font size="2"><br>
+        Meer Fractionering</font></h3>
+        <p><font size="2">Het Polybius vierkant en de
+        Checkerboard matrix verdelen elk afzonderlijk karakter in
+        één of twee delen. Er zijn echter methodes om de
+        letters in nog meer delen te versnipperen wat het nog
+        moeilijker maakt voor de codebrekers om ze bijeen te
+        puzzelen. Het Trifid cijfer werkt met drie matrices met
+        negen karakters elk. Elk karakter wordt geconverteerd in
+        drie cijfers: één voor de gebruikte matrix, één voor
+        de rij en één voor de kolom. Natuurlijk kunnen we de
+        drie matrices ook vullen met een dooreen gehaspeld
+        alfabet. Het systeem is gemakkelijk uit te breiden. Met
+        drie matrices van vier op vier ondersteunen we al 48
+        karakters.</font></p>
+        <p><font size="2">De Trifid fractionering:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+      1         2         3
+   +-----+   +-----+   +-----+
+  1|A B C|  1|D E F|  1|G H I|   
+  2|J K L|  2|M N O|  2|P Q R|
+  3|S T U|  3|V W X|  3|Y Z .|
+   +-----+   +-----+   +-----+
+    1 2 3     1 2 3     1 2 3   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">De klare tekst vercijferd:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  M   Y   S   E   C   R   E   T      
+ 221 331 131 212 113 323 212 132
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Zoals bij alle fractioneringen dient
+        ook Trifid gecombineerd met andere technieken. Een
+        cryptoanalist zou echter onmiddellijk zien dat de
+        cijfertekst enkel de cijfers 1, 2 en 3 bevat en beseffen
+        dat tenminste één van de onderdelen van de encryptie
+        een Trifid cijfer is. Zonder transpositie zou hij de
+        tekst in stukken per drie cijfers kunnen verdelen en elke
+        combinatie kunnen behandelen als één karakter van een
+        mono-alfabetische substitutie, wat eenvoudig te breken
+        is.</font></p>
+        <p><font size="2">Er zijn echter manieren om de aanvaller
+        te misleiden. We kunnen verschillende letters toewijzen
+        aan de drie waarden en willekeurig een letter kiezen. We
+        hebben dan een tabel nodig die zegt welke groep letters
+        voor welk cijfer staan. We kunnen de aanvaller zelfs nog
+        meer misleiden. Als we veelgebruikte letters zoals ETAOIN
+        meer gebruiken dan andere letters creëren we de illusie
+        dat het geen fractionerend cijfer is maar een eenvoudige
+        substitutie, aangezien de letter frequentie analyse een
+        vrijwel normale letterdistributie toont. Hierdoor beseft
+        de aanvaller niet dat een letter niet één aparte letter
+        is maar slechts één derde van een cijfercombinatie
+        voorstelt.</font></p>
+        <p><font size="2">We geven de cijfers enkele letters. U
+        kunt ook gebruik maken van een dooreen gehaspeld alfabet.
+        Als u overweegt om uit te breiden naar drie matrices van
+        vier op vier moet u er rekening mee houden dat het cijfer
+        4 binnen de cijfercombinaties minder frequent gebruikt
+        word dan de andere cijfers (het eerste cijfer van de
+        combinatie kan nooit een 4 zijn want er zijn maar drie
+        matrices). In dat geval is het beter om een paar letters
+        minder toe te wijzen aan het cijfer 4 om de oneven
+        distributie te compenseren (minder letters voor een
+        bepaald cijfer betekend dat dezelfde letters meer zullen
+        gebruikt worden).</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+  1  2  3   
+  A  B  C
+  D  E  F
+  G  H  I
+  J  K  L
+  M  N  O
+  P  Q  R
+  S  T  U
+  V  W  X
+  Y  Z
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Het nieuwe resultaat van Trifid met
+        willekeurige letters voor elk van de drie cijfers:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ Klaartkest   M   Y   S   E   C   R   E   T      
+ Cijfers     221 331 131 212 113 323 212 132
+ Cijfertekst BEV LOA JRP NAH MPO IKF WYE AXB
+
+ In groepen  BEVLO AJRPN AHMPO IKFWY EAXB  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Om dit te ontcijferen kijken we gewoon
+        welk cijfer is toegewezen aan een bepaalde letter en kunt
+        u zo de cijfercombinatie terug samenstellen. Merk op dat
+        een letter kan voorgesteld worden door veel verschillende
+        combinaties van drie letters. In het voorbeeld zien we
+        dat de letter E zowel in NAH als WYE werd omgezet. We
+        zien ook dat de cijfertekst letter A één derde is van
+        de klare letter Y, maar ook van E en T. Zelfs zonder
+        combinatie met transpositie is het moeilijk te ontdekken
+        dat Trifid werd gebruikt en letter frequentie analyse is
+        nutteloos. Als combinatie kunnen we bijvoorbeeld een
+        sleutelwoord gebruiken voor het door elkaar halen van het
+        matrix alfabet en een sleutelwoord om na de Trifid
+        omzetting een transpositie uit te voeren op de
+        lettercombinaties. Een harde noot om te kraken.</font></p>
+        <p><font size="2">Laat ons nog een stap verder gaan. Vier
+        matrices, elke een mini straddling checkerboard. Het
+        onregelmatige resultaat is een combinatie van twee of
+        drie cijfers, net zoals bij het staddling, maar nu zijn
+        de letters verdeeld in twee of drie delen ip plats van
+        één of twee delen. Dit betekend meer fractionering. Het
+        eerste cijfer van een combinatie is het matrix nummer.
+        Als de letter zich in de bovenste rij bevindt zal het een
+        twee-cijferige combinatie zijn. Is de letter in de
+        onderste rij te vinden zal het een drie-cijferige
+        combinatie zijn. In het voorbeeld gebruiken we een
+        dooreen gehaspeld alfabet, eenvoudig te maken met een
+        sleutelwoord (zie sectie over sleutelwoorden). De
+        bovenste rij van de matrices bevat de 12 meest frequent
+        gebruikte letters. Deze zijn E T A O I N S H R D L C
+        (voor Engels). Zo'n matrices vullen met een dooreen
+        gehaspeld alfabet is niet moeilijk. Markeer eerst de top
+        12 letters in het dooreen gehaspeld alfabet en vul deze
+        letters in de bovenste rij in. Vervolgens vult u de
+        overige letters in de onderste rij in. De combinatie 414
+        is om te wisselen tussen letters en cijfers.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+       1           2           3           4
+    1 2 3 4     1 2 3 4     1 2 3 4     1 2 3 4 
+   +-------+   +-------+   +-------+   +-------+   
+   |E - H R|   |S T - D|   |L N A -|   |- C I O|
+  2|V F X J|  3|U M P Q|  4|K B W G|  1|Z Y .nr|
+   +-------+   +-------+   +-------+   +-------+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Hier het alfabet, gebruikt voor de
+        matrices:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ VF<u>E</u>X<u>H</u>J<u>R</u>U<u>S</u>MPQ<u>T</u>KB<u>D</u>W<u>LN</u>G<u>ACI</u>ZY<u>O</u>  
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">En hier zien we het Quadfid
+        Checkerboard, of hoe je het ook wil noemen want ik vond
+        zonet die naam uit, in actie:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ Klaartekst:  M   Y   S   E   C   R   E   T   D   I   A   R   Y    
+ Cijfers:    232 412  21  11  42  14  11  22  24  43  33  14 412
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Ook hier kunnen we alvorens een
+        bijkomende transpositie toe te passen de cijfers
+        omzetting in letters, nu met de letters verdeeld over
+        vier kolommen.</font></p>
+        <h3><font size="2"><br>
+        Sleutelwoorden Verbeteren</font></h3>
+        <p><font size="2">Er zijn verschillende methodes om een
+        alfabet dooreen te halen met behulp van een sleutelwoord
+        of een sleutelwoord te verlengen. De meest gebruikte
+        methode voor het gebruik van een alfabet in een matrix is
+        door het alfabet te mixen in een aparte matrix met behulp
+        van één of twee sleutelwoorden.</font></p>
+        <p><font size="2">In het eerste voorbeeld gebruiken we
+        één sleutelwoord, ENTERPRISE. Eerst maken we een matrix
+        met dezelfde breedte als het sleutelwoord en vullen het
+        sleutelwoord in, daarbij elke letter slechts één maal
+        te gebruiken. Vervolgens zijn er twee manieren om de
+        overige letters aan te vullen. Ofwel vullen we de overige
+        letters opeenvolgend in, ofwel laten we een vrije ruimte
+        voor elke letter die al gebruikt is. Het uiteindelijke
+        dooreen gehaspeld alfabet wordt kolom per kolom
+        afgelezen, aan de hand van de volgorde van het
+        sleutelwoord.</font></p>
+        <p><font size="2">De twee manieren om de matrix te vullen
+        met een enkel sleutelwoord::</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3">  1 3 7 5 4 2 6       1 3 7 5 4 2 6   
+  E N T R P I S       E N T R P I S
+  A B C D F G H       A B C D - F G
+  J K L M O Q U       H - J K L M -
+  V W X Y Z           O - Q - - - U
+                      V W X Y Z
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Het resultaat voor beide methodes,
+        kolom per kolom afgelezen. Bemerk het verschillende
+        resultaat: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ EAJVIGQNBKWPFOZRDMYSHUTCLX  
+
+ EAHOVIFMNBWPLZRDKYSGUTCJQX
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Laat ons nu een alfabet creëren dat
+        gemixed is met de twee sleutelwoorden INDIGO en
+        ENTERPRISE. Eerst maken we een matrix met de breedte van
+        het eerste sleutelwoord en gebruiken dit sleutelwoord als
+        hoofding van de matrix. Vervolgens vullen we het tweede
+        sleutelwoord in de matrix, ook hier elke letter één
+        maal gebruiken. We kunnen de resterende letters ook weer
+        achtereenvolgens of met spaties voor gebruikte letters
+        aanvullen. Het uiteindelijke alfabet wordt kolom per
+        kolom afgelezen, volgens de volgorde van het eerste
+        sleutelwoord.</font></p>
+        <p><font size="2">In onderstaand voorbeeld zien we
+        hetzelfde dubbele sleutelwoord met de twee manieren om de
+        matrix te vullen:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3">  I N D I G O          I N D I G O   
+  3 5 1 4 2 6          3 5 1 4 2 6
+  -----------          -----------
+  E N T R P I          E N T R P I
+  S A B C D F          S A B C D -
+  G H J K L M          F G H - J K
+  O Q U V W X          L M - O - Q
+  Y Z                  - - - U V W
+                       X Y Z</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Het resultaat van beide manieren, kolom
+        per kolom afgelezen: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+ TBJUPDLWESGOYRCKVNAHQZIFMX  
+
+ TBHZPDJVESFLXRCOUNAGMYIKQW
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Er zijn verschillende variaties
+        mogelijk om de matrix te vullen. Men kan de letters
+        spiraalsgewijs invullen van buiten naar binnen, met of
+        tegen de klok in, van rechts naar links enzovoort. Uw
+        verbeelding is de limiet. Deze dooreen gehaspelde
+        alfabetten worden gebruikt om Polybius vierkanten of
+        checkerboards te vullen, of om complexe transpositie
+        reeksen te creëren.</font></p>
+        <h3><font size="2"><br>
+        Willekeurige Getallen Genereren</font></h3>
+        <p><font size="2">Een eenvoudige manier om
+        pseudo-willekeurige cijfers te genereren is de Lagged
+        Fibonacci Generator. Deze methode wordt ook Chaining
+        genoemd. Bemerk dat dit zeker geen cryptografisch veilige
+        manier is om cijfers te genereren, aangezien de output
+        van deze generator sterk afhangt van de initiëme staat
+        en grootte van de generator. De Chaining methode kan
+        echter nuttig zijn als een super-encryptie of om een
+        algoritme te individualiseren.</font></p>
+        <p><font size="2">Om een Chaining uit te voeren tellen we
+        het eerste en tweede cijfer bij elkaar op, modulo 10, en
+        voegen het resultaat achteraan toe aan de reeks cijfers.
+        Vervolgens tellen we het tweede en derde cijfer op
+        enzovoort. Hoe groter de afstand tussen de initiële
+        staat en de gegenereerde cijfers, hoe complexer de
+        relatie is tussen de initiële staat en de gegenereerde
+        cijfers. Modulo 10 betekend dat wanneer de uitkomst
+        groter dan 9 is we er 10 aftrekken)</font></p>
+        <p><font size="2">Voorbeeld van een 10 Lagged Fibonacci
+        Generator (de eerste rij is de initialisatie):</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 5189566247
+ 6974128613
+ 5615304...</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We kunnen de grootte van de initiële
+        staat wijzigen, de afstand tussen de twee cijfers die we
+        optellen, of een andere modulo waarde gebruiken.</font></p>
+        <p><font size="2">Deze generator kan gebruikt worden om
+        de resistentie tegen cryptoanalyse te verbeteren bij
+        methodes zoals transpositie. We weten dat een grote
+        hoeveelheid cijfertekst met dezelfde sleutel gevoeliger
+        is voor cryptoanalyse. We kunnen bij een transpositie de
+        gebruikelijke sleutelwoorden gebruiken maar de
+        uiteindelijke transpositie wijzigen per individuele
+        ontvanger door het toevoegen van een serie cijfers. Dit
+        kan het via het persoonlijk nummer van de ontvanger of
+        een ander makkelijk te onthouden getal zijn. Hoewel alle
+        gebruikers dezelfde sleutel hebben zal het eindresultaat
+        verschillen en zullen er minder statischtische gegevens
+        zijn voor de aanvaller. Zelfs een schema met individuele
+        berichtsleutels kan ontwikkeld worden.</font></p>
+        <p><font size="2">Als voorbeeld chainen we het
+        persoonlijk nummer 54826 totdat we 10 willekeurige
+        getallen hebben en voegen we deze getallen toe aan een
+        normale kolomhoofding van een transpositie matrix. Het
+        resultaat is een totaal verschillende transpositie.</font></p>
+        <p><font size="2">Het persoonlijk nummer 54826 gechained:</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 54826 9208512836</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Een voorbeeld van een transpositie die
+        beïnvloed is door het persoonlijk nummer (we gebruiken
+        nooit de initiële staat zelf). De nieuwe
+        transpositie-volgorde wordt genomen van de som van de
+        originele transpositie en de gegenereerde cijfers. Een 1
+        is de eerste kolom, 2 de tweede, enzovoort. 0 wordt de
+        laatste kolom. Bij meerdere identieke cijfers is de meest
+        linkse het eerst aan de beurt.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> De transpositie           5971304268    
+ De chaining cijfers      +9208512836
+                           -----------
+ De som modulo 10          4179816094
+ De nieuwe transpositie    3168725094</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2"><br>
+        Super-Encryptie</font></h3>
+        <p><font size="2">Een geheim getal chainen kan nuttig
+        zijn als super-encryptie. Super-encryptie is een
+        bijkomende vercijfering bovenop de normale vercijfering.
+        Deze werkwijze biedt bijkomende complexiteit en
+        veiligheid. Men kan super-encryptie bijvoorbeeld
+        gebruiken bij een one-time pad. Indien de sleutel
+        gecompromiteerd is zal het voor de onderschepper niet
+        mogelijk zijn om de cijfertekst te ontcijferen met het
+        one-time pad. Het resultaat zouden totaal willekeurige
+        letters lijken. Het chainen is dan gebruikt als
+        bijkomende veiligheid naast de gebruikelijke fysieke
+        veiligheid bij het gebruik van de one-time pads.</font></p>
+        <p><font size="2">Laat ons een one-time pad nemen met
+        eenvoudige conversio A=1 tot Z=26 waarbij de encryptie
+        gebeurt door het pad af te trekken van de klare tekst. Er
+        gebeurt tevens een super-encryptie met het persoonlijk
+        nummer 54826.</font></p>
+        <p><font size="2">Het persoonlijk nummer gechaind: </font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3"> 54826 920851283630199310824180...</font><font
+size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Een one-time pad super-encryptie met
+        het gechainde nummer (aftrekken gebeurt zonder
+        overdracht):</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="5">
+</font><font size="3"> Klaartekst            S E C R E T
+ Klaartekst cijfers    200503190521 
+ Het one-time pad     -458956254748
+ De chaining cijfers  -920851283630
+                      -------------
+ De cijfertkest        932806863253</font><font size="5">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Een voorbeeld om het meervoudige
+        aftrekken te verduidelijken zonder overdracht: 2 - 4 - 9
+        = 9 want 2 - 4 = 12 - 4 = 8 en 8 - 9 = 18 - 9 = 9</font></p>
+        <p><font size="2">Om dit te ontcijferen genereren we de
+        cijfers terug aan de hand van het persoonlijk nummer en
+        tellen de cijfertekst en one-time pad sleutel erbij op
+        zonder overdracht. Meer over one-time pad op </font><a
+        href="onetimepad.htm"><font size="2">op deze pagina</font></a><font
+        size="2">.</font></p>
+        <h3><font size="2"><br>
+        Tap Code</font></h3>
+        <p><font size="2">Een interessante variatie op het
+        Polibius vierkant is de Tap Code. Hiermee is de meest
+        basale vorm van communicatie mogelijk. Waar andere
+        eenvoudige communicatiemethodes zoals morse minstens een
+        lichtstraal, elektrische stroom of geluid nodig hebben om
+        zowel punten als strepen te verzenden heeft de Tap Code
+        enkel pulsen nodig die op verschillende manieren kan
+        verzonden worden, waarbij kloppen wel de
+        allereenvoudigste. Let wel, gezien dit een eenvoudige
+        substitutie is kan de Tap Code makkelijk gebroken worden.
+        Daarom dienen we dit te zien als een methode van
+        transmissie en niet als een methode van vercijfering.</font></p>
+        <p><font size="2">Een eenvoudige Tap Code matrix::</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">   1  2  3  4  5  
+ 1 A  B  C  D  E
+ 2 F  G  H I/J K
+ 3 L  M  N  O  P
+ 4 Q  R  S  T  U
+ 5 V  W  X  Y  Z</font><font size="4">   </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">Elke te verzenden code wordt gevormd
+        door een combinatie van een rij en een kolom. Volgens de
+        matrix is de letter M te converteren naar 32. Om de
+        letter M te verzenden geven we dus drie kloppen, een
+        kleine pauze en 2 kloppen. Neem een langere pauze tussen
+        de letters. In het voorbeeld hieronder staat een X voor
+        een klop met eender wat je bij de hand hebt, op eender
+        welk oppervlak (gebruik niet je hoofd!). De Tap Code kan
+        gebruikt worden als je duikboot vast zit op de bodem van
+        de oceaan, als je vast zit onder een gebouw na een
+        aardbeving, of om een medegevangene in een andere cel te
+        vragen om de vijl door te geven als hij klaar is (een
+        disclaimer kan hier wel nuttig zijn).</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="4">
+</font><font size="3">    H         E       L       L        O  
+ XX XXX   X XXXXX   XXX X   XXX X   XXX XXXX </font><font
+size="4">  </font></pre>
+                </td>
+            </tr>
+        </table>
+        <p><font size="2">We kunnen een Tap Code matrix
+        optimaliseren volgens de letter frequenties. Om het
+        aantal kloppen te reduceren kunnen we de kortste
+        combinaties toewijzen aan de meest gebruikte letters. De
+        zes meest frequente letters vertegenwoordigen ongeveer 50
+        procent van normale tekst en hen korte combinaties
+        toewijzen zal de transmissietijd aanzienlijk verkorten.</font></p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" bgcolor="#EEEEDD"
+                celpadding="20"><pre><font size="3">
+                                    1 2 3 4 5 6   
+ A 21 G 43 M 51 S 23 Y 52 4 55    1 E T I D W V
+ B 61 H 32 N 31 T 12 Z 62 5 56    2 A O S C P Q
+ C 24 I 13 O 22 U 42 0 36 6 63    3 N H L F X 0
+ D 14 J 53 P 25 V 16 1 45 7 64    4 R U G K 1 2
+ E 11 K 44 Q 26 W 15 2 46 8 65    5 M Y J 3 4 5
+ F 34 L 33 R 41 X 35 3 54 9 66    6 B Z 6 7 8 9 </font><font
+size="2">
+</font></pre>
+                </td>
+            </tr>
+        </table>
+        <h3><font size="2"><br>
+        Conclusie</font></h3>
+        <p><font size="2">Een veilig handcijfer dient
+        sleutelwoorden te gebruiken die gemakkelijk te onthouden
+        zijn, is eenvoudig in uitvoering zonder kans op fouten en
+        biedt een goede veiligheid. Het dient zomogelijk
+        substitutie, transpositie en fractionering te combineren.
+        De gebruiker moet bepalen of hij de focus wil leggen op
+        veiligheid, gebruiksgemak of snelheid. De
+        encryptiemethodes zoals hierboven beschreven zijn de
+        laatste en sterkste van voor het digitale tijdperk en
+        kunnen een leidraad zijn voor het ontwikkelen van uw
+        eigen algoritme. Vele combinaties, uitbreidingen en
+        aanpassingen van bovenstaande technieken zijn mogelijk.
+        Hoewel het breken van een goed ontworpen handcijfer
+        complexe cryptanalytische technieken vereist zal het
+        echter met moderne computerkracht zonder meer mogelijk
+        zijn hen te breken via een brute-force aanval en
+        aangepaste software (met uitzondering van one-time pad).</font></p>
+        <p><font size="2">Niettegenstaande is er een grondige
+        kennis nodig van cryptografie, en eventueel software
+        design, om een degelijk handcijfer te breken. Indien het
+        gaat om een onbekend algoritme kan het handcijfer zelfs
+        alle cryptanalytische aanvallen weerstaan indien de
+        aanvaller de aard van het algoritme niet kan bepalen.
+        Zoals altijd is cryptografie een risicoanalyse, een
+        balans tussen de moeite en kosten die de beveiliging u
+        waart is, en de hoeveelheid moeite, tijd en kosten die de
+        aanvaller bereid is te willen investeren in het breken.
+        Tenslotte biedt moderne cryptografie ons natuurlijk
+        sterkere en snellere software algoritmes, en handcijfers
+        dienen dan ook aanzien te worden als een alternatief in
+        geval van onbeschikbaarheid van computers of andere
+        codeerapparaten, zij het een minder veilig alternatief.</font></p>
+        <h3><font size="2"><br>
+        Meer op deze site</font></h3>
+        <ul>
+            <li><a href="onetimepad.htm"><font size="2">Het
+                one-time pad system</font></a></li>
+            <li><a href="rasterschlussel44.htm"><font size="2">Rasterschlüssel
+                44</font></a></li>
+            <li><a href="cryptoindex.htm"><font size="2">Klassieke
+                Cijfers</font></a></li>
+        </ul>
+        <h3><font size="2">Off-site Links (openen in nieuw
+        venster)</font></h3>
+        <ul>
+            <li><a href="http://cryptogram.org/cipher_types.html"
+                target="_blank"><font size="2">Lijst van manuele
+                cijfers van de American Cryptogram Association
+                (ACA)</font></a></li>
+            <li><a
+                href="http://practicalcryptography.com/ciphers/classical-era/"
+                target="_blank"><font size="2">Ciphers from the
+                Classical Era op Practical Cryptography</font></a></li>
+            <li><a
+                href="http://www.apprendre-en-ligne.net/crypto/bibliotheque/lanaki/lesson1.htm"
+                target="_blank"><font size="2">LANAKI's Classical
+                Cryptography Course</font></a></li>
+            <li><a
+                href="http://www.quadibloc.com/crypto/intro.htm"
+                target="_blank"><font size="2">Pen-en-papier
+                systemen op John Savard's Cryptographic
+                Compendium</font></a></li>
+            <li><a
+                href="http://www.cryptomuseum.com/crypto/manual.htm"
+                target="_blank"><font size="2">Handcijfers op de
+                Crypto Museum website</font></a></li>
+            <li><a href="http://www.ciphermysteries.com/"
+                target="_blank"><font size="2">Nick Pelling's
+                Cipher Mysteries</font></a></li>
+        </ul>
+        <p align="center"><!-- Start of StatCounter Code --> <script language="javascript"
+        type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script> <script
+        language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <!--webbot
+        bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --><br>
+        <font size="2">© Copyright 2004 - 2016 Dirk Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index-nl.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>

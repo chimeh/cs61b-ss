@@ -1,0 +1,481 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Cryptography</title>
+<link rel="stylesheet" type="text/css" href="../standaard.css">
+</head>
+
+<body background="../pics/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950"
+background="../pics/back5.gif">
+    <tr>
+        <td><table border="1" cellpadding="0" cellspacing="0"
+        width="100%" bordercolor="#FFFFFF"
+        bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tr>
+                <td width="100%"
+                background="../pics/backheader.jpg"
+                bordercolor="#000000" bordercolordark="#000000"
+                bordercolorlight="#000000"><table border="0"
+                cellspacing="10" width="100%">
+                    <tr>
+                        <td align="right"><font color="#000000"
+                        size="3"><strong>CIPHER MACHINES AND
+                        CRYPTOLOGY</strong></font></td>
+                    </tr>
+                    <tr>
+                        <td><font color="#000000" size="5"><strong>What
+                        is Cryptography</strong></font></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="2" cellspacing="0"
+                width="100%">
+                    <tr>
+                        <td width="100%" bgcolor="#808080"><a
+                        href="../index.htm" class="menu">Home</a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <h4><font size="2"><br>
+        What is Cryptography</font></h4>
+        <p><font size="2"><img src="../pics/codewheel.gif"
+        align="right" border="1" hspace="5" width="217"
+        height="213"></font><font size="2">Cryptography (from the
+        Greek Krypto 'hidden' and Grafo 'written') is the study
+        and implementation of techniques to hide information, or
+        to protect it from being read. The information that is
+        protected can be written text, electronic signals such as
+        Morse, Telex or speech, or all kinds of digital
+        information like computer files, e-mail messages or data
+        transmissions.</font></p>
+        <p><font size="2">The unprocessed readable information is
+        called plaintext or plain data. The process of making the
+        information unreadable is called encryption or
+        enciphering. The result of encryption is a ciphertext or
+        cryptogram. Reversing this process and retrieving the
+        original readable information is called decryption or
+        deciphering. To encrypt or decrypt information, an
+        algorithm or so-called cipher is used.</font></p>
+        <p><font size="2">How a cryptographic algorithm works, is
+        controlled by a secret key, sometimes called password or
+        passphrase (on crypto machines, the key is the setting of
+        the machine). The key is known only to those who are
+        authorized to read the information. Without knowing the
+        key, it should be impossible to reverse the encryption
+        process, or the time to attempt to reverse the process
+        should required take so much time that the information
+        would become useless.</font></p>
+        <p><font size="2">Cryptanalysis or crypto-analysis is the
+        study and analysis of existing ciphers or encryption
+        algorithms, in order to assess their quality, to find
+        weaknesses or to find a way to reverse the encryption
+        process without having the key. Decryption without a key
+        (often also without authorization) is a cryptanalytic
+        attack, referred to as breaking or cracking a cipher.</font></p>
+        <p><font size="2">A cryptanalytic attack can exploit
+        weaknesses in the algorithm or crypto device itself,
+        exploit its implementation procedures, or try out all
+        possible keys (a brute-force attack). In general, there
+        are two types of attack: The ciphertext-only attack,
+        where the cryptanalyst or attacker has access only to the
+        ciphertext, and the known-plaintext attack, where the
+        cryptanalyst has access to both ciphertext and its
+        corresponding plaintext or assumed plaintext, to retrieve
+        the corresponding key.</font></p>
+        <p><font size="2">Cryptology comprises both cryptography
+        (making) and cryptanalysis (breaking). The expressions
+        'code', 'encoding' and 'decoding' are frequently used in
+        cryptography. A code, however, is a simple replacement of
+        information with other information, and doesn't use an
+        algorithm. Generally, these are code books or tables that
+        convert one value (letters, words or phrases) into
+        another value (letter sequence, numerical value or
+        special symbols). Cryptography, on the other hand, uses
+        an algorithm (often a combination of fractioning,
+        transposition and substitution) to manipulate the
+        information. Although technically wrong, the expression
+        'encoding' is often used to indicate encryption or
+        enciphering and one should therefore look at the context
+        in which such expressions are used.</font></p>
+        <h4><font size="2">A Brief History</font></h4>
+        <p><font size="2">Ever since mankind has existed, people
+        have had secrets, and other people have wanted to know
+        these secrets. The earliest forms of cryptography were
+        performed by pencil and paper, and of course were
+        available only to those who had access to proper
+        education. These classical ciphers were mainly
+        transposition ciphers, which rearrange the letters in a
+        message, and substitution ciphers, which replaced
+        letters, groups of letters or words with other letters,
+        groups or words. One of the earliest reported
+        substitution ciphers was the Caesar cipher or Caesar's
+        shift, in which the letters of the alphabet were replaced
+        by the letters of a second alphabet that was shifted a
+        fixed number of positions again the normal alphabet. It
+        was named after Julius Caesar who used it to communicate
+        with his generals during his military campaigns.</font></p>
+        <p><font size="2">Cryptography was used to secure secret
+        communications from military leaders, diplomats, spies
+        and religious groups. Unfortunately, most of the early
+        ciphers revealed statistical information which could be
+        used to break them. As early as the 9th century, Arab
+        mathematicians discovered frequency analysis and
+        developed methods to break ciphers. This started the race
+        between codemakers and codebreakers. Frequency analysis
+        proved to solve many of the known ciphers, and it was
+        only with the invention of the poly-alphabetic cipher by
+        Leon Battista Alberti in the 15th century that codemakers
+        were one step ahead of the codebreakers again.
+        Poly-alphabetic ciphers like Vigenère use different sets
+        of alphabets during the encryption process. For ages,
+        these ciphers were considered to be unbreakable until
+        Charles Babage in the 19th century developed the multiple
+        frequency analysis techniques.</font></p>
+        <p><font size="2">Cryptography was extensively used by
+        governments to protect their diplomatic post. In the 18th
+        century, all major countries in Europe started recruiting
+        cryptologists to either protect their communication,
+        mostly letters through postal services, or break the
+        encrypted messages of other countries. These bureaus
+        became known as the Black Chambers. Some of the most
+        notorious Black Chambers were the Austrain Geheime
+        Kabinets-Kanzlei in Vienna, the French Cabinet Noir and
+        later the British Room 40, notorious for their great
+        skill in intercepting and decrypting all kinds of
+        military and diplomatic post. Cryptography soon became an
+        important weapon in politics and in the many wars in
+        Europe. By the end of the 19th century important steps
+        were made in the development of cryptography. Auguste
+        Kerckhoffs was one of the most important men to change
+        cryptography from a dark art into a science, based on
+        mathematics. It was Kerckhoffs who stated the fundamental
+        principle that encryption should not depend on the
+        secrecy of the system - which sooner or later would be
+        compromised - but should solely depend on the secrecy of
+        the key.</font></p>
+        <p><font size="2">Many new pencil-and-paper ciphers or
+        hand ciphers were developed and used during the First
+        World War. Among them were ADFGVX, Playfair and Double
+        Transposition. All of them were based on transposition,
+        substitution and fractioning of letters. One important
+        invention was the one-time pad encryption for Telex
+        traffic by Gilbert Vernam in 1917. He realised that when
+        a Telex signal is mixed with a truly random key with the
+        same length as the message, the message would be
+        unbreakable. Pencil-and-paper versions of his invention
+        soon followed. With the rise of wireless communication,
+        the need for secure communications for both military as
+        civilian use grew exponential. The impractical and
+        time-consuming hand ciphers could not keep up with the
+        growing demand and this lead to the development of cipher
+        machines.</font></p>
+        <p><font size="2">After the First World War, two types of
+        machines dominated the market. The electromechanical
+        rotor machines such as the German Enigma and Siemens
+        &amp; HalskeT-52, and the British Typex, and the fully
+        mechanical pin-and lug machines like the Hagelin series.
+        Although machines took over most of the work,
+        pencil-and-paper based hand ciphers still remained in use
+        for short-time tactical purposes, where the time to
+        cryptanalyse them would render the tactical information
+        useless. For example, the secure Double Transposition
+        hand cipher was used until the end of the Second World
+        War by both Allied an Axis forces. Some pencil-and-paper
+        ciphers such as one-time pads were even used during the
+        Cold War for clandestine operations by intelligence
+        services.</font></p>
+        <p><font size="2">All major countries realized the
+        importance of intelligence gathering and new
+        organizations saw the light. In Britain, Room 40 was
+        reorganized into the Government Communications &amp;
+        Cipher School (GC&amp;CS), which played a decisive role
+        during the Second World War. Amongst their most famous
+        cryptologist were Alastair Denniston, Dilly Knox, John
+        Tiltman. In the United States, the Signal Intelligence
+        Service (SIS) and the Communications Security section of
+        the Office of Naval communications (OP-20-G) were the
+        most important code breaking organisations with legendary
+        cryptologists such as William Friedman and Meredith
+        Gardner.</font></p>
+        <p><font size="2">The Second World War lead to improved
+        cipher machines like the American SIGABA and SIGCUM, and
+        the German Lorenz SZ-40 and Schlusselgeraet 41. To break
+        the enormous amount of encrypted message traffic the
+        codebreaker had to build new, automated machines, which
+        lead directly to the development of the first digital
+        computers. In Bletchley Park, Max Newton and Tommy
+        Flowers developed the Colossus, a digital programmable
+        computer to break the Lorenz SZ-40/42 messages. This was
+        the first step in the evolution of cryptography towards
+        the new computer age. However, new improved
+        electro-mechanical cipher machines such as the KL-7,
+        Fialka M-127 and Hagelin CX-52 were designed and remained
+        in service until the 1980s, when the digitalisation
+        really broke through.</font></p>
+        <p><font size="2">It was Claude Elwood Shannon who laid
+        the foundations for modern cryptography in 1948 with his
+        famous Information Theory. The development of electronics
+        and digital computers after the Second World War made it
+        possible to create encryption algorithms, far more
+        complex than before. The new computer algorithms were no
+        longer based on the simple substitution, transposition
+        and fractioning of letters and words, but on a large
+        number of complex operations on data bits. One of the
+        first block ciphers - encryption performed on blocks of
+        data bits - was the Lucifer cipher, designed by Feistel
+        and Coppersmith for IBM, and based on what is known as a
+        Feistel network. It was the predecessor of DES, the first
+        ever cryptographic standard. However, the computer
+        revolution did not only lead to better encryption
+        systems, but also to faster and better codebreaking
+        techniques. The race between codemakers and codebreakers
+        continued as before. Absolute security was one of the
+        reasons that one-time pad systems remained in use until
+        the 1980s for Telex traffic and such, although the
+        expensive and complex key distribution, a typical
+        downside of one-time pad, made it only affordable to the
+        military and diplomatic services. </font></p>
+        <p><font size="2">Until the 1970s, the cryptologic
+        community remained very closed and mainly controlled by
+        government agencies. This changed drastically by the
+        public release of DES, the Data Encryption Standard, and
+        the RSA public-key Algorithm. Following Kerckhoffs
+        principle, newly designed crypto algorithms were released
+        into the public domain, to subject them to extensive
+        academic research. The advantage was obvious. A very
+        large open crypto community could assess new algorithms,
+        discover weaknesses and propose improvements or
+        disapprove the use of a weak algorithm. This lead to a
+        'survival of the fittest' situation, resulting in quality
+        encryption standards.</font></p>
+        <p><font size="2">The most widely used symmetric
+        algorithms today are the Advanced Encryptions Standard
+        (AES), International Data Encryption Algorithm (IDEA),
+        Blowfish and Triple DES. Nevertheless, secret algorithms
+        are still developed and used, mainly by government
+        agencies. Another type of computer algorithms were stream
+        ciphers. They were developed as an answer to the key
+        distribution problem of long keys, as used in systems
+        like one-time pad. Where a block cipher performs a
+        cryptographic function on a fixed number of plain bits,
+        the stream cipher produces a continuous stream of random
+        values that is mixed with the plain bits. Some well known
+        stream ciphers are RC4, SEAL and SOBER.</font></p>
+        <p><font size="2">Another field of cryptography is
+        message integrity and authentication. How can we be sure
+        that the message that we receive is authentic and has not
+        been tampered or modified? The solution is a Hash
+        function, a special one-way function. Hash functions use
+        a crypto algorithm, controlled by a secret key, to take
+        an input and return a unique fixed-size string, which is
+        called the hash value. This value is used to 'sign' the
+        message. This unique value cannot be reproduced without
+        the secret key. Therefore it is impossible to change the
+        message content, since this would require the calculation
+        of a new signature value, which is impossible without
+        knowing the key. Meanwhile many different cryptographic
+        hash functions are developed. MD5, SHA-2 and RIPEMD are
+        some of the latest and most secure hash functions.</font></p>
+        <p><font size="2">The most important development for
+        modern cryptography was public-key cryptography. Until
+        1970, all encryption was based on symmetric-key
+        algorithms. Both encryption and decryption are performed
+        with the same key. Both sender and receiver of an
+        encrypted message have to use the same key. The
+        disadvantage of this system was a complex key
+        distribution system with several security issues. The
+        invention of the asymmetric-key algorithm by James Ellis
+        was a revolution in the world of cryptography. With
+        asymmetric-key cryptography, two keys are used. A public
+        key for encryption only, and a secret private key for
+        decryption. The public key cannot be used to decrypt the
+        information. This solved the expensive and risky problem
+        of secret key distribution.</font></p>
+        <p><font size="2">From now on, you could make your public
+        key available to everyone. Everyone can encrypt his
+        message, destined to you, with your public key, but only
+        you, with your private secret key, can decrypt the
+        message. There is no longer a need to share a secret key!
+        James Ellis' invention at the Government Communications
+        Headquarters (GCHQ), the successor of the GC&amp;CS,
+        remained top secret. However, in 1976, Whitfield Diffie
+        and Martin Hellman proposed an asymmetric-key algorithm,
+        and in 1978, Ronald Rivest, Adi Shamir, and Len Adleman
+        invented RSA, another public-key system. Because of their
+        solution to the secret key distribution problem, the
+        Diffie-Hellman and RSA algorithms are among the most
+        widely used crypto algorithms in the world.</font></p>
+        <p><font size="2">Public-key algorithms are based on the
+        computational complexity problem. The Diffie-Hellman
+        algorithm is based on the discrete logarithm problem and
+        RSA is based on the problem of factorization of large
+        primes. Asymmetric-key algorithms require large keys and
+        heavy computation, which makes them suitable only for
+        encryption of small amounts of data. Therefore, strong
+        traditional symmetric algorithms often are used to
+        encrypt information and the asymmetric-key is then used
+        to encrypt the secret keys. One of the most popular
+        implementations of this principle is Philip Zimmermanns
+        PGP, which is a combination of powerful symmetric block
+        ciphers, the practical public-key asymmetric cryptography
+        and the message integrity of digital signatures by hash
+        functions.</font></p>
+        <h4><font size="2">Cryptography Today</font></h4>
+        <p><font size="2">What has cryptography to do with you?
+        Everything! Today, cryptography is embedded in all
+        aspects of your life to protect your privacy. When you
+        connect your computer to the Internet to browse, to
+        e-mail, or login onto your favorite social network, that
+        connection is secured by TLS (Transport Layer Security).
+        The TLS protocol uses strong cryptography to prevent
+        eavesdropping, tampering, and message forgery. And it's
+        not only your personal computer that uses encryption. If
+        we go shopping, our customer card is scanned and
+        cryptography protects the personal data of the customers.
+        If you pay with your bank card in a shop, or draw money
+        from an ATM, the transaction is securely processed by
+        your bank. Information on the chip of your ID card and
+        health insurance card are encrypted. When you call
+        someone with your mobile phone, your digitized voice is
+        encrypted to prevent eavesdropping. The remote key of the
+        central locking system of your car communicates with your
+        car to generate unique keys, protected by cryptography.
+        Let's put it this way: How would you like it when
+        someone, let's say your life insurance broker, could
+        simply use the Internet to read the computer files of
+        your doctor? Or when someone could check your police
+        record without authorization? What if your employer could
+        check what you do with your money? Cryptography prevents
+        people from illegally invading your privacy.</font></p>
+        <p><font size="2">The most important benefit of
+        cryptography is indeed privacy. Today our lives are
+        completely digitized. Nearly all your private information
+        is stored in one of the many databases from the
+        government, police, city services, banks, commercial
+        holdings, health care services and so on. All this
+        information can get exposed to unauthorized people. We
+        need to stay in control of the technology that ensures
+        our privacy. Cryptography protects the right to privacy
+        and the right to communicate confidentially. Secure
+        communications can protect one&#146;s intimate private
+        life, his business relations, and his social or political
+        activities. These basic rights are written in the
+        constitution of many, but not all countries. Of course,
+        it is illegal to use cryptography for criminal or
+        terrorist purposes. This does not mean that the use of
+        cryptography should be illegal. Just as with weapons, a
+        knife or a crowbar, it is not because you could use these
+        objects for illegal purposes that they should be regarded
+        as illegal. It is useless to make cryptography illegal.
+        Criminals simply don&#146;t care about the law. If you
+        outlaw cryptography, only outlaws will have cryptography
+        (read privacy).</font></p>
+        <p><font size="2">However, even the most liberal and
+        democratic countries have laws that control the use of
+        cryptography and some countries have stricter laws than
+        others. Many governments are reluctant to permit the use
+        of cryptography by their citizens because it limits the
+        government&#146;s surveillance capabilities. The laws are
+        often a balancing between the protection of the
+        individual privacy and a nation&#146;s security or its
+        the fight against crime. Democratic countries tend to
+        permit cryptography for personal use and have legal
+        mechanisms to bypass the right to privacy with a court
+        order in case of a criminal investigation or a threat of
+        the nation. The boundaries between lawful surveillance
+        and state organized invasion of privacy is often a
+        subjected to discussion, even in democratic countries.</font></p>
+        <p><font size="2">Depending on the country, laws on
+        cryptography can restrict specific types of cryptography
+        partially or allow only government licensed systems,
+        limit the strength of the encryption or demand key
+        escrow. Some laws can force someone to hand over the
+        decryption keys following a judicial warrant and there
+        are laws that restrict the import or export of
+        cryptographic software, equipment or knowledge, or even
+        regard export of cryptography as weapons export. One
+        might have no objection to his current government having
+        the possibility to invade your privacy 'in case they
+        really need to', and of course only when approved by the
+        justice department. But governments change, and what you
+        believe to be a democracy today, can be a totalitarian
+        state tomorrow. That's why we need to be able to use
+        strong encryption without limitations, to assure our
+        basic rights, today and tomorrow. Is cryptography
+        important to you? You bet it is!</font></p>
+        <h4><font size="2">More information on Cryptography</font></h4>
+        <ul>
+            <li><a
+                href="http://library.thinkquest.org/07aug/01676/"
+                target="_blank"><font size="2">Hash That! Can you
+                keep a secret?</font></a></li>
+            <li><a
+                href="http://en.wikipedia.org/wiki/Cryptography"
+                target="_blank"><font size="2">Cryptography on
+                Wikipedia</font></a></li>
+            <li><a
+                href="http://www.esat.kuleuven.be/cosic/intro/"
+                target="_blank"><font size="2">Introduction to
+                Cryptography by the COSIC group</font></a></li>
+            <li><a
+                href="http://www.garykessler.net/library/crypto.html"
+                target="_blank"><font size="2">Gary Kessler's
+                Overview of Cryptography</font></a><font size="2">
+                </font><font size="1"><img src="../pics/new.gif"
+                width="31" height="12"></font></li>
+            <li><a
+                href="http://www.simonsingh.net/Crypto_Corner.html"
+                target="_blank"><font size="2">Simon Singh's
+                Crypto Corner</font></a></li>
+            <li><a href="http://www.iacr.org/" target="_blank"><font
+                size="2">International Association for
+                Cryptologic Research</font></a></li>
+            <li><a href="http://www.cacr.math.uwaterloo.ca/hac/"
+                target="_blank"><font size="2">Handbook of
+                Applied Cryptography</font></a></li>
+            <li><a
+                href="http://www.youtube.com/watch?v=1BJuuUxCaaY"
+                target="_blank"><font size="2">Information
+                Security Before and After Publik Key Cryptography</font></a><font
+                size="2"> great video with Whitfield Diffie</font></li>
+        </ul>
+        <p align="center"><font color="#808080" size="1"><!-- Start of StatCounter Code --><script
+        language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script></font>
+        <script language="javascript" type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script><noscript><a
+        href="http://www.statcounter.com/" target="_blank"><img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;java=0&amp;security=80e5009e&amp;invisible=1"
+        alt="website hit counter" border="0"></a> </noscript> <!-- End of StatCounter Code --> <a
+        href="../nl/enigmaproc.htm"><font color="#808080"
+        size="1"><!--webbot bot="HTMLMarkup" startspan --><img src="http://users.telenet.be/cgi-bin/yaac/yaac?t756400+zero" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></font></a><font
+        color="#808080" size="1"><br>
+        </font><font size="2">© Copyright 2004 - 2016 Dirk
+        Rijmenants</font></p>
+        <table border="0" cellpadding="2" cellspacing="0"
+        width="100%">
+            <tr>
+                <td width="100%" bgcolor="#808080"><a
+                href="../index.htm" class="menu">Home</a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</center></div>
+</body>
+</html>
